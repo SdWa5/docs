@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalDependencies">
+    <plugin id="Git4Idea" />
+    <plugin id="com.anthropic.code.plugin" />
+    <plugin id="com.github.deeepamin.gitlabciaid" />
+    <plugin id="com.github.xepozz.caddy" />
+    <plugin id="com.jetbrains.twig" />
+    <plugin id="com.magento2utilities" />
+    <plugin id="de.php_perfect.intellij.ddev" />
+    <plugin id="dev.meanmail.plugin.nginx-intellij-plugin" />
+    <plugin id="fr.adrienbrault.idea.symfony2plugin" />
+    <plugin id="intellij.webp" />
+    <plugin id="intellij.webpack" />
+    <plugin id="mobi.hsz.idea.gitignore" />
+    <plugin id="ru.adelf.idea.dotenv" />
+    <plugin id="zielu.gittoolbox" />
+  </component>
+</project>
