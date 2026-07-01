@@ -1,5 +1,4 @@
-1. add project description to github repository (no `gh` CLI available here, set manually via GitHub web UI:
-   "SdWa5 organization root repository — documentation, org info, and links to sub-repositories (sdwa5-vps, ...)")
+1. improve docs (resolve TODOs in /home/stefanr/PhpstormProjects/sdwa5/docs)
 2. github account/org plan (DECIDED)
     1. short term: create current project (sdwa5) repo under bestcodename
     2. later: create GitHub Organization `sdwa5` + admin account on @sdwa5.org
