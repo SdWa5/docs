@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/sdwa5-vps/shopware-html-data/custom/plugins/FroshLazySizes/src" isTestSource="false" packagePrefix="Frosh\LazySizes\" />
+      <sourceFolder url="file://$MODULE_DIR$/sdwa5-vps/shopware-html-data/custom/plugins/FroshPlatformFilterSearch/src" isTestSource="false" packagePrefix="FroshPlatformFilterSearch\" />
+      <sourceFolder url="file://$MODULE_DIR$/sdwa5-vps/shopware-html-data/custom/plugins/FroshShopmon/src" isTestSource="false" packagePrefix="Frosh\Shopmon\" />
+      <sourceFolder url="file://$MODULE_DIR$/sdwa5-vps/shopware-html-data/custom/plugins/SwagPlatformSecurity/src" isTestSource="false" packagePrefix="Swag\Security\" />
+      <sourceFolder url="file://$MODULE_DIR$/sdwa5-vps/shopware-html-data/custom/plugins/SwagPlatformSecurity/tests" isTestSource="true" packagePrefix="Swag\Security\Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/sdwa5-vps/shopware-html-data/src" isTestSource="false" packagePrefix="App\" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
