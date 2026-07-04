@@ -26,7 +26,7 @@ Storefront at https://sdwa5.org used for merch distributed as voluntary
 donations (no commercial sale, no VAT). Also hosts org content pages (About,
 Events, Music/Mixes, Gallery, legal pages).
 
-Technical/ops detail: [`sdwa5-vps/docs/shopware.md`](../sdwa5-vps/docs/shopware.md)
+Technical/ops detail: [`sdwa5-vps/docs/shopware/README.md`](../sdwa5-vps/docs/shopware/README.md)
 
 ## TODO
 

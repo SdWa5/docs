@@ -6,7 +6,7 @@ Google Workspace usage for the `sdwa5.org` domain.
 
 | Address              | Usage                                         |
 |-----------------------|-----------------------------------------------|
-| `ripper@sdwa5.org`    | SMTP auth for Shopware (App Password) — see [`sdwa5-vps/docs/shopware.md`](../sdwa5-vps/docs/shopware.md#smtp); Caddy Let's Encrypt contact — see [`sdwa5-vps/docs/caddy.md`](../sdwa5-vps/docs/caddy.md) |
+| `ripper@sdwa5.org`    | SMTP auth for Shopware (App Password) — see [`sdwa5-vps/docs/shopware/shop-config.md`](../sdwa5-vps/docs/shopware/shop-config.md#smtp); Caddy Let's Encrypt contact — see [`sdwa5-vps/docs/caddy.md`](../sdwa5-vps/docs/caddy.md) |
 | `shop@sdwa5.org`      | Shopware sender / storefront contact address  |
 | `admin@sdwa5.org`     | Planned — GitHub org admin account (see [TODO.md](../TODO.md) item 4) |
 | `github@sdwa5.org`    | Planned — GitHub org role address (see [TODO.md](../TODO.md) item 4) |
