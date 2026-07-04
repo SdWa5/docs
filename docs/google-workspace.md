@@ -47,6 +47,6 @@ VPS Restic backups land in Google Drive folder `restic-backups`, owned by
 see [`sdwa5-vps/docs/backup.md`](../sdwa5-vps/docs/backup.md). Access:
 restricted, only people with access can open the link.
 
-Org documents live in a shared My-Drive folder (see
-[organization.md](organization.md#documents)). No Shared Drives
-(Geteilte Ablagen) in use.
+Shared Drive (Geteilte Ablage) **SdWa5** — central storage for everything,
+including the org documents folder (see
+[organization.md](organization.md#documents)).
