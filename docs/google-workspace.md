@@ -2,21 +2,51 @@
 
 Google Workspace usage for the `sdwa5.org` domain.
 
-## Known mailboxes
+## Plan / Nonprofit status
 
-| Address              | Usage                                         |
-|-----------------------|-----------------------------------------------|
-| `ripper@sdwa5.org`    | SMTP auth for Shopware (App Password) — see [`sdwa5-vps/docs/shopware/shop-config.md`](../sdwa5-vps/docs/shopware/shop-config.md#smtp); Caddy Let's Encrypt contact — see [`sdwa5-vps/docs/caddy.md`](../sdwa5-vps/docs/caddy.md) |
-| `shop@sdwa5.org`      | Shopware sender / storefront contact address  |
-| `admin@sdwa5.org`     | Planned — GitHub org admin account (see [TODO.md](../TODO.md) item 4) |
-| `github@sdwa5.org`    | Planned — GitHub org role address (see [TODO.md](../TODO.md) item 4) |
+Google Workspace for Nonprofits: **approved** (status checked 2026-07-04 on
+https://www.google.com/nonprofits/), Workspace domain `sdwa5.org`.
 
-## TODO
+## Admin
 
-- [ ] Confirm Google Workspace for Nonprofits enrollment status
-- [ ] Document admin console access / user management process
-- [ ] List all active mailboxes and groups
-- [ ] Document shared drives usage (if any)
-- [ ] Backup: confirm relation to Restic/rclone Google Drive backup target
-      (see [`sdwa5-vps/docs/backup.md`](../sdwa5-vps/docs/backup.md)) — same
-      Workspace account or separate?
+Super Admin: Stefan Ripper (`ripper@sdwa5.org`) — sole assigned administrator.
+User management via the standard admin console (https://admin.google.com).
+
+## Users
+
+| User            | Address            | Notes                                                        |
+|-----------------|--------------------|--------------------------------------------------------------|
+| Stefan Ripper   | `ripper@sdwa5.org` | Super Admin; SMTP auth for Shopware (App Password) — see [`sdwa5-vps/docs/shopware/shop-config.md`](../sdwa5-vps/docs/shopware/shop-config.md#smtp); Caddy Let's Encrypt contact — see [`sdwa5-vps/docs/caddy.md`](../sdwa5-vps/docs/caddy.md); owns `restic-backups` Drive folder |
+| Obmann-Stv.     | `sepp@sdwa5.org`   |                                                              |
+| Obmann-Stv.     | (second mailbox)   |                                                              |
+
+## Groups
+
+One group **Allgemein** — `mail@sdwa5.org`, 3 members (all users), access type
+custom. Also the PayPal account address (see
+[organization.md](organization.md#bank--payments)).
+
+Aliases of the group (all deliver to `mail@sdwa5.org`):
+
+`help@` `all@` `info@` `noreply@` `sdwa5@` `shop@` `sound@` `youtube@`
+`erp@` `vault@` `swda5.system@`
+
+Notes:
+
+- `shop@sdwa5.org` (Shopware sender / storefront contact) is a group alias,
+  not a separate mailbox.
+- `swda5.system@sdwa5.org` contains a typo (`swda5` instead of `sdwa5`) —
+  intentional or candidate for cleanup?
+- `admin@sdwa5.org` / `github@sdwa5.org` (GitHub org plan, see
+  [TODO.md](../TODO.md)) do not exist yet.
+
+## Drive / Backup
+
+VPS Restic backups land in Google Drive folder `restic-backups`, owned by
+`ripper@sdwa5.org` (same Workspace account; rclone remote `[SdWa5]`, OAuth2) —
+see [`sdwa5-vps/docs/backup.md`](../sdwa5-vps/docs/backup.md). Access:
+restricted, only people with access can open the link.
+
+Org documents live in a shared My-Drive folder (see
+[organization.md](organization.md#documents)). No Shared Drives
+(Geteilte Ablagen) in use.

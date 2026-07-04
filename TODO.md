@@ -1,7 +1,6 @@
 1. improve docs [docs](docs)
     1. resolve TODOs regarding missing content and information
-        1. [docs/google-workspace.md#todo](docs/google-workspace.md#todo)
-        2. [docs/services.md#todo](docs/services.md#todo)
+        1. [docs/services.md#todo](docs/services.md#todo)
     2. infrastructure diagram — one overview graphic (Caddy → containers, domains, backup flow) in
        [sdwa5-vps/docs/infrastructure.md](sdwa5-vps/docs/infrastructure.md); mermaid renders on GitHub natively
         1. check documentation on freshness and consistency before
