@@ -29,14 +29,12 @@ custom. Also the PayPal account address (see
 Aliases of the group (all deliver to `mail@sdwa5.org`):
 
 `help@` `all@` `info@` `noreply@` `sdwa5@` `shop@` `sound@` `youtube@`
-`erp@` `vault@` `swda5.system@`
+`erp@` `vault@`
 
 Notes:
 
 - `shop@sdwa5.org` (Shopware sender / storefront contact) is a group alias,
   not a separate mailbox.
-- `swda5.system@sdwa5.org` contains a typo (`swda5` instead of `sdwa5`) —
-  intentional or candidate for cleanup?
 - `admin@sdwa5.org` / `github@sdwa5.org` (GitHub org plan, see
   [TODO.md](../TODO.md)) do not exist yet.
 
