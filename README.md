@@ -9,11 +9,17 @@ itself contain a deployable application.
 
 ## Documentation
 
+Documentation is split by audience: [`docs/`](docs/) holds the org-level
+documentation (*what* services are used for and *why*), while
+[`sdwa5-vps/docs/`](sdwa5-vps/docs/) holds the technical/ops documentation
+(*how* they run: Docker, configs, operations).
+
 See [`docs/`](docs/) for:
 
 - [Organization](docs/organization.md) — legal/official info
 - [Google Workspace](docs/google-workspace.md) — `sdwa5.org` Workspace usage
-- [Services](docs/services.md) — Dolibarr, Vaultwarden, Shopware usage overview
+- [Services](docs/services.md) — usage overview of all org services
+  (Dolibarr, Vaultwarden, Shopware, social accounts, GitHub, ...)
 
 ## Sub-repositories
 
