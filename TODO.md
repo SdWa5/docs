@@ -1,12 +1,9 @@
 1. improve docs [docs](docs)
-    1. infrastructure diagram — one overview graphic (Caddy → containers, domains, backup flow) in
-       [sdwa5-vps/docs/infrastructure.md](sdwa5-vps/docs/infrastructure.md); mermaid renders on GitHub natively
-        1. check documentation on freshness and consistency before
-    2. TODO format consistency — TODO.md files use numbered lists, docs use `- [ ]` checkboxes — unify
+    1. TODO format consistency — TODO.md files use numbered lists, docs use `- [ ]` checkboxes — unify
        (checkboxes show progress on GitHub)
-    3. link check CI — GitHub Action (e.g. `lychee` or `markdown-link-check`) validates relative links + anchors in
+    2. link check CI — GitHub Action (e.g. `lychee` or `markdown-link-check`) validates relative links + anchors in
        both repos; cross-repo links like `../sdwa5-vps/docs/...` break silently otherwise
-    4. keep docs split by topic — one service/topic per file (like docs/shopware/); split future files if they
+    3. keep docs split by topic — one service/topic per file (like docs/shopware/); split future files if they
        grow too big
 2. go public with all sdwa5 repos
     1. github account/org plan (DECIDED)
