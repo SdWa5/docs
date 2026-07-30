@@ -25,6 +25,8 @@ See [`docs/`](docs/) for:
 
 - [`sdwa5-vps`](sdwa5-vps) — VPS infrastructure, Docker Compose configs, and
   technical/ops documentation for all self-hosted services
+- [`sdwa5-3d`](sdwa5-3d) — 3D models of the speakers and stage equipment,
+  generated from specs, for Blender event previews and PA setup planning
 
 ## Contact
 

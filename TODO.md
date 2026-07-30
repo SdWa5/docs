@@ -15,3 +15,4 @@
             3. bestcodename/sdwa5 (https://github.com/bestcodename/sdwa5) -> sdwa5/docs
     2. configure repos as public
 3. [sdwa5-vps/TODO.md](sdwa5-vps/TODO.md)
+4. [sdwa5-3d/TODO.md](sdwa5-3d/TODO.md)
