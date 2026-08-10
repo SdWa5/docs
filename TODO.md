@@ -1,12 +1,11 @@
 1. improve docs [docs](docs)
-    1. link check CI — GitHub Action (e.g. `lychee` or `markdown-link-check`) validates relative links + anchors in
-       both repos; cross-repo links like `../sdwa5-vps/docs/...` break silently otherwise
-    2. keep docs split by topic — one service/topic per file (like docs/shopware/); split future files if they
-       grow too big
+    1. link check CI — GitHub Action (e.g. `lychee` or `markdown-link-check`) validates relative links + anchors in both
+       repos; cross-repo links like `../sdwa5-vps/docs/...` break silently otherwise
+    2. keep docs split by topic — one service/topic per file (like docs/shopware/); split future files if they grow too
+       big
 2. go public with all sdwa5 repos
     1. github account/org plan (DECIDED)
-        1. create GitHub Organization `sdwa5` + admin account on @sdwa5.org
-           (domain already wired to google workspace)
+        1. create GitHub Organization `sdwa5` + admin account on @sdwa5.org (domain already wired to google workspace)
             1. use role address (e.g. git@sdwa5.org)
             2. apply for GitHub non-profit discount
         2. then: transfer both (all sdwa5) repos into the org
@@ -16,3 +15,4 @@
     2. configure repos as public
 3. [sdwa5-vps/TODO.md](sdwa5-vps/TODO.md)
 4. [sdwa5-3d/TODO.md](sdwa5-3d/TODO.md)
+5. Cleanup and refresh Google Drive together with this repo and all sub repos
