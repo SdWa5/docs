@@ -1,0 +1,21 @@
+# Secret scanning configuration for the SdWa5 root repository.
+#
+# Extends the upstream rule set rather than replacing it, so new rules arrive
+# with a gitleaks upgrade instead of having to be copied in here.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Paths this repository does not own and does not publish"
+
+paths = [
+  # sdwa5-vps and sdwa5-3d are separate repositories that only sit in
+  # subdirectories on disk, and this repository gitignores both. They run this
+  # same scan in their own CI, so scanning them from here would report another
+  # repository's findings against this one's commits.
+  '''^sdwa5-vps/''',
+  '''^sdwa5-3d/''',
+  # PhpStorm's own project files. Tracked on purpose so the shared inspection
+  # profile and dictionary travel with the repository.
+  '''^\.idea/''',
+]

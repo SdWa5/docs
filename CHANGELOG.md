@@ -6,12 +6,39 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-09-08
+
 ### Added
 
-- `docs/services.md` records two decisions taken on 2026-09-08. Emergency access with a Takeover
-  grantee is being set up with a new member, and the two Vaultwarden accounts holding zero
-  items are kept rather than deleted, because neither holds data and deleting an account someone was
-  invited to costs more explaining than it saves.
+- Continuous integration, in [.github/workflows/docs.yml](.github/workflows/docs.yml). This repository
+  had no CI at all. Three jobs run: `links` resolves every relative link and every `#anchor` against
+  the filesystem on each push, `links-external` fetches external URLs nightly, and `secrets` scans the
+  working tree and the full history for credentials.
+- [lychee.toml](lychee.toml) configures the link checker. External URLs are checked nightly rather
+  than per push, because a rate limit or a briefly unreachable host fails a build for reasons that
+  have nothing to do with the commit.
+- [.gitleaks.toml](.gitleaks.toml) configures the secret scanner. It extends the upstream rule set
+  rather than replacing it, and allowlists the two gitignored sibling repositories, which run the same
+  scan in their own CI.
+- The link check covers cross-repository links such as `../sdwa5-vps/docs/caddy.md`, which was the
+  point of the item it closes. `sdwa5-vps` and `sdwa5-3d` are gitignored sibling directories rather
+  than submodules, so CI clones them separately. While they are private that clone needs a
+  `SIBLING_REPOS_TOKEN` secret; without it the job stays green and warns that those links were skipped
+  rather than checked, instead of reporting them as broken.
+- `TODO.md` records the result of the go-public secret scan, the missing `sdwa5-3d` transfer, the
+  licence question and the Google Drive duplicates.
+
+### Changed
+
+- The secret scanner is the gitleaks CLI rather than `gitleaks/gitleaks-action`. That action requires
+  a licence key for repositories owned by a GitHub Organization, and moving these repositories into an
+  `sdwa5` organization is the plan, so the action would stop working at exactly the wrong moment. The
+  CLI is MIT and needs no key.
+
+### Fixed
+
+- `CHANGELOG.md` had the entry from commit `eb93397` under `Unreleased` although that commit shipped
+  as 0.4.0 and `composer.json` was never bumped past it. Moved into 0.4.0 where it belongs.
 
 ## [0.4.0] - 2026-09-08
 
@@ -25,6 +52,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- `docs/services.md` records two decisions taken on 2026-09-08. Emergency access with a Takeover
+  grantee is being set up with a new member, and the two Vaultwarden accounts holding zero
+  items are kept rather than deleted, because neither holds data and deleting an account someone was
+  invited to costs more explaining than it saves.
 - `docs/services.md` records the Vaultwarden accounts with their KDF, item count, last activity and
   organization role, and states plainly that the SdWa5 organization has a single Owner holding 32
   ciphers in 5 collections while `emergency_access` has zero rows, so losing that account loses the
