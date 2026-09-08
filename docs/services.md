@@ -31,9 +31,13 @@ Users, measured 2026-09-08: four accounts, not one.
 | third account | 2026-06-20 | not a member |
 | fourth account | never | invited, never accepted |
 
-The SdWa5 organization holds a small number of ciphers. **Stefan is its only Owner**, and
-With a single Owner, losing his account loses the organization's data. That is
-tracked in [`sdwa5-vps/TODO.md`](../sdwa5-vps/TODO.md).
+The SdWa5 organization holds a small number of ciphers. **Stefan is its only Owner**, so until that changes, losing his account loses the organization's
+data. Emergency access with a Takeover grantee is being set up with a new member, as of
+2026-09-08. Tracked in [`sdwa5-vps/TODO.md`](../sdwa5-vps/TODO.md).
+
+The two accounts holding zero items are **kept deliberately**, decided 2026-09-08. Neither holds
+data, so the exposure is a login rather than anything readable, and deleting an account someone was
+invited to costs more explaining than it saves.
 
 Only the account holder can change their own KDF, so the three PBKDF2 accounts are a message to them
 rather than an action here, and only the second one has anything to protect.
