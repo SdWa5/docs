@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.6.1] - 2026-09-08
+
+### Fixed
+
+- **"Four copies of `AmpLimiterCalc.csv`" overstated what was measured**, in 0.5.0 and in `TODO.md`.
+  Re-measured: the four files share a name but have **three distinct sizes**, 7700, 7718 and 7432
+  bytes with the last appearing twice at the same timestamp. So three are hand-kept versions and only
+  one pair is a true duplicate. That is stronger evidence for the drift the repository-as-master
+  decision is meant to remove, not weaker, because somebody is versioning by duplicating a filename.
+  It also changes the remedy from a delete into a reading job.
+- Dropped the claim that both `Drivers.csv` and `drivers.csv` sit in that folder. Both were listed
+  earlier in the day and only `drivers.csv` is present now, at 554 bytes, so the pair is not something
+  to assert. Deleting or renaming anything there needs a write scope in any case, since the `SdWa5:`
+  remote is `scope = drive.readonly`.
+
 ## [0.6.0] - 2026-09-08
 
 ### Added
