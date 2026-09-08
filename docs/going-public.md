@@ -13,37 +13,50 @@ and each is a decision rather than a defect.
 does not reproduce the address, the name or the value in question. Read it next to the file it points
 at.
 
-## The one that cannot be fixed later
+## The one that could not be fixed later, and was done on 2026-09-08
 
 **Every commit carries the identity that made it, and publishing a repository publishes all of them.**
-Measured 2026-09-08:
+What that used to be, measured before the rewrite:
 
 | Repository | Commits | Authored as |
 |---|---|---|
 | `sdwa5` | 22 | a work address on a business domain |
 | `sdwa5-3d` | 140 | the same work address |
-| `sdwa5-vps` | 95 | **a private address on a third-party mail provider**, as author *and* committer |
+| `sdwa5-vps` | 95 | a private address on a third-party mail provider, as author *and* committer |
 
-Two things follow. The private address is published 95 times in `sdwa5-vps` no matter what any file
-says, and the business domain is published 162 times across the other two, which links the
-association's repositories to an unrelated employer.
+So the private address was published 95 times no matter what any file said, and the business domain
+162 times across the other two, which linked the association's repositories to an unrelated employer.
 
-**This is the only item on this list whose window is closing.** Rewriting author identities means
-rewriting every commit, which changes every hash. Right now that is cheap, because the repositories
-are private, there are exactly two clones of each (the workstation and the deploy checkout at
-`/opt/docker`), and there are no forks, no pull requests and no external references. After going
-public it is not practical.
+**All three histories are rewritten.** Every commit in every repository now carries a single identity,
+`Stefan Ripper <7108645+bestcodename@users.noreply.github.com>`, as author and as committer, and
+neither old address appears anywhere. Verified on GitHub as well as locally, and the commits are still
+attributed to the `bestcodename` account, so the contribution graph survived.
 
-Three options, and only the middle one actually removes the disclosure:
+**The content is provably untouched.** The tree hash at `HEAD` is identical to its pre-rewrite value in
+all three repositories, so only the commit objects changed:
 
-* **Accept it.** Publishing an email with your commits is ordinary in open source. GitHub can hide an
-  address from its own UI, but the commit objects still carry it and anyone cloning reads it.
-* **Rewrite before going public**, with `git filter-repo --mailmap`, mapping both identities to
-  whatever the association wants to be known by, for example a role address on `sdwa5.org`. Then
-  re-clone `/opt/docker`. This is the moment to do it or not at all.
-* **A `.mailmap` file changes nothing.** It only affects how `git log` displays names locally. The
-  stored commit objects are untouched, so it does not help here. Worth stating because it looks like
-  the answer.
+| Repository | Tree at `HEAD`, before and after |
+|---|---|
+| `sdwa5` | `dbbe151333fb` |
+| `sdwa5-vps` | `e7d94eebd0ad` |
+| `sdwa5-3d` | `1981e6b43b7b` |
+
+How it was done, in case it is ever needed again. `git-filter-repo` runs as a single script and needs
+no installation, driven by a two-line mailmap built from the repositories themselves rather than typed
+out. It removes `origin`, so the remotes were re-added and each repository force-pushed with a
+`--force-with-lease` on its exact pre-rewrite commit, so a concurrent push elsewhere would have
+aborted it rather than been overwritten. Bare backups of all three were taken first.
+
+**The two things that would have undone it, and were therefore also done.** `sdwa5-vps` carried a
+*local* `user.email` override set to the private address, which is why that repository's commits
+differed from the other two, so the next commit would have reintroduced exactly what the rewrite
+removed. All three repositories now set the noreply address as a local identity, and the machine's
+global identity is deliberately left alone, because the work address is correct for other projects.
+
+And **`/opt/docker` on the VPS was moved with `fetch` plus `reset --hard`, never a re-clone.** It holds
+the untracked runtime state of the whole stack, `minecraft-data` alone being 6.9 GiB, so a fresh clone
+would have discarded it. Verified afterwards: 6.9 GiB still there, the rotated `server.properties`
+still there, tree clean, and all eight health checks green.
 
 ## Personal data of named people
 
