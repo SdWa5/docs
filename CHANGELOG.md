@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+
+- `docs/services.md` records two decisions taken on 2026-09-08. Emergency access with a Takeover
+  grantee is being set up with a new member, and the two Vaultwarden accounts holding zero
+  items are kept rather than deleted, because neither holds data and deleting an account someone was
+  invited to costs more explaining than it saves.
+
 ## [0.4.0] - 2026-09-08
 
 ### Fixed
