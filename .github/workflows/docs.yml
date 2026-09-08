@@ -25,13 +25,13 @@ jobs:
   links:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       # Cloning a private sibling needs a token this repository does not have
       # by default. Both steps therefore tolerate failure, and the next step
       # tells lychee to skip whatever is missing rather than call it broken.
       # Once the repositories are public, no token is needed and both succeed.
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         id: vps
         continue-on-error: true
         with:
@@ -39,7 +39,7 @@ jobs:
           path: sdwa5-vps
           token: ${{ secrets.SIBLING_REPOS_TOKEN || github.token }}
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         id: three_d
         continue-on-error: true
         with:
@@ -79,7 +79,7 @@ jobs:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: lycheeverse/lychee-action@v2.9.0
         with:
@@ -101,7 +101,7 @@ jobs:
     env:
       GITLEAKS_VERSION: 8.30.1
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           # The history scan needs the history.
           fetch-depth: 0

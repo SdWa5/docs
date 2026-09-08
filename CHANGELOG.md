@@ -6,6 +6,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.5.1] - 2026-09-08
+
+### Fixed
+
+- `actions/checkout` bumped from `v4` to `v5`. GitHub forces `v4` onto Node 24 and warns that it is
+  deprecated. **Unverified on GitHub**, because no job can currently run — see below.
+
+### Added
+
+- `TODO.md` records that **CI is blocked account-wide on billing**, measured 2026-09-08. Every run in
+  all three repositories fails within 2 to 4 seconds with "The job was not started because recent
+  account payments have failed or your spending limit needs to be increased", including runs that
+  predate this work. So no pipeline in any of the three repositories is verified on GitHub.
+- The consumption behind it is measured and recorded: all three repositories are private, so Actions
+  minutes are metered, and `sdwa5-3d` spends them. One push costs about 2 h 15 m for the `phpunit` job
+  alone, against 23 minutes locally, and one nightly costs about 548 minutes because the `full` job
+  runs 6 h 1 m and is then killed at GitHub's 6-hour ceiling. Three consecutive nightlies were
+  cancelled that way between 5 and 7 September.
+- This turns going public from a preference into the fix: a public repository gets Actions minutes
+  free and unlimited.
+
 ## [0.5.0] - 2026-09-08
 
 ### Added
