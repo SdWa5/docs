@@ -6,6 +6,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-09-08
+
+### Fixed
+
+- `docs/services.md` said both Dolibarr and Vaultwarden had "currently only Stefan; Sepp and Ziri
+  planned". Neither was true, measured on 2026-09-08. Dolibarr has three enabled accounts, and the
+  Sepp and Ziri ones were created on 2025-07-08 and have never been logged into, so they are
+  provisioned rather than planned. Vaultwarden has four accounts, two of which are in active use with
+  differing numbers of items.
+
+### Added
+
+- `docs/services.md` records the Vaultwarden accounts with their KDF, item count, last activity and
+  organization role, and states plainly that the SdWa5 organization has a single Owner holding 32
+  ciphers in 5 collections while `emergency_access` has zero rows, so losing that account loses the
+  organization's data.
+
 ## [0.3.0] - 2026-07-30
 
 ### Added
