@@ -1,0 +1,120 @@
+name: Docs
+
+# This repository holds no code. What it can get wrong is a link, and what it
+# must never publish is a secret, so those are the two things CI checks.
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  # External URLs are checked nightly rather than per push. They fail for
+  # reasons that have nothing to do with the commit — rate limits, a site
+  # being briefly down — and a check that cries wolf gets ignored.
+  schedule:
+    - cron: '23 4 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  # Relative links and their #anchors, resolved against the filesystem.
+  #
+  # The sub-repositories are separate repositories that merely sit in
+  # subdirectories on disk, and this repository gitignores both. So a link like
+  # `../sdwa5-vps/docs/caddy.md` cannot be resolved from a checkout of this
+  # repository alone, which is the silent breakage this job exists to catch.
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Cloning a private sibling needs a token this repository does not have
+      # by default. Both steps therefore tolerate failure, and the next step
+      # tells lychee to skip whatever is missing rather than call it broken.
+      # Once the repositories are public, no token is needed and both succeed.
+      - uses: actions/checkout@v4
+        id: vps
+        continue-on-error: true
+        with:
+          repository: bestcodename/sdwa5-vps
+          path: sdwa5-vps
+          token: ${{ secrets.SIBLING_REPOS_TOKEN || github.token }}
+
+      - uses: actions/checkout@v4
+        id: three_d
+        continue-on-error: true
+        with:
+          repository: bestcodename/sdwa5-3d
+          path: sdwa5-3d
+          token: ${{ secrets.SIBLING_REPOS_TOKEN || github.token }}
+
+      - name: Decide which sibling repositories can be validated
+        id: siblings
+        run: |
+          skip=''
+          for dir in sdwa5-vps sdwa5-3d; do
+            if [ -d "$dir/.git" ]; then
+              echo "::notice::$dir is checked out, links into it will be validated"
+            else
+              echo "::warning::$dir could not be cloned, so links into it are SKIPPED rather than checked. Add a SIBLING_REPOS_TOKEN secret with read access, or make the repository public."
+              skip="$skip --exclude $dir/"
+            fi
+          done
+          echo "skip=$skip" >> "$GITHUB_OUTPUT"
+
+      - uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          # --offline resolves file paths and anchors without touching the
+          # network, which is what a per-push run should do. The nightly
+          # external job below drops it.
+          args: >-
+            --offline
+            --include-fragments
+            --config lychee.toml
+            ${{ steps.siblings.outputs.skip }}
+            './*.md' './docs/**/*.md'
+          fail: true
+
+  # The same files, with external URLs actually fetched. Nightly and on demand.
+  links-external:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          args: >-
+            --include-fragments
+            --config lychee.toml
+            --exclude sdwa5-vps/ --exclude sdwa5-3d/
+            './*.md' './docs/**/*.md'
+          fail: true
+
+  # Secret scanning, on the working tree and on the full history.
+  #
+  # The gitleaks CLI is used directly rather than gitleaks/gitleaks-action,
+  # because that action requires a paid-tier licence key for repositories owned
+  # by a GitHub Organization, and moving these repositories into an `sdwa5`
+  # organization is the plan. The CLI itself is MIT and needs no key.
+  secrets:
+    runs-on: ubuntu-latest
+    env:
+      GITLEAKS_VERSION: 8.30.1
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The history scan needs the history.
+          fetch-depth: 0
+
+      - name: Install gitleaks
+        run: |
+          curl -sSfL -o /tmp/gitleaks.tar.gz \
+            "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          tar -xzf /tmp/gitleaks.tar.gz -C /tmp gitleaks
+          /tmp/gitleaks version
+
+      - name: Scan the working tree
+        run: /tmp/gitleaks dir . --redact --no-banner --config .gitleaks.toml
+
+      - name: Scan the full history
+        run: /tmp/gitleaks git . --redact --no-banner --config .gitleaks.toml

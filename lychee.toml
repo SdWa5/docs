@@ -1,0 +1,32 @@
+# Link checker configuration, shared shape across the SdWa5 repositories.
+# https://lychee.cli.rs/usage/config/
+
+# Retry and back off rather than failing a build on one slow host.
+max_retries = 3
+retry_wait_time = 2
+timeout = 20
+max_concurrency = 8
+
+# Some hosts refuse the default agent outright.
+user_agent = "Mozilla/5.0 (compatible; lychee link checker; +https://sdwa5.org)"
+
+# A 403 or 429 from a site that plainly exists is a bot defence rather than a
+# broken link, so those are not build failures.
+accept = ["200..=299", "403", "429"]
+
+exclude = [
+  # Reachable only from inside the VPS or the local network.
+  "^https?://127\\.0\\.0\\.1",
+  "^https?://localhost",
+  "^https?://[^/]*\\.ddev\\.site",
+  # Requires a login, so an anonymous checker always sees a redirect.
+  "^https://docs\\.google\\.com/",
+  "^https://drive\\.google\\.com/",
+  "^https://admin\\.google\\.com/",
+  "^https://console\\.cloud\\.google\\.com/",
+  "^https://github\\.com/bestcodename/",
+]
+
+# Mail addresses are checked for syntax only. There is no way to verify a
+# mailbox exists without sending to it.
+include_mail = false
