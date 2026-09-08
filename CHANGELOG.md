@@ -6,6 +6,30 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-09-08
+
+### Added
+
+- [docs/going-public.md](docs/going-public.md), the half of the go-public content check that a scanner
+  cannot do. The credential half is done and gated in CI, and all three repositories are clean in tree
+  and history. This is the list of things that are not credentials and would still become
+  world-readable, each with its evidence and a recommendation. The file deliberately describes each
+  item without reproducing the address, name or value, because it is published too.
+- **The finding that matters most is the commit identities.** Measured: all 95 commits in `sdwa5-vps`
+  are authored and committed as a private address on a third-party provider, and 162 across `sdwa5`
+  and `sdwa5-3d` as a work address on a business domain. No file change touches that, only a history
+  rewrite does, and that is practical only while the repositories are private with two clones each and
+  no forks. It is the one item on the list whose window is closing.
+- The rest are recorded as decisions: a private residential address and a former board member's name
+  in `docs/organization.md`, both of which the public ZVR register also carries; the per-account
+  Vaultwarden KDF and item counts in `docs/services.md`, which are anonymised but read differently
+  next to three named board members and a reachable `vault.sdwa5.org`; roughly 40 attributions and 49
+  quotations of another sound system owner's private messages about their own gear in
+  `sdwa5-3d/docs/sources.md`; and four Minecraft pseudonyms with their UUIDs.
+- Recorded that the published infrastructure detail is deliberate, since `TODO.md` gives "No security
+  by obscurity" as the guideline, and that the identifiers which do appear are useless without access.
+- Restated the licence question as a decision with its three usual shapes, rather than as an omission.
+
 ## [0.5.1] - 2026-09-08
 
 ### Fixed
