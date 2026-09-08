@@ -6,6 +6,39 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-09-08
+
+### Security
+
+- **All three repository histories were rewritten, so no commit carries a private or a business email
+  address any more.** Before: 95 commits in `sdwa5-vps` authored and committed as a private address on
+  a third-party provider, and 162 across `sdwa5` and `sdwa5-3d` as a work address on a business
+  domain. Publishing a repository publishes every one of them, so this was the only item in
+  `docs/going-public.md` whose window closed the moment the repositories went public. Every commit
+  now carries `Stefan Ripper <7108645+bestcodename@users.noreply.github.com>` as author and committer,
+  verified on GitHub as well as locally, and the commits are still attributed to the `bestcodename`
+  account so the contribution graph survived.
+- **The content is provably untouched.** The tree hash at `HEAD` is identical to its pre-rewrite value
+  in all three repositories, `dbbe151333fb`, `e7d94eebd0ad` and `1981e6b43b7b`, so only the commit
+  objects changed.
+- `sdwa5-vps` carried a **local** `user.email` override set to the private address, which is why that
+  repository's commits differed from the other two, and the next commit would have reintroduced
+  exactly what the rewrite removed. All three now set the noreply address as a local identity, and the
+  machine's global identity is deliberately left alone because the work address is correct for other
+  projects.
+- `/opt/docker` on the VPS was moved with `fetch` plus `reset --hard` and **never a re-clone**, because
+  it holds the untracked runtime state of the whole stack with `minecraft-data` alone at 6.9 GiB.
+  Verified afterwards: the 6.9 GiB is still there, the rotated `server.properties` is still there, the
+  tree is clean, and all eight health checks are green.
+
+### Added
+
+- `docs/going-public.md` records how it was done, so it is repeatable: `git-filter-repo` as a single
+  script needing no installation, a two-line mailmap built from the repositories themselves rather
+  than typed out, bare backups of all three first, and a force push per repository with a
+  `--force-with-lease` on its exact pre-rewrite commit, so a concurrent push elsewhere would have
+  aborted it rather than been overwritten.
+
 ## [0.6.1] - 2026-09-08
 
 ### Fixed
