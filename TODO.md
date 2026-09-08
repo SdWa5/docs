@@ -13,13 +13,13 @@
                of all three repos on 2026-09-08 with gitleaks 8.30.1. This repo and `sdwa5-3d` came back with zero
                findings in tree and history. `sdwa5-vps` had two real ones in `minecraft-data/server.properties`, both
                rotated, and ten false positives from a Shopware plugin's hash manifest, allowlisted by path.
-               **The judgement half is now written up in [docs/going-public.md](docs/going-public.md)**, item by item
-               with its evidence and a recommendation. Every one of them is a decision rather than a defect, and one is
-               urgent: **all 95 commits in `sdwa5-vps` are authored as a private address and 162 across the other two
-               as a business domain**, which only a history rewrite removes and only while the repos are still private.
-               The rest are a private residential address and a former board member's name in `docs/organization.md`,
-               the per-account Vaultwarden posture in `docs/services.md` read next to those names, another crew's gear
-               figures quoted from private messages in `sdwa5-3d/docs/sources.md`, and four Minecraft pseudonyms
+               **The judgement half is written up in [docs/going-public.md](docs/going-public.md)**, item by item with
+               its evidence and a recommendation. **The urgent one is done**: all three histories were rewritten on
+               2026-09-08, so every commit in every repository now carries one identity and neither the private nor the
+               business address appears anywhere. What is left are decisions rather than defects, namely a private
+               residential address and a former board member's name in `docs/organization.md`, the per-account
+               Vaultwarden posture in `docs/services.md` read next to those names, another crew's gear figures quoted
+               from private messages in `sdwa5-3d/docs/sources.md`, and four Minecraft pseudonyms
             2. bestcodename/sdwa5-vps (https://github.com/bestcodename/sdwa5-vps/) -> sdwa5/vps
             3. bestcodename/sdwa5 (https://github.com/bestcodename/sdwa5) -> sdwa5/docs
             4. bestcodename/sdwa5-3d (https://github.com/bestcodename/sdwa5-3d/) -> sdwa5/3d — this one was missing from
