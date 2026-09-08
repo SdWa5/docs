@@ -20,6 +20,8 @@ See [`docs/`](docs/) for:
 - [Google Workspace](docs/google-workspace.md) — `sdwa5.org` Workspace usage
 - [Services](docs/services.md) — usage overview of all org services
   (Dolibarr, Vaultwarden, Shopware, social accounts, GitHub, ...)
+- [Going public](docs/going-public.md) — what publishing these repositories
+  would disclose, and the decisions that are still open
 
 ## Sub-repositories
 
