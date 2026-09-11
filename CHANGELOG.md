@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.1] - 2026-09-11
+
+### Changed
+
+- **Every job states a `timeout-minutes`, and the workflow states a `concurrency` group.** GitHub's default
+  timeout is 360 minutes, and that default is what let `sdwa5-3d`'s `full` job burn roughly 1644 minutes across
+  three nightly runs in September before anybody saw a log, because a job cancelled at the ceiling reports only
+  that it was cancelled. The concurrency group cancels a superseded push. It is deliberately **not** applied on
+  `main`, because a merge commit's green run is what a release is judged by.
+  On `main` that also stops a push cancelling the nightly external link check mid-flight.
+
+  Nothing here is expensive — this repository's runs are well under a minute — so the change is about the rule being the same
+  in all three SdWa5 repositories rather than about the minutes.
+
+
 ## [0.7.0] - 2026-09-08
 
 ### Security
