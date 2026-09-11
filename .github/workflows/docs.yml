@@ -15,6 +15,17 @@ on:
 permissions:
   contents: read
 
+# **A superseded push should stop costing money the moment it is superseded.** This repository's runs are cheap,
+# well under a minute, so the saving here is small — it is in place because the rule should be the same in all
+# three SdWa5 repositories rather than because this one is expensive. `sdwa5-3d` is where it pays for itself.
+#
+# **`cancel-in-progress` is off on `main` on purpose.** A merge commit's green run is the thing a release is
+# judged by, and cancelling it because the next merge landed is how a branch ends up with no completed run at all.
+# The nightly external link check runs on `main`, so this is also what stops a push cancelling it mid-flight.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
 jobs:
   # Relative links and their #anchors, resolved against the filesystem.
   #
@@ -24,6 +35,10 @@ jobs:
   # repository alone, which is the silent breakage this job exists to catch.
   links:
     runs-on: ubuntu-latest
+    # GitHub's default is 360 minutes. That default is what let `sdwa5-3d`'s `full` job burn roughly 1644 minutes
+    # across three nightly runs before anybody saw a log, because a job cancelled at the ceiling reports only that
+    # it was cancelled. An offline link check over a few dozen Markdown files is seconds.
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v5
 
@@ -78,6 +93,9 @@ jobs:
   links-external:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
+    # Network-bound and the slowest job here, since it actually fetches every external URL. lychee's own
+    # `max_retries = 3` and `timeout = 20` in lychee.toml bound a single link; this bounds the job.
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v5
 
@@ -98,6 +116,7 @@ jobs:
   # organization is the plan. The CLI itself is MIT and needs no key.
   secrets:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     env:
       GITLEAKS_VERSION: 8.30.1
     steps:
