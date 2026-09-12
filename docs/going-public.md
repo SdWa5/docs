@@ -75,7 +75,18 @@ history is not needed for anyone to understand the association today.
 
 **A private email address in `sdwa5-vps`.** Removed from all five places in the working tree in
 1.24.0 and moved into `.env` on the host, which is gitignored, with the effective alert recipients
-unchanged. The history still carries it, which is the item above.
+unchanged.
+
+**The history still carries it, and the item above is not the fix.** That rewrite replaced the author
+and committer fields of every commit, which is a different thing from the contents of a file. Measured
+on 2026-09-12: the current tree is clean, and **74 of the 113 commits still contain the address**, in
+all five files at once — `README.md`, `monitoring/lib.sh`, `.env.example`, `docs/monitoring.md` and
+`docs/infrastructure.md`. The earliest carrying commit is the first one on the branch and the latest is
+1.5.0 on 2026-09-01.
+
+So this needs a second rewrite, over file contents rather than over identities, and it is the one
+remaining item on this list that **cannot** be done after the repository is public. A published commit
+is fetched, forked and mirrored, and deleting it afterwards deletes only your copy.
 
 ## A combination that is more revealing than its parts
 
@@ -104,9 +115,17 @@ system owns is commercially theirs.
 The same file cites a rental company's published datasheets, which is ordinary use of public
 material and needs no decision.
 
-The recommendation is to ask the person before publishing that section, and to keep the figures
-without the quotations if they would rather not be quoted. Provenance survives as "stated by the
-owner" without reproducing the message.
+**Decided on 2026-09-12, and the decision is to publish it.** The owner of GMSS and the Innschleife
+crew are both known personally to the association's owner, who states that neither objects to their
+inventory being public. The content was checked rather than taken on trust at the same time: all 60
+distinct quoted strings in that file are dimension enumerations, cabinet names or phrases out of a
+published datasheet. The longest thing anybody says is "the ones on the outside of the bottom row are
+also turbo subs". There is no opinion in it, no third person, no price and no commercial term. Two of
+the quotations reach past speakers into amplifiers and lighting, and those are inventory lists in the
+same shape.
+
+If that ever needs undoing, the figures can stay while the quotations go, because provenance survives
+as "stated by the owner" without reproducing the message.
 
 **Minecraft player names and UUIDs**, in `sdwa5-vps` in `minecraft-data/ops.json`,
 `minecraft-data/whitelist.json` and the `OPS` and `WHITELIST` environment variables in
@@ -140,5 +159,13 @@ all-rights-reserved with that stated as a choice rather than as an omission.
 
 ## What is left to do
 
-The credential scan is done and gated in CI. Every item above is a decision, and the first one is the
-only one that gets harder with time.
+The credential scan is done and gated in CI, and the commit identities were rewritten on 2026-09-08.
+
+**One item is work rather than a decision, and it is the only one that gets harder with time.** The
+private email address sits in 74 of `sdwa5-vps`'s 113 commits and has to come out by a rewrite of file
+contents before the repository is published. Everything else on this list can be changed afterwards.
+
+The decisions still open are the board member's home address and the four names in
+[`organization.md`](organization.md), the Vaultwarden KDF and item-count pairing in
+[`services.md`](services.md), the Minecraft names in `sdwa5-vps`, and the licence. The third-party
+question is settled and recorded above.

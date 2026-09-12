@@ -14,12 +14,18 @@
                findings in tree and history. `sdwa5-vps` had two real ones in `minecraft-data/server.properties`, both
                rotated, and ten false positives from a Shopware plugin's hash manifest, allowlisted by path.
                **The judgement half is written up in [docs/going-public.md](docs/going-public.md)**, item by item with
-               its evidence and a recommendation. **The urgent one is done**: all three histories were rewritten on
-               2026-09-08, so every commit in every repository now carries one identity and neither the private nor the
-               business address appears anywhere. What is left are decisions rather than defects, namely a private
-               residential address and a former board member's name in `docs/organization.md`, the per-account
-               Vaultwarden posture in `docs/services.md` read next to those names, another crew's gear figures quoted
-               from private messages in `sdwa5-3d/docs/sources.md`, and four Minecraft pseudonyms
+               its evidence and a recommendation. **The identity half is done**: all three histories were rewritten on
+               2026-09-08, so every commit in every repository now carries one identity. **That rewrite touched author
+               and committer fields and not file contents, which is a distinction 0.7.0 stated too broadly.** Measured
+               on 2026-09-12, the private address is still in **74 of `sdwa5-vps`'s 113 commits**, in `README.md`,
+               `monitoring/lib.sh`, `.env.example`, `docs/monitoring.md` and `docs/infrastructure.md`. The tree is
+               clean, `gitleaks` does not catch it because an email is not a credential, and a second rewrite over file
+               contents is the one item here that **cannot** be done once the repositories are public. Everything else
+               is a decision rather than a defect, namely a private residential address and a former board member's
+               name in `docs/organization.md`, the per-account Vaultwarden posture in `docs/services.md` read next to
+               those names, and four Minecraft pseudonyms. **The other crew's gear figures in
+               `sdwa5-3d/docs/sources.md` are decided and cleared**, by their owners and against the content, which is
+               60 quoted strings holding nothing but dimensions, cabinet names and datasheet phrases
             2. bestcodename/sdwa5-vps (https://github.com/bestcodename/sdwa5-vps/) -> sdwa5/vps
             3. bestcodename/sdwa5 (https://github.com/bestcodename/sdwa5) -> sdwa5/docs
             4. bestcodename/sdwa5-3d (https://github.com/bestcodename/sdwa5-3d/) -> sdwa5/3d — this one was missing from
