@@ -19,9 +19,11 @@
                and committer fields and not file contents, which is a distinction 0.7.0 stated too broadly.** Measured
                on 2026-09-12, the private address is still in **74 of `sdwa5-vps`'s 113 commits**, in `README.md`,
                `monitoring/lib.sh`, `.env.example`, `docs/monitoring.md` and `docs/infrastructure.md`. The tree is
-               clean, `gitleaks` does not catch it because an email is not a credential, and a second rewrite over file
-               contents is the one item here that **cannot** be done once the repositories are public. Everything else
-               is a decision rather than a defect, namely a private residential address and a former board member's
+               clean and `gitleaks` does not catch it, because an email is not a credential. **That second rewrite is
+               done, in `sdwa5-vps` 1.30.0 on 2026-09-12**, with the tree hash unchanged at `c887c215`, 113 commits
+               before and after and zero commits on `origin/main` still holding it. What is left of it belongs to
+               GitHub rather than to git, namely clearing the force-pushed commits from their cache before publishing.
+               Everything else is a decision rather than a defect, namely a private residential address and a former board member's
                name in `docs/organization.md`, the per-account Vaultwarden posture in `docs/services.md` read next to
                those names, and four Minecraft pseudonyms. **The other crew's gear figures in
                `sdwa5-3d/docs/sources.md` are decided and cleared**, by their owners and against the content, which is

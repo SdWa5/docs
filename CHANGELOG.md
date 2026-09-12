@@ -18,9 +18,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   `monitoring/lib.sh`, `.env.example`, `docs/monitoring.md` and `docs/infrastructure.md`. The earliest
   carrying commit is the first on the branch and the latest is 1.5.0 on 2026-09-01. `gitleaks` does
   not catch it and never would, because an email address is not a credential.
-- The item is restated in `docs/going-public.md` as **work rather than a decision**, and as the only
-  one left whose window closes when the repositories are published. A published commit is fetched,
-  forked and mirrored, so deleting it afterwards deletes one copy.
+- **It is fixed the same day, in `sdwa5-vps` 1.30.0.** The address was removed from all 74 commits
+  together with its separator rather than substituted, because on every line it stood next to
+  `ripper@sdwa5.org` as the second recipient. Verified afterwards: `HEAD`'s tree hash unchanged at
+  `c887c215`, 113 commits before and after, zero commits reachable from `origin/main` holding it, and
+  no doubled recipient anywhere. `docs/going-public.md` now records the work items as done and names
+  the one step that is left, which belongs to GitHub rather than to git: a force-pushed commit stays
+  reachable by SHA until the repository is garbage-collected.
 
 ### Changed
 
