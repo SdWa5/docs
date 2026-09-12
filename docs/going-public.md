@@ -84,9 +84,17 @@ all five files at once — `README.md`, `monitoring/lib.sh`, `.env.example`, `do
 `docs/infrastructure.md`. The earliest carrying commit is the first one on the branch and the latest is
 1.5.0 on 2026-09-01.
 
-So this needs a second rewrite, over file contents rather than over identities, and it is the one
-remaining item on this list that **cannot** be done after the repository is public. A published commit
-is fetched, forked and mirrored, and deleting it afterwards deletes only your copy.
+**Done on 2026-09-12 in `sdwa5-vps` 1.30.0.** A second rewrite, over file contents rather than over
+identities, removed the address together with its separator rather than substituting it, because on
+every line it stood next to `ripper@sdwa5.org` as the second recipient. Verified afterwards: `HEAD`'s
+tree hash is unchanged at `c887c215`, which it must be since the tree was already clean, the commit
+count is 113 before and after, zero commits reachable from `origin/main` contain the address, and no
+file anywhere in the history carries a doubled recipient. `.gitleaks.toml`'s allowlisted commit did
+not move, checked rather than assumed.
+
+**What remains is GitHub's own copy.** A force-pushed commit stays reachable by its SHA on GitHub until
+the repository is garbage-collected, so before publishing, either ask GitHub Support to run one or
+delete and re-push the repository, which nothing external references yet.
 
 ## A combination that is more revealing than its parts
 
@@ -161,9 +169,10 @@ all-rights-reserved with that stated as a choice rather than as an omission.
 
 The credential scan is done and gated in CI, and the commit identities were rewritten on 2026-09-08.
 
-**One item is work rather than a decision, and it is the only one that gets harder with time.** The
-private email address sits in 74 of `sdwa5-vps`'s 113 commits and has to come out by a rewrite of file
-contents before the repository is published. Everything else on this list can be changed afterwards.
+**The work items are done.** The commit identities were rewritten on 2026-09-08 and the private email
+address was rewritten out of `sdwa5-vps`'s file contents on 2026-09-12. One step is left and it belongs
+to GitHub rather than to git, namely clearing the force-pushed commits from their cache before
+publishing, by asking Support for a garbage collection or by deleting and re-pushing the repository.
 
 The decisions still open are the board member's home address and the four names in
 [`organization.md`](organization.md), the Vaultwarden KDF and item-count pairing in
