@@ -25,8 +25,8 @@ recommend, because the shop's own Impressum publishes more than the analysis ass
 
 ### Changed
 
-- **Two board members' names defer to the ZVR register, and the Obmann's does not.** the Obmann-Stellvertreterin and
-  the Obmann-Stellvertreter are replaced by their roles in `docs/organization.md` and
+- **Two board members' names defer to the ZVR register, and the Obmann's does not.** The two
+  Obmann-Stellvertreter are replaced by their roles in `docs/organization.md` and
   `docs/google-workspace.md`, because <https://sdwa5.org/Impressum> does **not** name them, so this
   repository would have been the only publisher. `Stefan Ripper` stays, because that Impressum names
   him as Obmann by law and he authored all 304 commits, so removing it from three documents would
@@ -49,7 +49,7 @@ recommend, because the shop's own Impressum publishes more than the analysis ass
 ### Measured, and worth stating plainly
 
 - **The trees are clean and the histories are not, which is the same trap the email address set.**
-  the two Obmann-Stellvertreter remain in 32 of this repository's 37 commits and 95 of
+  The two Obmann-Stellvertreter remain in 32 of this repository's 37 commits and 95 of
   `sdwa5-vps`'s 115, the former Obmann-Stellvertreterin in 32 of this repository's, and the Vaultwarden values in
   23. A rewrite over both is prepared and was refused three times by the environment's
   `[Git Destructive]` guard, so it is outstanding. `SdWa5/3d` needs none. This is the only item left
