@@ -6,6 +6,33 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.4] - 2026-09-12
+
+### Changed
+
+- **The three repositories live in the [SdWa5](https://github.com/SdWa5) organization**, moved there
+  on 2026-09-12 as [docs](https://github.com/SdWa5/docs), [vps](https://github.com/SdWa5/vps) and
+  [3d](https://github.com/SdWa5/3d). The organization belongs to the Verein rather than to a personal
+  account, with `mail@sdwa5.org` as its contact address, that being the existing Workspace group
+  rather than one of the two addresses the plan named, which `docs/google-workspace.md` records as not
+  existing yet.
+- **Moved by a fresh push and not by GitHub's transfer function**, which is what actually removed the
+  cached pre-rewrite commits of both history rewrites. Three empty repositories were created and
+  pushed into, then the three personal originals were deleted. Verified: each new `main` matches its
+  local `HEAD`, zero commits on `SdWa5/vps` hold the private address, and all three old paths answer
+  "Not Found".
+
+### Fixed
+
+- **Three places pointed at repository paths that the deletion turned into 404s**, and one of them was
+  a broken build rather than a broken link. `.github/workflows/docs.yml` checked out
+  `bestcodename/sdwa5-vps` and `bestcodename/sdwa5-3d` for the cross-repository link check, and now
+  checks out `SdWa5/vps` and `SdWa5/3d`. `lychee.toml` excluded `^https://github\.com/bestcodename/`
+  from link checking because those repositories were private, and now excludes
+  `^https://github\.com/SdWa5/` for the same reason. `docs/services.md` listed two repositories under
+  the personal account and now lists all three under the organization, with why they were pushed
+  rather than transferred.
+
 ## [0.7.3] - 2026-09-12
 
 ### Changed

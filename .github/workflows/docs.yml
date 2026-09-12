@@ -50,7 +50,7 @@ jobs:
         id: vps
         continue-on-error: true
         with:
-          repository: bestcodename/sdwa5-vps
+          repository: SdWa5/vps
           path: sdwa5-vps
           token: ${{ secrets.SIBLING_REPOS_TOKEN || github.token }}
 
@@ -58,7 +58,7 @@ jobs:
         id: three_d
         continue-on-error: true
         with:
-          repository: bestcodename/sdwa5-3d
+          repository: SdWa5/3d
           path: sdwa5-3d
           token: ${{ secrets.SIBLING_REPOS_TOKEN || github.token }}
 

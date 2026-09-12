@@ -24,7 +24,7 @@ exclude = [
   "^https://drive\\.google\\.com/",
   "^https://admin\\.google\\.com/",
   "^https://console\\.cloud\\.google\\.com/",
-  "^https://github\\.com/bestcodename/",
+  "^https://github\\.com/SdWa5/",
 ]
 
 # Mail addresses are checked for syntax only. There is no way to verify a
