@@ -77,10 +77,19 @@ alias `sound@` → `mail@`.
 
 ## GitHub
 
-Repositories currently under the personal account `bestcodename`:
-[sdwa5](https://github.com/bestcodename/sdwa5) (this repo, org docs) and
-[sdwa5-vps](https://github.com/bestcodename/sdwa5-vps) (VPS infrastructure).
-Migration to a GitHub organization `sdwa5` is planned — see [TODO.md](../TODO.md).
+Three repositories in the GitHub organization **[SdWa5](https://github.com/SdWa5)**, moved there from
+the personal account `bestcodename` on 2026-09-12:
+[docs](https://github.com/SdWa5/docs) (this repo, org documentation),
+[vps](https://github.com/SdWa5/vps) (VPS infrastructure) and
+[3d](https://github.com/SdWa5/3d) (speaker and stage models).
+
+All three are still **private**. They are meant to become public, which is gated on the decisions in
+[going-public.md](going-public.md) rather than on any work.
+
+**They were moved by pushing into fresh, empty repositories rather than by GitHub's transfer
+function**, on purpose. A transfer moves the same object store, so it would have carried the
+pre-rewrite commits of both history rewrites into the organization. The three personal repositories
+were deleted afterwards, which is what removed that cache.
 
 ## Minecraft (community server)
 
