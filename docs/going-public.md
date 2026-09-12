@@ -75,7 +75,26 @@ history is not needed for anyone to understand the association today.
 
 **A private email address in `sdwa5-vps`.** Removed from all five places in the working tree in
 1.24.0 and moved into `.env` on the host, which is gitignored, with the effective alert recipients
-unchanged. The history still carries it, which is the item above.
+unchanged.
+
+**The history still carries it, and the item above is not the fix.** That rewrite replaced the author
+and committer fields of every commit, which is a different thing from the contents of a file. Measured
+on 2026-09-12: the current tree is clean, and **74 of the 113 commits still contain the address**, in
+all five files at once — `README.md`, `monitoring/lib.sh`, `.env.example`, `docs/monitoring.md` and
+`docs/infrastructure.md`. The earliest carrying commit is the first one on the branch and the latest is
+1.5.0 on 2026-09-01.
+
+**Done on 2026-09-12 in `sdwa5-vps` 1.30.0.** A second rewrite, over file contents rather than over
+identities, removed the address together with its separator rather than substituting it, because on
+every line it stood next to `ripper@sdwa5.org` as the second recipient. Verified afterwards: `HEAD`'s
+tree hash is unchanged at `c887c215`, which it must be since the tree was already clean, the commit
+count is 113 before and after, zero commits reachable from `origin/main` contain the address, and no
+file anywhere in the history carries a doubled recipient. `.gitleaks.toml`'s allowlisted commit did
+not move, checked rather than assumed.
+
+**What remains is GitHub's own copy.** A force-pushed commit stays reachable by its SHA on GitHub until
+the repository is garbage-collected, so before publishing, either ask GitHub Support to run one or
+delete and re-push the repository, which nothing external references yet.
 
 ## A combination that is more revealing than its parts
 
@@ -104,9 +123,17 @@ system owns is commercially theirs.
 The same file cites a rental company's published datasheets, which is ordinary use of public
 material and needs no decision.
 
-The recommendation is to ask the person before publishing that section, and to keep the figures
-without the quotations if they would rather not be quoted. Provenance survives as "stated by the
-owner" without reproducing the message.
+**Decided on 2026-09-12, and the decision is to publish it.** The owner of GMSS and the Innschleife
+crew are both known personally to the association's owner, who states that neither objects to their
+inventory being public. The content was checked rather than taken on trust at the same time: all 60
+distinct quoted strings in that file are dimension enumerations, cabinet names or phrases out of a
+published datasheet. The longest thing anybody says is "the ones on the outside of the bottom row are
+also turbo subs". There is no opinion in it, no third person, no price and no commercial term. Two of
+the quotations reach past speakers into amplifiers and lighting, and those are inventory lists in the
+same shape.
+
+If that ever needs undoing, the figures can stay while the quotations go, because provenance survives
+as "stated by the owner" without reproducing the message.
 
 **Minecraft player names and UUIDs**, in `sdwa5-vps` in `minecraft-data/ops.json`,
 `minecraft-data/whitelist.json` and the `OPS` and `WHITELIST` environment variables in
@@ -140,5 +167,14 @@ all-rights-reserved with that stated as a choice rather than as an omission.
 
 ## What is left to do
 
-The credential scan is done and gated in CI. Every item above is a decision, and the first one is the
-only one that gets harder with time.
+The credential scan is done and gated in CI, and the commit identities were rewritten on 2026-09-08.
+
+**The work items are done.** The commit identities were rewritten on 2026-09-08 and the private email
+address was rewritten out of `sdwa5-vps`'s file contents on 2026-09-12. One step is left and it belongs
+to GitHub rather than to git, namely clearing the force-pushed commits from their cache before
+publishing, by asking Support for a garbage collection or by deleting and re-pushing the repository.
+
+The decisions still open are the board member's home address and the four names in
+[`organization.md`](organization.md), the Vaultwarden KDF and item-count pairing in
+[`services.md`](services.md), the Minecraft names in `sdwa5-vps`, and the licence. The third-party
+question is settled and recorded above.
