@@ -6,6 +6,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.3] - 2026-09-12
+
+### Changed
+
+- **The repositories are to be published by a fresh push into the `sdwa5` organization, never by
+  GitHub's transfer function**, and `docs/going-public.md` and `TODO.md` now say so. A transfer moves
+  the same repository and the same object store, so it would carry every cached pre-rewrite commit
+  into the new organization and quietly undo both history rewrites. A force-pushed commit stays
+  reachable by its SHA until GitHub garbage-collects, and that has no schedule worth planning around,
+  since it is triggered by repository maintenance rather than by a clock. Creating the repository
+  empty and pushing clears the residue and performs the move in one action.
+- Measured on 2026-09-12, nothing is lost by publishing that way: all three repositories are private
+  with **0 forks, 0 tags and 0 releases**, no pull requests and no issues, at 54 KB, 6380 KB and
+  980 KB. What goes is the Actions run history, every run of which failed on billing, and one
+  stargazer on `sdwa5-vps`.
+- Stated plainly in both files: **nothing is exposed while the repositories are private**, because an
+  unreachable object is unreachable to anyone without access to the repository. The risk is entirely
+  one of ordering.
+
 ## [0.7.2] - 2026-09-12
 
 ### Fixed

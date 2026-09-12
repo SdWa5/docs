@@ -22,16 +22,25 @@
                clean and `gitleaks` does not catch it, because an email is not a credential. **That second rewrite is
                done, in `sdwa5-vps` 1.30.0 on 2026-09-12**, with the tree hash unchanged at `c887c215`, 113 commits
                before and after and zero commits on `origin/main` still holding it. What is left of it belongs to
-               GitHub rather than to git, namely clearing the force-pushed commits from their cache before publishing.
+               GitHub rather than to git, namely that the repositories are published by a fresh push into the new
+               organization rather than by a transfer, which is what clears the force-pushed commits from GitHub's
+               cache. See the step below.
                Everything else is a decision rather than a defect, namely a private residential address and a former board member's
                name in `docs/organization.md`, the per-account Vaultwarden posture in `docs/services.md` read next to
                those names, and four Minecraft pseudonyms. **The other crew's gear figures in
                `sdwa5-3d/docs/sources.md` are decided and cleared**, by their owners and against the content, which is
                60 quoted strings holding nothing but dimensions, cabinet names and datasheet phrases
-            2. bestcodename/sdwa5-vps (https://github.com/bestcodename/sdwa5-vps/) -> sdwa5/vps
-            3. bestcodename/sdwa5 (https://github.com/bestcodename/sdwa5) -> sdwa5/docs
-            4. bestcodename/sdwa5-3d (https://github.com/bestcodename/sdwa5-3d/) -> sdwa5/3d — this one was missing from
-               the list above and exists on GitHub, so a transfer that covers only the first two leaves it behind
+            2. **create each one empty in the organization and push into it. Do not use GitHub's transfer function.**
+               Both history rewrites leave their pre-rewrite commits cached on GitHub until it garbage-collects, and a
+               transfer moves the same repository and the same object store, so it would carry that cache into the new
+               organization and undo both rewrites. A fresh push does not, and it clears the residue and does the move
+               in one action. Nothing is lost either way, measured on 2026-09-12: all three are private with 0 forks,
+               0 tags and 0 releases, no pull requests and no issues. What goes is the Actions run history, every run
+               of which failed on billing, and one stargazer on `sdwa5-vps`
+            3. bestcodename/sdwa5-vps (https://github.com/bestcodename/sdwa5-vps/) -> sdwa5/vps
+            4. bestcodename/sdwa5 (https://github.com/bestcodename/sdwa5) -> sdwa5/docs
+            5. bestcodename/sdwa5-3d (https://github.com/bestcodename/sdwa5-3d/) -> sdwa5/3d — this one was missing from
+               the list above and exists on GitHub, so a move that covers only the first two leaves it behind
         3. decide a licence, or decide deliberately not to have one. `README.md` currently says "No license specified —
            all rights reserved unless stated otherwise per sub-repo", which means a public reader may read the docs and
            legally reuse nothing from them. For a non-profit publishing its own ops documentation that is probably not
