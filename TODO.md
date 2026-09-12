@@ -38,10 +38,16 @@
                `main` matches its local `HEAD`, and zero commits on `SdWa5/vps` hold the private address.
                [docs](https://github.com/SdWa5/docs), [vps](https://github.com/SdWa5/vps) and
                [3d](https://github.com/SdWa5/3d), all still private
-        3. decide a licence, or decide deliberately not to have one. `README.md` currently says "No license specified —
-           all rights reserved unless stated otherwise per sub-repo", which means a public reader may read the docs and
-           legally reuse nothing from them. For a non-profit publishing its own ops documentation that is probably not
-           the intent, and it needs the owner's call rather than a default
+        3. **DONE on 2026-09-12.** MIT in `LICENSE` for code and configuration, CC BY-SA 4.0 in `LICENSE-docs` for
+           prose, documentation and data, in all three repositories, with each `README.md` naming which directories
+           fall on which side. Two carve-outs are stated rather than left implied: `sdwa5-vps/shopware-html-data/` is
+           store-installed plugin content under its vendors' terms, and any mesh a `sdwa5-3d` spec reaches through
+           `mesh_override` is third-party CAD, deliberately uncommitted
+        4. **the names are out of the trees and still in the histories, which is the one item left that cannot be
+           done after publication.** the two Obmann-Stellvertreter sit in 32 of `docs`'s 37 commits and 95 of
+           `vps`'s 115, the former Obmann-Stellvertreterin in 32 of `docs`'s, and the Vaultwarden KDF and item values in 23. A
+           rewrite over both is prepared and was refused by the environment's `[Git Destructive]` guard, so it needs
+           a hand. `3d` needs nothing. See [docs/going-public.md](docs/going-public.md)
     2. configure repos as public
         1. **going public is what unblocks CI, and CI is blocked right now.** Every workflow run in all three repos
            fails within 2 to 4 seconds with "The job was not started because recent account payments have failed or
