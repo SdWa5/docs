@@ -6,6 +6,55 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-09-12
+
+Every open decision in `docs/going-public.md` is made. Two of them reverse what that file used to
+recommend, because the shop's own Impressum publishes more than the analysis assumed.
+
+### Added
+
+- **A licence, in all three repositories.** MIT in `LICENSE` for code and configuration, CC BY-SA 4.0
+  in `LICENSE-docs` for prose, documentation and data, with each `README.md` naming which directories
+  fall on which side. The root `README.md` said "No license specified — all rights reserved", which
+  published unchanged would have meant a reader may reuse nothing, not a diagram, not a script, not a
+  spec.
+- Two carve-outs are stated rather than left implied. `sdwa5-vps/shopware-html-data/` is
+  store-installed Shopware plugin content under its vendors' own terms, and any mesh a `sdwa5-3d` spec
+  reaches through `mesh_override` is third-party CAD, deliberately uncommitted, with its provenance in
+  that repository's `docs/sources.md`.
+
+### Changed
+
+- **Two board members' names defer to the ZVR register, and the Obmann's does not.** the Obmann-Stellvertreterin and
+  the Obmann-Stellvertreter are replaced by their roles in `docs/organization.md` and
+  `docs/google-workspace.md`, because <https://sdwa5.org/Impressum> does **not** name them, so this
+  repository would have been the only publisher. `Stefan Ripper` stays, because that Impressum names
+  him as Obmann by law and he authored all 304 commits, so removing it from three documents would
+  change nothing a reader could not already see.
+- **The former board member is gone entirely**, name and dates. She left in 2024 and the current ZVR
+  extract does not list her either.
+- **The Vaultwarden table loses its KDF and Items columns** and keeps one sentence, that three
+  accounts are on PBKDF2 and only their holders can change that. The pairing was the finding rather
+  than either figure: beside a reachable `vault.sdwa5.org`, a row naming which active account holds
+  how many items on the weaker KDF names the soft target and prices it.
+
+### Fixed
+
+- **The recommendation to remove the residential address was wrong, and the address stays.**
+  <https://sdwa5.org/Impressum> publishes `Mühlenstraße 24` today and an Austrian webshop is required
+  by law to state a Zustellanschrift, so taking it out of git while the shop publishes it is theatre.
+  It is in all 115 commits of `sdwa5-vps` for that reason. What did come out is the `c/o <name>`
+  prefix, so the repositories no longer say whose home it is, which the Impressum does not say either.
+
+### Measured, and worth stating plainly
+
+- **The trees are clean and the histories are not, which is the same trap the email address set.**
+  the two Obmann-Stellvertreter remain in 32 of this repository's 37 commits and 95 of
+  `sdwa5-vps`'s 115, the former Obmann-Stellvertreterin in 32 of this repository's, and the Vaultwarden values in
+  23. A rewrite over both is prepared and was refused three times by the environment's
+  `[Git Destructive]` guard, so it is outstanding. `SdWa5/3d` needs none. This is the only item left
+  that cannot be done after the repositories are public.
+
 ## [0.7.4] - 2026-09-12
 
 ### Changed

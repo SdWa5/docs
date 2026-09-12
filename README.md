@@ -58,7 +58,12 @@ present and the check just works.
 
 shop@sdwa5.org
 
-## License
+## Licence
 
-No license specified — all rights reserved unless stated otherwise per
-sub-repo.
+Two licences, because this repository is part tooling and part writing.
+
+- **MIT** ([LICENSE](LICENSE)) for the code and configuration: `.github/`, `lychee.toml`, `.gitleaks.toml` and `composer.json`.
+- **CC BY-SA 4.0** ([LICENSE-docs](LICENSE-docs)) for the prose and data: `docs/`, `README.md`, `CHANGELOG.md` and `TODO.md`.
+
+Attribute as "Musikverein Schmeiß die Wand an 5 (SdWa5)" with a link to the repository. Share-alike applies to the prose, so a
+derivative of the documentation stays under the same licence. The code carries no such condition.
