@@ -67,7 +67,14 @@ jobs:
         run: |
           skip=''
           for dir in sdwa5-vps sdwa5-3d; do
-            if [ -d "$dir/.git" ]; then
+            # **`-d "$dir/.git"` WAS THE WRONG TEST AND IT MADE THIS JOB RED THE FIRST TIME IT EVER RAN.**
+            # `actions/checkout` creates the directory and initialises `.git` *before* it fetches, so a
+            # checkout that fails leaves both behind with no files under them. Both siblings therefore
+            # reported "checked out", nothing was excluded, and lychee called 60 working links broken.
+            # Measured on run 34700494948: the checkouts failed with "Not Found" because this repository's
+            # `GITHUB_TOKEN` cannot read a sibling repository, not even inside the same organization.
+            # A commit is the thing worth testing for, since only a fetch that succeeded produces one.
+            if git -C "$dir" rev-parse --verify HEAD >/dev/null 2>&1; then
               echo "::notice::$dir is checked out, links into it will be validated"
             else
               echo "::warning::$dir could not be cloned, so links into it are SKIPPED rather than checked. Add a SIBLING_REPOS_TOKEN secret with read access, or make the repository public."

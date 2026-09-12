@@ -6,6 +6,29 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.8.3] - 2026-09-12
+
+### Fixed
+
+- **The `links` job was red the first time it ever ran, and the guard was the reason.** It tested
+  `[ -d "$dir/.git" ]` to decide whether a sibling repository had been cloned, but `actions/checkout`
+  creates the directory and initialises `.git` *before* it fetches, so a failed checkout leaves both
+  behind with nothing under them. Both siblings reported "checked out", nothing was excluded, and
+  lychee called about sixty working cross-repository links broken. It now tests
+  `git -C "$dir" rev-parse --verify HEAD`, because only a fetch that succeeded produces a commit.
+- Measured on run 34700494948: the sibling checkouts fail with "Not Found", because this repository's
+  `GITHUB_TOKEN` cannot read a sibling repository even inside the same organization. That is the
+  designed-for case, and the job's own warning already says the remedy is a `SIBLING_REPOS_TOKEN`
+  secret or making the repositories public. The bug was only that the guard never noticed.
+
+### Measured, and worth stating plainly
+
+- **The organization has its own Actions allowance and CI runs again.** Every run in all three
+  repositories had failed in 3 to 5 seconds since 2026-09-08 with "recent account payments have
+  failed", which was the personal account's exhausted balance. Since the move to `SdWa5`, `secrets`
+  passes in 8 to 11 seconds and `static` in 40. So going public is no longer what unblocks CI. It
+  still buys unlimited minutes and 4-core runners rather than 2.
+
 ## [0.8.2] - 2026-09-12
 
 ### Security
