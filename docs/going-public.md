@@ -92,9 +92,28 @@ count is 113 before and after, zero commits reachable from `origin/main` contain
 file anywhere in the history carries a doubled recipient. `.gitleaks.toml`'s allowlisted commit did
 not move, checked rather than assumed.
 
-**What remains is GitHub's own copy.** A force-pushed commit stays reachable by its SHA on GitHub until
-the repository is garbage-collected, so before publishing, either ask GitHub Support to run one or
-delete and re-push the repository, which nothing external references yet.
+**What remains is GitHub's own copy, and it is the same for all three repositories.** A force-pushed
+commit stays reachable by its SHA on GitHub until the repository is garbage-collected, so `da46b79`
+and its 74 siblings are still fetchable there by anyone who knows the hash. The two identity rewrites
+of 2026-09-08 left the same residue in `sdwa5` and `sdwa5-3d`.
+
+**GitHub's garbage collection has no schedule worth planning around.** It is internal and triggered by
+repository maintenance rather than by a clock, and GitHub's own guidance for removing sensitive data
+is to contact Support rather than to wait. Support can run one on request, which is free and
+open-ended in time.
+
+**Nothing is exposed while the repositories are private**, since an unreachable object is unreachable
+to anyone without access to the repository. The whole risk is ordering, so the cache has to be cleared
+before the flip to public rather than after it.
+
+**So publish by pushing into fresh repositories rather than by transferring, which is the cheap and
+certain version and is already on the plan.** GitHub's transfer function moves the same repository and
+the same object store, so a transfer into the `sdwa5` organization would carry every cached
+pre-rewrite commit along with it and quietly undo both rewrites. Creating an empty repository in the
+organization and pushing to it does not. Measured on 2026-09-12, nothing is lost by doing it that way:
+all three are private with **0 forks, 0 tags and 0 releases**, no pull requests and no issues, at
+54 KB, 6380 KB and 980 KB. What goes is the Actions run history, every run of which failed on billing,
+and one stargazer on `sdwa5-vps`.
 
 ## A combination that is more revealing than its parts
 
@@ -170,9 +189,13 @@ all-rights-reserved with that stated as a choice rather than as an omission.
 The credential scan is done and gated in CI, and the commit identities were rewritten on 2026-09-08.
 
 **The work items are done.** The commit identities were rewritten on 2026-09-08 and the private email
-address was rewritten out of `sdwa5-vps`'s file contents on 2026-09-12. One step is left and it belongs
-to GitHub rather than to git, namely clearing the force-pushed commits from their cache before
-publishing, by asking Support for a garbage collection or by deleting and re-pushing the repository.
+address was rewritten out of `sdwa5-vps`'s file contents on 2026-09-12.
+
+**What is left is one instruction about how to publish rather than a task of its own.** Both rewrites
+leave their pre-rewrite commits cached on GitHub until it garbage-collects, so the repositories are
+published by creating them empty in the `sdwa5` organization and pushing, never by using GitHub's
+transfer function, which would move the same object store and carry the cache across. That clears the
+residue and performs the move in one action.
 
 The decisions still open are the board member's home address and the four names in
 [`organization.md`](organization.md), the Vaultwarden KDF and item-count pairing in
