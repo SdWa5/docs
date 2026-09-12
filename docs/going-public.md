@@ -106,14 +106,17 @@ open-ended in time.
 to anyone without access to the repository. The whole risk is ordering, so the cache has to be cleared
 before the flip to public rather than after it.
 
-**So publish by pushing into fresh repositories rather than by transferring, which is the cheap and
-certain version and is already on the plan.** GitHub's transfer function moves the same repository and
-the same object store, so a transfer into the `sdwa5` organization would carry every cached
-pre-rewrite commit along with it and quietly undo both rewrites. Creating an empty repository in the
-organization and pushing to it does not. Measured on 2026-09-12, nothing is lost by doing it that way:
-all three are private with **0 forks, 0 tags and 0 releases**, no pull requests and no issues, at
-54 KB, 6380 KB and 980 KB. What goes is the Actions run history, every run of which failed on billing,
-and one stargazer on `sdwa5-vps`.
+**Done on 2026-09-12, by pushing into fresh repositories rather than by transferring.** GitHub's
+transfer function moves the same repository and the same object store, so a transfer into the
+organization would have carried every cached pre-rewrite commit along with it and quietly undone both
+rewrites. Three empty repositories were created in [SdWa5](https://github.com/SdWa5) instead and
+pushed into, and the three personal repositories were then deleted, which is what removed the cache.
+Verified: each new repository's `main` matches its local `HEAD`, zero commits on `SdWa5/vps` hold the
+address, and all three old paths answer "Not Found".
+
+Nothing was lost by doing it that way. All three were private with **0 forks, 0 tags and 0 releases**,
+no pull requests and no issues, at 54 KB, 6380 KB and 980 KB. What went is the Actions run history,
+every run of which had failed on billing, and one stargazer on `sdwa5-vps`.
 
 ## A combination that is more revealing than its parts
 
@@ -191,11 +194,14 @@ The credential scan is done and gated in CI, and the commit identities were rewr
 **The work items are done.** The commit identities were rewritten on 2026-09-08 and the private email
 address was rewritten out of `sdwa5-vps`'s file contents on 2026-09-12.
 
-**What is left is one instruction about how to publish rather than a task of its own.** Both rewrites
-leave their pre-rewrite commits cached on GitHub until it garbage-collects, so the repositories are
-published by creating them empty in the `sdwa5` organization and pushing, never by using GitHub's
-transfer function, which would move the same object store and carry the cache across. That clears the
-residue and performs the move in one action.
+**The move is done too.** On 2026-09-12 the three repositories were pushed into fresh, empty
+repositories in the [SdWa5](https://github.com/SdWa5) organization and the personal originals were
+deleted, which removed GitHub's cache of both rewrites' pre-rewrite commits. They are
+[docs](https://github.com/SdWa5/docs), [vps](https://github.com/SdWa5/vps) and
+[3d](https://github.com/SdWa5/3d), and all three are still **private**.
+
+**So nothing on this list is work any more. What is left is the decisions**, and the flip to public
+that waits on them.
 
 The decisions still open are the board member's home address and the four names in
 [`organization.md`](organization.md), the Vaultwarden KDF and item-count pairing in
