@@ -6,6 +6,39 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.2] - 2026-09-12
+
+### Fixed
+
+- **0.7.0's "no commit carries a private or a business email address any more" is true of the commit
+  identities and false of the file contents, and `docs/going-public.md` now says so.** That rewrite
+  replaced the author and committer fields of every commit, which is a different thing from what a
+  file says. Measured on 2026-09-12 in `sdwa5-vps`: the current tree is clean, and **74 of the 113
+  commits still contain the private address**, in all five files at once — `README.md`,
+  `monitoring/lib.sh`, `.env.example`, `docs/monitoring.md` and `docs/infrastructure.md`. The earliest
+  carrying commit is the first on the branch and the latest is 1.5.0 on 2026-09-01. `gitleaks` does
+  not catch it and never would, because an email address is not a credential.
+- The item is restated in `docs/going-public.md` as **work rather than a decision**, and as the only
+  one left whose window closes when the repositories are published. A published commit is fetched,
+  forked and mirrored, so deleting it afterwards deletes one copy.
+
+### Changed
+
+- **The third-party question in `docs/going-public.md` is decided, and the decision is to publish.**
+  The owner of GMSS and the Innschleife crew are both known personally to the association's owner, who
+  states that neither objects to their inventory being public. The content was checked at the same
+  time rather than taken on trust: all 60 distinct quoted strings in `sdwa5-3d/docs/sources.md` are
+  dimension enumerations, cabinet names or phrases out of a published datasheet, with no opinion, no
+  third person, no price and no commercial term in any of them.
+- **The manufacturer specifications were examined and are not a publishing risk**, which was the
+  question that prompted this. Dimensions, weights and performance figures are facts and carry no
+  copyright; what a datasheet protects is its prose, its drawings and its photographs, and
+  `sdwa5-3d` commits none of those. Verified: zero PDFs, zero images, zero CAD and zero meshes are
+  tracked in that repository, and the longest quoted string anywhere in its specs is a single line of
+  figures. The genuine licence questions there attach to the *open* designs rather than to the
+  commercial ones, because those are the ones whose CAD was written by somebody else, and that CAD
+  lives outside git under an ignored `meshes/` on purpose.
+
 ## [0.7.1] - 2026-09-11
 
 ### Changed
