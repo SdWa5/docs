@@ -60,18 +60,40 @@ still there, tree clean, and all eight health checks green.
 
 ## Personal data of named people
 
+**DECIDED 2026-09-12, and two of the three came out.** The board members' names now defer to the ZVR
+register, the Vaultwarden posture is thinned, and the address stays. The reasoning for each is below,
+kept because the address decision reverses the recommendation this file used to make.
+
+**The tree is done and the histories are not.** the two Obmann-Stellvertreter still sit in 32 of
+the root repository's 37 commits and 95 of `sdwa5-vps`'s 115, and the former Obmann-Stellvertreterin in 32 of the
+root's. Removing a name from the working tree does not remove it from the history, which is the same
+trap the email address set. **A second rewrite over both repositories is outstanding**, and it is the
+one item on this list that cannot be done after the repositories are public.
+
 **A private residential address**, in [`organization.md`](organization.md). The association's service
 address is care-of a named board member at their home. The Austrian
 [ZVR register](https://citizen.bmi.gv.at/at.gv.bmi.fnsweb-p/zvn/public/Registerauszug) already
 publishes it against the association's ZVR number, so this discloses nothing legally private. It is
 still an escalation, because a register you query on purpose is not the same as a page Google
-indexes. Options are to keep it as the register has it, or to replace it with the ZVR number and the
-register link and let a reader look it up.
+indexes.
 
-**Four full names with roles and dates**, in the same file. Three are the sitting Vorstand, which the
-ZVR register also publishes. The fourth is a **former** board member who left in 2024, and her name
-and dates are the hardest of the four to justify keeping, because she is no longer involved and the
-history is not needed for anyone to understand the association today.
+**Kept, and the recommendation this file used to make was wrong.** The shop's own Impressum at
+<https://sdwa5.org/Impressum> publishes `Mühlenstraße 24` today, and an Austrian webshop is required
+by law to state a Zustellanschrift. Taking it out of git while the shop publishes it is theatre, and
+it is in all 115 commits of `sdwa5-vps` for exactly that reason. **What did come out is the `c/o
+<name>` prefix**, so the repositories no longer say whose home it is, which the Impressum does not say
+either. The only real remedy would be a Zustellanschrift that is not a private home, and that is a ZVR
+filing rather than a documentation change.
+
+**Four full names with roles and dates**, in the same file. **Three of the four now defer to the ZVR
+register and one is kept**, decided on the same evidence as the address.
+
+The former board member who left in 2024 is gone entirely, name and dates, because she is no longer
+involved and the current ZVR extract does not list her either. the two Obmann-Stellvertreter
+are replaced by their roles, because the Impressum does **not** name them, so this repository would
+have been the only publisher. `Stefan Ripper` stays: the Impressum names him as Obmann by law and he
+authored all 304 commits, so taking the name out of three documents while every commit carries it
+would be the same theatre as the address.
 
 **A private email address in `sdwa5-vps`.** Removed from all five places in the working tree in
 1.24.0 and moved into `.env` on the host, which is gitignored, with the effective alert recipients
@@ -130,9 +152,13 @@ where the soft target is and roughly what it is worth. And there are only four a
 named board members in [`organization.md`](organization.md), so the anonymisation is thinner than it
 looks.
 
-Nothing here is a credential and the finding is the pairing rather than either file. The cheap remedy
-is to drop the per-account KDF and item counts and keep the one sentence that matters, namely that
-three accounts are on PBKDF2 and only their holders can change that.
+Nothing here is a credential and the finding is the pairing rather than either file.
+
+**Done on 2026-09-12.** The per-account KDF and item counts are out of the table and one sentence is
+left, that three accounts are on PBKDF2 and only their holders can change that. Upgrading those three
+to Argon2id would be the real remedy and would make the old figures describe a state that no longer
+exists, but it depends on the account holders, so publication cannot wait on it. The values are still
+in 23 of this repository's commits and go with the outstanding rewrite named at the top.
 
 ## Third parties who never agreed to any of this
 
@@ -182,10 +208,12 @@ No repository has a `LICENSE` file, and the root `README.md` says "No license sp
 reserved unless stated otherwise per sub-repo". Published unchanged, that means a reader may read the
 documentation and reuse none of it, not a diagram, not a script, not a spec.
 
-For a non-profit publishing its own operations documentation that is probably not the intent, and it
-needs the owner's decision rather than a default. The usual shapes are a permissive licence for the
-code and configuration, a Creative Commons licence for the prose and diagrams, or a deliberate
-all-rights-reserved with that stated as a choice rather than as an omission.
+**Decided on 2026-09-12 and applied to all three repositories.** MIT in `LICENSE` for the code and
+configuration, CC BY-SA 4.0 in `LICENSE-docs` for the prose, documentation and data, with each
+`README.md` naming which directories fall on which side. Two carve-outs are stated rather than left
+implied: `sdwa5-vps/shopware-html-data/` is store-installed plugin content under its vendors' own
+terms, and any mesh a `sdwa5-3d` spec reaches through `mesh_override` is third-party CAD, deliberately
+uncommitted, with its provenance recorded in that repository's `docs/sources.md`.
 
 ## What is left to do
 
@@ -200,10 +228,18 @@ deleted, which removed GitHub's cache of both rewrites' pre-rewrite commits. The
 [docs](https://github.com/SdWa5/docs), [vps](https://github.com/SdWa5/vps) and
 [3d](https://github.com/SdWa5/3d), and all three are still **private**.
 
-**So nothing on this list is work any more. What is left is the decisions**, and the flip to public
-that waits on them.
+**Every decision on this list is now made**, on 2026-09-12. The address stays because the Impressum
+publishes it by law, the `c/o <name>` prefix went with it. Two board members' names defer to the ZVR
+register and the Obmann's stays, because his Impressum names him. The former board member is gone. The
+Vaultwarden posture is thinned to one sentence. The Minecraft pseudonyms stay, being low sensitivity
+and all-or-nothing. The licence is MIT plus CC BY-SA 4.0. The third-party gear figures are cleared by
+their owners.
 
-The decisions still open are the board member's home address and the four names in
-[`organization.md`](organization.md), the Vaultwarden KDF and item-count pairing in
-[`services.md`](services.md), the Minecraft names in `sdwa5-vps`, and the licence. The third-party
-question is settled and recorded above.
+**One work item is left, and it is the only thing here that cannot be done after publication.** The
+names came out of the trees and are still in the histories: the two Obmann-Stellvertreter in 32
+of this repository's 37 commits and 95 of `sdwa5-vps`'s 115, the former Obmann-Stellvertreterin in 32 of this
+repository's, and the Vaultwarden values in 23. A rewrite over both repositories is prepared but was
+refused by the environment's `[Git Destructive]` guard, so it needs a hand. `SdWa5/3d` needs nothing.
+
+After that, the flip to public is one switch per repository, and it is also what gives CI its minutes
+back.
