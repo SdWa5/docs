@@ -31,6 +31,13 @@ Users, measured 2026-09-08: four accounts, not one.
 | third account | 2026-06-20 | not a member |
 | fourth account | never | invited, never accepted |
 
+**Three of the four are on PBKDF2 rather than Argon2id, and only their holders can change that.** The
+per-account KDF and item counts used to stand in this table and came out before the repository went
+public. Neither figure is a secret and both are readable in the admin panel by anybody who should have
+them. **The pairing is the problem.** Published beside a reachable `vault.sdwa5.org`, a row saying
+which active account holds how many items on the weaker KDF names the soft target and prices it, and
+four accounts against three board members is thinner anonymisation than it looks.
+
 The SdWa5 organization holds a small number of ciphers. **Stefan is its only Owner**, and
 `emergency_access` has zero rows, so until that changes, losing his account loses the organization's
 data. Emergency access with a Takeover grantee is being set up with a new member, as of
