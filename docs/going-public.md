@@ -64,7 +64,7 @@ still there, tree clean, and all eight health checks green.
 register, the Vaultwarden posture is thinned, and the address stays. The reasoning for each is below,
 kept because the address decision reverses the recommendation this file used to make.
 
-**The tree is done and the histories are not.** the two Obmann-Stellvertreter still sit in 32 of
+**The tree is done and the histories are not.** The two Obmann-Stellvertreter still sit in 32 of
 the root repository's 37 commits and 95 of `sdwa5-vps`'s 115, and the former Obmann-Stellvertreterin in 32 of the
 root's. Removing a name from the working tree does not remove it from the history, which is the same
 trap the email address set. **A second rewrite over both repositories is outstanding**, and it is the
@@ -89,7 +89,7 @@ filing rather than a documentation change.
 register and one is kept**, decided on the same evidence as the address.
 
 The former board member who left in 2024 is gone entirely, name and dates, because she is no longer
-involved and the current ZVR extract does not list her either. the two Obmann-Stellvertreter
+involved and the current ZVR extract does not list her either. The two Obmann-Stellvertreter
 are replaced by their roles, because the Impressum does **not** name them, so this repository would
 have been the only publisher. `Stefan Ripper` stays: the Impressum names him as Obmann by law and he
 authored all 304 commits, so taking the name out of three documents while every commit carries it

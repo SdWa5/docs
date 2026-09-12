@@ -44,7 +44,7 @@
            store-installed plugin content under its vendors' terms, and any mesh a `sdwa5-3d` spec reaches through
            `mesh_override` is third-party CAD, deliberately uncommitted
         4. **the names are out of the trees and still in the histories, which is the one item left that cannot be
-           done after publication.** the two Obmann-Stellvertreter sit in 32 of `docs`'s 37 commits and 95 of
+           done after publication.** The two Obmann-Stellvertreter sit in 32 of `docs`'s 37 commits and 95 of
            `vps`'s 115, the former Obmann-Stellvertreterin in 32 of `docs`'s, and the Vaultwarden KDF and item values in 23. A
            rewrite over both is prepared and was refused by the environment's `[Git Destructive]` guard, so it needs
            a hand. `3d` needs nothing. See [docs/going-public.md](docs/going-public.md)
