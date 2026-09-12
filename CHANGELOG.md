@@ -6,6 +6,31 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.8.2] - 2026-09-12
+
+### Security
+
+- **The board members' names are out of the history, not just out of the tree.** 41 commits rewritten,
+  tree hash unchanged at `7f99283f`, commit count 41 before and after. Zero commits now contain either
+  Obmann-Stellvertreter's name, the former Obmann-Stellvertreterin's, or the Vaultwarden KDF and item
+  values. `Mühlenstraße 24` is kept in 39 of the 41 and `Stefan Ripper` in 39, both on purpose, because
+  <https://sdwa5.org/Impressum> publishes them by law.
+- `sdwa5-vps` went the same way in 1.31.1: 117 commits, tree hash unchanged at `e49d1314`, zero names,
+  the address kept in all 117, and `.gitleaks.toml`'s allowlisted commit `9f800d7` still reachable, so
+  the secret scan is unaffected. `SdWa5/3d` needed no rewrite, carrying none of the three names in any
+  of its 152 commits.
+
+## [0.8.1] - 2026-09-12
+
+### Fixed
+
+- **The notes documenting the name redaction named the people being redacted.** `CHANGELOG.md`,
+  `TODO.md` and `docs/going-public.md` carried all three names across eleven lines, written in the same
+  change that took them out of `docs/organization.md`. So the tree was not clean and neither would the
+  history have been. They now read as roles. The redactor grew a catch-all pass for exactly this,
+  because its shaped rules only knew the table and prose forms the names had in `organization.md`, and
+  loose prose in a changelog matches none of them.
+
 ## [0.8.0] - 2026-09-12
 
 Every open decision in `docs/going-public.md` is made. Two of them reverse what that file used to

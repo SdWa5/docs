@@ -235,11 +235,11 @@ Vaultwarden posture is thinned to one sentence. The Minecraft pseudonyms stay, b
 and all-or-nothing. The licence is MIT plus CC BY-SA 4.0. The third-party gear figures are cleared by
 their owners.
 
-**One work item is left, and it is the only thing here that cannot be done after publication.** The
-names came out of the trees and are still in the histories: the two Obmann-Stellvertreter in 32
-of this repository's 37 commits and 95 of `sdwa5-vps`'s 115, the former Obmann-Stellvertreterin in 32 of this
-repository's, and the Vaultwarden values in 23. A rewrite over both repositories is prepared but was
-refused by the environment's `[Git Destructive]` guard, so it needs a hand. `SdWa5/3d` needs nothing.
+**Done on 2026-09-12.** The names came out of the histories as well as the trees. 41 commits rewritten
+here and 117 in `sdwa5-vps`, both with their tree hash unchanged and their commit count identical, and
+zero commits left holding either Obmann-Stellvertreter's name, the former Obmann-Stellvertreterin's, or
+the Vaultwarden values. `SdWa5/3d` needed none. `Mühlenstraße 24` and `Stefan Ripper` are kept, because
+the Impressum publishes both by law.
 
 After that, the flip to public is one switch per repository, and it is also what gives CI its minutes
 back.
