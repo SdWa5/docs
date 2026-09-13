@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.9.1] - 2026-09-13
+
+### Fixed
+
+- **`docs/going-public.md` said deleting the personal repositories "removed the cache". That conflated
+  unreachable with destroyed.** GitHub restores a deleted repository within 90 days, so the record
+  outlives the delete and the REST API reports 404 long before the content is gone. Six repositories
+  are inside that window: the three personal ones deleted 2026-09-12 and the three `-old` ones the
+  2026-09-13 rewrite deleted, each restorable until roughly 2026-12-11 with the pre-rewrite history
+  intact.
+- The measurement that does hold is narrower, and it is the one the threat model needed: fetching a
+  pre-rewrite SHA from each new repository returns `not our ref`, with a control fetch proving the test
+  itself works, so a reader holding an old hash cannot pull it. Restoring needs owner or
+  organization-admin credentials, so there is no route to it from outside and no publication decision
+  waits on it. Tracked as item 7.6 in `sdwa5-vps/TODO.md`.
+
 ## [0.9.0] - 2026-09-13
 
 An independent audit of all three repositories on 2026-09-13 found that
