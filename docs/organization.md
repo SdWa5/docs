@@ -81,4 +81,4 @@ Key points:
 
 All org documents live in the
 [Google Drive folder](https://drive.google.com/drive/folders/1deC0DDdF5bXz1OuGvVQTcvSgrui9EpmV):
-Vereinsstatuten, Vereinsregisterauszug, Wahlanzeige (2024-04-18), etc.
+Vereinsstatuten, Vereinsregisterauszug, Wahlanzeige, etc.

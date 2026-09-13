@@ -15,7 +15,17 @@ paths = [
   # repository's findings against this one's commits.
   '''^sdwa5-vps/''',
   '''^sdwa5-3d/''',
-  # PhpStorm's own project files. Tracked on purpose so the shared inspection
-  # profile and dictionary travel with the repository.
-  '''^\.idea/''',
 ]
+
+# **`.idea/` is scanned rather than allowlisted, and that is a deliberate
+# reversal.** It used to carry a blanket `^\.idea/` entry so PhpStorm's shared
+# inspection profile would not trip the high-entropy rules. Measured on
+# 2026-09-13: every tracked file under `.idea/` and every `.idea/` path that has
+# ever held a blob in this repository's history is clean, so the allowlist was
+# buying nothing. What it cost is the one directory that classically carries a
+# credential — `dataSources.xml` holds database connection strings and
+# `webServers.xml` holds FTP and SSH logins, and PhpStorm writes both without
+# being asked. An allowlist there would have hidden exactly the file worth
+# finding. `.idea/.gitignore` already excludes `/dataSources/` and
+# `/dataSources.local.xml`; this makes the scanner the backstop rather than the
+# gitignore alone.
