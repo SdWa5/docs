@@ -17,8 +17,14 @@ User management via the standard admin console (https://admin.google.com).
 | User            | Address            | Notes                                                        |
 |-----------------|--------------------|--------------------------------------------------------------|
 | Stefan Ripper   | `ripper@sdwa5.org` | Super Admin; SMTP auth for Shopware (App Password) — see [`sdwa5-vps/docs/shopware/shop-config.md`](../sdwa5-vps/docs/shopware/shop-config.md#smtp); Caddy Let's Encrypt contact — see [`sdwa5-vps/docs/caddy.md`](../sdwa5-vps/docs/caddy.md); owns `restic-backups` Drive folder |
-| Obmann-Stv.     | `sepp@sdwa5.org`   |                                                              |
-| Obmann-Stv.     | (second mailbox)   |                                                              |
+| board member    | `sepp@sdwa5.org`   |                                                              |
+| board member    | (second mailbox)   | Local-part withheld, see below                               |
+
+The third user's local-part is the first syllable of a surname this repository otherwise does not
+publish, so writing it here would republish by the back door what
+[organization.md](organization.md) deliberately defers to the ZVR register. `sepp@` is a nickname and
+carries no such reading, so it stands as written. Neither row names a board role any more, because
+pairing a mailbox with "Obmann-Stv." was what made the table identifying in the first place.
 
 ## Groups
 
