@@ -43,11 +43,15 @@
            fall on which side. Two carve-outs are stated rather than left implied: `sdwa5-vps/shopware-html-data/` is
            store-installed plugin content under its vendors' terms, and any mesh a `sdwa5-3d` spec reaches through
            `mesh_override` is third-party CAD, deliberately uncommitted
-        4. **the names are out of the trees and still in the histories, which is the one item left that cannot be
-           done after publication.** The two Obmann-Stellvertreter sit in 32 of `docs`'s 37 commits and 95 of
-           `vps`'s 115, the former Obmann-Stellvertreterin in 32 of `docs`'s, and the Vaultwarden KDF and item values in 23. A
-           rewrite over both is prepared and was refused by the environment's `[Git Destructive]` guard, so it needs
-           a hand. `3d` needs nothing. See [docs/going-public.md](docs/going-public.md)
+        4. **DONE on 2026-09-13, on the second attempt.** The 2026-09-12 rewrite took the names out of the file
+           contents of `docs` and `vps` and stopped there. An audit on 2026-09-13 found a bare surname that the
+           full-name rules never matched, sitting in 40 of `docs`'s 45 commits and in the working tree; every
+           commit **message**, which `--replace-text` does not reach and `--replace-message` does; and a deputy's
+           full name as a test fixture in 153 of `3d`'s 154 commits, in the repository the earlier pass had
+           declared clean without scanning it. The same audit found the private email address in **this**
+           repository's `TODO.md` history, which no rewrite had ever been scoped to. All three repositories were
+           rewritten again over contents and messages together. See
+           [docs/going-public.md](docs/going-public.md)
     2. configure repos as public
         1. **going public is what unblocks CI, and CI is blocked right now.** Every workflow run in all three repos
            fails within 2 to 4 seconds with "The job was not started because recent account payments have failed or

@@ -12,7 +12,7 @@ Kleinunternehmer status (§6 Abs. 1 Z 27 UStG — no VAT on invoices). Instance:
 https://erp.sdwa5.org
 
 Users, measured 2026-09-08: three accounts, all enabled. The admin account is the only one in use,
-last login 2026-07-27. The Sepp and Ziri accounts were created on 2025-07-08 and have **never been
+last login 2026-07-27. The two other accounts were created on 2025-07-08 and have **never been
 logged into**, so they are provisioned rather than planned.
 
 Technical/ops detail: [`sdwa5-vps/docs/dolibarr.md`](../sdwa5-vps/docs/dolibarr.md)
@@ -24,31 +24,23 @@ Instance: https://vault.sdwa5.org
 
 Users, measured 2026-09-08: four accounts, not one.
 
-| Account | Last seen | Org role |
-|---|---|---|
-| Stefan | 2026-09-08 | Owner |
-| second active account | 2026-09-07 | User |
-| third account | 2026-06-20 | not a member |
-| fourth account | never | invited, never accepted |
+| Account | Org role |
+|---|---|
+| Stefan | Owner |
+| second account | User |
+| third account | not a member |
+| fourth account | invited, never accepted |
 
-**Three of the four are on PBKDF2 rather than Argon2id, and only their holders can change that.** The
-per-account KDF and item counts used to stand in this table and came out before the repository went
-public. Neither figure is a secret and both are readable in the admin panel by anybody who should have
-them. **The pairing is the problem.** Published beside a reachable `vault.sdwa5.org`, a row saying
-which active account holds how many items on the weaker KDF names the soft target and prices it, and
-four accounts against three board members is thinner anonymisation than it looks.
+**Three of the four are on PBKDF2 rather than Argon2id.** Only an account holder can change their own
+KDF, so that is a message to them rather than an action here.
 
-The SdWa5 organization holds a small number of ciphers. **Stefan is its only Owner**, and
-`emergency_access` has zero rows, so until that changes, losing his account loses the organization's
-data. Emergency access with a Takeover grantee is being set up with a new member, as of
-2026-09-08. Tracked in [`sdwa5-vps/TODO.md`](../sdwa5-vps/TODO.md).
+**The organization has a single Owner**, so until a Takeover grantee is confirmed, losing that account
+loses the organization's data. Emergency access is being set up with a new member, as of 2026-09-08.
+Tracked in [`sdwa5-vps/TODO.md`](../sdwa5-vps/TODO.md).
 
-The two accounts holding zero items are **kept deliberately**, decided 2026-09-08. Neither holds
-data, so the exposure is a login rather than anything readable, and deleting an account someone was
-invited to costs more explaining than it saves.
-
-Only the account holder can change their own KDF, so the three PBKDF2 accounts are a message to them
-rather than an action here, and only the second one has anything to protect.
+The two accounts that have never been used are **kept deliberately**, decided 2026-09-08. Neither
+holds anything, so the exposure is a login rather than anything readable, and deleting an account
+someone was invited to costs more explaining than it saves.
 
 Technical/ops detail: [`sdwa5-vps/docs/vaultwarden.md`](../sdwa5-vps/docs/vaultwarden.md)
 

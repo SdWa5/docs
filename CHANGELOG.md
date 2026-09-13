@@ -6,6 +6,51 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.9.0] - 2026-09-13
+
+An independent audit of all three repositories on 2026-09-13 found that
+[docs/going-public.md](docs/going-public.md) certified several items as closed that were not, and that
+the file was itself one of the leaks it certified. Everything below is measured against `origin/main`
+rather than reasoned from the previous notes.
+
+### Security
+
+- **A bare surname survived both the tree edit and the 2026-09-12 rewrite**, standing alone inside a
+  parenthetical in `docs/organization.md` one line from a date the board table repeats. The redaction
+  rules matched full names, so nothing matched it. It was in **40 of this repository's 45 commits** and
+  in the working tree.
+- **Commit messages were never rewritten.** `git-filter-repo` applies `--replace-text` to file contents
+  only; messages need the separate `--replace-message`. The commit that performed the redaction
+  therefore carried all three names verbatim in its own body, here and in `sdwa5-3d`.
+- **The Vaultwarden redaction was undone by the sentences describing it.** `docs/going-public.md` and
+  this file each still quoted a per-account figure while explaining why that figure had been removed,
+  in **31 of 45 commits** and in the working tree. `sdwa5-vps`'s `TODO.md` restated the whole pairing
+  with more detail than the table had ever held, which the corresponding entry there now removes.
+- **A private email address sits in this repository's `TODO.md` history**, in 4 of 45 commits. Every
+  rewrite so far was scoped to `sdwa5-vps`, so this one had never been looked for here.
+- **The mailbox table mapped two local-parts to a board role.** `docs/google-workspace.md` now says
+  "board member" instead, which is what created the join rather than the addresses themselves.
+- **All three repositories were rewritten over contents and messages together** on 2026-09-13. Each
+  kept its commit count and its `HEAD` tree.
+
+### Changed
+
+- `docs/services.md` loses the paragraph that explained why the per-account Vaultwarden figures were
+  removed, because it restated them. One sentence is left, that three accounts are on PBKDF2 and only
+  their holders can change that. The cipher and collection counts and the `emergency_access` row count
+  go with it; that the organization has a single Owner stays, because a single point of failure is
+  worth naming.
+- `docs/services.md`, `CHANGELOG.md` and `docs/google-workspace.md` refer to board members and to the
+  new member by role rather than by name, matching what
+  <https://sdwa5.org/Impressum> publishes, which is the Obmann alone.
+- `.gitleaks.toml` **stops allowlisting `^\.idea/`**, reversing the earlier decision. Every tracked
+  file there and every `.idea/` path that ever held a blob is clean, so the allowlist bought nothing
+  while blinding the scanner to the one directory PhpStorm writes database and SSH credentials into
+  without being asked.
+- `docs/going-public.md` and `TODO.md` record what the earlier passes actually achieved rather than
+  what they claimed, and keep the one lesson that caught this list twice: a note documenting a
+  redaction tends to quote the thing it redacted, and neither a tree scan nor `gitleaks` will see it.
+
 ## [0.8.3] - 2026-09-12
 
 ### Fixed
@@ -332,22 +377,20 @@ recommend, because the shop's own Impressum publishes more than the analysis ass
 
 ### Fixed
 
-- `docs/services.md` said both Dolibarr and Vaultwarden had "currently only Stefan; Sepp and Ziri
-  planned". Neither was true, measured on 2026-09-08. Dolibarr has three enabled accounts, and the
-  Sepp and Ziri ones were created on 2025-07-08 and have never been logged into, so they are
-  provisioned rather than planned. Vaultwarden has four accounts, two of which are in active use with
-  differing numbers of items.
+- `docs/services.md` described both Dolibarr and Vaultwarden as having one account in use with two
+  more planned. Neither was true, measured on 2026-09-08. Dolibarr has three enabled accounts, two of
+  which were created on 2025-07-08 and have never been logged into, so they are provisioned rather
+  than planned. Vaultwarden has four accounts, two of them in active use.
 
 ### Added
 
 - `docs/services.md` records two decisions taken on 2026-09-08. Emergency access with a Takeover
-  grantee is being set up with a new member, and the two Vaultwarden accounts holding zero
-  items are kept rather than deleted, because neither holds data and deleting an account someone was
-  invited to costs more explaining than it saves.
-- `docs/services.md` records the Vaultwarden accounts with their KDF, item count, last activity and
-  organization role, and states plainly that the SdWa5 organization has a single Owner holding 32
-  ciphers in 5 collections while `emergency_access` has zero rows, so losing that account loses the
-  organization's data.
+  grantee is being set up with a new member, and the two unused Vaultwarden accounts are kept rather
+  than deleted, because neither holds anything and deleting an account someone was invited to costs
+  more explaining than it saves.
+- `docs/services.md` records the Vaultwarden accounts with their organization role, and states plainly
+  that the organization has a single Owner, so losing that account loses the organization's data until
+  a grantee is confirmed.
 
 ## [0.3.0] - 2026-07-30
 

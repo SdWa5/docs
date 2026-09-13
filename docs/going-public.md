@@ -64,11 +64,23 @@ still there, tree clean, and all eight health checks green.
 register, the Vaultwarden posture is thinned, and the address stays. The reasoning for each is below,
 kept because the address decision reverses the recommendation this file used to make.
 
-**The tree is done and the histories are not.** The two Obmann-Stellvertreter still sit in 32 of
-the root repository's 37 commits and 95 of `sdwa5-vps`'s 115, and the former Obmann-Stellvertreterin in 32 of the
-root's. Removing a name from the working tree does not remove it from the history, which is the same
-trap the email address set. **A second rewrite over both repositories is outstanding**, and it is the
-one item on this list that cannot be done after the repositories are public.
+**The tree was done before the histories were, and the first rewrite did not finish the job.** Removing
+a name from the working tree does not remove it from the history, which is the same trap the email
+address set. That much was understood, and a rewrite ran on 2026-09-12. An independent audit on
+2026-09-13 found three ways it fell short, all of them measured:
+
+- **A bare surname survived, because the rules matched full names.** One deputy's surname stood alone
+  inside a parenthetical in [`organization.md`](organization.md), one line from a date the board table
+  repeats, and it was in 40 of this repository's 45 commits and in the working tree.
+- **Commit messages were never touched.** `git-filter-repo` applies `--replace-text` to file contents
+  only; messages need the separate `--replace-message`. So the commit that performed the redaction
+  carried all three names in its own body, in this repository and in `sdwa5-3d`.
+- **`sdwa5-3d` was declared clean without being checked.** It carried a deputy's full name as a test
+  fixture in 153 of its 154 commits, and a changelog line asserting the three names appear nowhere in
+  it.
+
+**All three are fixed and the histories were rewritten again on 2026-09-13**, this time over contents
+and messages together. See "What is left to do".
 
 **A private residential address**, in [`organization.md`](organization.md). The association's service
 address is care-of a named board member at their home. The Austrian
@@ -142,23 +154,24 @@ every run of which had failed on billing, and one stargazer on `sdwa5-vps`.
 
 ## A combination that is more revealing than its parts
 
-[`services.md`](services.md) documents the Vaultwarden accounts with their KDF, item count, last
-activity and organization role. Only the Owner is named; the others are deliberately written as
-"second account", "third account" and "fourth account", so somebody already thought about this.
+[`services.md`](services.md) used to document the Vaultwarden accounts with their KDF, item count and
+last activity alongside their organization role. Only the Owner is named; the others are deliberately
+written as "second account", "third account" and "fourth account", so somebody already thought about
+this.
 
-What is left is that the table states an active account holds a number of items on the **weaker** KDF while
-the Owner is on Argon2id. Published next to a named, reachable `vault.sdwa5.org`, that tells a reader
-where the soft target is and roughly what it is worth. And there are only four accounts against three
-named board members in [`organization.md`](organization.md), so the anonymisation is thinner than it
-looks.
+The finding was the pairing rather than any single figure. A per-account row read next to a named,
+reachable `vault.sdwa5.org` points at which account is worth attacking, and four accounts against
+three board members is thinner anonymisation than it looks. Nothing in it was ever a credential.
 
-Nothing here is a credential and the finding is the pairing rather than either file.
+**Done on 2026-09-12 and finished on 2026-09-13.** The per-account figures are out of the table and
+one sentence is left, that three accounts are on PBKDF2 and only their holders can change that.
+Upgrading those three to Argon2id would be the real remedy, but it depends on the account holders, so
+nothing here waits on it.
 
-**Done on 2026-09-12.** The per-account KDF and item counts are out of the table and one sentence is
-left, that three accounts are on PBKDF2 and only their holders can change that. Upgrading those three
-to Argon2id would be the real remedy and would make the old figures describe a state that no longer
-exists, but it depends on the account holders, so publication cannot wait on it. The values are still
-in 23 of this repository's commits and go with the outstanding rewrite named at the top.
+**The first pass removed the values and left the sentences that quoted them.** This file and
+`CHANGELOG.md` each still carried a figure while describing its removal, and `sdwa5-vps`'s `TODO.md`
+restated the whole pairing with more detail than the table had ever held. All three are corrected, and
+the 2026-09-13 rewrite took the figures out of both repositories' histories as well.
 
 ## Third parties who never agreed to any of this
 
@@ -228,18 +241,29 @@ deleted, which removed GitHub's cache of both rewrites' pre-rewrite commits. The
 [docs](https://github.com/SdWa5/docs), [vps](https://github.com/SdWa5/vps) and
 [3d](https://github.com/SdWa5/3d), and all three are still **private**.
 
-**Every decision on this list is now made**, on 2026-09-12. The address stays because the Impressum
-publishes it by law, the `c/o <name>` prefix went with it. Two board members' names defer to the ZVR
-register and the Obmann's stays, because his Impressum names him. The former board member is gone. The
-Vaultwarden posture is thinned to one sentence. The Minecraft pseudonyms stay, being low sensitivity
-and all-or-nothing. The licence is MIT plus CC BY-SA 4.0. The third-party gear figures are cleared by
-their owners.
+**Every decision on this list is made**, on 2026-09-12. The address stays because the Impressum
+publishes it by law, and the `c/o <name>` prefix went with it. Two board members' names defer to the
+ZVR register and the Obmann's stays, because the Impressum names him. The former board member is gone.
+The Vaultwarden posture is thinned to one sentence. The Minecraft pseudonyms stay, being low
+sensitivity and all-or-nothing. The licence is MIT plus CC BY-SA 4.0. The third-party gear figures are
+cleared by their owners.
 
-**Done on 2026-09-12.** The names came out of the histories as well as the trees. 41 commits rewritten
-here and 117 in `sdwa5-vps`, both with their tree hash unchanged and their commit count identical, and
-zero commits left holding either Obmann-Stellvertreter's name, the former Obmann-Stellvertreterin's, or
-the Vaultwarden values. `SdWa5/3d` needed none. `Mühlenstraße 24` and `Stefan Ripper` are kept, because
-the Impressum publishes both by law.
+**The 2026-09-12 rewrite was checked on 2026-09-13 and did not hold.** What that pass actually achieved
+was the file contents of two repositories. What it missed is listed under "Personal data of named
+people" above, and the short version is a bare surname, every commit message, and a third repository
+nobody scanned. Three further items came out of the same audit and had never been on this list at all:
+the private email address in **this** repository's `TODO.md`, a stale claim in `sdwa5-vps` that the VPS
+has no firewall, and a legal self-assessment of the live shop that is better kept in Drive.
 
-After that, the flip to public is one switch per repository, and it is also what gives CI its minutes
-back.
+**Done on 2026-09-13.** All three repositories were rewritten over contents **and** commit messages,
+with `--replace-text` and `--replace-message` together, which is the pair the earlier passes did not
+use. Each repository kept its commit count and its `HEAD` tree, except `sdwa5-vps`, whose tree changes
+because one file is deliberately removed from it. `Mühlenstraße 24` and `Stefan Ripper` are kept,
+because the Impressum publishes both by law. **`sepp` is kept as well**, decided on 2026-09-13: it is a
+nickname rather than a name, it is an owner key throughout `sdwa5-3d`, and what created the exposure
+was the mailbox table mapping it to a board role, which is what came out instead.
+
+**One lesson is worth keeping, because it caught this list twice.** A note that documents a redaction
+tends to quote the thing it redacted, and neither a tree scan of the current checkout nor `gitleaks`
+will ever see it. The check that does is a grep for the removed value across every commit **and** every
+commit message, in every repository at once rather than one at a time.
