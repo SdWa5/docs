@@ -144,9 +144,21 @@ before the flip to public rather than after it.
 transfer function moves the same repository and the same object store, so a transfer into the
 organization would have carried every cached pre-rewrite commit along with it and quietly undone both
 rewrites. Three empty repositories were created in [SdWa5](https://github.com/SdWa5) instead and
-pushed into, and the three personal repositories were then deleted, which is what removed the cache.
-Verified: each new repository's `main` matches its local `HEAD`, zero commits on `SdWa5/vps` hold the
-address, and all three old paths answer "Not Found".
+pushed into, and the three personal repositories were then deleted. Verified: each new repository's
+`main` matches its local `HEAD`, zero commits on `SdWa5/vps` hold the address, and all three old paths
+answer "Not Found".
+
+**That made the commits unreachable and it did not destroy them, which this file used to run
+together.** Corrected on 2026-09-13. GitHub restores a deleted repository within 90 days, so the
+record survives the delete and the REST API reports 404 well before the content is gone. The three
+personal repositories can be brought back until roughly 2026-12-11, and the three `-old` repositories
+that the 2026-09-13 rewrite deleted until a day later, each with the pre-rewrite history intact. The
+measurement that does hold is narrower and is the one that matters: fetching a pre-rewrite SHA from
+each new repository returns `not our ref`, with a control fetch proving the test itself works, so a
+reader holding an old hash cannot pull it. Restoring needs owner or organization-admin credentials, so
+there is no route to it from outside and no publication decision waits on it. Tracked as item 7.6 in
+[`sdwa5-vps/TODO.md`](../sdwa5-vps/TODO.md), with the choice being to accept it, to let the window
+close and verify after 2026-12-12, or to ask Support to purge the six permanently.
 
 Nothing was lost by doing it that way. All three were private with **0 forks, 0 tags and 0 releases**,
 no pull requests and no issues, at 54 KB, 6380 KB and 980 KB. What went is the Actions run history,
@@ -237,7 +249,8 @@ address was rewritten out of `sdwa5-vps`'s file contents on 2026-09-12.
 
 **The move is done too.** On 2026-09-12 the three repositories were pushed into fresh, empty
 repositories in the [SdWa5](https://github.com/SdWa5) organization and the personal originals were
-deleted, which removed GitHub's cache of both rewrites' pre-rewrite commits. They are
+deleted, which put GitHub's cache of both rewrites' pre-rewrite commits beyond reach, though not yet
+beyond restoring — see the 90-day window above. They are
 [docs](https://github.com/SdWa5/docs), [vps](https://github.com/SdWa5/vps) and
 [3d](https://github.com/SdWa5/3d), and all three are still **private**.
 
