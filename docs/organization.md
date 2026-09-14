@@ -90,8 +90,15 @@ No bank IBAN.
 
 ## Statutes (Vereinsstatuten)
 
-`Vereinsstatuten.docx` in the
-[Google Drive folder](https://drive.google.com/drive/folders/1deC0DDdF5bXz1OuGvVQTcvSgrui9EpmV).
+Full text as a reading copy: [`statuten.md`](statuten.md). The authoritative
+version stays the stamped scan `Statuten_Stempel.pdf` in the
+[Google Drive folder](https://drive.google.com/drive/folders/1deC0DDdF5bXz1OuGvVQTcvSgrui9EpmV),
+next to the `Vereinsstatuten.docx` the reading copy was converted from.
+
+`statuten.md` also lists four defects in the filed version, from an unfilled
+template line in § 1 Abs. 3 to three internal cross-references that point one
+paragraph too high. They matter for the planned Sitz change, because amending
+the statutes reopens the whole document for the authority's review.
 
 Key points:
 
