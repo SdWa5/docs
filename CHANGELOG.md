@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.13.1] - 2026-09-14
+
+### Fixed
+
+- **This repository's 0.13.0 entry and `docs/going-public.md` both quoted the PSL inference while
+  recording its removal**, which is the failure that page already has a lesson about. The quote is
+  gone from both.
+- **The same page claimed more than had happened.** `sdwa5-3d` 0.117.0 cleaned the two files it named
+  and left the assertion standing in that repository's changelog and in `docs/sources.md`, which is
+  the file the third-party section was written about. Finished in `sdwa5-3d` 0.117.1, and the claim
+  here now says working tree where it used to say removed.
+- **The history is now stated as an open decision rather than left implied.** Both PSL statements
+  stand in 28 of `sdwa5-3d`'s 160 commits and one of them in a commit message, measured 2026-09-14.
+  Nothing is exposed while the repository is private, so the choice is a fourth rewrite before the
+  flip or an explicit decision to keep them. `TODO.md` carries it next to the authorship trailers.
+
 ## [0.13.0] - 2026-09-14
 
 ### Added
