@@ -53,7 +53,17 @@
            rewritten again over contents and messages together. See
            [docs/going-public.md](docs/going-public.md)
     2. configure repos as public
-        1. **the billing block is gone and CI executes again, measured 2026-09-14.** This item used to say that
+        1. **`sdwa5-3d` was audited for publication on 2026-09-14 and one decision is open.** Three passes over
+           the working tree, all 10 648 blobs in the history and all 158 commit messages. No credential anywhere,
+           by `gitleaks` with the repo config, with the default rules and with no allowlist at all. No street
+           address, postcode, phone number, IP address, IBAN or key material. The 2026-09-13 redaction was
+           verified against the pre-rewrite backup, 8 of 22 patterns matching there and 0 here. Four things came
+           out of it and three are fixed in `sdwa5-3d` 0.117.0, namely a `gitleaks` allowlist that exempted four
+           tracked files, three links to the deleted personal account, and an inference about what PSL own. The
+           full name in that repo's `TODO.md` is decided and stays. **What is open is the authorship trailers in
+           119 of its commit messages**, which go public with it and cannot be taken back afterwards. See
+           [docs/going-public.md](docs/going-public.md)
+        2. **the billing block is gone and CI executes again, measured 2026-09-14.** This item used to say that
            every run in all three repos failed within 2 to 4 seconds with "The job was not started because recent
            account payments have failed or your spending limit needs to be increased", measured 2026-09-08, and
            that no job had ever executed. That no longer holds. Runs complete in all three repositories from
