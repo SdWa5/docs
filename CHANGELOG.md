@@ -6,6 +6,42 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.13.0] - 2026-09-14
+
+### Added
+
+- **`docs/going-public.md` gains a section on what changes at the flip itself**, which the page never
+  had, because everything on it until now was about content rather than behaviour. Two things were
+  checked for `sdwa5-3d` and both are written up. Its workflow has no `pull_request` trigger and reads
+  no `secrets`, so a stranger's fork cannot make it execute anything once the repository is public.
+  And 119 of its 158 commit messages carry an authorship trailer with a session URL, 16 distinct ones,
+  which becomes public with the repository and is the one item on that page nobody has decided.
+
+### Changed
+
+- **The `sepp` decision covered a nickname and not the full name, which is also in the history.**
+  `sdwa5-3d/TODO.md` names the owner of the second van in full, in the working tree and in 78 of that
+  repository's 158 commits. It surfaced on 2026-09-14 through a sweep for common given names rather
+  than through the redaction patterns, which had no reason to carry it. Kept on the same ground as the
+  nickname, decided the same day, so no fourth history rewrite is needed.
+- **PSL's inventory is no longer inferred from what they bring to one event.** The third-party section
+  cleared `sdwa5-3d/docs/sources.md` and named the GMSS owner and the Innschleife crew as content.
+  PSL are a rental company who were never asked, and `rosters/psl-next-event.yaml` had turned a
+  statement about one load-out into a floor on their stock. Corrected in `sdwa5-3d` 0.117.0, and the
+  reasoning is recorded here.
+- **The same section now says that the clearance covers one file while the content is in fifteen
+  more**, namely `rosters/`, `docs/requests.md`, `docs/scenes.md`, `TODO.md`, `CHANGELOG.md` and about
+  twenty spec files. That part is the same shape as `sources.md` and needs no further decision,
+  because the two crews cleared their inventory rather than one document.
+- **The 2026-09-13 rewrite is verified rather than asserted.** All 22 replacement patterns were run
+  over the full history of the pre-rewrite backup and of the current repository, contents and commit
+  messages together. The backup answers with 8 patterns matching, one of them 25 times, which is what
+  proves the test works, and `sdwa5-3d` answers with zero across all 158 commits.
+- **A second lesson joins the one about notes quoting what they redact.** An allowlist can exempt
+  tracked files while its own comment says it does not, which is what `sdwa5-3d/.gitleaks.toml` did to
+  four committed files under `.ddev/` for as long as it existed. Running the scanner once with the
+  allowlist off is the cheap check.
+
 ## [0.12.0] - 2026-09-14
 
 ### Fixed
