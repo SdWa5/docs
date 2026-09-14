@@ -90,8 +90,8 @@ still an escalation, because a register you query on purpose is not the same as 
 indexes.
 
 **Kept, and the recommendation this file used to make was wrong.** The shop's own Impressum at
-<https://sdwa5.org/Impressum> publishes `Mühlenstraße 24` today, and an Austrian webshop is required
-by law to state a Zustellanschrift. Taking it out of git while the shop publishes it is theatre, and
+<https://sdwa5.org/Impressum> published `Mühlenstraße 24` while it was the current address, and an
+Austrian webshop is required by law to state a Zustellanschrift. Taking it out of git while the shop publishes it is theatre, and
 it is in all 115 commits of `sdwa5-vps` for exactly that reason. **What did come out is the `c/o
 <name>` prefix**, so the repositories no longer say whose home it is, which the Impressum does not say
 either. The only real remedy would be a Zustellanschrift that is not a private home, and that is a ZVR
@@ -103,9 +103,9 @@ still a second member's home. § 5 ECG obliges the shop to publish this one too,
 repositories in plain text for the same reason the old one did, again without a `c/o <name>` prefix.
 `Mühlenstraße 24` stays in the history of `sdwa5-vps` and this repository and is **not** worth a
 fourth rewrite: it was the lawfully published address of the Verein throughout that period, it is
-now a former address, and each rewrite costs another force-push cycle. The sentences above that
-speak of the Impressum publishing it "today" were measured on 2026-09-08 and hold only until the
-storefront pages are updated.
+now a former address, and each rewrite costs another force-push cycle. The storefront was updated on 2026-09-14, so the
+sentences above are in the past tense: the Impressum, the Datenschutz page and the German AGB now
+carry Egitlweg 6, and a fetch of each finds no trace of the old address.
 
 **Four full names with roles and dates**, in the same file. **Three of the four now defer to the ZVR
 register and one is kept**, decided on the same evidence as the address.
