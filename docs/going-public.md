@@ -287,12 +287,27 @@ No step in the file reads `secrets`, so there is nothing for a workflow to hand 
 2026-09-14 it also declares `permissions: contents: read` rather than inheriting whatever the
 organization default happens to be, because a default is not a statement.
 
-**Every commit message carries an authorship trailer, and publishing the repository publishes those.**
-119 of `sdwa5-3d`'s 158 commit messages carried an authorship trailer and a session link,
-URL, 16 distinct ones. Those URLs open only for the account that owns them, so what becomes public is
-the fact that the work was AI-assisted together with 16 opaque identifiers. That is a disclosure rather
-than a risk, and it is the one item on this page that nobody has decided. It is also permanent once the
-repository is public, which is why it belongs here rather than in a backlog.
+**Most commit messages carry an authorship trailer, and publishing a repository publishes those.**
+Measured 2026-09-15, and this is not a question about one repository. All three carry them.
+
+| Repository | Commits | Attribution lines | Session links | Distinct session ids |
+|---|---:|---:|---:|---:|
+| `sdwa5-3d` | 164 | 122 | 122 | 18 |
+| `sdwa5-vps` | 143 | 69 | 61 | 18 |
+| `sdwa5` | 65 | 33 | 27 | 13 |
+
+**The session URLs disclose nothing beyond their own existence.** Fetched without a session cookie one
+answers HTTP 403, so it is an opaque identifier rather than a readable transcript. What becomes public
+is that the work was AI-assisted, and how many sittings it took. Nothing of it is in file contents; the
+only match in any working tree is this paragraph.
+
+**DECIDED 2026-09-15, and the decision is to keep both trailers, in all three repositories.**
+The attribution was an ordinary trailer and the honest answer to how this work was made,
+and a set of repositories that has just been through four rewrites to make its own record true is the
+wrong place to understate authorship. Against that stood a fifth rewrite across three repositories,
+three more republish cycles, and the risk each one carries, which the 2026-09-15 pass demonstrated by
+rewriting another session's in-flight branch along the way. The trailers are permanent in every public
+clone once the flip happens, which is why this was settled before it rather than after.
 
 ## The licence, which is a separate decision
 
@@ -328,10 +343,10 @@ The Vaultwarden posture is thinned to one sentence. The Minecraft pseudonyms sta
 sensitivity and all-or-nothing. The licence is MIT plus CC BY-SA 4.0. The third-party gear figures are
 cleared by their owners.
 
-**Two more decisions were taken on 2026-09-14, and one item is still open.** The full name in
-`sdwa5-3d/TODO.md` stays, and PSL's inventory is no longer inferred from what they bring. Both are
-written up above. What is open is the commit-message authorship trailers, under "What changes at the
-flip".
+**Three more decisions were taken on 2026-09-14 and 2026-09-15, and nothing on this page is open.**
+The full name in `sdwa5-3d/TODO.md` stays. PSL's inventory is no longer inferred from what they bring,
+in the working trees and in both histories. And the commit-message authorship trailers stay, in all
+three repositories. All three are written up above, with their evidence.
 
 **The 2026-09-12 rewrite was checked on 2026-09-13 and did not hold.** What that pass actually achieved
 was the file contents of two repositories. What it missed is listed under "Personal data of named
