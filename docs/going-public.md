@@ -97,6 +97,16 @@ it is in all 115 commits of `sdwa5-vps` for exactly that reason. **What did come
 either. The only real remedy would be a Zustellanschrift that is not a private home, and that is a ZVR
 filing rather than a documentation change.
 
+**Update 2026-09-14: the address changed, and the reasoning carries over unchanged.** The
+Zustellanschrift is now Egitlweg 6, 5322 Hof bei Salzburg, still care-of a board member's home and
+still a second member's home. § 5 ECG obliges the shop to publish this one too, so it goes into the
+repositories in plain text for the same reason the old one did, again without a `c/o <name>` prefix.
+`Mühlenstraße 24` stays in the history of `sdwa5-vps` and this repository and is **not** worth a
+fourth rewrite: it was the lawfully published address of the Verein throughout that period, it is
+now a former address, and each rewrite costs another force-push cycle. The sentences above that
+speak of the Impressum publishing it "today" were measured on 2026-09-08 and hold only until the
+storefront pages are updated.
+
 **Four full names with roles and dates**, in the same file. **Three of the four now defer to the ZVR
 register and one is kept**, decided on the same evidence as the address.
 

@@ -6,6 +6,36 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.10.0] - 2026-09-14
+
+### Changed
+
+- **The Zustellanschrift is Egitlweg 6, 5322 Hof bei Salzburg, Österreich, since 2026-09-14**, by
+  resolution of the Vorstand. `docs/organization.md` carries it and a new section
+  **Address change, in progress since 2026-09-14** that keeps the two moves apart: the postal
+  address has changed and is a free notification under § 14 Abs 3 VerG, while the **Sitz** is still
+  Ostermiething because § 1 Abs 2 of the statutes names it and moving it is a Statutenänderung under
+  § 14 Abs 1 VerG, needing a two-thirds resolution of the Generalversammlung.
+- The **Registration authority** row no longer reads as permanent. Competence follows the Sitz, so
+  both notifications go to Bezirkshauptmannschaft Braunau am Inn, and only after the Sitz move is
+  registered does it pass to Bezirkshauptmannschaft Salzburg-Umgebung in Seekirchen am Wallersee.
+- The source line now says what it actually covers. The register extract of 2026-07-04 is the source
+  for every row **except** the Zustellanschrift, because the ZVR still shows the old address until
+  the notification is processed.
+
+### Added
+
+- `docs/going-public.md`: an update stating that the disclosure reasoning for the old address carries
+  over to the new one unchanged, and that `Mühlenstraße 24` stays in the history rather than earning
+  a fourth rewrite. It was the lawfully published address of the Verein throughout that period, and
+  every rewrite costs another force-push cycle.
+
+### Notes
+
+- Nothing outside the repositories has been changed yet. The storefront Impressum, Datenschutz and
+  AGB pages, the Dolibarr company record, Google Workspace, PayPal and the domain registrant still
+  carry the old address, and the notification to the authority has not been filed.
+
 ## [0.9.1] - 2026-09-13
 
 ### Fixed
