@@ -6,6 +6,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.13.4] - 2026-09-15
+
+### Changed
+
+- **The authorship trailers stay, decided 2026-09-15, and that was the last open item before the
+  flip.** `docs/going-public.md` had the question down as a property of `sdwa5-3d` alone and with
+  figures that a later push had overtaken. Re-measured across all three repositories: 122 of 164
+  commit messages in `sdwa5-3d`, 69 of 143 in `sdwa5-vps` and 33 of 65 here, with 18, 18 and 13
+  distinct session ids. So a decision for one repository would have come back twice.
+- **The session URLs were checked rather than assumed.** Fetched without a session cookie one answers
+  HTTP 403, so it is an opaque identifier and not a readable transcript. What publication discloses is
+  that the work was AI-assisted and how many sittings it took, and none of it is in file contents.
+- **Kept, because the attribution is the honest answer to how this work was made**, and a set of
+  repositories that has just been through four rewrites to make its own record true is the wrong place
+  to understate authorship. The alternative was a fifth rewrite across three repositories and three
+  more republish cycles, each carrying the risk the 2026-09-15 pass demonstrated when it rewrote
+  another session's in-flight branch along the way.
+- `TODO.md` and `docs/going-public.md` now both say that nothing blocks the flip.
+
 ## [0.13.3] - 2026-09-15
 
 ### Security
