@@ -11,6 +11,14 @@ Dolibarr is the organization's ERP, used primarily for accounting given the
 Kleinunternehmer status (§6 Abs. 1 Z 27 UStG — no VAT on invoices). Instance:
 https://erp.sdwa5.org
 
+**It also holds the organization's operational backlog**, in the Projects
+module, since 2026-09-15. The repositories' `TODO.md` files stay technical, and
+anything that is a purchase, a deadline, an event settlement or a piece of
+Verein administration belongs here instead. The backlog is written in from a
+gitignored JSON spec by `tools/dolibarr/sync-pm.sh`, which creates and updates
+but never deletes, so closing a task stays a job for the Dolibarr UI. See
+[`sdwa5-vps/docs/dolibarr.md`](../sdwa5-vps/docs/dolibarr.md#projects-and-tasks).
+
 Users, measured 2026-09-08: three accounts, all enabled. The admin account is the only one in use,
 last login 2026-07-27. The two other accounts were created on 2025-07-08 and have **never been
 logged into**, so they are provisioned rather than planned.
