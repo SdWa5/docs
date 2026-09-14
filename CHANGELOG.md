@@ -6,6 +6,36 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.12.0] - 2026-09-14
+
+### Fixed
+
+- **The nightly `links-external` job had never passed, and its failure mail is most of what looks
+  like GitHub Actions running at random.** Measured on run `34830869821`: exit code 2 on three
+  errors, all of them links to the sibling *directories* themselves, written as
+  ``[sdwa5-vps](sdwa5-vps)`` and ``[sdwa5-3d](sdwa5-3d)``, twice in `README.md` and once in this
+  file. Both jobs excluded the siblings as `--exclude sdwa5-vps/`, but lychee matches `--exclude` as
+  a regular expression against
+  the resolved URI, and a link to a bare directory produces a URI with no trailing slash. So the
+  pattern matched `sdwa5-vps/docs/caddy.md` and missed `sdwa5-vps`. The trailing slash is gone from
+  both jobs.
+- **Why `links` stayed green while `links-external` went red on the same files.** `links` checks the
+  siblings out first, and `actions/checkout` leaves the directory behind even when the fetch fails,
+  so the bare link resolves there. `links-external` checks out nothing, so it does not. The
+  behaviour is recorded next to the loop that builds the exclusions.
+
+### Changed
+
+- The `schedule` trigger now records that its time is a request rather than a promise. Measured on
+  the same run: `23 4 * * *` asked for 04:23 UTC and the run started at 09:59 UTC, 5 h 36 m late.
+  GitHub queues scheduled events and drops them under load, so a failure mail from this workflow
+  says nothing about the hour it names, and a missing night is not evidence of a fault.
+- `TODO.md` no longer claims that CI is blocked account-wide on billing. That was measured on
+  2026-09-08 and stopped being true: runs execute and complete in all three repositories from
+  2026-09-13 onwards. What going public still buys is unmetered minutes and a four-core runner in
+  place of a private repository's two, and the first executed `sdwa5-3d` push is the evidence for
+  why the core count matters.
+
 ## [0.11.1] - 2026-09-14
 
 ### Fixed
