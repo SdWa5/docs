@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.11.1] - 2026-09-14
+
+### Fixed
+
+- `docs/going-public.md` still claimed in the present tense that the shop's Impressum publishes the
+  old address. **It stopped being true on 2026-09-14**, when the storefront was updated. Both
+  sentences are now in the past tense and the closing note records what a fetch of each page finds,
+  which is Egitlweg 6 and no trace of the old address. A document about what is safe to publish is
+  the last place an untrue present-tense claim belongs.
+
 ## [0.11.0] - 2026-09-14
 
 ### Added
