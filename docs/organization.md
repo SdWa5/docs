@@ -8,22 +8,51 @@ Official / legal information for the SdWa5 organization.
 |-------------|-----------------------------------------------|
 | Legal name  | Musikverein Schmeiß die Wand an 5             |
 | Display name| SdWa5 (Scheiß die Wand an 5)                  |
-| Sitz        | Ostermiething (Ostermiething)                 |
-| Zustellanschrift | Mühlenstraße 24, 5121 Ostermiething, Österreich |
+| Sitz        | Ostermiething (Ostermiething) — move to Hof bei Salzburg pending, see below |
+| Zustellanschrift | Egitlweg 6, 5322 Hof bei Salzburg, Österreich (since 2026-09-14) |
 | ZVR         | 1115343752                                    |
 | Founded (Entstehungsdatum) | 2023-01-05                     |
-| Registration authority | Bezirkshauptmannschaft Braunau     |
+| Registration authority | Bezirkshauptmannschaft Braunau — changes with the Sitz |
 | Domain      | sdwa5.org                                     |
 | Tax status  | Kleinunternehmer §6 Abs. 1 Z 27 UStG (no VAT) |
 
-Source: Vereinsregisterauszug zum Stichtag 2026-07-04. A current extract can
-always be fetched from the
+Source for everything except the Zustellanschrift: Vereinsregisterauszug zum
+Stichtag 2026-07-04. A current extract can always be fetched from the
 [public ZVR register](https://citizen.bmi.gv.at/at.gv.bmi.fnsweb-p/zvn/public/Registerauszug)
 (ZVR 1115343752); older extracts in the
 [Google Drive folder](https://drive.google.com/drive/folders/1deC0DDdF5bXz1OuGvVQTcvSgrui9EpmV);
 Shopware Impressum config, see
 [`sdwa5-vps/docs/shopware/shop-config.md`](../sdwa5-vps/docs/shopware/shop-config.md#shop-identity)
 and [`sdwa5-vps/docs/caddy.md`](../sdwa5-vps/docs/caddy.md).
+
+### Address change, in progress since 2026-09-14
+
+The postal address and the Sitz move separately, and only the first has
+happened. Do not read the table as one event.
+
+- **Zustellanschrift.** Changed to Egitlweg 6, 5322 Hof bei Salzburg by
+  resolution of the Vorstand on 2026-09-14. A change of the Vereinsanschrift is
+  a notification to the Vereinsbehörde under § 14 Abs 3 VerG, due within four
+  weeks and free of charge. Until the notification is processed, the ZVR extract
+  still shows the old address, so an extract that contradicts this table is
+  not necessarily out of date — it may simply be ahead of the filing.
+- **Sitz.** Still Ostermiething, because § 1 Abs 2 of the statutes names it and
+  changing it is a Statutenänderung under § 14 Abs 1 VerG: a two-thirds
+  resolution of the Generalversammlung, then a notification the authority has
+  four weeks to forbid, extendable to six. Fee roughly 21 € plus 6 € per page of
+  the attached statutes.
+- **Competent authority.** Bezirkshauptmannschaft Braunau am Inn today, because
+  competence follows the Sitz and Ostermiething is in Oberösterreich. Both
+  notifications therefore go to Braunau, not to Salzburg. Once the Sitz move is
+  registered, competence passes to Bezirkshauptmannschaft Salzburg-Umgebung,
+  Dr.-Hans-Katschthaler-Platz 1, 5201 Seekirchen am Wallersee.
+- **Place of jurisdiction** in the storefront AGB follows the Sitz, so it stays
+  Ostermiething until the move is registered.
+
+Egitlweg 6 is also the private address of a board member and of one other
+member. It is in this repository in plain text on purpose: § 5 ECG obliges the
+Verein to publish the same address in its Impressum, and the ZVR extract is
+public, so withholding it here would hide nothing.
 
 ## Board (Vorstand)
 
