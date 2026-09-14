@@ -218,6 +218,24 @@ same shape.
 If that ever needs undoing, the figures can stay while the quotations go, because provenance survives
 as "stated by the owner" without reproducing the message.
 
+**The paragraph above names one file, and the same kind of content is in fifteen more.** Measured on
+2026-09-14, while `sdwa5-3d` was being read for publication. Verbatim quotations of private messages,
+and figures derived from them, also sit in `rosters/`, `docs/requests.md`, `docs/scenes.md`, `TODO.md`,
+`CHANGELOG.md` and about twenty spec files. Almost all of it is the same shape as `sources.md` and is
+covered by the same clearance, because the GMSS owner and the Innschleife crew cleared their inventory
+rather than one document.
+
+**PSL are the exception, and one inference has been taken out.** They are Pro Sound & Light, a rental
+company, and this page had them down only as the source of published datasheets, which needs no
+decision. `rosters/psl-next-event.yaml` went past that. It turned a statement about what they are
+bringing to one event into a floor on what they own,
+and `docs/requests.md` restated it. A published package is not an inventory, which that file argued
+itself, and neither is a load-out. Nobody asked PSL, and what a company owns is commercially theirs.
+So the counts stay as what is coming to an event, the inference is gone, and the open question of
+asking them outright stays in `docs/requests.md`. Done in `sdwa5-3d` 0.117.0. A note in the same file
+calling their published page self-contradictory now reads as a sourcing decision instead, with every
+technical fact in it unchanged.
+
 **Minecraft player names and UUIDs**, in `sdwa5-vps` in `minecraft-data/ops.json`,
 `minecraft-data/whitelist.json` and the `OPS` and `WHITELIST` environment variables in
 `docker-compose.yml`. Four pseudonyms and their UUIDs, which any server they join already sees. Low
@@ -236,6 +254,26 @@ credential is committed anywhere, confirmed by `gitleaks` over tree and history 
 repositories. And the identifiers that do appear are useless without access: Vaultwarden item UUIDs
 name items inside a vault, and the Google Shared Drive ID names a drive that still requires
 authentication.
+
+## What changes at the flip, which is not only who can read
+
+Everything above is about content. Two things about a public repository are about behaviour instead,
+and both were checked for `sdwa5-3d` on 2026-09-14.
+
+**Actions become triggerable by strangers, and here they are not.** A public repository lets anyone
+open a pull request, and a workflow carrying a `pull_request` trigger then executes a fork's code.
+`sdwa5-3d`'s `tests.yml` triggers on `push` and `workflow_dispatch` only, so a fork's pull request runs
+nothing at all, and the 330-minute `full` job carries `if: github.event_name != 'push'` on top of that.
+No step in the file reads `secrets`, so there is nothing for a workflow to hand out either. Since
+2026-09-14 it also declares `permissions: contents: read` rather than inheriting whatever the
+organization default happens to be, because a default is not a statement.
+
+**Every commit message carries an authorship trailer, and publishing the repository publishes those.**
+119 of `sdwa5-3d`'s 158 commit messages carried an authorship trailer and a session link,
+URL, 16 distinct ones. Those URLs open only for the account that owns them, so what becomes public is
+the fact that the work was AI-assisted together with 16 opaque identifiers. That is a disclosure rather
+than a risk, and it is the one item on this page that nobody has decided. It is also permanent once the
+repository is public, which is why it belongs here rather than in a backlog.
 
 ## The licence, which is a separate decision
 
@@ -271,6 +309,11 @@ The Vaultwarden posture is thinned to one sentence. The Minecraft pseudonyms sta
 sensitivity and all-or-nothing. The licence is MIT plus CC BY-SA 4.0. The third-party gear figures are
 cleared by their owners.
 
+**Two more decisions were taken on 2026-09-14, and one item is still open.** The full name in
+`sdwa5-3d/TODO.md` stays, and PSL's inventory is no longer inferred from what they bring. Both are
+written up above. What is open is the commit-message authorship trailers, under "What changes at the
+flip".
+
 **The 2026-09-12 rewrite was checked on 2026-09-13 and did not hold.** What that pass actually achieved
 was the file contents of two repositories. What it missed is listed under "Personal data of named
 people" above, and the short version is a bare surname, every commit message, and a third repository
@@ -282,11 +325,31 @@ has no firewall, and a legal self-assessment of the live shop that is better kep
 with `--replace-text` and `--replace-message` together, which is the pair the earlier passes did not
 use. Each repository kept its commit count and its `HEAD` tree, except `sdwa5-vps`, whose tree changes
 because one file is deliberately removed from it. `Mühlenstraße 24` and `Stefan Ripper` are kept,
-because the Impressum publishes both by law. **`sepp` is kept as well**, decided on 2026-09-13: it is a
+because the Impressum publishes both by law. **`sepp` is kept as well**, decided on 2026-09-13. It is a
 nickname rather than a name, it is an owner key throughout `sdwa5-3d`, and what created the exposure
 was the mailbox table mapping it to a board role, which is what came out instead.
+
+**That reasoning covered the bare nickname, and the full name is there too.** `sdwa5-3d/TODO.md` names
+the owner of the second van in full, in the working tree and in 78 of that repository's 158 commits,
+introduced in 0.72.2 and never in a commit message. It surfaced on 2026-09-14 through a sweep for
+common given names rather than through the redaction patterns, which had no reason to carry it. **Kept,
+decided on 2026-09-14 on the same ground**, namely that it reads as a nickname. Taking it out would
+have cost a fourth rewrite over 78 commits.
+
+**The 2026-09-13 rewrite was verified against the pre-rewrite backup on 2026-09-14.** All 22
+replacement patterns were run over the full history of both the backup and the current repository,
+file contents and commit messages together. The backup answers with 8 patterns matching, one of them
+25 times, which is what proves the test itself works. `sdwa5-3d` as it stands answers with zero in
+contents and zero in messages, across all 158 commits.
 
 **One lesson is worth keeping, because it caught this list twice.** A note that documents a redaction
 tends to quote the thing it redacted, and neither a tree scan of the current checkout nor `gitleaks`
 will ever see it. The check that does is a grep for the removed value across every commit **and** every
 commit message, in every repository at once rather than one at a time.
+
+**A second lesson, from 2026-09-14. An allowlist can exempt tracked files while its own comment says it
+does not.** `sdwa5-3d/.gitleaks.toml` skipped `^\.ddev/` on the stated ground that nothing under that
+path is committed, and four files under it are. Every scan of that repository, in the working tree and
+over the history alike, had been skipping them since the file was written. They turned out to be clean,
+which is luck rather than a result. So a scanner's own configuration is part of what has to be read,
+and the cheap check is to run it once with the allowlist off and compare the two answers.
