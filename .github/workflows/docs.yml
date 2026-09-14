@@ -9,6 +9,14 @@ on:
   # External URLs are checked nightly rather than per push. They fail for
   # reasons that have nothing to do with the commit — rate limits, a site
   # being briefly down — and a check that cries wolf gets ignored.
+  #
+  # **THE TIME BELOW IS A REQUEST AND NOT A PROMISE, AND THE DIFFERENCE IS LARGE ENOUGH TO CONFUSE
+  # SOMEBODY READING THEIR INBOX.** GitHub queues `schedule` events and runs them when capacity
+  # allows, so a nightly job arrives at an hour nobody asked for and is dropped entirely under load.
+  # Measured on run 34830869821: requested 04:23 UTC, started 09:59 UTC, which is 5 h 36 m late. That
+  # is normal for this trigger and there is no setting that tightens it. So a failure mail from this
+  # workflow carries no information about the time of day it names, and a missing night is not
+  # evidence that anything broke.
   schedule:
     - cron: '23 4 * * *'
 
@@ -78,7 +86,12 @@ jobs:
               echo "::notice::$dir is checked out, links into it will be validated"
             else
               echo "::warning::$dir could not be cloned, so links into it are SKIPPED rather than checked. Add a SIBLING_REPOS_TOKEN secret with read access, or make the repository public."
-              skip="$skip --exclude $dir/"
+              # **NO TRAILING SLASH, BECAUSE `--exclude` IS A REGULAR EXPRESSION AND NOT A PATH PREFIX.**
+              # `README.md` and `CHANGELOG.md` link to the sibling *directories* themselves, as
+              # `[`sdwa5-3d`](sdwa5-3d)`, so the URI lychee resolves ends at the directory name with no
+              # slash after it. `sdwa5-3d/` therefore matched `sdwa5-3d/docs/caddy.md` and missed the bare
+              # link, which is what made `links-external` red on run 34830869821. `sdwa5-3d` matches both.
+              skip="$skip --exclude $dir"
             fi
           done
           echo "skip=$skip" >> "$GITHUB_OUTPUT"
@@ -111,7 +124,7 @@ jobs:
           args: >-
             --include-fragments
             --config lychee.toml
-            --exclude sdwa5-vps/ --exclude sdwa5-3d/
+            --exclude sdwa5-vps --exclude sdwa5-3d
             './*.md' './docs/**/*.md'
           fail: true
 
