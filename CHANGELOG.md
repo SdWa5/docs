@@ -6,6 +6,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.11.0] - 2026-09-14
+
+### Added
+
+- **[`docs/statuten.md`](docs/statuten.md)**, the full statutes as a Markdown reading copy, converted
+  from `Vereinsstatuten.docx` and checked page by page against the stamped scan. The authoritative
+  version stays the stamped scan; the file says so. `docs/organization.md` links to it.
+
+### Fixed
+
+- **Paragraph citations of the statutes were one paragraph too high, in this repository's plan
+  documents and in two letters drafted for the Vereinsbehörde.** Word carries the numbering as
+  automatic list numbering, so the text holds none of it, and the first reconstruction put the
+  Vorstand at § 11. It is **§ 10**. Corrected: the Vorstand's meeting rules are § 10 Abs. 4 to 6 and
+  not § 11, the signature rule is **§ 12 Abs. 2** and not § 11 Abs. 2, and the clause giving the
+  Vorstand the last word over the Generalversammlung is **§ 8 Abs. 8** and not Abs. 9. Verified
+  twice, against § 7 of the statutes, which states their own structure, and against all seven pages
+  of the stamped scan.
+
+### Notes
+
+- **The filed statutes carry the same off-by-one in three of their own cross-references.** § 8
+  Abs. 2 lit. d and lit. e cite "§ 11 Abs. 2" and § 13 Abs. 3 cites "§ 11 Abs. 8 bis 10"; all three
+  mean the Vorstand at § 10, and § 11 has no such clauses. The template they were adapted from
+  evidently had the Vorstand one paragraph further down. Together with the unfilled template line in
+  § 1 Abs. 3, the § 8 Abs. 8 clause and a numbering restart in § 15, that is four defects, all listed
+  in `docs/statuten.md` and all belonging in the same future amendment.
+
 ## [0.10.0] - 2026-09-14
 
 ### Changed
