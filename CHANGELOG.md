@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.13.2] - 2026-09-15
+
+### Changed
+
+- **`docs/services.md`: the ERP is no longer only the accounting system.** It now also holds the
+  organization's operational backlog in the Projects module, written in from a gitignored spec by
+  `sdwa5-vps/tools/dolibarr/sync-pm.sh`. The split is stated so it is not re-derived later: the
+  repositories' `TODO.md` files stay technical, and purchases, deadlines, event settlements and
+  Verein administration live in the ERP.
+
 ## [0.13.1] - 2026-09-14
 
 ### Fixed
