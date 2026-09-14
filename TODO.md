@@ -53,17 +53,21 @@
            rewritten again over contents and messages together. See
            [docs/going-public.md](docs/going-public.md)
     2. configure repos as public
-        1. **going public is what unblocks CI, and CI is blocked right now.** Every workflow run in all three repos
-           fails within 2 to 4 seconds with "The job was not started because recent account payments have failed or
-           your spending limit needs to be increased", measured 2026-09-08. No job has executed, including runs that
-           predate this work, so nothing in any of the three pipelines is verified on GitHub. All three repos are
-           **private**, so Actions minutes are metered, and **a public repository gets them free and unlimited**.
-           Needs a billing action in the account first: check Billing & plans
+        1. **the billing block is gone and CI executes again, measured 2026-09-14.** This item used to say that
+           every run in all three repos failed within 2 to 4 seconds with "The job was not started because recent
+           account payments have failed or your spending limit needs to be increased", measured 2026-09-08, and
+           that no job had ever executed. That no longer holds. Runs complete in all three repositories from
+           2026-09-13 onwards, so the pipelines are verified on GitHub for the first time. What going public still
+           buys is the metering itself, because all three repos are **private** and a public repository gets
+           Actions minutes free and unlimited, plus a four-core runner where a private one has two
         2. the consumption is measured and it is `sdwa5-3d` that spends it. One **push** costs about 2 h 15 m, which is
            the `phpunit` job alone on a runner against 23 minutes locally, and `static` now adds to that. One
            **nightly** costs about 548 minutes, because `full` runs 6 h 1 m and is then killed at GitHub's 6-hour job
            ceiling. Three consecutive nightlies were cancelled that way, 5 to 7 September, so roughly 1 644 minutes
-           bought nothing. Filed for that repo as well
+           bought nothing. Filed for that repo as well. **The first executed push confirms the figure and the core
+           count is why**: on run `34759228276`, 2026-09-13, `phpunit` was cancelled at its own 90-minute timeout
+           after 90 m 16 s, on a commit that already carried the parallel `ShippedScenesTest` and the JIT. See
+           `TOOL-20` in [sdwa5-3d/TODO.md](sdwa5-3d/TODO.md)
         3. until they are public, the cross-repo half of the link check cannot run in CI. `sdwa5-vps` and `sdwa5-3d` are
            gitignored sibling directories rather than submodules, so CI clones them separately, and a private clone
            needs a `SIBLING_REPOS_TOKEN` secret with read access. Without it the job stays green and warns that those
