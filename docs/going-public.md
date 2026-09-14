@@ -242,11 +242,18 @@ changelog entry then reproduced both statements while describing their removal, 
 about their page, in the very file this section was written about. Finished in `sdwa5-3d` 0.117.1, and
 re-measured across the whole working tree rather than across the files that were edited.
 
-**What is corrected is the working tree, and the history is a separate decision that is still open.**
-Both statements stand in 28 of `sdwa5-3d`'s 160 commits and one of them in a single commit message,
-measured 2026-09-14. Nothing is exposed while the repository is private, so this is the same ordering
-argument the email address made. Either a fourth rewrite runs before the flip, or this section says
-plainly that the history keeps them. It cannot be left to the flip to decide.
+**Correcting the working tree was not the end of it, and the history was rewritten on 2026-09-15.**
+Both statements stood in 28 of `sdwa5-3d`'s 162 commits and one of them in two commit messages, so
+publishing the repository would have published them whatever the tree said. That is the same ordering
+argument the email address made, and the answer was the same. `git-filter-repo` ran over file contents
+and commit messages together, with 13 replacements, on `sdwa5-3d` and on this repository.
+
+**The content is provably untouched in both.** The commit counts are 162 and 61 before and after, and
+the tree at `HEAD` is `d440b3e8` and `37d1beed` before and after, so only commit objects changed. Both
+were **republished rather than force-pushed**, by renaming the repository, creating it empty, pushing,
+confirming the tip and then deleting the old one, which is what leaves no object cache behind.
+Verified afterwards in both: seven probe phrases return zero matches over every blob and every commit
+message, a pre-rewrite SHA answers `not our ref`, and a control fetch of `main` succeeds.
 
 **Minecraft player names and UUIDs**, in `sdwa5-vps` in `minecraft-data/ops.json`,
 `minecraft-data/whitelist.json` and the `OPS` and `WHITELIST` environment variables in

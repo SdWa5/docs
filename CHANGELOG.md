@@ -6,6 +6,31 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.13.3] - 2026-09-15
+
+### Security
+
+- **The fourth history rewrite ran, so the PSL decision is real rather than cosmetic.** 0.13.1 narrowed
+  the claim on `docs/going-public.md` to the working tree and left the history as an open decision.
+  Both statements stood in 28 of `sdwa5-3d`'s 162 commits, in two of its commit messages and in two
+  commits of this repository, so publishing either repository would have published them whatever the
+  tree said. `git-filter-repo` ran over file contents and commit messages together, with 13
+  replacements.
+- **The content is provably untouched in both.** The commit counts are 162 and 61 before and after,
+  and the tree at `HEAD` is `d440b3e8` and `37d1beed` before and after, so only commit objects changed.
+- **Both were republished rather than force-pushed**, by renaming the repository, creating it empty,
+  pushing, confirming the tip and then deleting the old one. A force-push leaves the pre-rewrite
+  commits reachable by SHA in GitHub's cache; recreating leaves no cache. Verified in both afterwards:
+  seven probe phrases return zero matches over every blob and every message, a pre-rewrite SHA answers
+  `not our ref`, and a control fetch of `main` succeeds.
+- **`sdwa5-vps` was deliberately not touched**, because another session was working in it at the time.
+  It carries none of the affected text, measured the same day over all 141 of its commits.
+
+### Changed
+
+- `TODO.md` records the rewrite under "configure repos as public". The one item still open before the
+  flip is the authorship trailers in 119 of `sdwa5-3d`'s commit messages.
+
 ## [0.13.2] - 2026-09-15
 
 ### Changed
