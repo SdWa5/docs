@@ -61,11 +61,12 @@
            out of it and three are fixed in `sdwa5-3d` 0.117.0, namely a `gitleaks` allowlist that exempted four
            tracked files, three links to the deleted personal account, and an inference about what PSL own. The
            full name in that repo's `TODO.md` is decided and stays. **Two things are open and both have to be
-           settled before the flip rather than by it.** The authorship trailers in 119 of its commit messages go
-           public with the repository and cannot be taken back afterwards. And the two PSL statements that
-           0.117.0 and 0.117.1 removed from the working tree still stand in **28 of its 160 commits** and one
-           commit message, so either a fourth rewrite runs first or the decision is to keep them. See
-           [docs/going-public.md](docs/going-public.md)
+           settled before the flip rather than by it, and one of the two is done.** The two PSL statements that
+           0.117.0 and 0.117.1 removed from the working tree also stood in 28 of its commits, and **the history
+           of both repositories was rewritten on 2026-09-15**, with the commit counts and the `HEAD` trees
+           unchanged and both repositories republished rather than force-pushed. **What is still open is the
+           authorship trailers in 119 of its commit messages**, which go public with the repository and cannot
+           be taken back afterwards. See [docs/going-public.md](docs/going-public.md)
         2. **the billing block is gone and CI executes again, measured 2026-09-14.** This item used to say that
            every run in all three repos failed within 2 to 4 seconds with "The job was not started because recent
            account payments have failed or your spending limit needs to be increased", measured 2026-09-08, and
