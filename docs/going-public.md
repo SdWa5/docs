@@ -228,13 +228,25 @@ rather than one document.
 **PSL are the exception, and one inference has been taken out.** They are Pro Sound & Light, a rental
 company, and this page had them down only as the source of published datasheets, which needs no
 decision. `rosters/psl-next-event.yaml` went past that. It turned a statement about what they are
-bringing to one event into a floor on what they own,
-and `docs/requests.md` restated it. A published package is not an inventory, which that file argued
-itself, and neither is a load-out. Nobody asked PSL, and what a company owns is commercially theirs.
-So the counts stay as what is coming to an event, the inference is gone, and the open question of
-asking them outright stays in `docs/requests.md`. Done in `sdwa5-3d` 0.117.0. A note in the same file
-calling their published page self-contradictory now reads as a sourcing decision instead, with every
-technical fact in it unchanged.
+bringing to one event into a floor on what they own, and `docs/requests.md` restated it. A published
+package is not an inventory, which that file argued itself, and neither is a load-out. Nobody asked
+PSL, and what a company owns is commercially theirs. So the counts stay as what is coming to an event,
+the inference comes out, and the open question of asking them outright stays in `docs/requests.md`. A
+second note characterising their published page rather than citing it is now a sourcing decision, with
+every technical fact in it unchanged.
+
+**The first pass at that was incomplete, and it failed in the way this page already has a lesson
+about.** `sdwa5-3d` 0.117.0 cleaned the two files it named and did not search again afterwards. Its own
+changelog entry then reproduced both statements while describing their removal, that repository's
+0.109.0 entry still asserted outright what PSL own, and `docs/sources.md` still carried the verdict
+about their page, in the very file this section was written about. Finished in `sdwa5-3d` 0.117.1, and
+re-measured across the whole working tree rather than across the files that were edited.
+
+**What is corrected is the working tree, and the history is a separate decision that is still open.**
+Both statements stand in 28 of `sdwa5-3d`'s 160 commits and one of them in a single commit message,
+measured 2026-09-14. Nothing is exposed while the repository is private, so this is the same ordering
+argument the email address made. Either a fourth rewrite runs before the flip, or this section says
+plainly that the history keeps them. It cannot be left to the flip to decide.
 
 **Minecraft player names and UUIDs**, in `sdwa5-vps` in `minecraft-data/ops.json`,
 `minecraft-data/whitelist.json` and the `OPS` and `WHITELIST` environment variables in
