@@ -81,7 +81,10 @@ is unavailable, Stellvertreter act in his place.
 | 2 | see ZVR register |
 
 Note: statutes § 13 say Rechnungsprüfer must not belong to an organ whose
-activity they audit — both are Vorstand members. Unresolved conflict.
+activity they audit, and both hold Vorstand roles. Unresolved conflict, and it
+belongs in the same amendment as the four defects recorded in
+[statuten.md](statuten.md). Stated by role rather than against a person,
+decided 2026-09-15: the defect is the association's, not any individual's.
 
 ## Bank / payments
 
