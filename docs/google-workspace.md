@@ -16,9 +16,16 @@ User management via the standard admin console (https://admin.google.com).
 
 | User            | Address            | Notes                                                        |
 |-----------------|--------------------|--------------------------------------------------------------|
-| Stefan Ripper   | `ripper@sdwa5.org` | Super Admin; SMTP auth for Shopware (App Password) — see [`sdwa5-vps/docs/shopware/shop-config.md`](../sdwa5-vps/docs/shopware/shop-config.md#smtp); Caddy Let's Encrypt contact — see [`sdwa5-vps/docs/caddy.md`](../sdwa5-vps/docs/caddy.md); owns `restic-backups` Drive folder |
+| Stefan Ripper   | `ripper@sdwa5.org` | Super Admin |
 | board member    | `sepp@sdwa5.org`   |                                                              |
 | board member    | (second mailbox)   | Local-part withheld, see below                               |
+
+**Which mailbox carries which service credential is not written down here**, decided 2026-09-15. This
+row used to say in one sentence that one account holds the Shopware SMTP App Password, is the Caddy
+Let's Encrypt contact, and owns the `restic-backups` Drive folder. None of those credentials is in any
+repository, but the sentence told a reader exactly which mailbox to go after to take mail, certificates
+and backups together. That each of the three exists is documented where it is used; which account it is
+lives in the password manager.
 
 The third user's local-part is the first syllable of a surname this repository otherwise does not
 publish, so writing it here would republish by the back door what
