@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.16.0] - 2026-09-15
+
+### Added
+
+- **`docs/services.md` records that the VPS now hosts a site for someone else.** The artist website
+  Chimo Diazz gets `chimodiazz.sdwa5.org`, and the section says plainly that this is a favour rather
+  than an SdWa5 service, that the association's Impressum ends up attached to content it does not
+  write, and who owns which half of the work. The technical side lives in
+  [`sdwa5-vps/docs/chimodiazz.md`](sdwa5-vps/docs/chimodiazz.md).
+
 ## [0.15.0] - 2026-09-15
 
 ### Security

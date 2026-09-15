@@ -54,6 +54,28 @@ Events, Music/Mixes, Gallery, legal pages).
 
 Technical/ops detail: [`sdwa5-vps/docs/shopware/README.md`](../sdwa5-vps/docs/shopware/README.md)
 
+## Chimo Diazz (hosted for a third party)
+
+Artist website for the DJ Chimo Diazz at https://chimodiazz.sdwa5.org, built on Shopware 6 used as a
+CMS rather than as a shop. **This is not an SdWa5 service.** It is a favour: the site is developed by
+its own author in the private repository `chimodiazz/website`, and SdWa5 provides the subdomain, the
+VPS and the operations.
+
+That arrangement is worth naming rather than leaving implicit, because it puts someone else's site on
+the association's domain, its host and its Let's Encrypt contact address. Three consequences follow
+from it.
+
+- Anything the site publishes is published under `sdwa5.org`, so the association's Impressum and its
+  reputation are attached to content it does not write.
+- The host is shared. A second Shopware instance is the largest thing this VPS would then run twice,
+  and a fault in it competes for memory with the shop and the ERP.
+- The split of duties is deliberate and should stay written down. SdWa5 owns the VPS, DNS, TLS,
+  Docker and the Shopware installation. The author owns theme, content, forms, blog, SEO and plugins.
+
+As of 2026-09-15 the subdomain serves a static placeholder and no container runs.
+
+Technical/ops detail: [`sdwa5-vps/docs/chimodiazz.md`](../sdwa5-vps/docs/chimodiazz.md)
+
 ## Google Workspace / Drive
 
 Mail, users, groups and central file storage (Shared Drive "SdWa5") for the
