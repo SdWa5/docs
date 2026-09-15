@@ -4,3 +4,9 @@
 # PhpStorm scope definitions, which named an unrelated employer's directory layout
 # and matched nothing in this repository. Removed from the history on 2026-09-15.
 /.idea/scopes
+
+# Claude Code project settings. Deliberately not committed: the file's whole job
+# is to switch off the authorship attribution that the 2026-09-15 rewrite removed
+# from every commit message, so committing it would disclose exactly what that
+# removed. sdwa5-3d has ignored this path since it was created.
+/.claude/
