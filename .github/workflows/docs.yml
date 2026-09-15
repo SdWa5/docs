@@ -4,8 +4,12 @@ name: Docs
 # must never publish is a secret, so those are the two things CI checks.
 on:
   push:
-  pull_request:
   workflow_dispatch:
+  # **NO `pull_request` TRIGGER, WHICH MATTERS ONCE THIS REPOSITORY IS PUBLIC.** A public repository
+  # lets anyone open a pull request, and a fork's pull request would then spend runner time on
+  # attacker-supplied Markdown. No step here interpolates `github.event.*` into a shell argument, so
+  # there is no injection sink, but free compute for strangers buys this repository nothing. The same
+  # rule holds in sdwa5-3d and sdwa5-vps.
   # External URLs are checked nightly rather than per push. They fail for
   # reasons that have nothing to do with the commit — rate limits, a site
   # being briefly down — and a check that cries wolf gets ignored.

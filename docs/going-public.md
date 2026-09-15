@@ -287,27 +287,89 @@ No step in the file reads `secrets`, so there is nothing for a workflow to hand 
 2026-09-14 it also declares `permissions: contents: read` rather than inheriting whatever the
 organization default happens to be, because a default is not a statement.
 
-**Most commit messages carry an authorship trailer, and publishing a repository publishes those.**
-Measured 2026-09-15, and this is not a question about one repository. All three carry them.
+**Every commit message used to carry an authorship trailer, and they are gone.**
 
-| Repository | Commits | Attribution lines | Session links | Distinct session ids |
-|---|---:|---:|---:|---:|
-| `sdwa5-3d` | 164 | 122 | 122 | 18 |
-| `sdwa5-vps` | 143 | 69 | 61 | 18 |
-| `sdwa5` | 65 | 33 | 27 | 13 |
+**DECIDED 2026-09-15, and this reverses a decision taken the same day.** The first answer was to keep
+them, on the reasoning that the attribution was the honest record of how the work was made and that a
+fifth rewrite across three repositories was not worth it. The owner decided otherwise, and the deciding
+argument is ordering rather than sensitivity: a trailer is permanent in every public clone the moment a
+repository is published, so it is cheap to remove now and impossible to remove later.
 
-**The session URLs disclose nothing beyond their own existence.** Fetched without a session cookie one
-answers HTTP 403, so it is an opaque identifier rather than a readable transcript. What becomes public
-is that the work was AI-assisted, and how many sittings it took. Nothing of it is in file contents; the
-only match in any working tree is this paragraph.
+What it amounted to, measured before removal on 2026-09-15. Of the three repositories' 376 commits,
+**225 carried an attribution line and 211 carried a session link**, naming 31 distinct sittings. Only
+two wordings ever occurred, and **no attribution line ever named a human**, so removing them took a
+credit from nobody. The session links were opaque in any case, since fetching one without a session
+cookie answers HTTP 403.
 
-**DECIDED 2026-09-15, and the decision is to keep both trailers, in all three repositories.**
-The attribution was an ordinary trailer and the honest answer to how this work was made,
-and a set of repositories that has just been through four rewrites to make its own record true is the
-wrong place to understate authorship. Against that stood a fifth rewrite across three repositories,
-three more republish cycles, and the risk each one carries, which the 2026-09-15 pass demonstrated by
-rewriting another session's in-flight branch along the way. The trailers are permanent in every public
-clone once the flip happens, which is why this was settled before it rather than after.
+Removed from the working trees and from every commit message on 2026-09-15, in the same pass that
+carried the other findings of that day's audit, and the setting that produced them is switched off for
+this project so nothing new arrives.
+
+## What the 2026-09-15 audit found in the other two repositories
+
+`sdwa5-3d` was audited in depth on 2026-09-14. The same four passes were run over this repository and
+over `sdwa5-vps` on 2026-09-15: credentials three ways, the redaction patterns against the pre-rewrite
+backups as a control, a pattern-free sweep for personal and infrastructure data, and the mechanics of
+publication.
+
+**A correction to the method first, because it invalidates an earlier claim.** The runs described as
+"without the allowlist" were not. `gitleaks` reads a `.gitleaks.toml` found in the scan target even
+when `--config` is not given, and the `git archive` export carried one. Every such run was repeated
+with an explicitly empty configuration. That is also what turned the `sdwa5-vps` result from clean to
+not clean.
+
+**Credentials.** This repository and `sdwa5-3d` are clean in tree and history, with the repository
+configuration, with the default rules, and with no allowlist at all. `sdwa5-vps` yields twelve findings
+once its allowlist is off. Ten are the `SwagPlatformSecurity` hash manifest and are digests rather than
+secrets. **Two are real**, both in `minecraft-data/server.properties` in the commit that imported the
+Minecraft data directory. Both are machine-generated, both were rotated on 2026-09-08, and one of them
+is regenerated on every container start, so they were dead before they were found. They are removed
+from that repository's history rather than left to be published. A pattern-free sweep over every blob
+in both repositories found no key material, no cloud token, no JWT, no IBAN and no telephone number.
+
+**The redaction of 2026-09-13 held here and did not hold in `sdwa5-vps`.** Against the pre-rewrite
+backup this repository's patterns hit seventeen times and hit zero times today. `sdwa5-vps` hit ten
+times in the backup and **still hit three times today**, because names came back into that repository
+after the rewrite rather than surviving it.
+
+**That is the finding of the day.** The ERP address rollout added on 2026-09-14 pinned three ERP record
+ids to the surnames those ids must carry, as a guard against writing to the wrong record, and its tests
+carried the same names as fixtures. Alongside it the changelog retold the ERP member list, naming five
+further people, three of them deactivated former members and one an external third party, together with
+that third party's own postal address. None of the six holds an office and nothing on this page ever
+covered them. All are out of the working tree in `sdwa5-vps` 1.39.0, the record list moved to a
+gitignored file beside the script, and the names are out of the history in the same pass.
+
+**A scanner blind spot of the opposite shape.** `sdwa5-3d` allowlisted a path that contained tracked
+files. `sdwa5-vps` allowlisted a path whose files are tracked on purpose, which stopped gitleaks reading
+them at all. Both are the same mistake seen from two sides, and the second is now scoped to the rule
+instead of to the path. Measured with a planted key: eleven findings with no allowlist, one with the
+new one, which is the planted key.
+
+**Four things were decided rather than fixed**, all on 2026-09-15.
+
+* **The Vaultwarden posture in [`services.md`](services.md) is down to one line.** The thinning of
+  2026-09-12 removed the per-account figures and left the conclusions, and a reachable host read next
+  to a named owner, a count of weaker accounts and a stated single point of failure is a targeting
+  statement whatever the figures say.
+* **[`google-workspace.md`](google-workspace.md) no longer says which mailbox carries which service
+  credential.** One row named an account and, in the same sentence, made it the Shopware SMTP holder,
+  the Let's Encrypt contact and the owner of the backup folder. No credential was ever in a repository;
+  the sentence was the map to all three.
+* **The four defects in the filed statutes and the Rechnungsprüfer conflict are published.** An
+  association that names its own defects and fixes them stands better than one where somebody else
+  finds them, and the statutes are filed with the authority in any case. The governance conflict is now
+  stated by role rather than against a person, because the defect belongs to the association.
+* **The two board names stay deferred to the ZVR register, with their roles and dates.** The point of
+  deferring was that this repository should not be the publisher, not that the names become unfindable.
+  The register is the source and remains it, and the ZVR number is in the shop's Impressum by law.
+  Recorded here so the question does not come up a third time.
+
+**What was left alone, deliberately.** The Minecraft pseudonyms and their UUIDs, already decided. The
+firewall rules, open ports and SSH key fingerprints in `sdwa5-vps`, which are the stated intent of the
+no-obscurity guideline, though two sentences in `ssh-hardening.md` are worth a re-read before the flip,
+namely that the deploy key has no passphrase and that a superseded private key is still on disk. And
+`minecraft-data/`, which fell under neither licence clause and now has one.
 
 ## The licence, which is a separate decision
 
