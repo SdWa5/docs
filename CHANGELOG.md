@@ -6,6 +6,32 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.15.0] - 2026-09-15
+
+### Security
+
+- **The fifth history rewrite ran, over all three repositories.** The authorship trailers came out of
+  every commit message, `.idea/scopes` out of every commit of this repository, and in `sdwa5-vps` two
+  real secrets and six people's names out of theirs. One `git-filter-repo` run each, messages and
+  contents together.
+- **The trailers came out through a message callback rather than a text replacement**, because a
+  replacement only empties the text and leaves the blank line behind. The callback drops whole lines
+  and trims what they leave, and it is scoped to Claude and Anthropic so an attribution line naming a
+  human would survive. There was none.
+- **The content is provably untouched in all three.** Commit counts are 71, 166 and 147 before and
+  after, and the trees at `HEAD` are `d95e57c5`, `c586aec3` and `2f562d25` before and after, so only
+  commit objects changed. The working trees had been corrected by ordinary commits first, precisely so
+  that this invariant could hold while content was still leaving the history.
+- **All three were republished rather than force-pushed.** Verified afterwards: every probe term
+  returns zero over every blob and every commit message, the two removed paths appear in no commit, a
+  pre-rewrite SHA answers `not our ref`, and a control fetch of `main` succeeds. `sdwa5-vps` is 184
+  tests green with shellcheck clean and this repository's link check reports no errors.
+
+### Changed
+
+- `docs/going-public.md` records how the pass was run and what proves it, and `TODO.md` carries the
+  result of the audit of the two repositories that had not had one.
+
 ## [0.14.1] - 2026-09-15
 
 ### Changed
