@@ -62,7 +62,7 @@ shop@sdwa5.org
 
 Two licences, because this repository is part tooling and part writing.
 
-- **MIT** ([LICENSE](LICENSE)) for the code and configuration: `.github/`, `lychee.toml`, `.gitleaks.toml` and `composer.json`.
+- **MIT** ([LICENSE](LICENSE)) for the code and configuration: `.github/`, `.idea/`, `lychee.toml`, `.gitleaks.toml` and `composer.json`.
 - **CC BY-SA 4.0** ([LICENSE-docs](LICENSE-docs)) for the prose and data: `docs/`, `README.md`, `CHANGELOG.md` and `TODO.md`.
 
 Attribute as "Musikverein Schmeiß die Wand an 5 (SdWa5)" with a link to the repository. Share-alike applies to the prose, so a

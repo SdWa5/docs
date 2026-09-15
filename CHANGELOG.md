@@ -6,6 +6,54 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.14.0] - 2026-09-15
+
+### Security
+
+- **The authorship trailers are being removed, which reverses a decision taken the same day.** The
+  first answer was to keep them. The owner decided otherwise, and the deciding argument is ordering:
+  a trailer is permanent in every public clone the moment a repository is published, so it is cheap
+  to remove now and impossible to remove later. Measured before removal: of the three repositories'
+  376 commits, 225 carried an attribution line and 211 a session link, naming 31 distinct sittings,
+  and no attribution line ever named a human.
+- **`.idea/scopes` named an unrelated employer and is untracked.** Two PhpStorm scope definitions
+  pointed at `htdocs/…` paths that do not exist in this repository, and the file sat in 66 of 67
+  commits. That association is exactly what two history rewrites and a repository move were run to
+  remove from the commit headers, and it survived in a tracked file where no scanner would ever flag
+  it, because a company name is not a credential. The file held nothing else, so it goes rather than
+  gets edited, and the history goes with it.
+- **`pull_request` is no longer a trigger.** A fork's pull request would spend runner time on
+  attacker-supplied Markdown. No step interpolates `github.event.*` into a shell argument, so there
+  was no injection sink, but free compute for strangers buys this repository nothing.
+- **The Vaultwarden posture in `docs/services.md` is down to one line.** The thinning of 2026-09-12
+  removed the per-account figures and left the conclusions standing. A reachable host read next to a
+  named owner, a count of weaker accounts and a stated single point of failure is a targeting
+  statement whatever the figures say.
+- **`docs/google-workspace.md` no longer says which mailbox carries which service credential.** One
+  row made a single account the Shopware SMTP holder, the Let's Encrypt contact and the owner of the
+  backup folder, in one sentence. No credential was ever in a repository; the sentence was the map.
+
+### Changed
+
+- **The Rechnungsprüfer conflict is stated by role rather than against a person.** The defect belongs
+  to the association, and it belongs in the same amendment as the four defects in the statutes. Both
+  stay published, because an association that names its own defects and fixes them stands better than
+  one where somebody else finds them.
+- **The two deferred board names keep their roles and dates, decided rather than defaulted.** The
+  point of deferring was that this repository should not be the publisher, not that the names become
+  unfindable, and the ZVR number is in the shop's Impressum by law. Recorded so the question does not
+  come up a third time.
+- **`.idea/` is named in the licence split.** It was 15 of the 30 tracked files and fell under
+  neither clause, while `LICENSE-docs` delegates its own scope back to the README.
+
+### Added
+
+- **`docs/going-public.md` carries the 2026-09-15 audit of this repository and of `sdwa5-vps`**, the
+  same four passes `sdwa5-3d` had. It opens with a correction to the method, because the earlier runs
+  described as "without the allowlist" were not: gitleaks reads a `.gitleaks.toml` found in the scan
+  target even without `--config`, and the export carried one. Repeating them properly is what turned
+  the `sdwa5-vps` result from clean to not clean.
+
 ## [0.13.4] - 2026-09-15
 
 ### Changed
@@ -18,7 +66,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **The session URLs were checked rather than assumed.** Fetched without a session cookie one answers
   HTTP 403, so it is an opaque identifier and not a readable transcript. What publication discloses is
   that the work was AI-assisted and how many sittings it took, and none of it is in file contents.
-- **Kept, because the attribution is the honest answer to how this work was made**, and a set of
+- **Kept, because the attribution was the honest answer to how this work was made**, and a set of
   repositories that has just been through four rewrites to make its own record true is the wrong place
   to understate authorship. The alternative was a fifth rewrite across three repositories and three
   more republish cycles, each carrying the risk the 2026-09-15 pass demonstrated when it rewrote

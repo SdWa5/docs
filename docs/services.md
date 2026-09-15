@@ -30,21 +30,15 @@ Technical/ops detail: [`sdwa5-vps/docs/dolibarr.md`](../sdwa5-vps/docs/dolibarr.
 Self-hosted Bitwarden-compatible password manager for org credentials.
 Instance: https://vault.sdwa5.org
 
-Users, measured 2026-09-08: four accounts, not one.
+Some accounts are on PBKDF2 rather than Argon2id, and only an account holder can change their own KDF,
+so that is a message to them rather than an action here. Emergency access is being set up. Both are
+tracked in [`sdwa5-vps/TODO.md`](../sdwa5-vps/TODO.md).
 
-| Account | Org role |
-|---|---|
-| Stefan | Owner |
-| second account | User |
-| third account | not a member |
-| fourth account | invited, never accepted |
-
-**Three of the four are on PBKDF2 rather than Argon2id.** Only an account holder can change their own
-KDF, so that is a message to them rather than an action here.
-
-**The organization has a single Owner**, so until a Takeover grantee is confirmed, losing that account
-loses the organization's data. Emergency access is being set up with a new member, as of 2026-09-08.
-Tracked in [`sdwa5-vps/TODO.md`](../sdwa5-vps/TODO.md).
+**The account table and the recovery posture came out on 2026-09-15**, decided with the rest of that
+day's audit. The thinning of 2026-09-12 had taken the per-account figures out and left the conclusions
+standing, and a reachable host read next to a named owner, a count of weaker accounts and a stated
+single point of failure is a targeting statement whatever the figures say. What is left is the part
+somebody has to act on.
 
 The two accounts that have never been used are **kept deliberately**, decided 2026-09-08. Neither
 holds anything, so the exposure is a login rather than anything readable, and deleting an account
