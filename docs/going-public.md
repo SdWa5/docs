@@ -303,7 +303,32 @@ cookie answers HTTP 403.
 
 Removed from the working trees and from every commit message on 2026-09-15, in the same pass that
 carried the other findings of that day's audit, and the setting that produced them is switched off for
-this project so nothing new arrives.
+this project so nothing new arrives. That setting is deliberately **not** committed: its whole job is
+to hide the attribution, so a tracked copy of it would disclose exactly what the rewrite removed.
+
+**How the pass was run and what proves it.** One `git-filter-repo` run per repository, over commit
+messages and file contents together. The trailers came out through a message callback rather than a
+text replacement, because a replacement only empties the text and leaves the blank line behind; the
+callback drops whole lines and then trims what they leave. It is scoped to Claude and Anthropic on
+purpose, so that an attribution line naming a **human** would survive. Measured beforehand: there was
+none.
+
+| Repository | Commits before and after | Tree at `HEAD` before and after |
+|---|---:|---|
+| `sdwa5` | 71 | `d95e57c5` |
+| `sdwa5-3d` | 166 | `c586aec3` |
+| `sdwa5-vps` | 147 | `2f562d25` |
+
+Equal commit counts and an unchanged tree hash together say that only commit objects changed. The
+working trees had been corrected by ordinary commits first, precisely so that this invariant could
+hold while content was still being removed from the history.
+
+All three were **republished rather than force-pushed**, by renaming the repository, creating it
+empty, pushing, confirming the tip and then deleting the old one, which is what leaves no pre-rewrite
+objects in GitHub's cache. Verified afterwards in all three: every probe term returns zero over every
+blob and every commit message, the two removed paths appear in no commit at all, a pre-rewrite SHA
+answers `not our ref`, and a control fetch of `main` succeeds. `sdwa5-vps`'s own suite is 184 tests
+green with shellcheck clean, and this repository's link check reports no errors.
 
 ## What the 2026-09-15 audit found in the other two repositories
 

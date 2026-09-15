@@ -65,6 +65,14 @@
            commit counts and the `HEAD` trees unchanged and both republished rather than force-pushed. **The
            authorship trailers stay**, decided 2026-09-15 for all three repositories. See
            [docs/going-public.md](docs/going-public.md). **Nothing blocks the flip.**
+        2. **`sdwa5` and `sdwa5-vps` were audited to the same depth on 2026-09-15, and all three histories
+           were rewritten.** `sdwa5` came back clean on every pass. `sdwa5-vps` did not: two real secrets sat
+           in a commit that its own `gitleaks` allowlist was hiding, and the ERP address rollout added on
+           2026-09-14 had put a board member's name into test fixtures and a script while the changelog
+           retold the ERP member list by name, five further people among them. All of it is out of the
+           working trees and out of the histories. The authorship trailers went in the same pass, 225
+           attribution lines and 211 session links across 376 commits. Commit counts and `HEAD` trees are
+           unchanged in all three and every repository was republished rather than force-pushed
         2. **the billing block is gone and CI executes again, measured 2026-09-14.** This item used to say that
            every run in all three repos failed within 2 to 4 seconds with "The job was not started because recent
            account payments have failed or your spending limit needs to be increased", measured 2026-09-08, and
