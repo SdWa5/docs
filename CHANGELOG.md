@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.17.0] - 2026-09-16
+
+### Added
+
+- **[docs/going-public.md](docs/going-public.md) now measures the plugin carve-out instead of
+  assuming it.** The four plugin directories `sdwa5-vps` carries as source declare MIT in their own
+  `composer.json`, so republishing them is permitted. The carve-out's wording stays, because it also
+  has to cover whatever gets vendored next.
+- A note that the same measurement found five further plugins active on the shop that no repository
+  records, and that this belongs in `sdwa5-vps/TODO.md` rather than on a disclosure page.
+
 ## [0.16.0] - 2026-09-15
 
 ### Added

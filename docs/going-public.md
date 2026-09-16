@@ -409,6 +409,17 @@ implied: `sdwa5-vps/shopware-html-data/` is store-installed plugin content under
 terms, and any mesh a `sdwa5-3d` spec reaches through `mesh_override` is third-party CAD, deliberately
 uncommitted, with its provenance recorded in that repository's `docs/sources.md`.
 
+**The first of those carve-outs was measured on 2026-09-16, and it holds.** The four plugin
+directories `sdwa5-vps` carries as source are `FroshLazySizes`, `FroshPlatformFilterSearch`,
+`FroshShopmon` and `SwagPlatformSecurity`, 166 files between them, and each one's own
+`composer.json` declares **MIT**. Publishing them is therefore permitted rather than merely assumed,
+and the carve-out's wording stays as it is because it also has to cover whatever gets vendored next.
+The inventory behind this is `sdwa5-vps/docs/shopware/plugins.md`.
+
+The same measurement found five further plugins active on the shop that no repository records. That
+is a reproducibility gap and not a disclosure one, so it is tracked in `sdwa5-vps/TODO.md` rather
+than on this page.
+
 ## What is left to do
 
 The credential scan is done and gated in CI, and the commit identities were rewritten on 2026-09-08.
