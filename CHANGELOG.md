@@ -6,6 +6,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.19.0] - 2026-09-30
+
+### Changed
+
+- [docs/going-public.md](docs/going-public.md) records the flip. All three repositories went public on
+  2026-09-30, after a last scan of every blob, every commit message and the 37 Actions log archives.
+- It records the identity regression of 2026-09-29 as well. Four `sdwa5-3d` commits carried the business
+  address and were rewritten and republished on 2026-09-30, with the `HEAD` tree unchanged, and an
+  `includeIf` in the global git config now pins the noreply identity for every clone under `sdwa5/`.
+- The `ssh-hardening.md` re-read is done. One sentence stays, and the stale one is fixed in `sdwa5-vps`
+  1.50.1.
+
+### Fixed
+
+- Two places said the authorship trailers stay, although they were removed on 2026-09-15 and none is
+  left in any of the three histories.
+
+### Removed
+
+- The go-public item from `TODO.md`, because it is done. The later items move up by one.
+
 ## [0.18.0] - 2026-09-30
 
 ### Added
