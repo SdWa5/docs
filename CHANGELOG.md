@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.20.0] - 2026-10-01
+
+### Added
+
+- `TODO.md` item 5 plans a mapping engine inspired by Mapshroom and Resolume. Its USPs are a camera video
+  feedback loop and a doubled perspective correction, and it is to be controllable from a browser and a phone.
+
 ## [0.19.0] - 2026-09-30
 
 ### Changed
