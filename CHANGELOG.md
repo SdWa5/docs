@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.18.0] - 2026-09-30
+
+### Added
+
+- `trackdsp` sits next to `sdwa5-vps` and `sdwa5-3d` as a nested repository. It is gitignored,
+  registered as a VCS root in `.idea/vcs.xml` and listed in `README.md` without a link, because it
+  lives outside the SdWa5 organization and CI cannot clone it for the link check.
+
 ## [0.17.0] - 2026-09-16
 
 ### Added
