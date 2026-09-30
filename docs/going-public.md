@@ -1,7 +1,7 @@
 # Going public: what publishing would disclose
 
-The three SdWa5 repositories are private and are meant to become public, tracked in
-[`../TODO.md`](../TODO.md) item 2. Item 2.1.2.1 asks for a scan of the content first. **The
+The three SdWa5 repositories were private and went public on 2026-09-30, which was tracked in
+[`../TODO.md`](../TODO.md) until it was done. That item asked for a scan of the content first. **The
 credential half of that is done and automated.** `gitleaks` runs over the working tree and the full
 history of all three repositories in CI, and all three are clean as of 2026-09-08.
 
@@ -31,6 +31,16 @@ So the private address was published 95 times no matter what any file said, and 
 `Stefan Ripper <7108645+bestcodename@users.noreply.github.com>`, as author and as committer, and
 neither old address appears anywhere. Verified on GitHub as well as locally, and the commits are still
 attributed to the `bestcodename` account, so the contribution graph survived.
+
+**It regressed once, on 2026-09-29, and was rewritten again on 2026-09-30.** Four `sdwa5-3d` commits,
+two releases and their merges, were made in a clone whose git identity fell back to the business
+address, as author and as committer. The desktop clone was not the source, because its config had
+carried the noreply identity since 2026-09-15 and its reflog shows only a fetch of those commits. The
+four were rewritten with `git filter-repo --mailmap`, the tree at `HEAD` stayed identical, and the
+repository was republished rather than force-pushed, so the pre-rewrite head is no longer fetchable. Two
+Actions runs had carried the address in their `head_commit` metadata, and they went with the deleted
+repository. An `includeIf "gitdir:~/PhpstormProjects/sdwa5/"` in the global git config now sets the
+noreply identity for every clone under that directory, so a fresh clone no longer inherits the default.
 
 **The content is provably untouched.** The tree hash at `HEAD` is identical to its pre-rewrite value in
 all three repositories, so only the commit objects changed:
@@ -392,8 +402,11 @@ new one, which is the planted key.
 
 **What was left alone, deliberately.** The Minecraft pseudonyms and their UUIDs, already decided. The
 firewall rules, open ports and SSH key fingerprints in `sdwa5-vps`, which are the stated intent of the
-no-obscurity guideline, though two sentences in `ssh-hardening.md` are worth a re-read before the flip,
-namely that the deploy key has no passphrase and that a superseded private key is still on disk. And
+no-obscurity guideline, though two sentences in `ssh-hardening.md` were worth a re-read before the flip,
+namely that the deploy key has no passphrase and that a superseded private key is still on disk. Both
+were re-read on 2026-09-30. The first stays, because the key is read-only, scoped to one repository and
+never leaves the host. The second was stale, since `/root/.ssh/` holds only the two current deploy
+keys, and `sdwa5-vps` 1.50.1 corrects it. And
 `minecraft-data/`, which fell under neither licence clause and now has one.
 
 ## The licence, which is a separate decision
@@ -432,7 +445,17 @@ repositories in the [SdWa5](https://github.com/SdWa5) organization and the perso
 deleted, which put GitHub's cache of both rewrites' pre-rewrite commits beyond reach, though not yet
 beyond restoring — see the 90-day window above. They are
 [docs](https://github.com/SdWa5/docs), [vps](https://github.com/SdWa5/vps) and
-[3d](https://github.com/SdWa5/3d), and all three are still **private**.
+[3d](https://github.com/SdWa5/3d). **All three went public on 2026-09-30**, `vps` first, then `3d`
+after its identity rewrite and this repository last, each with secret scanning, push protection and
+private vulnerability reporting switched on.
+
+**The last check before the flip, 2026-09-30.** Every blob and every commit message of all four private
+repositories of the owner was scanned without printing values, and the redaction patterns of the
+earlier passes were run again. Nothing matched in the three SdWa5 repositories apart from the four
+commits above. The 37 Actions log archives, which become readable with the repository, were scanned the
+same way with a positive control and came back clean, helped by `gitleaks` running with `--redact`. The
+link to the `SCN-6` routing table in `sdwa5-3d/TODO.md` opens without a login. It stays, because its
+owner decided on 2026-09-30 that the sheet may be publicly readable.
 
 **Every decision on this list is made**, on 2026-09-12. The address stays because the Impressum
 publishes it by law, and the `c/o <name>` prefix went with it. Two board members' names defer to the
@@ -443,8 +466,9 @@ cleared by their owners.
 
 **Three more decisions were taken on 2026-09-14 and 2026-09-15, and nothing on this page is open.**
 The full name in `sdwa5-3d/TODO.md` stays. PSL's inventory is no longer inferred from what they bring,
-in the working trees and in both histories. And the commit-message authorship trailers stay, in all
-three repositories. All three are written up above, with their evidence.
+in the working trees and in both histories. And the commit-message authorship trailers were removed
+from all three repositories, which reversed that day's first answer. All three are written up above,
+with their evidence.
 
 **The 2026-09-12 rewrite was checked on 2026-09-13 and did not hold.** What that pass actually achieved
 was the file contents of two repositories. What it missed is listed under "Personal data of named
