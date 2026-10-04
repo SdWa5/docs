@@ -29,10 +29,9 @@ See [`docs/`](docs/) for:
   technical/ops documentation for all self-hosted services
 - [`sdwa5-3d`](sdwa5-3d) — 3D models of the speakers and stage equipment,
   generated from specs, for Blender event previews and PA setup planning
-- `trackdsp` — editor, command line and PHP library for the PA's t.racks 8x8
-  DSP over USB or LAN. It lives outside the SdWa5 organization and is cloned
-  here by hand. It is gitignored like the others and not part of the CI link
-  check, so it is named here without a link
+- [`sdwa5-dsp`](sdwa5-dsp) — editor, command line and PHP library for the PA's
+  t.racks 8x8 DSP over USB or LAN, with gain riders, measurements and Auto EQ,
+  formerly trackdsp
 
 ## Checks
 

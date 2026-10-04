@@ -26,4 +26,4 @@
     4. The engine has to be as hardware efficient as possible and is at the same time a webserver, so a browser or a
        phone can control it.
     5. The stack is still open, because a real-time GPU video pipeline lies outside the PHP default. Check whether
-       the browser control can reuse the approach of the `trackdsp` browser editor.
+       the browser control can reuse the approach of the `sdwa5-dsp` browser editor.
