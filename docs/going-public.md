@@ -409,6 +409,60 @@ never leaves the host. The second was stale, since `/root/.ssh/` holds only the 
 keys, and `sdwa5-vps` 1.50.1 corrects it. And
 `minecraft-data/`, which fell under neither licence clause and now has one.
 
+## The fourth repository, `sdwa5-dsp`, published on 2026-10-05
+
+The DSP editor was a private repository on a co-author's personal account under the name trackdsp. It moved into
+the organization as `SdWa5/dsp`, renamed to `sdwa5-dsp` like its siblings, and it went through the same passes
+before anything was pushed.
+
+**Both authors agreed to the move, to MIT, and to how they appear.** The co-author is credited by GitHub handle only.
+The co-author's commits carry the noreply address of that account, and the first name came out of the tree and the
+history, where it stood in a credit line, in three Windows paths of the legacy tools and in the name of a backup file on the board.
+
+**What the rewrite removed, measured beforehand.** The business address as author or committer in 76 identity
+entries, the co-author's two mail addresses in 7, the business development domain as a default URL in three browser
+checks, and the authorship trailers and session links in 32 commit messages. One `git-filter-repo` run did it with
+a mailmap, a text replacement and the same Claude-scoped message callback as on 2026-09-15. The tree was corrected by
+an ordinary release first, so the 215 commits and the tree at `HEAD` are unchanged by the rewrite, and every probe
+term returns zero over every blob and every message afterwards.
+
+**gitleaks finds one thing with the allowlist off, and it is meant to be there.** It is the `APP_SECRET` that the
+Symfony recipe commits in `.env.dev`. It signs nothing outside a developer's machine, and the board sets its own. It
+is allowlisted by path rather than by commit, because the rewrite changed every commit hash.
+
+**Kept on purpose.** The vendor editor screenshots, the menu metadata decoded from the vendor installer, the USB
+captures and the configuration dumps are interoperability evidence, the test suite replays the captures, and no
+vendor binary was ever committed. The board's network layout in `docs/vim3.md` follows the guideline above. It has
+private addresses and the crew network's name, and the network key is not in the repository.
+
+**Two vendor screenshots were redacted before the push.** The Open and Save As dialogs in `tools/shots/` showed the
+virtual machine's share path, its folder tree and a folder named after a person. The path and the folder list are
+blanked, while the dialog title and the `*.prs` filter that the vendor parity audit cites are kept. Each file had a
+single version, and a second `git-filter-repo` pass on 2026-10-05 replaced it everywhere.
+
+**A private venue's network name came out of `docs/vim3.md` and its history in the same pass.** The venue's name
+stays where it is a DSP preset inside the USB captures, because the test suite replays them, and without the
+network name it is only a venue preset like the others. The release commit carried both corrections first, so this
+pass, too, left the commit count and the tree at the tip unchanged.
+
+**The licence is MIT alone, unlike the siblings.** There is no CC BY-SA part, because MIT is what both authors
+agreed to. The README names the vendor screenshots, the menu and dialog data read from the vendor software and the
+factory configuration as not ours to license, and it says that the project is not affiliated with Thomann.
+
+**The lock dialog stays.** The code in `dlg_TfmLockSetup.png` is the vendor default, which the owner confirmed and
+`docs/vendor-parity.md` records. The vendor manual names no default.
+
+**Published on 2026-10-05, private first and public after the checks.** `SdWa5/dsp` was created empty and
+private, and only `main` was pushed, 217 commits. While it was private, its `main` matched the local tip, a fresh
+clone returned zero for every removed value and a clean gitleaks run, and the first CI run was green on php, js and
+secrets, with a log that holds none of the removed values. A fetch by SHA of the old repository's last tip and of
+both pre-redaction tips answered `not our ref`, and a control fetch of `main` succeeded. Only then did it go public,
+with secret scanning, push protection and private vulnerability reporting switched on like its siblings, and the
+`not our ref` answer held for an anonymous fetch afterwards.
+
+**The old repository stays where it is.** It is private, it holds the pre-rewrite history, and only its owner can
+archive or delete it. Nothing was transferred from it, so the new repository has no cached pre-rewrite objects.
+
 ## The licence, which is a separate decision
 
 No repository has a `LICENSE` file, and the root `README.md` says "No license specified — all rights
