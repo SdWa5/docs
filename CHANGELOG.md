@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.21.0] - 2026-10-05
+
+### Changed
+
+- `trackdsp` is now `sdwa5-dsp`, published as `SdWa5/dsp`. It is linked from `README.md`, gitignored and
+  registered as a VCS root under its new name, and the docs workflow checks it out for the link check like the
+  other two siblings.
+- `docs/going-public.md` covers the fourth repository, with its two redactions, its licence, the lock dialog and its publication.
+- The `README.md` entry for `sdwa5-dsp` names the gain riders, measurements and Auto EQ.
+
 ## [0.20.0] - 2026-10-01
 
 ### Added

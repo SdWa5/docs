@@ -74,11 +74,19 @@ jobs:
           path: sdwa5-3d
           token: ${{ secrets.SIBLING_REPOS_TOKEN || github.token }}
 
+      - uses: actions/checkout@v5
+        id: dsp
+        continue-on-error: true
+        with:
+          repository: SdWa5/dsp
+          path: sdwa5-dsp
+          token: ${{ secrets.SIBLING_REPOS_TOKEN || github.token }}
+
       - name: Decide which sibling repositories can be validated
         id: siblings
         run: |
           skip=''
-          for dir in sdwa5-vps sdwa5-3d; do
+          for dir in sdwa5-vps sdwa5-3d sdwa5-dsp; do
             # **`-d "$dir/.git"` WAS THE WRONG TEST AND IT MADE THIS JOB RED THE FIRST TIME IT EVER RAN.**
             # `actions/checkout` creates the directory and initialises `.git` *before* it fetches, so a
             # checkout that fails leaves both behind with no files under them. Both siblings therefore
