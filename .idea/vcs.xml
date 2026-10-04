@@ -3,7 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/sdwa5-3d" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sdwa5-dsp" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/sdwa5-vps" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/trackdsp" vcs="Git" />
   </component>
 </project>
