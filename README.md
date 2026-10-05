@@ -32,6 +32,8 @@ See [`docs/`](docs/) for:
 - [`sdwa5-dsp`](sdwa5-dsp) — editor, command line and PHP library for the PA's
   t.racks 8x8 DSP over USB or LAN, with gain riders, measurements and Auto EQ,
   formerly trackdsp
+- [`sdwa5-banksync`](https://github.com/SdWa5/banksync) — Dolibarr module, a fork of BankSync with
+  a PayPal provider, automatic posting and a review queue with Belege
 
 ## Checks
 
