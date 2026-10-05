@@ -40,8 +40,8 @@ See [`docs/`](docs/) for:
 [`.github/workflows/docs.yml`](.github/workflows/docs.yml) runs on every push.
 
 - **Links.** Every relative link and every `#anchor` in this repository's markdown is resolved
-  against the filesystem. External URLs are fetched nightly instead of per push, so a rate limit
-  never fails a build over an unrelated commit.
+  against the filesystem. External URLs are fetched weekly on Mondays instead of per push, so a
+  rate limit never fails a build over an unrelated commit.
 - **Secrets.** The working tree and the full history are scanned with
   [gitleaks](https://github.com/gitleaks/gitleaks). This runs in all three SdWa5 repositories,
   because they are going public and a public repository publishes every past commit at once.
