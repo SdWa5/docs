@@ -86,6 +86,16 @@ Mail, users, groups and central file storage (Shared Drive "SdWa5") for the
 The organization's only payment account — see
 [organization.md](organization.md#bank--payments).
 
+A PayPal sync into Dolibarr is built but not live yet. The module is the fork
+[SdWa5/banksync](https://github.com/SdWa5/banksync) of `vanyolai/dolibarr-banksync`, checked out as
+`sdwa5-banksync/` next to the other repositories. Once deployed, a daily scheduled job fetches PayPal's
+transactions into bank account 4 from the cutover date 2026-09-09 on, posts fees and payments that
+clearly belong to one supplier invoice, and leaves everything else in a queue where the
+Rechnungsprüfer settles it together with its Belege. The hand-typed lines before the cutover stay as
+they are. Setup and behaviour are in the fork's `docs/paypal.md`, the deployment in
+[`sdwa5-vps/docs/dolibarr.md`](../sdwa5-vps/docs/dolibarr.md#custom-modules), and the remaining
+go-live steps in `sdwa5-vps/TODO.md`.
+
 ## Social / external accounts
 
 | Service   | Account                                | Mail routing         |
