@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.22.3] - 2026-10-06
+
+### Fixed
+
+- `docs/services.md` describes the PayPal sync as live in dry run at BankSync v1.2.0 instead of not yet deployed.
+
 ## [0.22.2] - 2026-10-05
 
 ### Changed
