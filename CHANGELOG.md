@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.22.1] - 2026-10-05
+
+### Changed
+
+- The external link check runs weekly on Mondays instead of nightly.
+
+### Fixed
+
+- The external link check excludes `sdwa5-dsp`, whose missing exclude made the run of 2026-10-05 fail. Both
+  link jobs now take the sibling repositories from one list.
+
 ## [0.22.0] - 2026-10-05
 
 ### Added
