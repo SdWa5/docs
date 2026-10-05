@@ -1,7 +1,7 @@
 {
   "name": "sdwa5/sdwa5",
   "description": "SdWa5 organization root repository — documentation, org info, and links to sub-repositories (sdwa5-vps, sdwa5-3d, ...)",
-  "version": "0.22.0",
+  "version": "0.22.1",
   "type": "project",
   "homepage": "https://sdwa5.org"
 }
