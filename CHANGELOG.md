@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.22.0] - 2026-10-05
+
+### Added
+
+- `docs/services.md` describes the PayPal sync through the BankSync fork, built but not live yet.
+- `README.md` lists `sdwa5-banksync` among the sub-repositories.
+- `docs/organization.md` records that Revolut is ruled out and the SEPA, IBAN and card gaps of a
+  PayPal-only Verein as proposals.
+
+### Changed
+
+- `.gitignore` covers the nested `sdwa5-banksync` checkout.
+
 ## [0.21.0] - 2026-10-05
 
 ### Changed
