@@ -91,6 +91,24 @@ decided 2026-09-15: the defect is the association's, not any individual's.
 PayPal: mail@sdwa5.org, https://paypal.me/SdWa5, handle `@SdWa5`.
 No bank IBAN.
 
+Revolut Business was ruled out on 2026-10-05, because it does not accept a Verein in DACH. The
+PayPal account is being connected to Dolibarr instead, see [services.md](services.md#paypal).
+
+PayPal alone leaves two gaps open, recorded on 2026-10-05 as proposals for the Vorstand.
+
+- **SEPA and IBAN.** PayPal cannot pay to a third party's IBAN and cannot collect through a normal
+  SEPA mandate. An invoice that offers only a bank transfer is paid privately by a member and
+  becomes an advance, membership fees cannot be debited, and money that arrives only by bank
+  transfer, such as sponsorship or public funding, has no account to arrive on.
+- **Cards.** Shops that take only cards, deposits and pre-authorisations, and card payments at
+  events are not covered. The PayPal Business Debit Mastercard and Zettle would land in the same
+  PayPal account, and neither has been checked for this account yet.
+
+Both gaps point to an Austrian Vereinskonto. finanzinfo.at (as of 2026-08-17) puts Austrian price
+lists between 10.76 € a quarter and 23.49 € a month, and collecting SEPA direct debits also needs a
+creditor ID and a collection agreement with the bank. Comparing three concrete offers would take
+ca. 1 Stunde.
+
 ## Statutes (Vereinsstatuten)
 
 Full text as a reading copy: [`statuten.md`](statuten.md). The authoritative
