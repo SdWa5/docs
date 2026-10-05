@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.22.2] - 2026-10-05
+
+### Changed
+
+- The PhpStorm project config holds the settings of both machines. It carries the `sdwa5-3d` source, test and
+  include paths and the PHPUnit configuration, and the excludes of the removed `trackdsp` checkout are gone.
+
 ## [0.22.1] - 2026-10-05
 
 ### Changed

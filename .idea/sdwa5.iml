@@ -8,6 +8,8 @@
       <sourceFolder url="file://$MODULE_DIR$/sdwa5-vps/shopware-html-data/custom/plugins/SwagPlatformSecurity/src" isTestSource="false" packagePrefix="Swag\Security\" />
       <sourceFolder url="file://$MODULE_DIR$/sdwa5-vps/shopware-html-data/custom/plugins/SwagPlatformSecurity/tests" isTestSource="true" packagePrefix="Swag\Security\Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/sdwa5-vps/shopware-html-data/src" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/sdwa5-3d/src" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/sdwa5-3d/tests" isTestSource="true" packagePrefix="App\Tests\" />
       <excludeFolder url="file://$MODULE_DIR$/sdwa5-3d/.ddev/.dbimageBuild" />
       <excludeFolder url="file://$MODULE_DIR$/sdwa5-3d/.ddev/.homeadditions" />
       <excludeFolder url="file://$MODULE_DIR$/sdwa5-3d/.ddev/.webimageBuild" />
@@ -15,6 +17,22 @@
       <excludeFolder url="file://$MODULE_DIR$/sdwa5-3d/build" />
       <excludeFolder url="file://$MODULE_DIR$/sdwa5-3d/meshes" />
       <excludeFolder url="file://$MODULE_DIR$/sdwa5-3d/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/.claude" />
+      <excludeFolder url="file://$MODULE_DIR$/sdwa5-3d/.claude" />
+      <excludeFolder url="file://$MODULE_DIR$/sdwa5-vps/.claude" />
+      <excludeFolder url="file://$MODULE_DIR$/sdwa5-vps/.handoff" />
+      <excludeFolder url="file://$MODULE_DIR$/sdwa5-3d/.handoff" />
+      <excludeFolder url="file://$MODULE_DIR$/sdwa5-banksync/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/sdwa5-dsp/.ddev/.dbimageBuild" />
+      <excludeFolder url="file://$MODULE_DIR$/sdwa5-dsp/.ddev/.homeadditions" />
+      <excludeFolder url="file://$MODULE_DIR$/sdwa5-dsp/.ddev/.webimageBuild" />
+      <excludeFolder url="file://$MODULE_DIR$/sdwa5-dsp/.ddev/db_snapshots" />
+      <excludeFolder url="file://$MODULE_DIR$/sdwa5-dsp/.ddev/traefik" />
+      <excludeFolder url="file://$MODULE_DIR$/sdwa5-dsp/.phpunit.cache" />
+      <excludeFolder url="file://$MODULE_DIR$/sdwa5-dsp/assets/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/sdwa5-dsp/files" />
+      <excludeFolder url="file://$MODULE_DIR$/sdwa5-dsp/var" />
+      <excludeFolder url="file://$MODULE_DIR$/sdwa5-dsp/vendor" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
