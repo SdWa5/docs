@@ -10,22 +10,32 @@ on:
   # attacker-supplied Markdown. No step here interpolates `github.event.*` into a shell argument, so
   # there is no injection sink, but free compute for strangers buys this repository nothing. The same
   # rule holds in sdwa5-3d and sdwa5-vps.
-  # External URLs are checked nightly rather than per push. They fail for
+  # External URLs are checked weekly rather than per push. They fail for
   # reasons that have nothing to do with the commit — rate limits, a site
-  # being briefly down — and a check that cries wolf gets ignored.
+  # being briefly down — and a check that cries wolf gets ignored. Weekly
+  # rather than nightly, because link rot is slow and every red run mails: in
+  # 20 nightly runs up to 2026-10-05 the job found no dead external link, and
+  # its only red run was a missing sibling exclude, which a week also catches.
   #
   # **THE TIME BELOW IS A REQUEST AND NOT A PROMISE, AND THE DIFFERENCE IS LARGE ENOUGH TO CONFUSE
   # SOMEBODY READING THEIR INBOX.** GitHub queues `schedule` events and runs them when capacity
-  # allows, so a nightly job arrives at an hour nobody asked for and is dropped entirely under load.
+  # allows, so a scheduled job arrives at an hour nobody asked for and is dropped entirely under load.
   # Measured on run 34830869821: requested 04:23 UTC, started 09:59 UTC, which is 5 h 36 m late. That
   # is normal for this trigger and there is no setting that tightens it. So a failure mail from this
-  # workflow carries no information about the time of day it names, and a missing night is not
+  # workflow carries no information about the time of day it names, and a missing week is not
   # evidence that anything broke.
   schedule:
-    - cron: '23 4 * * *'
+    - cron: '23 4 * * 1'
 
 permissions:
   contents: read
+
+# **THE SIBLING REPOSITORIES, LISTED ONCE.** Both link jobs exclude a sibling they cannot read, and each used to
+# carry its own list. `links-external` still named only two when `sdwa5-dsp` joined the README on 2026-10-04, and
+# its next scheduled run went red on that one bare link (run 37304513972). A new sibling goes here, plus a checkout
+# step in `links`.
+env:
+  SIBLINGS: sdwa5-vps sdwa5-3d sdwa5-dsp
 
 # **A superseded push should stop costing money the moment it is superseded.** This repository's runs are cheap,
 # well under a minute, so the saving here is small — it is in place because the rule should be the same in all
@@ -33,7 +43,7 @@ permissions:
 #
 # **`cancel-in-progress` is off on `main` on purpose.** A merge commit's green run is the thing a release is
 # judged by, and cancelling it because the next merge landed is how a branch ends up with no completed run at all.
-# The nightly external link check runs on `main`, so this is also what stops a push cancelling it mid-flight.
+# The weekly external link check runs on `main`, so this is also what stops a push cancelling it mid-flight.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
@@ -86,7 +96,7 @@ jobs:
         id: siblings
         run: |
           skip=''
-          for dir in sdwa5-vps sdwa5-3d sdwa5-dsp; do
+          for dir in $SIBLINGS; do
             # **`-d "$dir/.git"` WAS THE WRONG TEST AND IT MADE THIS JOB RED THE FIRST TIME IT EVER RAN.**
             # `actions/checkout` creates the directory and initialises `.git` *before* it fetches, so a
             # checkout that fails leaves both behind with no files under them. Both siblings therefore
@@ -111,7 +121,7 @@ jobs:
       - uses: lycheeverse/lychee-action@v2.9.0
         with:
           # --offline resolves file paths and anchors without touching the
-          # network, which is what a per-push run should do. The nightly
+          # network, which is what a per-push run should do. The weekly
           # external job below drops it.
           args: >-
             --offline
@@ -121,7 +131,7 @@ jobs:
             './*.md' './docs/**/*.md'
           fail: true
 
-  # The same files, with external URLs actually fetched. Nightly and on demand.
+  # The same files, with external URLs actually fetched. Weekly and on demand.
   links-external:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
@@ -131,12 +141,22 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      # No sibling is checked out here, so every one of them is excluded.
+      - name: Exclude the sibling repositories
+        id: siblings
+        run: |
+          skip=''
+          for dir in $SIBLINGS; do
+            skip="$skip --exclude $dir"
+          done
+          echo "skip=$skip" >> "$GITHUB_OUTPUT"
+
       - uses: lycheeverse/lychee-action@v2.9.0
         with:
           args: >-
             --include-fragments
             --config lychee.toml
-            --exclude sdwa5-vps --exclude sdwa5-3d
+            ${{ steps.siblings.outputs.skip }}
             './*.md' './docs/**/*.md'
           fail: true
 
