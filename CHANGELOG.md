@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.22.5] - 2026-10-12
+
+### Security
+
+- **Which accounts are in use is no longer written down.** `docs/services.md` loses the usage facts
+  for Dolibarr and Vaultwarden and says why. Older entries of this file lose the same facts and the
+  account counts.
+- **`docs/google-workspace.md` names no mailbox for the backup folder and no sole administrator.** Its
+  2026-09-15 paragraph now says where the address still appears and why.
+- **`docs/going-public.md`** describes the 2026-09-12 finding without its counts and records the
+  2026-10-12 sweep, which found the same facts standing in `sdwa5-vps` and left the history as it is.
+
 ## [0.22.4] - 2026-10-12
 
 ### Changed
@@ -449,10 +461,8 @@ rather than reasoned from the previous notes.
 ### Changed
 
 - `docs/services.md` loses the paragraph that explained why the per-account Vaultwarden figures were
-  removed, because it restated them. One sentence is left, that three accounts are on PBKDF2 and only
-  their holders can change that. The cipher and collection counts and the `emergency_access` row count
-  go with it; that the organization has a single Owner stays, because a single point of failure is
-  worth naming.
+  removed, because it restated them. One sentence is left, that some accounts are on PBKDF2 and only
+  their holders can change that. The cipher, collection and emergency access counts go with it.
 - `docs/services.md`, `CHANGELOG.md` and `docs/google-workspace.md` refer to board members and to the
   new member by role rather than by name, matching what
   <https://sdwa5.org/Impressum> publishes, which is the Obmann alone.
@@ -539,7 +549,7 @@ recommend, because the shop's own Impressum publishes more than the analysis ass
   change nothing a reader could not already see.
 - **The former board member is gone entirely**, name and dates. She left in 2024 and the current ZVR
   extract does not list her either.
-- **The Vaultwarden table loses its KDF and Items columns** and keeps one sentence, that three
+- **The Vaultwarden table loses its KDF and Items columns** and keeps one sentence, that some
   accounts are on PBKDF2 and only their holders can change that. The pairing was the finding rather
   than either figure: beside a reachable `vault.sdwa5.org`, a row naming which active account holds
   how many items on the weaker KDF names the soft target and prices it.
@@ -790,20 +800,15 @@ recommend, because the shop's own Impressum publishes more than the analysis ass
 
 ### Fixed
 
-- `docs/services.md` described both Dolibarr and Vaultwarden as having one account in use with two
-  more planned. Neither was true, measured on 2026-09-08. Dolibarr has three enabled accounts, two of
-  which were created on 2025-07-08 and have never been logged into, so they are provisioned rather
-  than planned. Vaultwarden has four accounts, two of them in active use.
+- `docs/services.md` described the Dolibarr and Vaultwarden accounts as planned. Measured on
+  2026-09-08, they are provisioned.
 
 ### Added
 
 - `docs/services.md` records two decisions taken on 2026-09-08. Emergency access with a Takeover
-  grantee is being set up with a new member, and the two unused Vaultwarden accounts are kept rather
-  than deleted, because neither holds anything and deleting an account someone was invited to costs
-  more explaining than it saves.
-- `docs/services.md` records the Vaultwarden accounts with their organization role, and states plainly
-  that the organization has a single Owner, so losing that account loses the organization's data until
-  a grantee is confirmed.
+  grantee is being set up with a new member, and provisioned Vaultwarden accounts are kept rather than
+  deleted, because deleting an account someone was invited to costs more explaining than it saves.
+- `docs/services.md` records the Vaultwarden accounts with their organization role.
 
 ## [0.3.0] - 2026-07-30
 

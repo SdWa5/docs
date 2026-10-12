@@ -9,7 +9,7 @@ https://www.google.com/nonprofits/), Workspace domain `sdwa5.org`.
 
 ## Admin
 
-Super Admin: Stefan Ripper (`ripper@sdwa5.org`) — sole assigned administrator.
+Super Admin: Stefan Ripper (`ripper@sdwa5.org`).
 User management via the standard admin console (https://admin.google.com).
 
 ## Users
@@ -24,8 +24,10 @@ User management via the standard admin console (https://admin.google.com).
 row used to say in one sentence that one account holds the Shopware SMTP App Password, is the Caddy
 Let's Encrypt contact, and owns the `restic-backups` Drive folder. None of those credentials is in any
 repository, but the sentence told a reader exactly which mailbox to go after to take mail, certificates
-and backups together. That each of the three exists is documented where it is used; which account it is
-lives in the password manager.
+and backups together. That each of the three exists is documented where it is used, and the prose there
+describes the credential without the account, completed on 2026-10-12. Configuration files are the
+exception. The `Caddyfile` and the monitoring defaults in `sdwa5-vps` carry an address because the
+software cannot run without one.
 
 The third user's local-part is the first syllable of a surname this repository otherwise does not
 publish, so writing it here would republish by the back door what
@@ -53,8 +55,8 @@ Notes:
 
 ## Drive / Backup
 
-VPS Restic backups land in Google Drive folder `restic-backups`, owned by
-`ripper@sdwa5.org` (same Workspace account; rclone remote `[SdWa5]`, OAuth2) —
+VPS Restic backups land in Google Drive folder `restic-backups` in a Workspace
+account (rclone remote `[SdWa5]`, OAuth2) —
 see [`sdwa5-vps/docs/backup.md`](../sdwa5-vps/docs/backup.md). Access:
 restricted, only people with access can open the link.
 

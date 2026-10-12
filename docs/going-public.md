@@ -188,22 +188,29 @@ every run of which had failed on billing, and one stargazer on `sdwa5-vps`.
 
 [`services.md`](services.md) used to document the Vaultwarden accounts with their KDF, item count and
 last activity alongside their organization role. Only the Owner is named; the others are deliberately
-written as "second account", "third account" and "fourth account", so somebody already thought about
-this.
+written as numbered accounts, so somebody already thought about this.
 
 The finding was the pairing rather than any single figure. A per-account row read next to a named,
-reachable `vault.sdwa5.org` points at which account is worth attacking, and four accounts against
-three board members is thinner anonymisation than it looks. Nothing in it was ever a credential.
+reachable `vault.sdwa5.org` points at which account is worth attacking, and an account count set
+against the size of the board is thinner anonymisation than it looks. Nothing in it was ever a
+credential.
 
 **Done on 2026-09-12 and finished on 2026-09-13.** The per-account figures are out of the table and
-one sentence is left, that three accounts are on PBKDF2 and only their holders can change that.
-Upgrading those three to Argon2id would be the real remedy, but it depends on the account holders, so
+one sentence is left, that some accounts are on PBKDF2 and only their holders can change that.
+Upgrading them to Argon2id would be the real remedy, but it depends on the account holders, so
 nothing here waits on it.
 
 **The first pass removed the values and left the sentences that quoted them.** This file and
 `CHANGELOG.md` each still carried a figure while describing its removal, and `sdwa5-vps`'s `TODO.md`
 restated the whole pairing with more detail than the table had ever held. All three are corrected, and
 the 2026-09-13 rewrite took the figures out of both repositories' histories as well.
+
+**The same facts survived elsewhere until 2026-10-12.** The runbooks in `sdwa5-vps` and older entries
+in both changelogs still recorded what the vault checks had found, and four files still named the
+mailbox behind a service credential. A sweep of all five repositories removed them in `sdwa5-vps`
+1.55.6 and in this repository's 0.22.5. The checks themselves stay documented, without their results.
+The history was left as it is, because the lines had been public for twelve days and a rewrite could
+not have recalled any copy made in that time. Closing the gaps they describe is the remedy that holds.
 
 ## Third parties who never agreed to any of this
 
