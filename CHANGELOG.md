@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.22.4] - 2026-10-12
+
+### Changed
+
+- `docs/going-public.md` states that "No security by obscurity" does not oblige anything to be
+  published. A detail goes public when a reader needs it, and vault internals stay inside the vault.
+
 ## [0.22.3] - 2026-10-06
 
 ### Fixed
