@@ -19,10 +19,6 @@ gitignored JSON spec by `tools/dolibarr/sync-pm.sh`, which creates and updates
 but never deletes, so closing a task stays a job for the Dolibarr UI. See
 [`sdwa5-vps/docs/dolibarr.md`](../sdwa5-vps/docs/dolibarr.md#projects-and-tasks).
 
-Users, measured 2026-09-08: three accounts, all enabled. The admin account is the only one in use,
-last login 2026-07-27. The two other accounts were created on 2025-07-08 and have **never been
-logged into**, so they are provisioned rather than planned.
-
 Technical/ops detail: [`sdwa5-vps/docs/dolibarr.md`](../sdwa5-vps/docs/dolibarr.md)
 
 ## Vaultwarden (password manager)
@@ -40,9 +36,9 @@ standing, and a reachable host read next to a named owner, a count of weaker acc
 single point of failure is a targeting statement whatever the figures say. What is left is the part
 somebody has to act on.
 
-The two accounts that have never been used are **kept deliberately**, decided 2026-09-08. Neither
-holds anything, so the exposure is a login rather than anything readable, and deleting an account
-someone was invited to costs more explaining than it saves.
+**Which accounts are in use is not written down either**, for Dolibarr and Vaultwarden alike, decided
+2026-10-12. A login nobody uses is one where a stranger's sign-in goes unnoticed, so naming the
+unused ones names the quiet way in.
 
 Technical/ops detail: [`sdwa5-vps/docs/vaultwarden.md`](../sdwa5-vps/docs/vaultwarden.md)
 
