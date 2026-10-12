@@ -278,6 +278,13 @@ backup design are all documented and would all become public. **That is the stat
 `TODO.md` gives "No security by obscurity" as the guideline for this exercise, and a defence that only
 works while undescribed is not a defence.
 
+**The guideline does not oblige anything to be published**, clarified by the owner on 2026-10-12. It
+says that no defence may depend on staying undescribed. It does not say that every detail belongs in
+a public file. A detail goes public when a reader of the repository needs it. Vault internals fail
+that test, because which policies are relaxed, which roles an organization consists of and whether
+actions are logged help an attacker more than any reader. They are recorded inside the vault instead.
+The occasion was a first version of `sdwa5-vps` 1.55.5 that published exactly those three.
+
 Two things were worth checking against that guideline rather than assuming, and both are fine. No
 credential is committed anywhere, confirmed by `gitleaks` over tree and history in all three
 repositories. And the identifiers that do appear are useless without access: Vaultwarden item UUIDs
