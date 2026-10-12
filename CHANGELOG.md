@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.22.6] - 2026-10-12
+
+### Security
+
+- `docs/services.md` records that accounts not in use are disabled until they are needed.
+
 ## [0.22.5] - 2026-10-12
 
 ### Security

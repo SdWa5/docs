@@ -40,6 +40,10 @@ somebody has to act on.
 2026-10-12. A login nobody uses is one where a stranger's sign-in goes unnoticed, so naming the
 unused ones names the quiet way in.
 
+**Accounts that are not in use are disabled until they are needed**, decided 2026-10-12. A disabled
+login cannot sign in and, in Dolibarr, its API key answers 401 as well. Enabling it again is one click
+for an administrator.
+
 Technical/ops detail: [`sdwa5-vps/docs/vaultwarden.md`](../sdwa5-vps/docs/vaultwarden.md)
 
 ## Shopware (shop / merch)
