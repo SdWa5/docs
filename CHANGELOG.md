@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.23.0] - 2026-10-15
+
+### Added
+
+- `docs/going-public.md` gains "Rules that carry over to the next repository", the general lessons
+  of both audits without names or account state, and names the sweep script that automates part of
+  them.
+
+### Fixed
+
+- `docs/going-public.md` points at the right item of `sdwa5-vps/TODO.md` for the restorable deleted
+  repositories.
+
 ## [0.22.6] - 2026-10-12
 
 ### Security
