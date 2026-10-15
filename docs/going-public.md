@@ -176,7 +176,7 @@ that the 2026-09-13 rewrite deleted until a day later, each with the pre-rewrite
 measurement that does hold is narrower and is the one that matters: fetching a pre-rewrite SHA from
 each new repository returns `not our ref`, with a control fetch proving the test itself works, so a
 reader holding an old hash cannot pull it. Restoring needs owner or organization-admin credentials, so
-there is no route to it from outside and no publication decision waits on it. Tracked as item 7.6 in
+there is no route to it from outside and no publication decision waits on it. Tracked as item 7.5 in
 [`sdwa5-vps/TODO.md`](../sdwa5-vps/TODO.md), with the choice being to accept it, to let the window
 close and verify after 2026-12-12, or to ask Support to purge the six permanently.
 
@@ -577,3 +577,66 @@ path is committed, and four files under it are. Every scan of that repository, i
 over the history alike, had been skipping them since the file was written. They turned out to be clean,
 which is luck rather than a result. So a scanner's own configuration is part of what has to be read,
 and the cheap check is to run it once with the allowlist off and compare the two answers.
+
+## Rules that carry over to the next repository
+
+Everything above records one publication. This section is the part that applies to the next one. It
+is written without names, counts or the current state of any account, so it stays public whatever
+the repositories hold later. Written on 2026-10-15 after a second audit of all public repositories.
+
+**A variable name is not a secret, and its value is.** A compose file or an `.env.example` may name
+every setting the stack reads. What has to stay out is the value, and so does any default credential
+an image ships with, because a default nobody changed works as well as a leaked one. A clean secret
+scan says nothing about defaults, scopes or reachability.
+
+**A credential is judged by what it can reach, not only by whether it leaked.** A token or an app
+password that was never committed can still be broader than its job. Record what each one is for, and
+narrow it before publication makes the design around it readable.
+
+**Published configuration publishes its maintenance state.** Pinned image tags and package versions
+tell any reader how far behind a service is. That is fine while someone keeps them current, so the
+update cadence is part of the decision to publish.
+
+**Describe a mechanism, not its current weakness.** How the firewall, the backups or the admin access
+work can be public. Which administration page is reachable from the internet today, which accounts
+lack a second factor and which policy is relaxed belong in the vault or a private tracker until they
+are fixed. The same holds for anything stated per member.
+
+**Read the repositories together.** Two files that are harmless apart can map a nickname to a role, a
+mailbox to a credential or a host to its owner. Every check runs over all public repositories at
+once, because the combination is what a reader sees.
+
+**Tests use invented data.** A fixture copied from a real transaction, customer or member publishes
+that person with every clone. Synthetic values cost nothing at the start, while replacing real ones
+later needs a history rewrite.
+
+**Editor and image metadata are content.** An IDE directory can carry a spellcheck dictionary of
+names, copyright profiles that name an employer, database connection lists and absolute home paths.
+Photos carry EXIF authors, GPS positions and device serials, and screenshots show file dialogs and
+folder names. Ignore the editor directory unless a file in it is shared on purpose, and check image
+metadata before the first commit.
+
+**An untracked file is one command away from being published.** A file that is neither tracked nor
+ignored goes in with the next `git add -A`. Ignore it or move it out of the checkout.
+
+**A redaction claim covers everything that is published.** That means file contents in every commit,
+commit and tag messages, author and committer identities, every branch, tag and pull request ref, and
+the notes that describe the redaction. A clean working tree proves none of it.
+
+**The hosted copies count, not only the local clone.** GitHub keeps force-pushed objects fetchable by
+SHA until its own garbage collection, restores a deleted repository for 90 days and keeps a copy of
+every pull request in the repository it was opened against. Actions logs, releases and package
+registries are served next to the code. Forks and clones made by others cannot be recalled at all.
+A removal states which of these it was verified against.
+
+**A scan result states its coverage.** It names the refs, whether it read history, contents or
+messages, and which allowlist applied, and it says what it cannot see. A scanner's configuration is
+part of what has to be read, as the second lesson above shows.
+
+**The automatable part is a script.** Since 2026-10-15 the owner runs `repo_sweep.py` from a private
+tooling repository over every public repository. It mirror-clones each one, so every published ref is
+read, and it checks for secrets with gitleaks, commit identities outside an allow-list, authorship
+trailers, editor and dump files ever committed, identifying image and PDF metadata, untracked files in
+a local checkout and a private deny-list. It prints the rule, the commit and the path and never the
+matched text, so its output can be shared. It does not replace reading, because a real name in a
+fixture or a mapping between two documents is only found by someone who knows that it is sensitive.
