@@ -593,6 +593,13 @@ scan says nothing about defaults, scopes or reachability.
 password that was never committed can still be broader than its job. Record what each one is for, and
 narrow it before publication makes the design around it readable.
 
+**CI dependencies need the same boundaries as application dependencies.** Give workflow tokens only
+the permissions their jobs need, avoid persisting checkout credentials and clone public dependencies
+without personal tokens. Pin actions to reviewed upstream commits and verify downloaded release
+archives against committed checksums before extracting or executing them. A pinned action may still
+download an unchecked binary, so inspect that path too. A failed dependency checkout must fail the
+check instead of silently reducing its coverage.
+
 **Published configuration publishes its maintenance state.** Pinned image tags and package versions
 tell any reader how far behind a service is. That is fine while someone keeps them current, so the
 update cadence is part of the decision to publish.

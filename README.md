@@ -43,12 +43,13 @@ See [`docs/`](docs/) for:
   against the filesystem. External URLs are fetched weekly on Mondays instead of per push, so a
   rate limit never fails a build over an unrelated commit.
 - **Secrets.** The working tree and the full history are scanned with
-  [gitleaks](https://github.com/gitleaks/gitleaks). This runs in all three SdWa5 repositories,
-  because they are going public and a public repository publishes every past commit at once.
+  [gitleaks](https://github.com/gitleaks/gitleaks). The same scanner also runs in the VPS, 3d and DSP repositories.
+  A public repository publishes every past commit at once.
 
-Both checks run locally against the same configuration:
+The CI installer regression tests and both checks run locally against the same configuration:
 
 ```sh
+python3 -B -m unittest discover -s .github/tests -v
 lychee --offline --include-fragments --config lychee.toml './*.md' './docs/**/*.md'
 gitleaks dir . --redact --config .gitleaks.toml
 gitleaks git . --redact --config .gitleaks.toml
@@ -56,8 +57,15 @@ gitleaks git . --redact --config .gitleaks.toml
 
 The link check covers links into the sub-repositories, such as
 [`../sdwa5-vps/docs/caddy.md`](sdwa5-vps/docs/caddy.md). Those are separate repositories that only
-sit in subdirectories here and are gitignored, so CI clones them on its own. Locally they are already
+sit in subdirectories here and are gitignored, so CI clones all three public repositories anonymously.
+A failed clone fails the check rather than excluding that repository. Locally they are already
 present and the check just works.
+
+GitHub Actions reads repository contents only and does not persist checkout credentials. Action
+references use upstream commit SHAs. The lychee and gitleaks release archives must match committed
+SHA-256 values before extraction or installation. Updating a tool means reviewing its release and
+updating its version and checksum together. The installer tests cover valid archives, corruption,
+failed downloads and preservation of an existing installation after a failed verification.
 
 ## Contact
 

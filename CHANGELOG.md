@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+
+- A checksum-verified CI tool installer and regression tests for valid archives, modified archives,
+  failed downloads and preservation of an existing installation after failed verification.
+
+### Changed
+
+- GitHub Actions references use upstream commit SHAs and checkouts do not persist credentials.
+- Required public sibling repositories are cloned anonymously, and a failed clone fails the link check.
+- lychee 0.24.2 and gitleaks 8.30.1 archives are verified against committed SHA-256 values before extraction.
+- README and publication guidance describe CI dependency verification and credential boundaries.
+
 ## [0.23.1] - 2026-10-15
 
 ### Changed
