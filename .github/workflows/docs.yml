@@ -1,7 +1,7 @@
 name: Docs
 
-# This repository holds no code. What it can get wrong is a link, and what it
-# must never publish is a secret, so those are the two things CI checks.
+# This repository holds documentation and its CI tooling. The workflow checks
+# links, scans for secrets and tests verification before installing CI tools.
 on:
   push:
   workflow_dispatch:
@@ -30,12 +30,12 @@ on:
 permissions:
   contents: read
 
-# **THE SIBLING REPOSITORIES, LISTED ONCE.** Both link jobs exclude a sibling they cannot read, and each used to
-# carry its own list. `links-external` still named only two when `sdwa5-dsp` joined the README on 2026-10-04, and
-# its next scheduled run went red on that one bare link (run 37304513972). A new sibling goes here, plus a checkout
-# step in `links`.
+# Public siblings are required for the offline link check. The external job
+# excludes their local paths because it does not clone them.
 env:
   SIBLINGS: sdwa5-vps sdwa5-3d sdwa5-dsp
+  LYCHEE_VERSION: '0.24.2'
+  LYCHEE_SHA256: 1f4e0ef7f6554a6ed33dd7ac144fb2e1bbed98598e7af973042fc5cd43951c9a
 
 # **A superseded push should stop costing money the moment it is superseded.** This repository's runs are cheap,
 # well under a minute, so the saving here is small — it is in place because the rule should be the same in all
@@ -49,6 +49,16 @@ concurrency:
   cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 jobs:
+  ci-tools:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - name: Test CI tool download verification
+        run: python3 -B -m unittest discover -s .github/tests -v
+
   # Relative links and their #anchors, resolved against the filesystem.
   #
   # The sub-repositories are separate repositories that merely sit in
@@ -62,74 +72,31 @@ jobs:
     # it was cancelled. An offline link check over a few dozen Markdown files is seconds.
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v5
-
-      # Cloning a private sibling needs a token this repository does not have
-      # by default. Both steps therefore tolerate failure, and the next step
-      # tells lychee to skip whatever is missing rather than call it broken.
-      # Once the repositories are public, no token is needed and both succeed.
-      - uses: actions/checkout@v5
-        id: vps
-        continue-on-error: true
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
-          repository: SdWa5/vps
-          path: sdwa5-vps
-          token: ${{ secrets.SIBLING_REPOS_TOKEN || github.token }}
+          persist-credentials: false
 
-      - uses: actions/checkout@v5
-        id: three_d
-        continue-on-error: true
-        with:
-          repository: SdWa5/3d
-          path: sdwa5-3d
-          token: ${{ secrets.SIBLING_REPOS_TOKEN || github.token }}
-
-      - uses: actions/checkout@v5
-        id: dsp
-        continue-on-error: true
-        with:
-          repository: SdWa5/dsp
-          path: sdwa5-dsp
-          token: ${{ secrets.SIBLING_REPOS_TOKEN || github.token }}
-
-      - name: Decide which sibling repositories can be validated
-        id: siblings
+      - name: Clone the required public siblings without credentials
+        env:
+          GIT_CONFIG_NOSYSTEM: '1'
+          GIT_CONFIG_GLOBAL: /dev/null
+          GIT_TERMINAL_PROMPT: '0'
         run: |
-          skip=''
           for dir in $SIBLINGS; do
-            # **`-d "$dir/.git"` WAS THE WRONG TEST AND IT MADE THIS JOB RED THE FIRST TIME IT EVER RAN.**
-            # `actions/checkout` creates the directory and initialises `.git` *before* it fetches, so a
-            # checkout that fails leaves both behind with no files under them. Both siblings therefore
-            # reported "checked out", nothing was excluded, and lychee called 60 working links broken.
-            # Measured on run 34700494948: the checkouts failed with "Not Found" because this repository's
-            # `GITHUB_TOKEN` cannot read a sibling repository, not even inside the same organization.
-            # A commit is the thing worth testing for, since only a fetch that succeeded produces one.
-            if git -C "$dir" rev-parse --verify HEAD >/dev/null 2>&1; then
-              echo "::notice::$dir is checked out, links into it will be validated"
-            else
-              echo "::warning::$dir could not be cloned, so links into it are SKIPPED rather than checked. Add a SIBLING_REPOS_TOKEN secret with read access, or make the repository public."
-              # **NO TRAILING SLASH, BECAUSE `--exclude` IS A REGULAR EXPRESSION AND NOT A PATH PREFIX.**
-              # `README.md` and `CHANGELOG.md` link to the sibling *directories* themselves, as
-              # `[`sdwa5-3d`](sdwa5-3d)`, so the URI lychee resolves ends at the directory name with no
-              # slash after it. `sdwa5-3d/` therefore matched `sdwa5-3d/docs/caddy.md` and missed the bare
-              # link, which is what made `links-external` red on run 34830869821. `sdwa5-3d` matches both.
-              skip="$skip --exclude $dir"
-            fi
+            git -c credential.helper= -c http.extraheader= clone --depth 1 --no-tags \
+              "https://github.com/SdWa5/${dir#sdwa5-}.git" "$dir"
           done
-          echo "skip=$skip" >> "$GITHUB_OUTPUT"
 
-      - uses: lycheeverse/lychee-action@v2.9.0
-        with:
-          # --offline resolves file paths and anchors without touching the
-          # network, which is what a per-push run should do. The weekly
-          # external job below drops it.
-          args: >-
-            --offline
-            --include-fragments
-            --config lychee.toml
-            ${{ steps.siblings.outputs.skip }}
+      - name: Install checksum-verified lychee
+        run: |
+          bash .github/scripts/install-ci-tool.sh \
+            "https://github.com/lycheeverse/lychee/releases/download/lychee-v${LYCHEE_VERSION}/lychee-x86_64-unknown-linux-gnu.tar.gz" \
+            "$LYCHEE_SHA256" lychee-x86_64-unknown-linux-gnu/lychee "$RUNNER_TEMP/lychee"
+
+      - name: Check relative links and anchors
+        run: |
+          "$RUNNER_TEMP/lychee" --offline --include-fragments --config lychee.toml \
             './*.md' './docs/**/*.md'
-          fail: true
 
   # The same files, with external URLs actually fetched. Weekly and on demand.
   links-external:
@@ -139,26 +106,27 @@ jobs:
     # `max_retries = 3` and `timeout = 20` in lychee.toml bound a single link; this bounds the job.
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v5
-
-      # No sibling is checked out here, so every one of them is excluded.
-      - name: Exclude the sibling repositories
-        id: siblings
-        run: |
-          skip=''
-          for dir in $SIBLINGS; do
-            skip="$skip --exclude $dir"
-          done
-          echo "skip=$skip" >> "$GITHUB_OUTPUT"
-
-      - uses: lycheeverse/lychee-action@v2.9.0
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
-          args: >-
-            --include-fragments
-            --config lychee.toml
-            ${{ steps.siblings.outputs.skip }}
-            './*.md' './docs/**/*.md'
-          fail: true
+          persist-credentials: false
+
+      - name: Install checksum-verified lychee
+        run: |
+          bash .github/scripts/install-ci-tool.sh \
+            "https://github.com/lycheeverse/lychee/releases/download/lychee-v${LYCHEE_VERSION}/lychee-x86_64-unknown-linux-gnu.tar.gz" \
+            "$LYCHEE_SHA256" lychee-x86_64-unknown-linux-gnu/lychee "$RUNNER_TEMP/lychee"
+
+      - name: Check external links
+        env:
+          # Public GitHub link checks retain the existing read-only API token.
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          exclude=()
+          for dir in $SIBLINGS; do
+            exclude+=(--exclude "$dir")
+          done
+          "$RUNNER_TEMP/lychee" --include-fragments --config lychee.toml \
+            "${exclude[@]}" './*.md' './docs/**/*.md'
 
   # Secret scanning, on the working tree and on the full history.
   #
@@ -171,21 +139,23 @@ jobs:
     timeout-minutes: 15
     env:
       GITLEAKS_VERSION: 8.30.1
+      GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
+          persist-credentials: false
           # The history scan needs the history.
           fetch-depth: 0
 
-      - name: Install gitleaks
+      - name: Install checksum-verified gitleaks
         run: |
-          curl -sSfL -o /tmp/gitleaks.tar.gz \
-            "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
-          tar -xzf /tmp/gitleaks.tar.gz -C /tmp gitleaks
-          /tmp/gitleaks version
+          bash .github/scripts/install-ci-tool.sh \
+            "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" \
+            "$GITLEAKS_SHA256" gitleaks "$RUNNER_TEMP/gitleaks"
+          "$RUNNER_TEMP/gitleaks" version
 
       - name: Scan the working tree
-        run: /tmp/gitleaks dir . --redact --no-banner --config .gitleaks.toml
+        run: '"$RUNNER_TEMP/gitleaks" dir . --redact --no-banner --config .gitleaks.toml'
 
       - name: Scan the full history
-        run: /tmp/gitleaks git . --redact --no-banner --config .gitleaks.toml
+        run: '"$RUNNER_TEMP/gitleaks" git . --redact --no-banner --config .gitleaks.toml'
