@@ -11,13 +11,15 @@ Dolibarr is the organization's ERP, used primarily for accounting given the
 Kleinunternehmer status (§6 Abs. 1 Z 27 UStG — no VAT on invoices). Instance:
 https://erp.sdwa5.org
 
-**It also holds the organization's operational backlog**, in the Projects
-module, since 2026-09-15. The repositories' `TODO.md` files stay technical, and
-anything that is a purchase, a deadline, an event settlement or a piece of
-Verein administration belongs here instead. The backlog is written in from a
-gitignored JSON spec by `tools/dolibarr/sync-pm.sh`, which creates and updates
-but never deletes, so closing a task stays a job for the Dolibarr UI. See
-[`sdwa5-vps/docs/dolibarr.md`](../sdwa5-vps/docs/dolibarr.md#projects-and-tasks).
+**It also holds the organization's operational backlog**, since 2026-09-15.
+The repositories' `TODO.md` files stay technical, and anything that is a
+purchase, a deadline, an event settlement or a piece of Verein administration
+belongs here instead. Since 2026-10-15 the backlog is a set of tickets linked to
+their projects, because a ticket's severity is shown as its priority and a
+task's priority is not shown anywhere. It is written in from a gitignored JSON
+spec by `tools/dolibarr/sync-pm.sh`, which creates and updates but never
+deletes, so closing a ticket stays a job for the Dolibarr UI. See
+[`sdwa5-vps/docs/dolibarr.md`](../sdwa5-vps/docs/dolibarr.md#projects-tasks-and-tickets).
 
 Technical/ops detail: [`sdwa5-vps/docs/dolibarr.md`](../sdwa5-vps/docs/dolibarr.md)
 
