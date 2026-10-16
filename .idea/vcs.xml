@@ -5,6 +5,7 @@
     <mapping directory="$PROJECT_DIR$/sdwa5-3d" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/sdwa5-banksync" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/sdwa5-dsp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sdwa5-pmtools" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/sdwa5-vps" vcs="Git" />
   </component>
 </project>
