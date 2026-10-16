@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- `docs/services.md` describes ticket closing through `sync-pm.sh` and the PmTools module.
+
 ### Added
 
 - The Dolibarr module repository `sdwa5-pmtools` is listed and ignored as a sibling checkout.
