@@ -50,6 +50,20 @@ for an administrator.
 
 Technical/ops detail: [`sdwa5-vps/docs/vaultwarden.md`](../sdwa5-vps/docs/vaultwarden.md)
 
+## Paperless-ngx (document archive)
+
+The Verein's document archive, live since 2026-10-16. Instance: https://paper.sdwa5.org
+
+Documents arrive by web upload or through a Paperless mobile app, and the uploader becomes the owner.
+Every document is shared with the board's group as soon as it is added, under the Verein's policy of
+maximum transparency, so the board sees the whole archive. Private papers therefore do not belong in
+this instance. Every account uses TOTP, and the logins live in Vaultwarden.
+
+The archive is kept handoverable. When the board changes, `document_exporter` writes it out in one
+piece.
+
+Technical/ops detail: [`sdwa5-vps/docs/paperless.md`](../sdwa5-vps/docs/paperless.md)
+
 ## Shopware (shop / merch)
 
 Storefront at https://sdwa5.org used for merch distributed as voluntary
