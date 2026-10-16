@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+
+- `docs/services.md` describes the Verein's Paperless-ngx archive at paper.sdwa5.org.
+
 ### Changed
 
 - `docs/services.md` describes ticket closing through `sync-pm.sh` and the PmTools module.
