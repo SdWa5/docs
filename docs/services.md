@@ -17,8 +17,10 @@ purchase, a deadline, an event settlement or a piece of Verein administration
 belongs here instead. Since 2026-10-15 the backlog is a set of tickets linked to
 their projects, because a ticket's severity is shown as its priority and a
 task's priority is not shown anywhere. It is written in from a gitignored JSON
-spec by `tools/dolibarr/sync-pm.sh`, which creates and updates but never
-deletes, so closing a ticket stays a job for the Dolibarr UI. See
+spec by `tools/dolibarr/sync-pm.sh`, which creates, updates, renames, closes
+and reopens tickets but never deletes. Closing and the ticket dictionaries go
+through the module [SdWa5/dolibarr-pmtools](https://github.com/SdWa5/dolibarr-pmtools),
+which also gives the ERP's MCP server its ticket and project tools. See
 [`sdwa5-vps/docs/dolibarr.md`](../sdwa5-vps/docs/dolibarr.md#projects-tasks-and-tickets).
 
 Technical/ops detail: [`sdwa5-vps/docs/dolibarr.md`](../sdwa5-vps/docs/dolibarr.md)
