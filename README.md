@@ -34,6 +34,9 @@ See [`docs/`](docs/) for:
   formerly trackdsp
 - [`sdwa5-banksync`](https://github.com/SdWa5/banksync) — Dolibarr module, a fork of BankSync with
   a PayPal provider, automatic posting and a review queue with Belege
+- [`sdwa5-pmtools`](https://github.com/SdWa5/dolibarr-pmtools) — Dolibarr module that adds ticket
+  dictionary writes and ticket close, cancel and reopen to the REST API, and ticket and project
+  tools to the core MCP server
 
 ## Checks
 

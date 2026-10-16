@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- The Dolibarr module repository `sdwa5-pmtools` is listed and ignored as a sibling checkout.
 - A checksum-verified CI tool installer and regression tests for valid archives, modified archives,
   failed downloads and preservation of an existing installation after failed verification.
 
