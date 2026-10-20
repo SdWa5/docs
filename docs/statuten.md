@@ -35,11 +35,12 @@ The result was then checked two ways. § 7 states the document's own structure,
 Rechnungsprüfer (§ 13) und das Schiedsgericht (§ 14)", and all seven pages of the
 stamped scan were read. Both agree with what is below.
 
-## Four defects in the filed version
+## Seven defects in the filed version
 
-These are reproduced below unchanged rather than silently tidied. All four
+These are reproduced below unchanged rather than silently tidied. All seven
 belong in the same amendment whenever the statutes are next changed, because a
-Statutenänderung reopens the whole document for the authority's review.
+Statutenänderung reopens the whole document for the authority's review. The
+draft in [statuten-entwurf.md](statuten-entwurf.md) fixes all seven.
 
 - **§ 1 Abs. 3 is an unfilled template line.** It reads "Die Errichtung von
   Zweigvereinen ist / ist nicht beabsichtigt" and neither option was struck out,
@@ -53,7 +54,19 @@ Statutenänderung reopens the whole document for the authority's review.
   "§ 11 Abs. 8 bis 10". All three mean the Vorstand, which is **§ 10** here, and
   § 11 has no clause 2 or 8 to 10 at all. The template these statutes were
   adapted from evidently had the Vorstand one paragraph further down, and the
-  references were never renumbered.
+  references were never renumbered. Lit. d also cites the "dritter Satz", while
+  the auditors' sentence is the second sentence of § 10 Abs. 2, because the
+  template's opening sentence on who elects the Vorstand was dropped.
+- **No clause says who elects the Vorstand.** § 9 does not list the election
+  among the tasks of the Generalversammlung, § 10 does not name an electing
+  body, and only § 13 Abs. 1 does so, for the Rechnungsprüfer.
+- **Three chair rules contradict each other.** § 8 Abs. 9 gives the chair of
+  the Generalversammlung to the longest-serving Vorstand member present,
+  § 10 Abs. 7 gives the chair of the Vorstand to the longest-standing
+  Vereinsmitglied, and § 12 Abs. 5 gives both to the Obmann.
+- **Two dissolution rules contradict each other.** § 8 Abs. 8 requires two
+  thirds of the Generalversammlung, while § 15 Abs. 1 lets the Vorstand alone
+  dissolve the Verein with an absolute majority.
 - **§ 15 restarts its numbering.** The stamped scan numbers both of its clauses
   "(1)", the second one on a fresh page. They are rendered below as (1) and (2),
   which is the only sensible reading.
