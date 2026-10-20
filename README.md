@@ -22,6 +22,8 @@ See [`docs/`](docs/) for:
   (Dolibarr, Vaultwarden, Shopware, social accounts, GitHub, ...)
 - [Going public](docs/going-public.md) — what publishing these repositories
   would disclose, and the decisions that are still open
+- [Acoustics](docs/acoustics.md) — how much sound common walls, floors and
+  finishes reflect, absorb and let through, sand-filled timber wall included
 
 ## Sub-repositories
 
@@ -48,8 +50,14 @@ See [`docs/`](docs/) for:
 - **Secrets.** The working tree and the full history are scanned with
   [gitleaks](https://github.com/gitleaks/gitleaks). The same scanner also runs in the VPS, 3d and DSP repositories.
   A public repository publishes every past commit at once.
+- **Acoustics.** [`scripts/acoustics/`](scripts/acoustics/) generates [Acoustics](docs/acoustics.md) and its
+  graphs. Its tests check the energy balance and the estimate marks, compare curve inputs with the ten table
+  frequencies and the additional source inputs, and regenerate the page and the graphs to catch a stale commit.
+  Curves use unrounded energy inputs; tests separately verify the tables' rounding and display limits.
+  Direct labels merge identical curves, show pink noise averages and order endpoint ties by that average.
+  Tests check the label order, fit and averages; the page's tables and source descriptions identify measurements and estimates.
 
-The CI installer regression tests and both checks run locally against the same configuration:
+The CI installer regression tests and the link and secret checks run locally against the same configuration:
 
 ```sh
 python3 -B -m unittest discover -s .github/tests -v
@@ -57,6 +65,21 @@ lychee --offline --include-fragments --config lychee.toml './*.md' './docs/**/*.
 gitleaks dir . --redact --config .gitleaks.toml
 gitleaks git . --redact --config .gitleaks.toml
 ```
+
+The acoustics page is edited in `scripts/acoustics/acoustics.template.md` and `data.py`, never in `docs/`.
+Regenerating it and testing the result needs the graph libraries from the hash-pinned `requirements.txt`.
+On Debian, `python3 -m venv` needs the `python3-venv` package.
+
+```sh
+python3 -m venv ~/.venvs/sdwa5-acoustics
+~/.venvs/sdwa5-acoustics/bin/pip install --require-hashes --no-deps -r scripts/acoustics/requirements.txt
+~/.venvs/sdwa5-acoustics/bin/python -B scripts/acoustics/split.py
+ACOUSTICS_REQUIRE_GRAPHS=1 ~/.venvs/sdwa5-acoustics/bin/python -B -m unittest discover -s scripts/acoustics/tests -v
+```
+
+Without the libraries the table tests still run and the graph tests are skipped, while
+`ACOUSTICS_REQUIRE_GRAPHS=1` turns that skip into a failure, as in CI. The PNGs are compared byte for byte.
+That comparison has been confirmed on Python 3.12 only, the version CI uses.
 
 The link check covers links into the sub-repositories, such as
 [`../sdwa5-vps/docs/caddy.md`](sdwa5-vps/docs/caddy.md). Those are separate repositories that only
@@ -78,8 +101,8 @@ shop@sdwa5.org
 
 Two licences, because this repository is part tooling and part writing.
 
-- **MIT** ([LICENSE](LICENSE)) for the code and configuration: `.github/`, `.idea/`, `lychee.toml`, `.gitleaks.toml` and `composer.json`.
-- **CC BY-SA 4.0** ([LICENSE-docs](LICENSE-docs)) for the prose and data: `docs/`, `README.md`, `CHANGELOG.md` and `TODO.md`.
+- **MIT** ([LICENSE](LICENSE)) for the code and configuration: `.github/`, `.idea/`, `scripts/`, `lychee.toml`, `.gitleaks.toml` and `composer.json`, except for the two acoustics files below.
+- **CC BY-SA 4.0** ([LICENSE-docs](LICENSE-docs)) for the prose and data: `docs/`, `README.md`, `CHANGELOG.md` and `TODO.md`, and the acoustics data and page text in `scripts/acoustics/data.py` and `scripts/acoustics/acoustics.template.md`.
 
 Attribute as "Musikverein Schmeiß die Wand an 5 (SdWa5)" with a link to the repository. Share-alike applies to the prose, so a
 derivative of the documentation stays under the same licence. The code carries no such condition.
