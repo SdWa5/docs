@@ -40,7 +40,8 @@ happened. Do not read the table as one event.
   changing it is a Statutenänderung under § 14 Abs 1 VerG: a two-thirds
   resolution of the Generalversammlung, then a notification the authority has
   four weeks to forbid, extendable to six. Fee roughly 21 € plus 6 € per page of
-  the attached statutes.
+  the attached statutes. The amended text is drafted in
+  [statuten-entwurf.md](statuten-entwurf.md).
 - **Competent authority.** Bezirkshauptmannschaft Braunau am Inn today, because
   competence follows the Sitz and Ostermiething is in Oberösterreich. Both
   notifications therefore go to Braunau, not to Salzburg. Once the Sitz move is
@@ -81,9 +82,11 @@ is unavailable, Stellvertreter act in his place.
 | 2 | see ZVR register |
 
 Note: statutes § 13 say Rechnungsprüfer must not belong to an organ whose
-activity they audit, and both hold Vorstand roles. Unresolved conflict, and it
-belongs in the same amendment as the four defects recorded in
-[statuten.md](statuten.md). Stated by role rather than against a person,
+activity they audit, and both hold Vorstand roles. § 5 Abs. 5 VerG requires
+the same independence. The Verein accepts the conflict for now because of its
+size, and electing at least one auditor outside the Vorstand is deferred, see
+[TODO.md](../TODO.md) item 6 and [statuten.md](statuten.md) for the other
+defects. Stated by role rather than against a person,
 decided 2026-09-15: the defect is the association's, not any individual's.
 
 ## Bank / payments
@@ -116,10 +119,12 @@ version stays the stamped scan `Statuten_Stempel.pdf` in the
 [Google Drive folder](https://drive.google.com/drive/folders/1deC0DDdF5bXz1OuGvVQTcvSgrui9EpmV),
 next to the `Vereinsstatuten.docx` the reading copy was converted from.
 
-`statuten.md` also lists four defects in the filed version, from an unfilled
-template line in § 1 Abs. 3 to three internal cross-references that point one
-paragraph too high. They matter for the planned Sitz change, because amending
-the statutes reopens the whole document for the authority's review.
+`statuten.md` also lists seven defects in the filed version, from an unfilled
+template line in § 1 Abs. 3 to contradicting chair and dissolution rules. The
+amendment that fixes them is drafted in
+[`statuten-entwurf.md`](statuten-entwurf.md). They matter for the planned Sitz
+change, because amending the statutes reopens the whole document for the
+authority's review.
 
 Key points:
 

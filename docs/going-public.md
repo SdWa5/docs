@@ -405,7 +405,7 @@ new one, which is the planted key.
   credential.** One row named an account and, in the same sentence, made it the Shopware SMTP holder,
   the Let's Encrypt contact and the owner of the backup folder. No credential was ever in a repository;
   the sentence was the map to all three.
-* **The four defects in the filed statutes and the Rechnungsprüfer conflict are published.** An
+* **The defects in the filed statutes and the Rechnungsprüfer conflict are published.** An
   association that names its own defects and fixes them stands better than one where somebody else
   finds them, and the statutes are filed with the authority in any case. The governance conflict is now
   stated by role rather than against a person, because the defect belongs to the association.

@@ -8,6 +8,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- `docs/statuten-entwurf.md`, a draft amendment of the statutes with the Sitz in Hof bei Salzburg, branches
+  intended and cooperation abroad, a gender clause, a member's right to refuse acts that put them at risk in
+  place of the Vorstand's final say, one chair rule, the election of the Vorstand by the Generalversammlung,
+  GV approval of co-opted Vorstand members and of auditors' contracts, admission by the Generalversammlung,
+  expulsion only for an important reason with an appeal to the Generalversammlung, digital form first,
+  virtual or hybrid Generalversammlungen under the VirtGesG, dissolution by two thirds of the
+  Generalversammlung with Vorstand consent and corrected cross-references.
+- `TODO.md` item 6 tracks passing and filing the amendment, the deferred auditor election, a German sister e.V.,
+  liability insurance, the Zustellanschrift notification and the follow-ups after registration.
+
+### Changed
+
+- `docs/statuten.md` lists seven defects in the filed version instead of four.
+- `docs/organization.md` records the auditor conflict as accepted for now, with the election deferred.
+
+### Added
+
 - `docs/services.md` describes the Verein's Paperless-ngx archive at paper.sdwa5.org.
 
 ### Changed

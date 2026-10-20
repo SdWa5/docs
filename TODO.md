@@ -27,3 +27,24 @@
        phone can control it.
     5. The stack is still open, because a real-time GPU video pipeline lies outside the PHP default. Check whether
        the browser control can reuse the approach of the `sdwa5-dsp` browser editor.
+6. Pass the Statutenänderung drafted in [docs/statuten-entwurf.md](docs/statuten-entwurf.md)
+    1. Invite to the Generalversammlung at least one week ahead, in writing and digitally, with the full draft on
+       the agenda (§ 8 Abs. 3 and 5). The filed statutes still apply to this GV and have no VirtGesG clause, so it
+       has to meet in person; the online rules of § 16 apply only from the following GV. An informal pre-check of the draft by the BH Braunau before the invitation
+       would be a proposal. After the two-thirds resolution, notify the BH Braunau, at roughly 21 € plus 6 € per
+       page. The latest sensible date is the Generalversammlung that re-elects the Vorstand before the current
+       Funktionsperiode ends on 2027-10-26.
+    2. Deferred: elect at least one Rechnungsprüfer outside the Vorstand. Both auditors hold Vorstand roles today,
+       which § 13 Abs. 1 and § 5 Abs. 5 VerG rule out, and the Verein accepts it for now because of its size.
+    3. Found a German sister e.V. once there are enough members in Germany. § 4 Abs. 1 VerG requires an Austrian
+       Sitz, so it cannot be a Zweigverein; the draft's § 1 Abs. 3 allows cooperation and membership instead.
+    4. Check whether a liability insurance is worth it. Under § 24 Abs. 7 VerG it covers the indemnity an unpaid
+       Vorstand member can claim from the Verein for damages owed to third parties.
+    5. Check whether the notification of the new Zustellanschrift under § 14 Abs. 3 VerG was filed, and whether the
+       Impressum, Datenschutz and AGB pages, Dolibarr, Google Workspace, PayPal and the domain registrant carry the
+       new address. The repository has no record of the filing, the four weeks from 2026-09-14 ended on
+       2026-10-12, and the 0.10.0 changelog listed all those places as still showing the old address.
+    6. Once the amendment is registered, replace [docs/statuten.md](docs/statuten.md) with the new text and delete
+       the draft. Move the competent authority in [docs/organization.md](docs/organization.md) to the
+       BH Salzburg-Umgebung and update its key points, and change the AGB place of jurisdiction to Hof bei Salzburg
+       ([sdwa5-vps/docs/shopware/shop-config.md](sdwa5-vps/docs/shopware/shop-config.md)).
