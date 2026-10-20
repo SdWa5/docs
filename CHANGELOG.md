@@ -6,6 +6,33 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.25.0] - 2026-10-20
+
+### Added
+
+- `docs/acoustics.md` splits the absorption coefficients of the Sound Reinforcement Handbook's Table 6-1 into
+  reflected, absorbed and transmitted shares at the ten ISO 266 octave bands, 31.5, 63, 125, 250 and 500 Hz, and
+  1, 2, 4, 8 and 16 kHz, and adds an open window and a sand-filled timber wall. The added bands use measured
+  transmission where available and absorption estimates that combine interpolation with comparable measured
+  specimens, weighted by errors measured on 90 database specimens. Estimates are explicitly marked. Four embedded
+  graphs plot the percentage shares against logarithmic frequency, with a solid, smoothly interpolated curve
+  without point markers, with direct names and pink noise averages. Labels at the same visible endpoint
+  height are ordered by that average, largest first. Identical curves share a labelled block; the transmission
+  graphs have five distinct curves for nineteen materials. Material and thickness use separate table columns.
+  The transmission and absorbed curves include additional source
+  frequencies from the plaster, pine, concrete and brick tests while retaining the ten table anchors and axis
+  labels. No finer absorption measurements are implied. Dimensions use metric units throughout. Transmitted
+  shares appear in two graphs with a highlighted 2.5 % upper limit, one linear and one logarithmic. Both omit the 100 %
+  open window so the other 19 materials, reaching about 1.98 %, remain visible; the window stays in the tables
+  and the reflected and absorbed graphs. Curves use unrounded, uncapped inputs to avoid artificial steps;
+  the tables retain their rounding and display limits. Modified Akima interpolation keeps every transmission
+  input while avoiding the flat stair treads that PCHIP draws between equal readings.
+- `scripts/acoustics/` generates `docs/acoustics.md` and its graphs from `data.py` and a template. Its unittest
+  suite runs in a new `acoustics` CI job against hash-pinned matplotlib, scipy and numpy on Python 3.12.
+  `measure_weights.py` reproduces the absorption-weight study from an identified database snapshot.
+
+## [0.24.0] - 2026-10-20
+
 ### Added
 
 - `docs/statuten-entwurf.md`, a draft amendment of the statutes with the Sitz in Hof bei Salzburg, branches
@@ -17,28 +44,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   Generalversammlung with Vorstand consent and corrected cross-references.
 - `TODO.md` item 6 tracks passing and filing the amendment, the deferred auditor election, a German sister e.V.,
   liability insurance, the Zustellanschrift notification and the follow-ups after registration.
-
-### Changed
-
-- `docs/statuten.md` lists seven defects in the filed version instead of four.
-- `docs/organization.md` records the auditor conflict as accepted for now, with the election deferred.
-
-### Added
-
 - `docs/services.md` describes the Verein's Paperless-ngx archive at paper.sdwa5.org.
-
-### Changed
-
-- `docs/services.md` describes ticket closing through `sync-pm.sh` and the PmTools module.
-
-### Added
-
 - The Dolibarr module repository `sdwa5-pmtools` is listed and ignored as a sibling checkout.
 - A checksum-verified CI tool installer and regression tests for valid archives, modified archives,
   failed downloads and preservation of an existing installation after failed verification.
 
 ### Changed
 
+- `docs/statuten.md` lists seven defects in the filed version instead of four.
+- `docs/organization.md` records the auditor conflict as accepted for now, with the election deferred.
+- `docs/services.md` describes ticket closing through `sync-pm.sh` and the PmTools module.
 - GitHub Actions references use upstream commit SHAs and checkouts do not persist credentials.
 - Required public sibling repositories are cloned anonymously, and a failed clone fails the link check.
 - lychee 0.24.2 and gitleaks 8.30.1 archives are verified against committed SHA-256 values before extraction.

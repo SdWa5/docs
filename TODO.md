@@ -48,3 +48,7 @@
        the draft. Move the competent authority in [docs/organization.md](docs/organization.md) to the
        BH Salzburg-Umgebung and update its key points, and change the AGB place of jurisdiction to Hof bei Salzburg
        ([sdwa5-vps/docs/shopware/shop-config.md](sdwa5-vps/docs/shopware/shop-config.md)).
+7. Turn the [acoustics page](docs/acoustics.md) into an interactive application and publish it on the
+   sdwa5.org Shopware instance.
+    1. Investigate synchronizing Shopware content with `sdwa5-vps` or a new sibling repository, so it can be
+       versioned and maintained alongside the other website sources.

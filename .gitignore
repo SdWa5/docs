@@ -13,3 +13,6 @@
 # from every commit message, so committing it would disclose exactly what that
 # removed. sdwa5-3d has ignored this path since it was created.
 /.claude/
+
+# Python bytecode from running scripts/acoustics/ and its tests.
+__pycache__/
