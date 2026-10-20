@@ -48,7 +48,16 @@
        the draft. Move the competent authority in [docs/organization.md](docs/organization.md) to the
        BH Salzburg-Umgebung and update its key points, and change the AGB place of jurisdiction to Hof bei Salzburg
        ([sdwa5-vps/docs/shopware/shop-config.md](sdwa5-vps/docs/shopware/shop-config.md)).
-7. Turn the [acoustics page](docs/acoustics.md) into an interactive application and publish it on the
+7. Automate building PDFs from the docs, starting with [docs/statuten.md](docs/statuten.md) and
+   [docs/statuten-entwurf.md](docs/statuten-entwurf.md), which are made by hand so far
+    1. The draft PDF is the attachment for the GV invitation, and after the vote the PDF of the passed text is what
+       goes to the BH, which charges per page. That PDF therefore needs the German statute text only, without the
+       English header with the change table.
+    2. Proposal: a job in [.github/workflows/docs.yml](.github/workflows/docs.yml) that renders the PDFs with pandoc
+       and uploads them as workflow artifacts, plus a small script under `scripts/` for the same build locally.
+       pandoc is installed on the workstation. Check first how the hand-made PDFs were produced, so the automated
+       output matches them.
+8. Turn the [acoustics page](docs/acoustics.md) into an interactive application and publish it on the
    sdwa5.org Shopware instance.
     1. Investigate synchronizing Shopware content with `sdwa5-vps` or a new sibling repository, so it can be
        versioned and maintained alongside the other website sources.
