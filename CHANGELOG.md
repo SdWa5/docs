@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.26.0] - 2026-10-26
+
+### Added
+
+- `CLAUDE.md` with the rule that every Dolibarr change ships with its REST API.
+
 ## [0.25.0] - 2026-10-20
 
 ### Added
