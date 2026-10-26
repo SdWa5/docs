@@ -106,12 +106,14 @@ The organization's only payment account — see
 
 A PayPal sync into Dolibarr has been live since 2026-10-05, still in dry run. The module is the fork
 [SdWa5/banksync](https://github.com/SdWa5/banksync) of `vanyolai/dolibarr-banksync`, checked out as
-`sdwa5-banksync/` next to the other repositories and deployed on the VPS at v1.2.0. A daily scheduled
+`sdwa5-banksync/` next to the other repositories and deployed on the VPS at v1.4.0. A daily scheduled
 job at 06:00 UTC fetches PayPal's transactions into bank account 4 from the cutover date 2026-09-09 on
 and reports new queue items to mail@sdwa5.org. In dry run it posts nothing and only records what it
 would post. Once `BANKSYNC_AUTOPOST_ENABLED` is switched on, it posts fees and payments that clearly
-belong to one supplier invoice and leaves everything else in a queue where the Rechnungsprüfer
-settles it together with its Belege. The hand-typed lines before the cutover stay as they are. Setup and behaviour are in the fork's `docs/paypal.md`, the deployment in
+belong to one supplier invoice, creates and posts the supplier invoice of a shop purchase that has
+none, and leaves everything else in a queue where the Rechnungsprüfer settles it together with its
+Belege. A payment whose Beleg is missing stays in that queue until the Beleg is uploaded. A REST API
+covers the queue and these decisions. The hand-typed lines before the cutover stay as they are. Setup and behaviour are in the fork's `docs/paypal.md`, the deployment in
 [`sdwa5-vps/docs/dolibarr.md`](../sdwa5-vps/docs/dolibarr.md#custom-modules), and the remaining
 go-live steps in `sdwa5-vps/TODO.md`.
 
