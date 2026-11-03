@@ -1,14 +1,13 @@
 # 6. Sound outdoors
 
-> **Draft, pass 1.** This chapter was written from general knowledge and checked against the 1989 handbook for
+> **Draft, pass 1.** This chapter was written from general knowledge and checked against reference literature for
 > coverage. Standards, editions and figures are named but have not yet been verified against their sources. The
 > list *To verify in pass 2* at the end names every claim that still needs one.
 
 This chapter answers how sound behaves when there are no walls, which is the simplest case and the base for every
 other. It covers the loss with distance from point and line sources, a level budget from the loudspeaker to the last
 row, what air, wind and temperature do over longer distances, how far a festival carries into the neighbourhood, and
-how much gain a microphone can have before the system feeds back. It replaces handbook §5 (pp. 43–52) and §18.3.3,
-together with the parts of §18.2.3 to §18.3.2 that lead up to it (pp. 351–353). Rooms follow in
+how much gain a microphone can have before the system feeds back. Rooms follow in
 [chapter 7](07-sound-indoors.md).
 
 ## Loss with distance
@@ -60,8 +59,7 @@ which chapter 14 covers.
 
 ### A level budget
 
-The handbook works two examples in feet and watts. The same method in metres starts from the level wanted at the last
-listener and works back to the loudspeaker.
+A level budget starts from the level wanted at the last listener and works back to the loudspeaker.
 
 Say the audience should hear 100 dB(A) averaged over time at 50 m, and the programme has peaks 12 dB above that
 average. A point source then has to produce 134 dB at 1 m for the average and 146 dB at 1 m for the peaks. At 25 m the
@@ -70,8 +68,8 @@ same targets need 128 dB and 140 dB. A single box of the kind used at small even
 boxes, a line array or delay loudspeakers further back.
 
 Several boxes add up as follows. Boxes that cover the same area and add coherently gain up to 6 dB per doubling of
-their number, while boxes whose sound adds without a fixed phase relation gain 3 dB. The handbook advises planning
-with 3 dB per doubling and treating any further gain as headroom, and that is still a safe start.
+their number, while boxes whose sound adds without a fixed phase relation gain 3 dB. Planning with 3 dB per doubling
+and treating any further gain as headroom is a safe start.
 
 ### Covering the audience evenly
 
@@ -87,7 +85,7 @@ ears of the audience is 7.8 m from a listener at 5 m and 40.4 m from one at 40 m
 | 40 m | 40.4 m | 8.5° | 0 dB |
 
 Aiming the axis at the back row places the closer listeners off axis, and the box's vertical pattern then lowers
-their level. The handbook shows a case where the off-axis loss and the distance gain cancel within ±2 dB. With a
+their level. In a favourable case, the off-axis loss and the distance gain cancel within ±2 dB. With a
 conventional box of about 40° vertical coverage, this works for the rear two thirds of such an audience but not for
 the front rows, which need front fills or a line array whose curvature spreads the energy by distance. Aiming the axis
 into the middle of the audience makes it worse, because the front then gets both the shorter distance and the axis.
@@ -102,7 +100,7 @@ Over the first tens of metres, distance is all that matters. Further out, the ai
 ### Air absorption
 
 Air turns sound into heat, and much more so at high frequencies. The cause is a relaxation of oxygen and nitrogen
-molecules, which water vapour shifts in frequency. The handbook explains the humidity effect by the lower density of
+molecules, which water vapour shifts in frequency. The humidity effect is sometimes explained by the lower density of
 moist air, but that explanation does not hold. The loss depends on temperature and humidity together, and not
 monotonically, so dry air is not always the worst case. ISO 9613-1 gives the formula. The values below are computed
 from it for standard air pressure.
@@ -192,7 +190,7 @@ setup, by measuring both at the same time with the system running.
 A microphone in front of a loudspeaker forms a loop. The loudspeaker's sound reaches the microphone, is amplified and
 comes out of the loudspeaker again. When the loop gain reaches 0 dB at a frequency where the delay around the loop
 brings the sound back in phase, the system rings continuously. Just below that point, the system still rings briefly
-after each sound, and it colours everything that passes through it. The rule from the handbook still stands. A system
+after each sound, and it colours everything that passes through it. A system therefore
 runs at least 6 dB below the onset of feedback.
 
 ### Potential acoustic gain
@@ -237,15 +235,15 @@ with two open microphones it does not. Moving the microphone closer makes up the
 
 ### What raises it
 
-The handbook's three rules remain the core, and a modern system adds a few tools.
+Three classic rules remain the core, and a modern system adds a few tools.
 
 1. **Microphone close to the source.** Every halving of $D_s$ gives 6 dB, which is why a headset is the strongest
    single measure for a speaker or a singer who moves.
 2. **Loudspeaker far from the microphone.** Every doubling of $D_1$ gives 6 dB. A flown system and loudspeakers in
    front of the stage line help, while a loudspeaker behind the microphone is the worst case.
 3. **Directional microphones and loudspeakers, aimed.** A microphone that has the loudspeaker in its rejection zone
-   and a loudspeaker that has the microphone off its axis each gain several decibels. The handbook expects about 6 dB
-   together in practice, because a loudspeaker becomes omnidirectional at low frequencies and a microphone's pattern
+   and a loudspeaker that has the microphone off its axis each gain several decibels. About 6 dB together is a realistic
+   expectation in practice, because a loudspeaker becomes omnidirectional at low frequencies and a microphone's pattern
    changes with frequency. A microphone with smooth off-axis response gains more than one with a sharper pattern and
    peaks off axis.
 4. **Fewer open microphones.** Each doubling of NOM costs 3 dB. Muting unused channels or an automatic mixer that
@@ -260,20 +258,6 @@ A cardioid subwoofer array uses at least two sources, with one delayed and often
 cancel behind the array and add in front. For a gradient pair with the sources a quarter wavelength apart at 100 Hz,
 the spacing is 0.86 m and the delay 2.5 ms. Such arrays reach well over 10 dB of rear rejection over the subwoofer
 range, which helps the stage and the neighbours behind it. Chapter 14 covers the variants.
-
-## What changed since 1989
-
-| Handbook | Then | Today |
-|---|---|---|
-| §5.1 | Point source, 6 dB per doubling, two examples in feet | Point and line source, transition distance, metric level budget |
-| §5.2.1 | Wind vector and gradient refraction, small effect | Kept, with the effect on the audience and behind the stage |
-| §5.2.2 | Morning and evening temperature gradients | Kept, with night inversions and neighbour complaints |
-| §5.2.3 | Air absorption above 2 kHz, explained by the density of moist air | Molecular relaxation per ISO 9613-1, computed table, air-absorption filters |
-| §5.3, §5.3.1 | Feedback loop, 6 dB margin, maximum gain with four distances | PAG with NOM, NAG with EAD |
-| §5.3.2 | Directional elements give about 6 dB together | Kept, with headsets, cardioid subwoofers and in-ear monitors |
-| §18.2.3 | Clusters gain 3 to 6 dB per doubling | Kept, line arrays in chapter 14 |
-| §18.3.1, §18.3.3 | Aiming at the rear, two clusters aimed at the centre rear | Kept, with front fills and prediction software |
-| — | Not covered | Barriers per ISO 9613-2, neighbour limits in Austria and Germany |
 
 ## To verify in pass 2
 
@@ -294,8 +278,6 @@ range, which helps the stage and the neighbours behind it. Chapter 14 covers the
 
 ## Sources
 
-- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §5 (pp. 43–52) and
-  §18.2.3 to §18.3.3 (pp. 351–353).
 - ISO 9613-1, attenuation of sound during propagation outdoors, calculation of the absorption of sound by the
   atmosphere.
 - ISO 9613-2, attenuation of sound during propagation outdoors, general method of calculation.
@@ -303,3 +285,5 @@ range, which helps the stage and the neighbours behind it. Chapter 14 covers the
 - LAI Freizeitlärm-Richtlinie and TA Lärm.
 - Davis, D., Davis, C.: *Sound System Engineering*, Focal Press.
 - SdWa5: [Acoustics](../acoustics.md), section *What it means for the sound system*.
+- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §5 (pp. 43–52) and
+  §18.2.3 to §18.3.3 (pp. 351–353).

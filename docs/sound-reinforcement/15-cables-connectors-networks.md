@@ -1,17 +1,16 @@
 # 15. Cables, connectors and networks
 
-> **Draft, pass 1.** This chapter was written from general knowledge and checked against the 1989 handbook for
+> **Draft, pass 1.** This chapter was written from general knowledge and checked against reference literature for
 > coverage. Standards, editions and figures are named but have not yet been verified against their sources. The
 > list *To verify in pass 2* at the end names every claim that still needs one.
 
 This chapter answers which cables and connectors carry analog signals, loudspeaker power and mains power on a sound
 system, how thick a loudspeaker cable must be, and how digital audio travels over dedicated links and over networks.
-It replaces handbook §15 (pp. 281–302), §17.3 (pp. 325–327) and §18.4 (pp. 355–358). Grounding and hum are in
+Grounding and hum are in
 chapter 17, and the levels the cables carry in [chapter 3](03-decibels-levels-loudness.md).
 
-The handbook opens with the observation that most failures of a sound system are failures of a cable or a
-connector. That has not changed, and the cheapest reliability measure on a stage is still a spare for every cable
-type and a cable tester.
+Most failures of a sound system are failures of a cable or a connector, and the cheapest reliability measure on a
+stage is still a spare for every cable type and a cable tester.
 
 ## Analog signal cables
 
@@ -64,7 +63,7 @@ impedance is balanced in this sense. Professional line and microphone connection
 hundreds of metres.
 
 Modern equipment uses voltage bridging, with an output impedance of 50 Ω to 200 Ω and an input impedance of
-10 kΩ or more. The 600 Ω matching of the telephone era, which the handbook still discusses, is needed only for
+10 kΩ or more. The 600 Ω matching of the telephone era is needed only for
 old transformer equipment and long telephone lines. Connecting a +4 dBu output to a −10 dBV input, or the reverse,
 gives an 11.8 dB level mismatch, as chapter 3 computes. Interface boxes, or the trim of the receiving input, correct
 it, and an unbalanced output into a balanced input needs the cold conductor tied to ground at the source end.
@@ -78,7 +77,7 @@ multicores remain in use on small systems and as a backup.
 
 ### Strain relief and care
 
-The handbook's advice on strain relief still holds. The cable clamp of the connector must hold the jacket, so that a
+The cable clamp of the connector must hold the jacket, so that a
 pull never reaches the solder joints. Cables are coiled over-under so that they lie flat and do not twist, and a cable
 that crackles when it is moved is replaced rather than repaired on the night.
 
@@ -98,14 +97,14 @@ that crackles when it is moved is replaced rather than repaired on the night.
 | CEE (IEC 60309) | Mains distribution | Blue 230 V, red 400 V three-phase; 16 A, 32 A, 63 A |
 | Optical (opticalCON, LC, ST) | Fibre links | Clean caps on every unused end |
 
-The XLR connector has been the standard for professional audio since before 1989. It locks, and pin 1 makes contact
-first, so the grounds connect before the signal does. The polarity of pin 2 and pin 3 was not uniform in 1989, and
+The XLR connector has been the standard for professional audio for decades. It locks, and pin 1 makes contact
+first, so the grounds connect before the signal does. The polarity of pin 2 and pin 3 was not uniform in the 1980s, and
 some American equipment used pin 3 as hot. Pin 2 hot has since been standardized internationally, and equipment
 built to the older convention is now rare, but a polarity tester (chapter 16) settles any doubt.
 
 The jack plug lacks a lock, and its tip and ring touch the sleeve contact while it is inserted, which can cause loud
-bangs and short an amplifier output. The handbook already warned against jack plugs on loudspeaker cables, and
-speakON has since replaced them. A speakON NL4 cable carries pins 1+ and 1− for a single box, and pins 2+ and 2−
+bangs and short an amplifier output. Jack plugs on loudspeaker cables are therefore
+avoided, and speakON has replaced them. A speakON NL4 cable carries pins 1+ and 1− for a single box, and pins 2+ and 2−
 for the second way of a biamped box or for a second box. The convention for which pins carry which way varies
 between manufacturers, so the pinout of an NL4 or NL8 cable is checked against the box before use.
 
@@ -133,13 +132,13 @@ $20 \lg \frac{Z}{Z+R}$ for a load impedance $Z$.
 | 4 mm² | 50 m | 0.44 Ω | 0.5 dB | 0.9 dB |
 | 6 mm² | 50 m | 0.29 Ω | 0.3 dB | 0.6 dB |
 
-The handbook sets its practical limit at a loss of less than 0.5 dB, and that limit is a fair one. With 2.5 mm², it
+A loss of less than 0.5 dB is a fair practical limit. With 2.5 mm², it
 allows about 34 m into 8 Ω and 17 m into 4 Ω, and with 4 mm² about 54 m and 27 m. A subwoofer at 2 Ω, or two boxes
 in parallel on one cable, halves these lengths again. The cable resistance also lowers the damping that the amplifier
 exerts on the bass driver, as [chapter 13](13-power-amplifiers.md#the-cable-and-the-damping-factor) shows, which is a
 second reason for the thicker cable on long subwoofer runs, or for placing the amplifiers next to the boxes.
 
-The handbook also warns that the capacitance and inductance of unsuitable cable, such as coaxial or thin multicore
+The capacitance and inductance of unsuitable cable, such as coaxial or thin multicore
 cable, can roll off the response. Proper loudspeaker cable with two heavy conductors avoids this.
 
 Loudspeaker polarity is kept by convention, with pin 1+ to the positive terminal of the amplifier, and every cable is
@@ -209,16 +208,6 @@ acceptable for background music from a phone, but not for any signal that must b
 screen. Its codecs reduce the data, and its range and reliability on a crowded stage are poor, so a cable or a
 dedicated wireless system is preferred wherever it matters.
 
-## What changed since 1989
-
-| Handbook | Then | Today |
-|---|---|---|
-| §15.1, §15.2 | Shielding, capacitance, jackets, snakes | Kept; star-quad added; digital stage boxes |
-| §15.3 | Phone, phono, XLR connectors | Kept; pin 2 hot standardized; speakON, powerCON, etherCON, CEE |
-| §17.3 | +4 dBu and −10 dBV, balanced and unbalanced, 600 Ω matching | Voltage bridging; pin-1 problem (AES48) |
-| §18.4 | Wire gauge table, banana and phone connectors | Metric cross-sections computed; speakON |
-| — | Not covered | AES3, MADI, AES50, Dante, AES67, AVB/Milan, ST 2110-30; PTP; network practice; USB and Bluetooth |
-
 ## In the SdWa5 rig
 
 [The connections](../../sdwa5-3d/docs/signal-chain.md#the-connections) of one event, MARK Salzburg, list every
@@ -242,9 +231,9 @@ is the pin-convention problem of the connector section in practice.
 
 ## Sources
 
-- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §15 (pp. 281–302),
-  §17.3 (pp. 325–327), §18.4 (pp. 355–358).
 - AES3, AES10 (MADI), AES14, AES48, AES50, AES67; IEC 60268-12; IEC 60309; IEEE 1588; IEEE 802.1 (AVB);
   SMPTE ST 2110-30.
 - Muncy, N.: Noise susceptibility in analog and digital signal processing systems, *JAES* 43, 1995.
 - SdWa5: [signal chain](../../sdwa5-3d/docs/signal-chain.md), [measurements](../../sdwa5-dsp/docs/measurements.md).
+- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §15 (pp. 281–302),
+  §17.3 (pp. 325–327), §18.4 (pp. 355–358).

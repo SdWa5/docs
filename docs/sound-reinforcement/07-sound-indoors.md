@@ -1,13 +1,13 @@
 # 7. Sound indoors
 
-> **Draft, pass 1.** This chapter was written from general knowledge and checked against the 1989 handbook for
+> **Draft, pass 1.** This chapter was written from general knowledge and checked against reference literature for
 > coverage. Standards, editions and figures are named but have not yet been verified against their sources. The
 > list *To verify in pass 2* at the end names every claim that still needs one.
 
 This chapter answers what a room adds to a sound system. It covers what boundaries do with sound, the resonances of a
 room at low frequencies, reverberation and how long it lasts, the distance at which the room becomes louder than the
 loudspeaker, how intelligibility is measured, and how loudspeakers are placed and feedback is controlled when the
-room takes part. It replaces handbook §6 (pp. 53–60) and §18.3.4 to §18.3.5 (p. 354). Free-field behaviour, the
+room takes part. Free-field behaviour, the
 inverse square law and gain before feedback are in [chapter 6](06-sound-outdoors.md).
 
 ## Boundaries
@@ -16,14 +16,14 @@ A sound wave that hits a wall, a floor or a ceiling is split three ways. Part of
 part is turned into heat inside the material, and the rest passes through to the other side. The shares depend on the
 frequency and the angle, but not on the level. An object that is small compared with the wavelength, such as a
 lectern at 100 Hz, does not cast a shadow at all, because the sound bends around it. That bending is diffraction,
-which the handbook calls refraction.
+which older texts sometimes call refraction.
 
 The absorption coefficient α, introduced by Wallace Sabine, gives the share of energy that does not come back, from
 0 for a perfect reflector to 1 for an open window. A surface with α = 0.15 reflects 85 % of the energy, which is
 $10 \lg 0.85 = -0.7$ dB. A reflection is therefore weakened much less than the absorption coefficient suggests, and a
 room needs many reflections or highly absorbent surfaces before its sound decays.
 
-The SdWa5 acoustics page rebuilds the handbook's table of absorption coefficients with the split into reflected,
+The SdWa5 acoustics page gives a table of absorption coefficients with the split into reflected,
 absorbed and transmitted energy, and it adds the sound reduction index that matters for the neighbours. It is the
 reference for this section, in [Reflected, absorbed and through](../acoustics.md#reflected-absorbed-and-through).
 
@@ -78,8 +78,8 @@ modes are these.
 - **An equalizer cannot fix a mode for the whole room.** A cut at a modal peak helps where the peak is and deepens the
   dip at a node. Moving the subwoofers, the listening position or the measurement position changes more.
 - **Source position matters.** A mode is excited strongly by a source at its antinode and hardly at all by one at its
-  node. The handbook says that loudspeaker placement does not change the modes, which is right for their frequencies
-  but not for how strongly they are excited. Subwoofers placed at the middle of a wall do not excite the first width
+  node. Loudspeaker placement does not change the frequencies of the modes, but it does change how strongly they are
+  excited. Subwoofers placed at the middle of a wall do not excite the first width
   mode, which has its node there.
 - **Small rooms are the hard case.** A rehearsal room or a small club has few, widely spaced modes in the range of the
   kick drum and the bass guitar.
@@ -116,7 +116,7 @@ For a hall of 20 × 12 × 6 m, with 1440 m³ and 864 m² of surface, the two giv
 The same hall with a mean α of 0.15 empty gets an audience on 150 m² of its floor, which raises the absorption there
 from about 0.1 to about 0.9. The reverberation time at mid frequencies falls from 1.79 s to 0.93 s by Sabine. The
 audience halves the reverberation time, which is why a sound check in an empty hall misleads. The Fitzroy equation
-mentioned in the handbook treats rooms where the absorption is concentrated on one pair of surfaces, such as a
+treats rooms where the absorption is concentrated on one pair of surfaces, such as a
 hall with an absorbent ceiling and hard walls, and it gives longer times than Sabine there.
 
 ### What the room should have
@@ -179,8 +179,8 @@ Reverberation blurs speech. Each syllable is followed by its own decay, which ma
 consonants suffer most. A loud system cannot help beyond a point, because it raises the reverberation with the direct
 sound.
 
-The handbook mentions that acousticians relate intelligibility to the direct-to-reverberant ratio and leaves the
-methods to the specialist. Since then, measured indices have become routine.
+Acousticians long related intelligibility to the direct-to-reverberant ratio and left the methods to the
+specialist. Today, measured indices are routine.
 
 - **Speech Transmission Index (STI), IEC 60268-16.** STI measures how much the modulation of speech survives the
   path through the system and the room, including noise and reverberation, on a scale from 0 to 1. The standard's
@@ -204,7 +204,7 @@ noise, and much more makes no further difference.
 
 The outdoor rules from chapter 6 hold indoors, with the room as an extra participant.
 
-- **Aim at the audience, not at the walls.** The audience absorbs, and the walls reflect. The handbook aims at about
+- **Aim at the audience, not at the walls.** The audience absorbs, and the walls reflect. A common aim point is about
   two thirds of the depth of the hall, so that the level falls off towards the back and less sound reaches the rear
   wall. A slightly lower level at the back is accepted by listeners and often wanted.
 - **Treat the rear wall if possible.** A reflective rear wall sends an echo back to the stage and the front rows, which
@@ -224,7 +224,7 @@ favour some frequencies where the loop gain rises first. A feedback frequency in
 microphone position, and it can shift when the temperature changes the speed of sound, because the room resonates at
 a fixed wavelength.
 
-The handbook prefers acoustic measures over equalization, and that order still holds.
+Acoustic measures come before equalization.
 
 1. **Move the microphone.** A microphone at a node of the troublesome mode picks it up much less, and a microphone in a
    damped part of the stage picks up less reverberation.
@@ -233,8 +233,8 @@ The handbook prefers acoustic measures over equalization, and that order still h
 3. **Notch narrowly.** A modal resonance is only a few hertz wide. Its bandwidth is about $2.2 / T$, which gives
    1.2 Hz for the empty example hall and 2.4 Hz when occupied. A third-octave filter at 250 Hz is 58 Hz wide, a
    tenth-octave filter 17 Hz and a sixtieth-octave filter 3 Hz. Parametric notches of a tenth octave or narrower,
-   set by ear or by an automatic feedback suppressor, take far less out of the programme than the third-octave
-   graphic equalizers of 1989. Chapter 12 covers them.
+   set by ear or by an automatic feedback suppressor, take far less out of the programme than third-octave
+   graphic equalizers. Chapter 12 covers them.
 4. **Ring out with care.** The gain is raised slowly until a frequency rings, that frequency is notched, and the step
    is repeated a few times. After the third or fourth notch, the gain gained per notch is usually small, and the
    remaining margin is better left unused.
@@ -248,19 +248,6 @@ L-Acoustics Soundvision and Meyer MAPP 3D, calculate their own systems quickly, 
 field and leave the reverberation out. For an existing room, a measurement with REW, Smaart or a similar tool gives
 the reverberation time, the modes and the clarity from a few impulse responses in an hour, and that is usually the
 better start for a temporary system in a venue that has been measured once.
-
-## What changed since 1989
-
-| Handbook | Then | Today |
-|---|---|---|
-| §6.1 | Reflection, absorption, transmission; bending around small objects called refraction | Same split, link to the SdWa5 acoustics page; bending is diffraction |
-| §6.1.1 | Absorption coefficient, table of materials | Table kept in the acoustics page with transmission added |
-| §6.2, §6.2.1 | Standing waves between walls, three kinds of mode, drapes at a quarter wavelength | Mode tables for two rooms, Schroeder frequency, source position |
-| §6.3 | RT60 with Sabine, Eyring and Fitzroy in two unit systems | SI only, computed example, ISO 3382 measurement, DIN 18041 targets |
-| §6.4 | Critical distance, directivity raises it on axis | Kept, with a formula and a computed table |
-| §6.4.1 | Intelligibility left to specialists and computers | STI per IEC 60268-16, %ALcons, C50 and C80, prediction software |
-| §18.3.4 | Feedback locks to room modes, loudspeaker placement does not help, third- to twelfth-octave notches | Source position does change mode excitation; tenth-octave and narrower notches, automatic suppressors |
-| §18.3.5 | Aim two thirds back, treat the rear wall | Kept, with delay loudspeakers and subwoofer boundary effects |
 
 ## To verify in pass 2
 
@@ -282,11 +269,11 @@ better start for a temporary system in a venue that has been measured once.
 
 ## Sources
 
-- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §6 (pp. 53–60) and
-  §18.3.4 to §18.3.5 (p. 354).
 - Kuttruff, H.: *Room Acoustics*, CRC Press.
 - ISO 3382-1 and ISO 3382-2, measurement of room acoustic parameters.
 - IEC 60268-16, objective rating of speech intelligibility by speech transmission index.
 - DIN 18041, acoustic quality in rooms.
 - Peutz, V. M. A.: Articulation loss of consonants as a criterion for speech transmission in a room, *JAES* 19, 1971.
 - SdWa5: [Acoustics](../acoustics.md), section *Reflected, absorbed and through*.
+- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §6 (pp. 53–60) and
+  §18.3.4 to §18.3.5 (p. 354).

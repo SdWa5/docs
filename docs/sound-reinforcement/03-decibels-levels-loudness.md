@@ -1,13 +1,12 @@
 # 3. Decibels, levels and loudness
 
-> **Draft, pass 1.** This chapter was written from general knowledge and checked against the 1989 handbook for
+> **Draft, pass 1.** This chapter was written from general knowledge and checked against reference literature for
 > coverage. Standards, editions and figures are named but have not yet been verified against their sources. The
 > list *To verify in pass 2* at the end names every claim that still needs one.
 
 This chapter answers what a decibel is, which reference each common dB unit uses, how analog and digital levels
 relate, and how measured sound levels connect to perceived loudness. It is the vocabulary for everything that
-follows. It replaces handbook §3 (pp. 19–32), the operating-level part of §8.7 (pp. 92–96) and Appendix A on
-logarithms (pp. 409–412).
+follows.
 
 ## Logarithms in one table
 
@@ -111,7 +110,7 @@ an 8 Ω loudspeaker has a voltage gain of 0 dB and a power gain of 31 dB, becaus
 loudspeaker 189 mW. In a modern system nearly every gain is a voltage gain, and every stage except the power
 amplifier is designed to deliver voltage into a light load. This book means voltage gain whenever it says gain.
 
-The handbook also untangled the words volume, level and gain. Its advice still holds. "Level" is a quantity relative
+Three words are often confused, volume, level and gain. "Level" is a quantity relative
 to a stated reference, "gain" is a change of level through a stage, and "volume" is a colloquial word best avoided in
 technical writing.
 
@@ -249,8 +248,8 @@ loudness needs ten times the power.
 
 The contours flatten at higher levels. At concert levels the ear hears bass and treble nearly as strongly as the
 midrange, while at background levels the same mix sounds thin. A system set up for a quiet dinner may need more low
-and high end than the same system at a party, which the handbook illustrated with the loudness button of hi-fi
-amplifiers. Current DSPs can apply level-dependent loudness compensation based on ISO 226 automatically.
+and high end than the same system at a party, which is what the loudness button of hi-fi amplifiers was
+for. Current DSPs can apply level-dependent loudness compensation based on ISO 226 automatically.
 
 **Programme loudness** is measured in LUFS (loudness units relative to full scale) according to ITU-R BS.1770, with
 EBU R 128 setting −23 LUFS as the broadcast target in Europe and streaming services normalising to targets around −14
@@ -258,25 +257,6 @@ to −16 LUFS. LUFS matter in live sound wherever programme is exchanged with br
 feed, a playback file for an event or a pre-show playlist should be loudness-normalised so that the first track does
 not arrive 8 dB louder than the walk-in music. LUFS do not replace dB SPL in the room, because they measure the
 signal, not the sound.
-
-## What changed since 1989
-
-| Handbook | Then | Today |
-|---|---|---|
-| §3.1 | Decibel derivation with power and voltage examples, power-ratio tables | Kept, condensed into one table and three rules |
-| §3.2.1 | dBm explained at length, 600 Ω lines still common | Legacy. Voltage units fit bridging interfaces |
-| §3.2.3 | Confusion between dBv and dBV, NAB and IEC history | dBV is settled. dBv is no longer used |
-| §3.2.5 | +4 dBm and +8 dBm for professional, −10 dBV for consumer | +4 dBu and −10 dBV. The +8 dBm broadcast level is rarely seen |
-| §3.3 | Pressure in dyn/cm² and N/m² | Pascal only. 1 Pa is 94 dB SPL |
-| §3.4 | RMS, the "RMS power" misnomer | Kept, plus crest factor and meter types. Amplifier ratings in chapter 13 |
-| §3.6.1 | Fletcher-Munson and Robinson-Dadson contours | ISO 226:2023 |
-| §3.6.2 | A, B and C weighting. Criticism of A-weighted limits | A, C and Z per IEC 61672-1, B obsolete, $L_\text{Aeq}$ and $L_\text{Cpeak}$ |
-| §3.6.3 | Caution above 95 dB(C) for long periods | Exposure limits moved to chapter 5 |
-| §8.7.1–8.7.2 | Level classes and dBm/dBW tables | Kept, with mic levels computed from sensitivity |
-| §8.7.3 | Impedance and level, amplifier ratings into 4 and 8 Ω | Voltage-source principle kept here, amplifier part in chapter 13 |
-| §8.7.4 | Hi-fi and pro equipment mismatches | Kept, extended to DJ gear and USB interfaces |
-| App. A | Logarithms from first principles | One table and three rules |
-| — | Not covered | dBFS, alignment, true peak, LUFS |
 
 ## To verify in pass 2
 
@@ -296,8 +276,6 @@ signal, not the sound.
 
 ## Sources
 
-- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §3 (pp. 19–32),
-  §8.7 (pp. 92–96), Appendix A (pp. 409–412).
 - AES17, measurement of digital audio equipment.
 - EBU R68, alignment level in digital audio production equipment.
 - SMPTE RP 155, reference levels for analog and digital audio systems.
@@ -305,3 +283,5 @@ signal, not the sound.
 - ISO 226, normal equal-loudness-level contours.
 - ITU-R BS.1770, algorithms to measure audio programme loudness and true-peak audio level.
 - EBU R 128, loudness normalisation and permitted maximum level of audio signals.
+- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §3 (pp. 19–32),
+  §8.7 (pp. 92–96), Appendix A (pp. 409–412).

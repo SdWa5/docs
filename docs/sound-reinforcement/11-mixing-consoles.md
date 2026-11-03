@@ -1,13 +1,12 @@
 # 11. Mixing consoles
 
-> **Draft, pass 1.** This chapter was written from general knowledge and checked against the 1989 handbook for
+> **Draft, pass 1.** This chapter was written from general knowledge and checked against reference literature for
 > coverage. Standards, editions and figures are named but have not yet been verified against their sources. The
 > list *To verify in pass 2* at the end names every claim that still needs one.
 
 This chapter answers what a mixing console does with its inputs, how its channels, busses and outputs are organised,
-how a digital console with a stagebox differs from the analog desks of 1989, how one set of microphones feeds several
-consoles, and where the front-of-house console belongs. It replaces handbook §11.1 to §11.6 (pp. 149–171), §11.8
-(pp. 175–177), §11.10 (pp. 182–185) and §11.12 (pp. 189–192). Gain structure, including handbook §11.7, is in
+how a digital console with a stagebox differs from an analog desk, how one set of microphones feeds several
+consoles, and where the front-of-house console belongs. Gain structure is in
 [chapter 4](04-dynamic-range-gain-structure.md), microphone preamplifiers and DI boxes are in
 [chapter 9](09-microphones.md), and monitor mixing is in chapter 18.
 
@@ -17,7 +16,7 @@ A console takes many inputs, adjusts each one in level, tone and dynamics, and c
 mixes. The same inputs usually feed several mixes at once. The main mix for the audience, a monitor mix for each
 performer, a recording or a stream, and a feed for a broadcaster all want different balances of the same sources.
 
-The handbook distinguishes consoles by the mix they make, such as house, monitor, recording and broadcast consoles.
+Consoles used to be distinguished by the mix they make, such as house, monitor, recording and broadcast consoles.
 The distinction remains in how the console is used, but a digital console of moderate size can make all of these
 mixes at once, and at small events one console and one engineer often do.
 
@@ -96,12 +95,12 @@ eight faders for the whole show.
 
 The noise of a summed bus rises with the number of channels routed to it, by $10 \lg N$ when their noise is
 independent. Sixteen channels add 12 dB and 48 channels 16.8 dB to the noise of one. Analog consoles therefore offered
-switches to unassign unused channels, and the handbook advises against routing what is not used. In a digital console
+switches to unassign unused channels, and what is not used is not routed. In a digital console
 the summing is noiseless, and only the analog inputs contribute.
 
 ## Meters
 
-The handbook explains the VU meter and the peak meter and the difference between the two. A digital console replaces
+Analog consoles showed levels on a VU meter, which reads an average, or a peak meter. A digital console replaces
 both with a meter in dBFS that shows the sample peak and often a slower average, and it adds a gain reduction meter for
 every dynamics processor. Two more meters have become common. A true-peak meter shows the level between the samples,
 which matters at the output to a converter or a stream, and a loudness meter in LUFS shows the perceived loudness of a
@@ -109,8 +108,9 @@ mix, which broadcasters and streaming platforms specify. Chapter 3 explains all 
 
 ## Digital consoles and stageboxes
 
-The largest change since 1989 is that the console no longer processes analog audio. A digital console consists of a
-control surface, a processing engine and input and output units, which may be in one box or spread out.
+The largest change in recent decades is that the console no longer processes analog audio. A digital console
+consists of a control surface, a processing engine and input and output units, which may be in one box or spread
+out.
 
 ```mermaid
 flowchart LR
@@ -125,7 +125,7 @@ The stagebox sits on the stage with the microphone preamplifiers and converters,
 replaces the analog multicore. The preamplifiers are controlled remotely from the console. Chapter 15 covers the
 networks.
 
-Features that did not exist in 1989 change how a show is run.
+Features that analog consoles lacked change how a show is run.
 
 - **Scenes and snapshots.** The console stores the complete state, or a chosen part of it, and recalls it at a button
   press, for each song, each act or each scene of a play.
@@ -141,16 +141,15 @@ Features that did not exist in 1989 change how a show is run.
 
 ### Choosing a console's size
 
-The handbook advises counting inputs, mixes and outputs before choosing a console, and that remains the first step. A
+Counting inputs, mixes and outputs is the first step in choosing a console. A
 practical count includes every microphone and DI on the input list, the returns from effects and playback, a few
 spares, and every monitor mix, matrix output and recording feed. Digital consoles often have more mixing channels than
 local inputs, and the stagebox decides how many sources can be connected.
 
 ## Balancing with transformers or electronic inputs
 
-The handbook discusses at length whether a balanced input should use a transformer or an electronic differential
-amplifier. Both reject the noise that is common to the two wires of a balanced line. The arguments are now mostly
-settled.
+A balanced input can use a transformer or an electronic differential amplifier. Both reject the noise that is common
+to the two wires of a balanced line. The arguments are now mostly settled.
 
 - **Electronic inputs** are cheap, small, flat in frequency and free of the low-frequency saturation of a small
   transformer. They are standard on every console and stagebox.
@@ -158,13 +157,13 @@ settled.
   two systems, and they have a high common-mode rejection that does not depend on the balance of the source. They are
   used where isolation matters, in splitters, DI boxes and broadcast feeds.
 
-The handbook's point about safety stands. A transformer between two systems that are fed from different mains supplies
+Transformers have one safety advantage. A transformer between two systems that are fed from different mains supplies
 prevents a fault current from flowing along the audio cable. Chapter 17 covers earthing and electrical safety.
 
 ## Splitting microphone signals
 
 When several consoles need the same microphones, typically front of house, monitors and a recording or broadcast,
-the signals are split. The handbook describes the methods available then, and two more have been added.
+the signals are split. Four methods are in use.
 
 | Method | How it works | Strengths | Weaknesses |
 |---|---|---|---|
@@ -182,7 +181,7 @@ one engineer's change from upsetting the other's mix, which chapter 4 explains i
 ## Sub-mixers, feeds and cascades
 
 A sub-mixer combines a group of sources, such as a keyboard rig or a drum kit, and sends a few outputs to the main
-console. The handbook advises that each stage takes part of any level reduction needed, so that faders keep a useful
+console. Each stage should take part of any level reduction needed, so that faders keep a useful
 range of travel and nothing runs at a level where its noise dominates. In a digital system, the same idea applies to
 cascading two consoles over a network, and to playback computers that send a stereo mix.
 
@@ -196,8 +195,8 @@ remote guests and for hybrid events.
 
 ### Front of house
 
-The engineer mixes what they hear. The handbook's rule is to put the house console where the sound represents what
-most of the audience hears, and every later practice confirms it. In practice this means the following.
+The engineer mixes what they hear. The house console therefore belongs where the sound represents what most of
+the audience hears. In practice this means the following.
 
 - **In the audience, on the axis of the system.** Between the left and right systems, at about two thirds of the depth
   of the audience. Off-centre positions shift the image and the balance between the sides.
@@ -219,20 +218,6 @@ The monitor console sits at the side of the stage, where the engineer can see th
 can hear the wedges at roughly the performers' level. With in-ear monitors, the engineer listens on the same type of
 earpiece. Chapter 18 covers monitor mixing.
 
-## What changed since 1989
-
-| Handbook | Then | Today |
-|---|---|---|
-| §11.1, §11.4 | Mixers and consoles by type of mix, analog signal flow | Digital consoles make several kinds of mix at once |
-| §11.4.3 | Panning, summing, master faders | Pan law computed, DCAs, matrices, noise sum quantified |
-| §11.5.1–11.5.3 | Inputs, mixes, outputs, S/N and voltage gain of the console | Sizing by input list and outputs; noise in chapter 8 |
-| §11.5.4–11.5.5 | VU and peak meters, indicators | dBFS, true-peak and loudness meters |
-| §11.6 | Transformer or differential input, discrete or integrated circuits | Electronic inputs standard; transformers for isolation |
-| §11.8 | Sub-mixers and sub inputs | Network cascades, broadcast feeds, mix-minus |
-| §11.10 | Splitter transformers and Y-splits | Active and digital splits, gain sharing |
-| §11.12 | Console placement for house and monitors | Kept, with distance limits and tablets |
-| — | Not covered | Stageboxes, scenes, recall safe, virtual sound check, latency compensation |
-
 ## To verify in pass 2
 
 - The pan laws used by current consoles and whether −3 dB is the most common default.
@@ -244,6 +229,6 @@ earpiece. Chapter 18 covers monitor mixing.
 
 ## Sources
 
+- AES67, for network audio between stageboxes, consoles and recorders.
 - Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §11.1 to §11.6
   (pp. 149–171), §11.8 (pp. 175–177), §11.10 (pp. 182–185) and §11.12 (pp. 189–192).
-- AES67, for network audio between stageboxes, consoles and recorders.

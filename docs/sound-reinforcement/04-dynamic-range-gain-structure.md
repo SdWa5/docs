@@ -1,6 +1,6 @@
 # 4. Dynamic range, headroom and gain structure
 
-> **Draft, pass 1.** This chapter was written from general knowledge and checked against the 1989 handbook for
+> **Draft, pass 1.** This chapter was written from general knowledge and checked against reference literature for
 > coverage. Standards, editions and figures are named but have not yet been verified against their sources. The
 > list *To verify in pass 2* at the end names every claim that still needs one.
 
@@ -8,7 +8,7 @@ This chapter answers how loud and how quiet a system can be at the same time, wh
 the gain of every stage so the programme stays between the noise floor and the clip point. It defines dynamic range,
 headroom and signal-to-noise ratio, works through a gain chain from microphone to converter, shows how the outputs of
 a console, a processor and an amplifier are matched, and explains how compression fits a wide programme into a
-narrower system. It replaces handbook §4 (pp. 33–42) and §11.7 (pp. 172–175).
+narrower system.
 
 ## Three ranges
 
@@ -32,7 +32,7 @@ All three are differences, so they are given in plain dB, never in dBu or dB SPL
 +4 dBu, a clip point of +24 dBu and a noise floor of −90 dBu has 20 dB of headroom, 94 dB of S/N and a dynamic range
 of 114 dB.
 
-Headroom plus S/N equals the dynamic range as defined here. The handbook pointed out a subtlety that still holds.
+Headroom plus S/N equals the dynamic range as defined here. One subtlety remains.
 A listener can follow structured programme such as a voice or a tone several decibels below broadband noise, so the
 usable range of a system is slightly larger than its measured one. Measuring from the noise floor is the safer and
 repeatable convention.
@@ -47,7 +47,7 @@ microphone is a decibel of change everywhere, whether the stage is described in 
 A chain is only as wide as its narrowest stage. If one stage offers 74 dB between its noise and its clip point, an
 85 dB programme loses 11 dB somewhere. The loss shows up as clipped peaks, as quiet passages buried in hiss, or as
 both. Since the 1980s the narrow stages have moved. Analog consoles, tape and the summing amplifiers that limited the
-handbook's systems have given way to converters with well over 100 dB of range and floating-point mixing that does
+systems of that time have given way to converters with well over 100 dB of range and floating-point mixing that does
 not clip internally. In a modern rig the narrowest stages are usually
 
 - the **room**, where the audience noise sets a floor of 60 to 80 dB(A) at a busy event,
@@ -55,9 +55,8 @@ not clip internally. In a modern rig the narrowest stages are usually
 - the **limits** for audience exposure and for neighbours (chapters 5 and 6), which set a ceiling below the
   equipment's own.
 
-The handbook's observation that every extra 3 dB of maximum level costs twice the amplifiers and loudspeakers is
-still true, and it is the main reason to manage the programme's range rather than build a system wide enough for
-everything.
+Every extra 3 dB of maximum level costs twice the amplifiers and loudspeakers, and that is the main reason to manage
+the programme's range rather than build a system wide enough for everything.
 
 ## How much headroom
 
@@ -73,8 +72,8 @@ The headroom a system needs is set by the crest factor of its programme, the dis
 
 These are planning figures, not limits. A system that plays electronic music at a nominal 100 dB(A) needs peak
 capability around 110 to 112 dB at the same position, while a chamber orchestra at a nominal 85 dB(A) needs peaks of
-105 dB. The same equipment can serve both, because the orchestra needs a lower average. The handbook made this point
-with a symphony that needed more headroom but not more amplifiers.
+105 dB. The same equipment can serve both, because the orchestra needs a lower average. More headroom does not always
+mean more amplifiers.
 
 The headroom is usually the first thing given away when a system is too small. Running out of headroom does not
 announce itself on an average-reading meter. It shows as limiters working continuously, as a compressed and
@@ -83,7 +82,7 @@ fatiguing sound, and on the amplifier as clip indicators flashing on every kick 
 ## Gain structure in a digital chain
 
 Gain structure means setting each stage so the programme uses its range well, far enough above the noise and far
-enough below the clip point. The handbook's rule was to take as much gain as possible at the first stage and to
+enough below the clip point. The classic rule is to take as much gain as possible at the first stage and to
 avoid making up level later. In a digital system the rule becomes more precise. **The preamp gain is the one decision
 that sets both the noise floor and the headroom of a channel.** Everything after the converter is computed with so
 much range that it neither adds noise nor clips inside the mixing engine, until the signal is converted back or
@@ -141,11 +140,11 @@ taken from the same preamps. Chapter 11 covers splits in detail.
 
 ### Floating point inside, fixed point at the edges
 
-Consoles and processors compute internally in 32-bit or 64-bit floating point, which has a range of more than
-1500 dB. A bus that is driven 20 dB over 0 dBFS inside the engine does not clip, as long as the level is brought down
-before it leaves. Analog summing amplifiers in the handbook's consoles clipped when too many channels were pushed
-together, and a lot of its advice addressed that. In a digital console the risk has moved to the outputs. A DAC, an
-AES output, a network output and the input of the next device are fixed-point and clip at their full scale.
+Consoles and processors compute internally in 32-bit or 64-bit floating point, which has a range of more than 1500
+dB. A bus that is driven 20 dB over 0 dBFS inside the engine does not clip, as long as the level is brought down
+before it leaves. Analog summing amplifiers clipped when too many channels were pushed together, and much of the
+older gain-structure advice addressed that. In a digital console the risk has moved to the outputs. A DAC, an AES
+output, a network output and the input of the next device are fixed-point and clip at their full scale.
 
 Recorders that write 32-bit floating-point files have the same property for recording. A take that goes over full
 scale can be turned down afterwards without distortion, provided the converters themselves did not clip. Some
@@ -191,7 +190,7 @@ removed deliberately. A **compressor** above its threshold changes the output by
 2:1, every 2 dB of input above the threshold become 1 dB of output. A **limiter** is a compressor with a high ratio,
 10:1 to ∞:1, that holds peaks at or near the threshold.
 
-The handbook's example compressed a whole programme. Fitting 90 dB into 74 dB needs a ratio of about 1.22:1 across
+One way is to compress a whole programme. Fitting 90 dB into 74 dB needs a ratio of about 1.22:1 across
 the full range, a gentle setting that keeps most of the music's movement. A more common approach is to leave
 everything below a threshold untouched and compress only above it. A limiter with a threshold of +15 dBu and a ratio
 of 10:1 lets an input of +25 dBu out at +16 dBu.
@@ -203,25 +202,9 @@ In live sound three layers of dynamics control are usual.
 3. **Loudspeaker limiters** in the processor or the amplifier protect the drivers and the amplifiers. They should
    almost never act audibly. When they work continuously, the system is too small for the level asked of it.
 
-Chapter 12 covers the processors and their settings. The handbook also described tape noise reduction, which
+Chapter 12 covers the processors and their settings. Tape noise reduction worked the same way. It
 compressed the signal before the tape and expanded it after. Tape has left the live chain. Compander circuits
 survive in analog wireless systems (chapter 10).
-
-## What changed since 1989
-
-| Handbook | Then | Today |
-|---|---|---|
-| §4.1 | Concert example 40 to 130 dB SPL at the microphone, levels through the chain | Same principle, own example with a converter in the chain |
-| §4.2.1 | Headroom, S/N and dynamic range with an analog console | Same definitions, applied to dBFS and dBu alike |
-| §4.2.2 | Paging 6 dB, rock 20 dB, orchestra 30 dB of headroom | Headroom tied to the crest factor of the programme |
-| §4.3.2 | A rented console with 74 dB of range as the weak link | Weak links are now the room, the loudspeakers and the exposure limits |
-| §4.3.3 | Compression ratios, limiters, tape companders | Compression kept briefly, detail in chapter 12. Tape companders dropped |
-| §4.3.4 | 15–20 dB hi-fi, 10 dB SR, 5–6 dB paging | Table by programme type |
-| §11.7.1 | 10 µV to 10 V at the console input, 170 dB including a noise margin | Same problem, solved by preamp gain before a converter |
-| §11.7.2 | Faders near the top, gain until the VU meter peaks near zero | Faders at 0 dB, gain until peaks reach −12 to −18 dBFS |
-| §11.7.3 | Pad last, pads cost S/N, transformer saturation | Kept, condenser microphones as the usual reason for a pad |
-| §11.7.4 | Summing amplifier overload in analog mixers | Floating-point busses do not clip internally. Outputs still do |
-| — | Not covered | Gain sharing in split systems, 32-bit float recording, processor-to-amplifier matching with limiter thresholds |
 
 ## In the SdWa5 rig
 
@@ -244,9 +227,9 @@ matching rules above, measured on real equipment.
 
 ## Sources
 
-- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §4 (pp. 33–42) and
-  §11.7 (pp. 172–175).
 - AES17, measurement of digital audio equipment.
 - AES2-2012, specification of loudspeaker components used in professional audio and sound reinforcement.
 - SdWa5: [Signal chain](../../sdwa5-3d/docs/signal-chain.md), sections *The table is generated, not copied* and
   *Why 32 dB and 26 dB*.
+- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §4 (pp. 33–42) and
+  §11.7 (pp. 172–175).

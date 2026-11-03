@@ -1,20 +1,19 @@
 # 2. Frequency, phase and time
 
-> **Draft, pass 1.** This chapter was written from general knowledge and checked against the 1989 handbook for
+> **Draft, pass 1.** This chapter was written from general knowledge and checked against reference literature for
 > coverage. Standards, editions and figures are named but have not yet been verified against their sources. The
 > list *To verify in pass 2* at the end names every claim that still needs one.
 
 This chapter answers how a device or a system changes a signal depending on its frequency, and why time and phase
 belong in the same picture as level. It introduces the transfer function, the frequency bands used for measurement
 and equalisation, filters and their slopes, the frequency content of voices and instruments, and the comb filter
-that appears whenever a signal meets a delayed copy of itself. It replaces handbook §2 (pp. 9–18), §8.9 (pp. 99–100)
-and the square-wave part of §8.10 (pp. 100–103).
+that appears whenever a signal meets a delayed copy of itself.
 
 ## The transfer function
 
-The handbook defined frequency response with a sine generator, a black box and a level meter. The generator is swept
-across the audio band at constant level, and the output level is plotted against frequency. The plot shows which
-frequencies pass and how much each one is raised or lowered.
+The classic definition of frequency response uses a sine generator, a black box and a level meter. The generator is
+swept across the audio band at constant level, and the output level is plotted against frequency. The plot shows
+which frequencies pass and how much each one is raised or lowered.
 
 That plot is half of the description. Any linear device changes two things at each frequency, the **magnitude**
 (how much larger or smaller the output is) and the **phase** (how far the output is shifted in time against the
@@ -74,10 +73,10 @@ follow the base-ten series $f_m = 1000 \cdot 10^{n/10}$ Hz for third-octave band
 | 2 k | 2.5 k | 3.15 k | 4 k | 5 k | 6.3 k | 8 k | 10 k | 12.5 k | 16 k |
 
 The octave centres are every third entry, from 31.5 Hz to 16 kHz. An equaliser whose bands sit on these centres
-matches a real-time analyser that uses the same standard, which was the point of the standard in 1989 and remains so.
+matches a real-time analyser that uses the same standard, which is the point of the standard.
 
-Band measurements with **pink noise** were the main tool of the handbook's time. Pink noise has equal energy in every
-octave, so it shows a flat line on a band analyser when the system is flat. Its weakness is the same as its
+Before dual-channel analysers, band measurements with **pink noise** were the main tool. Pink noise has equal energy
+in every octave, so it shows a flat line on a band analyser when the system is flat. Its weakness is the same as its
 strength. A third-octave band averages everything inside it, so a deep notch 1/12 octave wide disappears, and in a
 reverberant room the result says more about the room than about the loudspeaker. Chapter 16 explains why
 dual-channel FFT measurements have largely replaced it.
@@ -222,31 +221,16 @@ matter. No equaliser can fix a comb filter, because the notches move with the li
 
 ## Square waves and other legacy tests
 
-The handbook described square-wave testing with an oscilloscope. A square wave contains a fundamental and all its odd
-harmonics in a fixed ratio, so a circuit that changes the magnitude or phase of any of them changes the shape of the
-square. A sloping top showed a low-frequency roll-off, rounded corners showed limited high-frequency response, and
-ripples after each edge showed ringing.
+Square-wave testing with an oscilloscope was once a standard bench method. A square wave contains a fundamental and
+all its odd harmonics in a fixed ratio, so a circuit that changes the magnitude or phase of any of them changes the
+shape of the square. A sloping top showed a low-frequency roll-off, rounded corners showed limited high-frequency
+response, and ripples after each edge showed ringing.
 
 The method still works and is quick with a USB oscilloscope (chapter 16), but it has lost its central role. An
 impulse response and transfer function from a dual-channel FFT analyser show the same information as numbers and
-curves, for the whole system including loudspeakers and room, and they do it with music as the test signal. The
-handbook's own warnings still apply. A square wave is not a musical signal, no loudspeaker can reproduce one, and a
+curves, for the whole system including loudspeakers and room, and they do it with music as the test signal. Its
+limits still apply. A square wave is not a musical signal, no loudspeaker can reproduce one, and a
 circuit that rounds a square wave can sound excellent.
-
-## What changed since 1989
-
-| Handbook | Then | Today |
-|---|---|---|
-| §2.1 | Frequency response as magnitude from a sine sweep and a meter | Transfer function with magnitude, phase and impulse response from FFT measurement |
-| §2.1.1 | Response specifications and tolerances | Kept briefly, detail moved to chapter 8 |
-| §2.1.2 | ISO third-octave bands, pink noise and band analysers | Same bands per ISO 266 and IEC 61260-1, band analysers complemented by dual-channel FFT |
-| §2.2.1 | Cable capacitance and amplifier band limits, steep converter filters | Cables moved to chapter 15. Oversampling converters no longer shape the audible band |
-| §2.2.2 | Microphone response peaks and one manufacturer's new models | Moved to chapter 9 without product references |
-| §2.2.3 | Loudspeakers ±4 dB per third octave as very good, full range from about 100 Hz | Moved to chapter 14. DSP-corrected boxes reach much lower and flatter |
-| §2.3.1 | Speech needs 300 Hz to 3.5 kHz minimum, PA flat 100 Hz to 8 kHz | Kept, with wideband telephony and the octave bands used for intelligibility measurement |
-| §2.4 | Wind, temperature, humidity, reflections and room resonances | Moved to chapters 6 and 7 |
-| §8.9 | Slopes in multiples of 6 dB per octave, turnover at −3 dB | Kept, plus alignments, Q, Linkwitz-Riley crossovers, group delay and FIR filters |
-| §8.10 | Square-wave tests on an oscilloscope | History. Impulse and transfer function measurement replaced them |
 
 ## To verify in pass 2
 
@@ -254,8 +238,8 @@ circuit that rounds a square wave can sound excellent.
   editions, and whether IEC 61260-1 prescribes base-ten or base-two band edges.
 - The Q to bandwidth relations (Q 1.41 for one octave, Q 4.3 for a third octave); check against a filter design
   reference.
-- The handbook's figure of 21 dB at 40 Hz for an 80 Hz third-order high-pass against the Butterworth value of
-  18.1 dB computed here; the difference presumably comes from the alignment and changes no advice.
+- The attenuation of an 80 Hz third-order high-pass at 40 Hz, 18.1 dB for the Butterworth alignment computed here
+  against 21 dB in Davis and Jones; the difference presumably comes from the alignment and changes no advice.
 - The fundamental ranges in the voice and instrument table; check against an acoustics of music reference.
 - The speech energy and consonant band figures and the 300 Hz to 3.4 kHz telephony band; check against ITU-T
   recommendations and IEC 60268-16.
@@ -264,9 +248,9 @@ circuit that rounds a square wave can sound excellent.
 
 ## Sources
 
-- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §2 (pp. 9–18),
-  §8.9 (pp. 99–100), §8.10 (pp. 100–103).
 - ISO 266, preferred frequencies for acoustical measurements.
 - IEC 61260-1, octave-band and fractional-octave-band filters.
 - IEC 60268-16, objective rating of speech intelligibility by speech transmission index.
 - Linkwitz, S. H.: *Active crossover networks for noncoincident drivers*, Journal of the AES, 1976.
+- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §2 (pp. 9–18),
+  §8.9 (pp. 99–100), §8.10 (pp. 100–103).

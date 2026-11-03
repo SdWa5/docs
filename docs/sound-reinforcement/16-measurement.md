@@ -1,17 +1,16 @@
 # 16. Measurement
 
-> **Draft, pass 1.** This chapter was written from general knowledge and checked against the 1989 handbook for
+> **Draft, pass 1.** This chapter was written from general knowledge and checked against reference literature for
 > coverage. Standards, editions and figures are named but have not yet been verified against their sources. The
 > list *To verify in pass 2* at the end names every claim that still needs one.
 
 This chapter answers which instruments a sound system needs, what each of them can and cannot show, and how the
-measurement of a loudspeaker or a room is set up so that its result can be trusted. It replaces handbook §16
-(pp. 303–312) and the oscilloscope section §8.10 (pp. 101–103). Tuning a system with these measurements is the
-subject of chapter 20, and the transfer function behind most of them is explained in
-[chapter 2](02-frequency-phase-time.md#the-transfer-function).
+measurement of a loudspeaker or a room is set up so that its result can be trusted. Tuning a system with these
+measurements is the subject of chapter 20, and the transfer function behind most of them is explained in [chapter
+2](02-frequency-phase-time.md#the-transfer-function).
 
-The handbook lists the volt-ohm meter, the sine wave oscillator, the oscilloscope, the phase tester, the sound level
-meter, the real-time analyzer and a loudness monitor. Most of them still exist, but a laptop with an audio
+The classic test bench held a volt-ohm meter, a sine wave oscillator, an oscilloscope, a phase tester, a sound level
+meter, a real-time analyzer and a loudness monitor. Most of them still exist, but a laptop with an audio
 interface, a measurement microphone and free software now does the work of the larger part of that list, and does
 some of it far better.
 
@@ -45,9 +44,9 @@ connected taps, so 100 Ω for ten loudspeakers at 10 W on a 100 V line.
 A cable tester checks every pin of XLR, jack, speakON and network cables for continuity, shorts and swapped
 conductors in seconds. It is the most useful instrument on a stage per euro spent.
 
-A polarity tester, called a phase tester in the handbook, sends a pulse of known polarity into a device or a
-loudspeaker and reports whether it comes back with the same sign. The handbook already lists its traps, and they
-remain. It is sensitive to level, and it fails on anything that changes phase with frequency. A multi-way box with a
+A polarity tester, often called a phase tester, sends a pulse of known polarity into a device or a
+loudspeaker and reports whether it comes back with the same sign. It has its traps.
+It is sensitive to level, and it fails on anything that changes phase with frequency. A multi-way box with a
 crossover reverses the polarity of one way on purpose in some designs, and the phase shift of the crossover filters
 makes the pulse arrive smeared, so the tester's answer for the whole box is close to meaningless. It is reliable for
 cables, for single drivers and for checking that all boxes of one type agree with each other. The polarity of a
@@ -59,10 +58,9 @@ A signal generator is now an app or a function of the measurement software, and 
 often contain one. Sine tones find rattles and buzzes, sweeps measure responses, and pink noise is the standard
 signal for listening and for real-time analysis, because it carries equal energy per octave like music does.
 
-The oscilloscope, which the handbook explains in detail together with the use of square waves, has become a
-specialist tool. A USB oscilloscope or the scope view of the measurement software shows clipping, oscillation and
-DC offset, which is mostly what a sound system needs. Square-wave tests are covered in
-[chapter 2](02-frequency-phase-time.md#square-waves-and-other-legacy-tests).
+The oscilloscope, once the central bench instrument, has become a specialist tool. A USB oscilloscope or the scope
+view of the measurement software shows clipping, oscillation and DC offset, which is mostly what a sound system
+needs. Square-wave tests are covered in [chapter 2](02-frequency-phase-time.md#square-waves-and-other-legacy-tests).
 
 ## Sound level meters
 
@@ -83,7 +81,7 @@ phone apps on the internal microphone vary by several dB and stop working at hig
 ### The real-time analyzer
 
 A real-time analyzer (RTA) shows the level in each band, usually in 31 third-octave bands, of whatever the microphone
-picks up. Fed with pink noise, a flat system shows a flat line. The handbook describes how the RTA was used to set a
+picks up. Fed with pink noise, a flat system shows a flat line. It was long the tool for setting a
 graphic equalizer band by band.
 
 An RTA shows only the magnitude and only of the sum of everything at the microphone. It cannot separate the direct
@@ -158,18 +156,6 @@ the off-axis colouration of a cardioid, so its reading does not depend on the ex
 Two microphones of the same model can differ by a decibel or more. When several are used at once, they are compared
 at the same position first, and the difference is corrected or noted.
 
-## What changed since 1989
-
-| Handbook | Then | Today |
-|---|---|---|
-| §16.1 | Volt-ohm meter | True-RMS multimeter; impedance checks of speaker lines |
-| §16.2, §16.3, §8.10 | Sine oscillator, oscilloscope, square waves | Generator in software; USB scope; square waves only legacy |
-| §16.4 | Phase tester with its quirks | Kept for cables and drivers; multi-way boxes by transfer function |
-| §16.5 | SPL meter | IEC 61672-1 classes, calibrator, $L_{Aeq}$ logging |
-| §16.6 | Real-time analyzer and graphic EQ | Dual-channel FFT with phase, coherence and impulse response |
-| §16.7 | Peak and average loudness monitor | Moved to meters in chapters 3 and 11 |
-| — | Not covered | Measurement microphones with calibration files; windows and averaging |
-
 ## In the SdWa5 rig
 
 The rig measures with an audio interface, two measurement microphones and the command `sdwa5-dsp:measure`, which
@@ -195,8 +181,8 @@ chapter on real equipment.
 
 ## Sources
 
-- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §16 (pp. 303–312),
-  §8.10 (pp. 101–103).
 - IEC 61672-1, IEC 60942.
 - McCarthy, B.: *Sound Systems: Design and Optimization*, Focal Press, 3rd ed. 2016.
 - SdWa5: [measurements](../../sdwa5-dsp/docs/measurements.md), [automation](../../sdwa5-dsp/docs/automation.md).
+- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §16 (pp. 303–312),
+  §8.10 (pp. 101–103).

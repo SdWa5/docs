@@ -198,6 +198,6 @@ inrush alone.
 
 - IEC 60364-7-711, IEC 60364-7-740, IEC 60309, ÖVE E 8101, AES48.
 - Whitlock, B.: Balanced lines in audio systems, fact, fiction and transformers, *JAES* 43, 1995.
+- SdWa5: [signal chain, mains](../../sdwa5-3d/docs/signal-chain.md#mains).
 - Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §17.4 to §17.8
   (pp. 327–346).
-- SdWa5: [signal chain, mains](../../sdwa5-3d/docs/signal-chain.md#mains).

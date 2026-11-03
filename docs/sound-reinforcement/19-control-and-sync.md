@@ -173,6 +173,6 @@ between audio and video for that event.
 - IETF RFC 6295: RTP Payload Format for MIDI.
 - Wright, M.: The Open Sound Control 1.0 Specification, CNMAT, 2002.
 - SMPTE ST 12-1, Time and Control Code.
+- SdWa5: [signal chain](../../sdwa5-3d/docs/signal-chain.md).
 - Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §19 (pp. 371–393),
   §20 (pp. 395–408).
-- SdWa5: [signal chain](../../sdwa5-3d/docs/signal-chain.md).

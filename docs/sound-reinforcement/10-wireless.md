@@ -1,15 +1,15 @@
 # 10. Wireless microphones, in-ear monitors and intercom
 
-> **Draft, pass 1.** This chapter was written from general knowledge and checked against the 1989 handbook for
+> **Draft, pass 1.** This chapter was written from general knowledge and checked against reference literature for
 > coverage. Standards, editions and figures are named but have not yet been verified against their sources. The
 > list *To verify in pass 2* at the end names every claim that still needs one.
 
 This chapter answers where wireless audio may transmit in Europe and Austria, how analog and digital systems differ,
 how several systems are made to work side by side, how antennas and cables decide the range, and how in-ear monitors
-and crew intercom fit in. It replaces handbook §10.5 and §10.6 (pp. 132–148). The frequency rules have changed more
-than anything else in this book since 1989. The handbook's bands were American VHF and TV channels, while today's
-European bands are the result of two rounds of clearing TV spectrum for mobile networks. All frequency ranges and
-licensing rules below are marked for verification, because they change and differ between countries.
+and crew intercom fit in. The frequency rules have changed more than anything else in this book. Wireless
+microphones once used VHF and free TV channels, while today's European bands are the result of two rounds of
+clearing TV spectrum for mobile networks. All frequency ranges and licensing rules below are marked for
+verification, because they change and differ between countries.
 
 ## Where wireless audio may transmit
 
@@ -29,11 +29,10 @@ interfere with the primary service, and they must accept interference from it.
 | 2.4 GHz (ISM) | Licence-exempt, shared with Wi-Fi and Bluetooth | Digital consumer and some professional systems |
 
 In the UHF TV band, which channels are free depends on the place. A TV transmitter in Salzburg occupies different
-channels than one in Vienna, so a touring system needs a frequency plan for each venue. The handbook gave the same
-advice for touring in the United States. In Austria, the use of wireless microphones in the TV band is coordinated by
-the telecommunications authorities, and some bands are covered by a general authorisation while others need an
-individual assignment. In Germany, the Federal Network Agency issues general authorisations for most PMSE bands, with
-an individual assignment for larger events.
+channels than one in Vienna, so a touring system needs a frequency plan for each venue. In Austria, the use of
+wireless microphones in the TV band is coordinated by the telecommunications authorities, and some bands are covered
+by a general authorisation while others need an individual assignment. In Germany, the Federal Network Agency issues
+general authorisations for most PMSE bands, with an individual assignment for larger events.
 
 Equipment bought before the clearing of the 800 and 700 MHz bands may still be in a rental stock or an association's
 storage. It may no longer be used in the cleared ranges, and using it there interferes with mobile networks and
@@ -45,7 +44,7 @@ can be prosecuted.
 
 An analog wireless microphone frequency-modulates its carrier with the audio. To gain dynamic range, it compresses the
 audio before transmission, typically at a ratio of 2 to 1, and expands it in the receiver. The compander is
-proprietary, which is one of the incompatibilities the handbook describes. A transmitter of one make with a receiver
+proprietary, which makes systems of different makes incompatible. A transmitter of one make with a receiver
 of another may work, but it sounds wrong because the compander and the frequency deviation do not match. Analog
 systems have almost no latency and degrade gradually as the signal weakens, with noise and then crackle before a
 dropout.
@@ -116,8 +115,7 @@ performer who faces away from the antenna can lose 10 to 20 dB. Higher bands los
 
 Multipath causes dropouts. The signal reaches the receiver by several paths, directly and reflected from walls,
 trusses and the floor, and at some positions the paths cancel. The cancellation zones are about half a wavelength
-apart, which is 25 cm at 600 MHz, so a performer who takes a step moves from a dead spot to a good one. The handbook
-describes the same mechanism.
+apart, which is 25 cm at 600 MHz, so a performer who takes a step moves from a dead spot to a good one.
 
 ### Diversity
 
@@ -132,16 +130,15 @@ and 15.9 cm at 470 MHz. For more than a few systems, or when the receivers are n
 distribution system is used. It takes two antennas, amplifies their signals and splits them to all receivers.
 
 Directional antennas, such as log-periodic paddles and helical antennas, gain several decibels towards the stage and
-reject signals from behind. The handbook warns against high-gain beams that would need to follow the performer. Its
-warning still applies to very narrow antennas, but the moderate directivity of a paddle or a helical aimed at the
-performance area is now standard. Helical antennas receive circular polarisation, which suffers less when a
-transmitter is held at an angle.
+reject signals from behind. High-gain beams with a very narrow pattern would need to follow the performer and are
+avoided, but the moderate directivity of a paddle or a helical aimed at the performance area is now standard.
+Helical antennas receive circular polarisation, which suffers less when a transmitter is held at an angle.
 
 ### Cables
 
 Antenna cable loses signal with length and frequency, and the loss comes before the receiver's input stage, so it
-adds directly to the noise. The handbook advised putting the receivers near the stage and running the audio over a
-long line instead. That remains valid, and a networked receiver placed at the stage is the modern form of it.
+adds directly to the noise. Placing the receivers near the stage and running the audio over a long line
+instead avoids that loss, and a networked receiver placed at the stage is the modern form of it.
 
 | Cable type, loss per 100 m at about 600 MHz | 10 m | 20 m | 30 m |
 |---|---|---|---|
@@ -170,8 +167,8 @@ risk to hearing.
 
 ## Intercom
 
-The handbook describes wireless intercom as a specialised tool for TV and theatre crews, with belt packs, base
-stations and the distinction between simplex, half duplex and full duplex. Since then, intercom has become a system in
+Wireless intercom began as a specialised tool for TV and theatre crews, with belt packs, base stations and the
+distinction between simplex, half duplex and full duplex. Today intercom has become a system in
 its own right at most events beyond the smallest.
 
 - **Wired partyline.** A two-wire or four-wire system over microphone cable, with belt packs and speaker stations. All
@@ -206,20 +203,6 @@ Further practice that keeps wireless reliable:
    walls, which radiate broadband interference.
 5. **Spares ready.** A spare handheld with fresh batteries, set up and tested, at the side of the stage.
 
-## What changed since 1989
-
-| Handbook | Then | Today |
-|---|---|---|
-| §10.5 | Wireless intercom for TV and theatre, belt packs and base stations | Wired partyline, DECT, matrix and IP intercom with AES67 |
-| §10.5.5 | US frequencies and configurations | EU PMSE bands after the 800 and 700 MHz clearing |
-| §10.6.4 | VHF low band, VHF high band, UHF | UHF TV band, 1.8 GHz and 2.4 GHz |
-| §10.6.5 | Path loss, TV channels and "B" channels in the US, multipath dropout | Path loss computed, multipath kept, local channel plans |
-| §10.6.6 | Diversity, receivers near the stage, no high-gain beams | Kept, with antenna distribution and paddle and helical antennas |
-| §10.6.7 | Multiple systems, intermodulation, frequencies from the maker | Computed products, coordination software, on-site scans |
-| §10.6.8 | Different deviations and companders across makers | Kept; digital systems equally proprietary |
-| §10.6.9 | Antenna cable loss | Computed table with cable types |
-| — | Not covered | Digital systems and latency, in-ear monitors, combiners, battery telemetry |
-
 ## To verify in pass 2
 
 - Every band in the table, its status in the EU and in Austria, and the end date of PMSE use in 470–694 MHz; check
@@ -235,9 +218,9 @@ Further practice that keeps wireless reliable:
 
 ## Sources
 
-- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §10.5 and §10.6
-  (pp. 132–148).
 - Decision (EU) 2017/899 on the use of the 470–790 MHz band in the Union.
 - CEPT ECC Report 204 and ERC Recommendation 70-03.
 - Austrian Frequenznutzungsverordnung (FNV), RTR.
 - AES67, high-performance streaming audio-over-IP interoperability.
+- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §10.5 and §10.6
+  (pp. 132–148).

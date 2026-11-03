@@ -1,15 +1,15 @@
 # 5. Hearing
 
-> **Draft, pass 1.** This chapter was written from general knowledge and checked against the 1989 handbook for
+> **Draft, pass 1.** This chapter was written from general knowledge and checked against reference literature for
 > coverage. Standards, editions and figures are named but have not yet been verified against their sources. The
 > list *To verify in pass 2* at the end names every claim that still needs one.
 
-This chapter answers what the ear can hear, how it hides one sound behind another, how it decides where a sound comes
-from, why a measurement and a listener can disagree about the same system, and how loud an event may be before it
-harms the people in it. The last question has changed most since 1989. The handbook left the danger levels out of its
-scope and advised caution above 95 dB(C), while today an EU directive protects the crew and a WHO standard and
-national norms address the audience. The chapter replaces handbook §9 (pp. 105–112) and §3.6 (pp. 29–32). The
-numbers behind decibels, weighting and loudness are in [chapter 3](03-decibels-levels-loudness.md).
+This chapter answers what the ear can hear, how it hides one sound behind another, how it decides where a sound
+comes from, why a measurement and a listener can disagree about the same system, and how loud an event may be before
+it harms the people in it. The answer to the last question has changed most in recent decades. Older sound
+reinforcement literature advised caution above about 95 dB(C) and left the danger levels to others, while today an
+EU directive protects the crew and a WHO standard and national norms address the audience. The numbers behind
+decibels, weighting and loudness are in [chapter 3](03-decibels-levels-loudness.md).
 
 ## Range and sensitivity
 
@@ -66,13 +66,13 @@ therefore masks the lower midrange of a vocal more than a loud vocal masks the b
 loud sound hides quieter sounds that follow it for some tens of milliseconds, and it hides sounds just before it for a
 few milliseconds.
 
-The handbook gives three examples of masking that still hold.
+Three examples show where masking fails.
 
 - **Distortion is not masked by other distortion of a different kind.** A loudspeaker with 1 % of mostly second and
   third harmonics does not hide an amplifier's much smaller share of high odd harmonics. Higher and odd harmonics
   are more audible than low and even ones, so a total figure such as THD says little about what is heard.
-- **Structured noise is heard below random noise.** The handbook's example is the quantization noise of an early
-  digital delay, audible through the hiss of an analog equalizer. Today the remedy is dither, which turns the
+- **Structured noise is heard below random noise.** The quantization noise of an early digital delay, for example, was
+  audible through the hiss of an analog equalizer. Today the remedy is dither, which turns the
   structured error into a smooth noise, and converters with enough bits that the error lies far below any analog noise.
 - **Noise that rises with the signal is hidden only near the signal.** Modulation noise accompanies a note and is
   masked within about an octave of it, but a strong low note can let higher noise sidebands through.
@@ -110,24 +110,24 @@ explains why a reflection from a wall does not shift the image, and why one at 6
 
 ## Measurement and listening
 
-The handbook spends most of §9 on a question that every engineer meets, which is why a system that measures well can
-sound wrong and the reverse. Its reasons still hold, although the tools have changed.
+Every engineer meets the question why a system that measures well can sound wrong and the reverse. There are
+several reasons, and the tools have answered some of them.
 
 - **A microphone is one point, and a listener is two moving ones.** At one fixed point, reflections add and cancel
   into a comb of peaks and notches. A shift of a few centimetres changes the comb at high frequencies. Two ears and a
   head that moves let the brain form an average of the field around the head, and that average is what the listener
   calls the sound of the room.
-- **An amplitude-only analyser misses time.** The real-time analyser of 1989 showed level per third-octave band from
-  pink noise and nothing else. A correction made from it could match two loudspeakers in level and leave them sounding
-  different, because the equalizers changed phase as well. Today's dual-channel FFT analysers, such as Smaart, REW and
-  Open Sound Meter, measure the transfer function with magnitude, phase and coherence, which answers much of this
-  objection. Chapter 16 covers them.
+- **An amplitude-only analyser misses time.** The real-time analysers of the 1980s showed level per third-octave
+  band from pink noise and nothing else. A correction made from it could match two loudspeakers in level and leave
+  them sounding different, because the equalizers changed phase as well. Today's dual-channel FFT analysers, such as
+  Smaart, REW and Open Sound Meter, measure the transfer function with magnitude, phase and coherence, which answers
+  much of this objection. Chapter 16 covers them.
 - **One test examines one property, the ear all at once.** A sine sweep shows response, a THD test shows harmonics,
   and the ear judges both together with the time behaviour of the system.
 - **Static signals hide dynamic faults.** A circuit can ring on a fast transient, and an amplifier can misbehave into
   a reactive loudspeaker load that a resistor on the bench does not present. Bursts and music-like test signals reveal
   what steady tones do not. Chapters 8 and 13 return to this.
-- **Analysers once had less range than the ear.** The handbook's analysers showed 30 to 60 dB on screen against about
+- **Analysers once had less range than the ear.** Analysers of that time showed 30 to 60 dB on screen against about
   120 dB for the ear. A current FFT analyser behind a 24-bit interface shows over 100 dB, so this reason has mostly
   gone.
 
@@ -139,10 +139,10 @@ answers only the question it was asked.
 
 ### Listening tests that mean something
 
-A listener can be trained, and an experienced engineer does hear faults that others miss. The handbook gives such a
-listener the benefit of the doubt, and it adds that what sounds good is partly a matter of taste. Both remain true,
-and one more finding has joined them. A listener who knows which device is playing is influenced by that knowledge,
-and a louder version of the same sound is usually judged better.
+A listener can be trained, and an experienced engineer does hear faults that others miss. Such a listener deserves
+the benefit of the doubt, and what sounds good is partly a matter of taste. One more finding has to be added. A
+listener who knows which device is playing is influenced by that knowledge, and a louder version of the same sound
+is usually judged better.
 
 A fair comparison therefore has three properties.
 
@@ -238,22 +238,6 @@ leakage and the crowd, and that a feedback squeal or a dropped wireless link rea
 on every in-ear mix, a seal checked by the performer, ambient microphones instead of one earpiece taken out, and a
 level that is measured rather than guessed make in-ear monitoring the quieter option.
 
-## What changed since 1989
-
-| Handbook | Then | Today |
-|---|---|---|
-| §9.1.1 | A calibrated microphone measures amplitude, ears hear time and phase | Dual-channel FFT measures magnitude, phase and coherence |
-| §9.1.2 | Trust trained listeners who hear more | Trust them, and test with matched levels and blind comparison |
-| §9.2.1 | Matching two loudspeakers by pink noise and an RTA fails on programme | Transfer-function measurement and spatial averaging, detail in chapters 16 and 20 |
-| §9.2.2 | One fixed microphone, analyser memories to overlay positions | Power average of several positions as standard practice |
-| §9.2.3 | Analysers show 30 to 60 dB, ears 120 dB | FFT analysers over 100 dB, no longer a limit |
-| §9.3 | Ringing, reactive loads, TIM | Moved to chapters 8 and 13 |
-| §9.4 | Quantization noise of early digital delays audible through analog hiss | Dither and 24-bit converters. Codecs use masking deliberately |
-| §3.6.1 | Fletcher–Munson and Robinson–Dadson contours | ISO 226:2023, detail in chapter 3 |
-| §3.6.2 | OSHA and others use A-weighting for loud noise | EU directive uses A for dose and C for peaks |
-| §3.6.3 | Danger levels out of scope, caution above 95 dB(C) | Directive 2003/10/EC for crew, WHO 2022 and DIN 15905-5 for audiences |
-| — | Not covered | Precedence effect, critical bands, synaptopathy, flat earplugs, in-ear monitor levels |
-
 ## To verify in pass 2
 
 - The upper frequency limit by age (12 to 16 kHz at fifty); check ISO 7029.
@@ -278,8 +262,6 @@ level that is measured rather than guessed make in-ear monitoring the quieter op
 
 ## Sources
 
-- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §9 (pp. 105–112) and
-  §3.6 (pp. 29–32).
 - ISO 226:2023, normal equal-loudness-level contours.
 - ISO 7029, statistical distribution of hearing thresholds related to age.
 - Glasberg, B. R., Moore, B. C. J.: Derivation of auditory filter shapes from notched-noise data, *Hearing Research*
@@ -290,3 +272,5 @@ level that is measured rather than guessed make in-ear monitoring the quieter op
 - WHO: *Global Standard for Safe Listening Venues and Events*, 2022.
 - DIN 15905-5, event technology, sound exposure of the audience.
 - EN 352-2 and ISO 4869-2, hearing protectors.
+- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §9 (pp. 105–112) and
+  §3.6 (pp. 29–32).
