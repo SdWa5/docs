@@ -72,11 +72,13 @@
     4. Step two connects the UI to Dolibarr via REST, building on the Dolibarr module that extends the REST
        endpoints, which is already in development.
 11. Sound reinforcement, pass 2, for [docs/sound-reinforcement.md](docs/sound-reinforcement.md)
-    1. Per chapter, check every item of its *To verify in pass 2* list against the primary source, correct the
+    1. Read the whole pass-1 draft first and note per chapter what is wrong, missing, too long or unclear.
+       The steps below start after that, with the notes folded in.
+    2. Per chapter, check every item of its *To verify in pass 2* list against the primary source, correct the
        text where needed, and remove the chapter's draft banner.
-    2. Add generated figures where the numbers carry the argument, in the style of
+    3. Add generated figures where the numbers carry the argument, in the style of
        [scripts/acoustics/plots.py](scripts/acoustics/plots.py).
-    3. Build PDF and EPUB editions through item 7.
-    4. Write a formula collection (Formelsammlung), a version of the whole book that is as short as possible,
+    4. Build PDF and EPUB editions through item 7.
+    5. Write a formula collection (Formelsammlung), a version of the whole book that is as short as possible,
        with the most important formulas, rules of thumb and tables on a few pages and a link to the chapter that
        explains each.
