@@ -55,10 +55,10 @@ the banners. Until then, treat named standards, editions and limit values as poi
 | 10 | [Wireless](sound-reinforcement/10-wireless.md) | Frequencies in the EU, analog and digital systems, intermodulation, antennas, in-ear transmitters, intercom | 10.5, 10.6 |
 | 11 | [Mixing consoles](sound-reinforcement/11-mixing-consoles.md) | Channel strip, busses, digital consoles and stageboxes, splits, front-of-house placement | 11.1–11.6, 11.8, 11.10, 11.12 |
 | 12 | [Signal processing](sound-reinforcement/12-signal-processing.md) | Equalisers, delay, reverb, dynamics, loudspeaker processors, feedback suppression | 14 |
-| 13 | Power amplifiers | Amplifier classes, ratings, mains supply, matching to loudspeakers, 100 V systems | 12 |
-| 14 | Loudspeakers | Drivers, enclosures, directivity, crossovers, line arrays, subwoofer arrays | 13 |
-| 15 | Cables, connectors and networks | Balanced lines, connectors, speaker cable loss, digital audio and networks | 15, 17.3, 18.4 |
-| 16 | Measurement | Meters and testers, SPL meters, FFT analysis, measurement practice | 16, 8.10.1 |
+| 13 | [Power amplifiers](sound-reinforcement/13-power-amplifiers.md) | Amplifier classes, ratings, mains supply, matching to loudspeakers, 100 V systems | 12 |
+| 14 | [Loudspeakers](sound-reinforcement/14-loudspeakers.md) | Drivers, enclosures, directivity, crossovers, line arrays, subwoofer arrays | 13 |
+| 15 | [Cables, connectors and networks](sound-reinforcement/15-cables-connectors-networks.md) | Balanced lines, connectors, speaker cable loss, digital audio and networks | 15, 17.3, 18.4 |
+| 16 | [Measurement](sound-reinforcement/16-measurement.md) | Meters and testers, SPL meters, FFT analysis, measurement practice | 16, 8.10.1 |
 | | **Part IV. Systems** | | |
 | 17 | Power, grounding and safety | Protective earth, RCDs, distribution, ground loops, switch-on order | 17.4–17.8 |
 | 18 | Stage monitoring | Wedges, fills, in-ear monitors, monitor mixing, ringing out | 11.9, 11.11 |
