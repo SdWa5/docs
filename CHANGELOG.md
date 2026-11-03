@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.33.2] - 2026-11-04
+
+### Changed
+
+- `docs/sound-reinforcement.md`: the handbook is written for the people behind free tekno events, not for SdWa5
+  alone.
+
 ## [0.33.1] - 2026-11-04
 
 ### Changed
