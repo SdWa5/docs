@@ -46,9 +46,9 @@ the banners. Until then, treat named standards, editions and limit values as poi
 | 3 | [Decibels, levels and loudness](sound-reinforcement/03-decibels-levels-loudness.md) | dB units, analog and digital levels, SPL, weighting, loudness, LUFS | 3, 8.7, App. A |
 | 4 | [Dynamic range, headroom and gain structure](sound-reinforcement/04-dynamic-range-gain-structure.md) | Headroom, S/N, preamp gain, matching processor and amplifier, compression as range management | 4, 11.7 |
 | | **Part II. Hearing and acoustics** | | |
-| 5 | Hearing | Thresholds, masking, precedence, exposure limits, hearing protection | 9, 3.6 |
-| 6 | Sound outdoors | Distance loss, air absorption, weather, barriers, neighbours, feedback | 5, 18.3.3 |
-| 7 | Sound indoors | Reflection and absorption, room modes, reverberation, critical distance, intelligibility | 6, 18.3.4–5 |
+| 5 | [Hearing](sound-reinforcement/05-hearing.md) | Thresholds, masking, precedence, exposure limits, hearing protection | 9, 3.6 |
+| 6 | [Sound outdoors](sound-reinforcement/06-sound-outdoors.md) | Distance loss, air absorption, weather, barriers, neighbours, feedback | 5, 18.3.3 |
+| 7 | [Sound indoors](sound-reinforcement/07-sound-indoors.md) | Reflection and absorption, room modes, reverberation, critical distance, intelligibility | 6, 18.3.4–5 |
 | | **Part III. Equipment** | | |
 | 8 | Specifications | Reading data sheets, noise, distortion, digital specifications | 8 |
 | 9 | Microphones and DI | Transducer types, polar patterns, sensitivity, phantom power, DI boxes | 10.1–10.4, 11.2 |

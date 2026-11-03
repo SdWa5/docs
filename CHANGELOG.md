@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.28.0] - 2026-11-03
+
+### Added
+
+- `docs/sound-reinforcement/`: chapters 5 to 7 (hearing; sound outdoors; sound indoors) as a pass-1 draft.
+
 ## [0.27.0] - 2026-11-03
 
 ### Added
