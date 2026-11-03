@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.26.2] - 2026-11-03
+
+### Added
+
+- TODO: item 9, mark the AI-agent OAuth clients agentic by 11.11.2026, and item 10, a general ERP/CRM frontend for Dolibarr.
+
 ## [0.26.1] - 2026-10-26
 
 ### Changed
