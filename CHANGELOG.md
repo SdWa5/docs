@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.32.1] - 2026-11-04
+
+### Changed
+
+- `TODO.md`: item 11 starts with a full read of the sound reinforcement draft before pass 2.
+
 ## [0.32.0] - 2026-11-03
 
 ### Changed
