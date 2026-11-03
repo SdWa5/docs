@@ -78,7 +78,8 @@
        text where needed, and remove the chapter's draft banner.
     3. Add generated figures where the numbers carry the argument, in the style of
        [scripts/acoustics/plots.py](scripts/acoustics/plots.py).
-    4. Build PDF and EPUB editions through item 7.
+    4. Build an EPUB edition. The PDF is built by
+       [scripts/sound-reinforcement/](scripts/sound-reinforcement/).
     5. Write a formula collection (Formelsammlung), a version of the whole book that is as short as possible,
        with the most important formulas, rules of thumb and tables on a few pages and a link to the chapter that
        explains each.

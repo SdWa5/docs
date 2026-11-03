@@ -58,6 +58,9 @@ See [`docs/`](docs/) for:
   Curves use unrounded energy inputs; tests separately verify the tables' rounding and display limits.
   Direct labels merge identical curves, show pink noise averages and order endpoint ties by that average.
   Tests check the label order, fit and averages; the page's tables and source descriptions identify measurements and estimates.
+- **Sound reinforcement PDF.** [`scripts/sound-reinforcement/`](scripts/sound-reinforcement/) renders
+  [Sound reinforcement](docs/sound-reinforcement.md) into one PDF. Its tests run without a browser and check that
+  every chapter, formula and diagram is in the document and that every in-document link lands on a heading.
 
 The CI installer regression tests and the link and secret checks run locally against the same configuration:
 
@@ -82,6 +85,17 @@ ACOUSTICS_REQUIRE_GRAPHS=1 ~/.venvs/sdwa5-acoustics/bin/python -B -m unittest di
 Without the libraries the table tests still run and the graph tests are skipped, while
 `ACOUSTICS_REQUIRE_GRAPHS=1` turns that skip into a failure, as in CI. The PNGs are compared byte for byte.
 That comparison has been confirmed on Python 3.12 only, the version CI uses.
+
+The sound reinforcement PDF is rebuilt by hand after chapters change, because CI does not install a browser. It
+needs Node 20 or later. `CHROME` names a Chromium binary, and without it `npx playwright-core install chromium`
+downloads one. The build fails when a diagram or a formula did not render.
+
+```sh
+cd scripts/sound-reinforcement
+npm ci
+npm test
+CHROME=/path/to/chrome npm run build
+```
 
 The link check covers links into the sub-repositories, such as
 [`../sdwa5-vps/docs/caddy.md`](sdwa5-vps/docs/caddy.md). Those are separate repositories that only

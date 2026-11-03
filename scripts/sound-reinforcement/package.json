@@ -1,0 +1,21 @@
+{
+  "name": "sdwa5-sound-reinforcement-pdf",
+  "private": true,
+  "description": "Builds one PDF of the SdWa5 sound reinforcement handbook",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "katex": "^0.19.1",
+    "markdown-it": "^15.0.3",
+    "markdown-it-texmath": "^1.0.0",
+    "mermaid": "^12.3.0",
+    "playwright-core": "^1.64.1"
+  }
+}
