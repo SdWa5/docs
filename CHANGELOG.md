@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.27.0] - 2026-11-03
+
+### Added
+
+- `docs/sound-reinforcement.md`: index of a modern sound reinforcement handbook with contents, conventions and a
+  concordance to Davis & Jones 1989.
+- `docs/sound-reinforcement/`: chapters 1 to 4 (signals and systems; frequency, phase and time; decibels, levels
+  and loudness; dynamic range, headroom and gain structure) as a pass-1 draft.
+- TODO: item 11, sound reinforcement pass 2.
+
 ## [0.26.2] - 2026-11-03
 
 ### Added

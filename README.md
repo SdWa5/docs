@@ -24,6 +24,8 @@ See [`docs/`](docs/) for:
   would disclose, and the decisions that are still open
 - [Acoustics](docs/acoustics.md) — how much sound common walls, floors and
   finishes reflect, absorb and let through, sand-filled timber wall included
+- [Sound reinforcement](docs/sound-reinforcement.md) — a modern rewrite of the
+  *Sound Reinforcement Handbook* in twenty chapters, drafted chapter by chapter
 
 ## Sub-repositories
 
