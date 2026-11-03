@@ -12,6 +12,10 @@ a draft banner and ends with a list *To verify in pass 2*, which names each clai
 against its primary source. Pass 2 works through those lists chapter by chapter, adds generated figures and removes
 the banners. Until then, treat named standards, editions and limit values as pointers to check, not as quotations.
 
+The whole book is also available as one
+[PDF for reading](assets/sound-reinforcement/sdwa5-sound-reinforcement.pdf). It is rebuilt by hand, so the
+Markdown pages here are the current version when the two differ.
+
 ## Conventions
 
 - **Units** are SI. Distances are in metres, pressures in pascals, and electrical supply is 230/400 V at 50 Hz.

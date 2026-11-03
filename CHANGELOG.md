@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.33.0] - 2026-11-04
+
+### Added
+
+- `scripts/sound-reinforcement/`: builds one PDF of the sound reinforcement handbook through headless Chromium,
+  with tests for the rendering and its in-document links, run by the new `sound-reinforcement` CI job.
+- `docs/assets/sound-reinforcement/sdwa5-sound-reinforcement.pdf`, linked from `docs/sound-reinforcement.md`.
+
+### Changed
+
+- `TODO.md`: item 11.4 keeps only the EPUB edition.
+
 ## [0.32.1] - 2026-11-04
 
 ### Changed

@@ -2,7 +2,7 @@ name: Docs
 
 # This repository holds documentation and its CI tooling. The workflow checks
 # links, scans for secrets, tests verification before installing CI tools and
-# tests the generator of docs/acoustics.md.
+# tests the generator of docs/acoustics.md and the sound reinforcement rendering.
 on:
   push:
   workflow_dispatch:
@@ -80,6 +80,24 @@ jobs:
         env:
           ACOUSTICS_REQUIRE_GRAPHS: '1'
         run: python -B -m unittest discover -s scripts/acoustics/tests -v
+
+  # scripts/sound-reinforcement/ renders the handbook into one document for the PDF. The tests need no browser,
+  # so the runner's own Node is enough and no further action is pinned. npm ci installs exactly the
+  # package-lock.json, whose integrity hashes play the part of the hash-pinned requirements.txt above.
+  sound-reinforcement:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: scripts/sound-reinforcement
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+      - name: Install the locked packages
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Test the rendering
+        run: npm test
 
   # Relative links and their #anchors, resolved against the filesystem.
   #

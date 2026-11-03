@@ -16,3 +16,6 @@
 
 # Python bytecode from running scripts/acoustics/ and its tests.
 __pycache__/
+
+# npm packages of scripts/sound-reinforcement/, installed from its package-lock.json.
+node_modules/
