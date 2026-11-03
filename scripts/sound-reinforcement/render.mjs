@@ -17,13 +17,15 @@ const siblings = {
 };
 
 /**
- * Lists the source files in reading order as [sectionId, absolutePath], index first as ch00.
+ * Lists the source files in reading order as [sectionId, absolutePath]: the index as ch00, the numbered chapters,
+ * then the appendices as appx1, appx2 and so on.
  */
 export function sourceFiles(repo = repoRoot) {
   const dir = path.join(repo, 'docs/sound-reinforcement');
-  return [['ch00', path.join(repo, 'docs/sound-reinforcement.md')]].concat(
-    fs.readdirSync(dir).filter(f => /^\d\d-.*\.md$/.test(f)).sort()
-      .map(f => ['ch' + f.slice(0, 2), path.join(dir, f)]));
+  const names = fs.readdirSync(dir).sort();
+  return [['ch00', path.join(repo, 'docs/sound-reinforcement.md')]]
+    .concat(names.filter(f => /^\d\d-.*\.md$/.test(f)).map(f => ['ch' + f.slice(0, 2), path.join(dir, f)]))
+    .concat(names.filter(f => /^appendix-.*\.md$/.test(f)).map((f, i) => ['appx' + (i + 1), path.join(dir, f)]));
 }
 
 /** GitHub's heading slug: lowercase, punctuation dropped, spaces to hyphens. */

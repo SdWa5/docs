@@ -1,4 +1,4 @@
-// Checks the single-document rendering without a browser: every chapter is in, every formula renders and every
+// Checks the single-document rendering without a browser: every chapter and appendix is in, every formula renders and every
 // in-document link lands on a heading. Run with `node --test` from scripts/sound-reinforcement/.
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -9,7 +9,7 @@ const html = renderHtml({ built: '2000-01-01' });
 const files = sourceFiles();
 
 test('every chapter file becomes one section', () => {
-  assert.equal(files.length, 21);
+  assert.equal(files.length, 22);
   assert.equal((html.match(/<section class="chapter"/g) || []).length, files.length);
 });
 

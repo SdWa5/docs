@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.34.0] - 2026-11-04
+
+### Added
+
+- `docs/sound-reinforcement/appendix-units-abbreviations-symbols.md`: SI and metric units, prefixes, levels with
+  their references, formula symbols and every abbreviation of the book with the chapter that explains it.
+- `scripts/sound-reinforcement/tests/appendix.test.mjs`: fails when a chapter uses an abbreviation the appendix
+  lacks, or when the appendix lists one no chapter uses.
+
+### Changed
+
+- `docs/sound-reinforcement.md`: written for crews who run their own events on their own sound systems; laws and
+  regulations are European or Austrian; the appendix is in the contents.
+- `scripts/sound-reinforcement/render.mjs`: appendices follow the chapters in the PDF.
+
 ## [0.33.2] - 2026-11-04
 
 ### Changed
