@@ -1,11 +1,13 @@
 # SdWa5 — Sound reinforcement
 
-A handbook on live sound for the people who set up, run and plan SdWa5's events, and for anyone else who wants
-one. It covers the physics of sound, the equipment from the microphone to the loudspeaker, hearing and the limits
-that protect it, and the design and tuning of a system for a real event. It is written for today's practice, in
-which consoles, processors and amplifiers are digital, loudspeakers are designed and aligned with measurement and
-prediction software, signals travel over networks, and hearing protection is a matter of regulation. Its chapters,
-their order and their figures are its own, and each chapter names the literature it draws on in its *Sources*.
+This handbook is about live sound. It is written for the people who set up, run and plan SdWa5's events, and anyone
+else may use it as well. It follows the signal from the sources on stage, such as drum machines, synthesizers,
+sequencers, turntables, DJ controllers and the occasional microphone, through mixers and processors to the
+loudspeakers. It also covers the physics of sound, hearing and the limits that protect it, and the design and tuning
+of a system for a real event. It describes today's practice, in which consoles, processors and amplifiers are
+digital, loudspeakers are designed and aligned with measurement and prediction software, signals travel over
+networks, and hearing protection is a matter of regulation. Its chapters, their order and their figures are its own,
+and each chapter names the literature it draws on in its *Sources*.
 
 **Status.** This is pass 1, a full draft written quickly so that the whole book can be read. Every chapter carries
 a draft banner and ends with a list *To verify in pass 2*, which names each claim that has not yet been checked
