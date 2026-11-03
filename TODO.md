@@ -83,3 +83,7 @@
     5. Write a formula collection (Formelsammlung), a version of the whole book that is as short as possible,
        with the most important formulas, rules of thumb and tables on a few pages and a link to the chapter that
        explains each.
+    6. Proposal: a chapter on electronic sources, since SdWa5 mostly plays drum machines, synthesizers,
+       sequencers, turntables, DJ mixers and DJ controllers and rarely uses microphones. It would cover their output
+       levels and connectors, DI boxes, phono stages, USB audio and clock, and gain staging into the mixer. These
+       topics are now spread over chapters 1, 3 and 9, where DI boxes and phono stages sit in the microphone chapter.

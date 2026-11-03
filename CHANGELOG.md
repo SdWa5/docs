@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.33.1] - 2026-11-04
+
+### Changed
+
+- `docs/sound-reinforcement.md`: the intro says plainly that anyone may use the handbook and names the electronic
+  sources SdWa5 plays instead of the microphone.
+- `TODO.md`: item 11.6 proposes a chapter on electronic sources.
+
 ## [0.33.0] - 2026-11-04
 
 ### Added
