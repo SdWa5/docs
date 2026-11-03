@@ -61,3 +61,13 @@
    sdwa5.org Shopware instance.
     1. Investigate synchronizing Shopware content with `sdwa5-vps` or a new sibling repository, so it can be
        versioned and maintained alongside the other website sources.
+9. **Mark AI-agent OAuth clients agentic by 11.11.2026** (GCP `sdwa5-automation`, `pro-icon-447800-e5`).
+   Else Workspace MCP rejects them; fixed per client from 12.11. (ca. 15 Minuten)
+10. Dolibarr UI, a general ERP/CRM frontend, proposed as a new sibling repository
+    1. Conceptualize, define and implement a general frontend for an ERP/CRM. This project covers function only, so
+       the theme design stays open for now.
+    2. The UI is configurable. Possibly ship both a fully configurable version and preconfigured, non-configurable
+       versions.
+    3. Step one is done completely, or as far as possible, independently of the original Dolibarr frontend.
+    4. Step two connects the UI to Dolibarr via REST, building on the Dolibarr module that extends the REST
+       endpoints, which is already in development.
