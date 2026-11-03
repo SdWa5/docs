@@ -60,10 +60,10 @@ the banners. Until then, treat named standards, editions and limit values as poi
 | 15 | [Cables, connectors and networks](sound-reinforcement/15-cables-connectors-networks.md) | Balanced lines, connectors, speaker cable loss, digital audio and networks | 15, 17.3, 18.4 |
 | 16 | [Measurement](sound-reinforcement/16-measurement.md) | Meters and testers, SPL meters, FFT analysis, measurement practice | 16, 8.10.1 |
 | | **Part IV. Systems** | | |
-| 17 | Power, grounding and safety | Protective earth, RCDs, distribution, ground loops, switch-on order | 17.4–17.8 |
-| 18 | Stage monitoring | Wedges, fills, in-ear monitors, monitor mixing, ringing out | 11.9, 11.11 |
-| 19 | Control and sync | MIDI, OSC, show control, timecode, clock synchronisation, playback | 19, 20 |
-| 20 | System design and tuning | Brief, prediction, coverage, subwoofer design, alignment, tuning, a worked event | 17.1, 17.2, 18 |
+| 17 | [Power, grounding and safety](sound-reinforcement/17-power-grounding-safety.md) | Protective earth, RCDs, distribution, ground loops, switch-on order | 17.4–17.8 |
+| 18 | [Stage monitoring](sound-reinforcement/18-stage-monitoring.md) | Wedges, fills, in-ear monitors, monitor mixing, ringing out | 11.9, 11.11 |
+| 19 | [Control and sync](sound-reinforcement/19-control-and-sync.md) | MIDI, OSC, show control, timecode, clock synchronisation, playback | 19, 20 |
+| 20 | [System design and tuning](sound-reinforcement/20-system-design-and-tuning.md) | Brief, prediction, coverage, subwoofer design, alignment, tuning, a worked event | 17.1, 17.2, 18 |
 
 [Acoustics](acoustics.md) is a companion page with reflection, absorption and transmission data for common
 materials. Chapter 7 uses it as its reference table.

@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.31.0] - 2026-11-03
+
+### Added
+
+- `docs/sound-reinforcement/`: chapters 17 to 20 (power, grounding and safety; stage monitoring; control and sync;
+  system design and tuning) as a pass-1 draft, written as a standalone book with Davis and Jones as one reference
+  among the sources.
+
 ## [0.30.0] - 2026-11-03
 
 ### Added
