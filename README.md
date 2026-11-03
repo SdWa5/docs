@@ -25,7 +25,8 @@ See [`docs/`](docs/) for:
 - [Acoustics](docs/acoustics.md) — how much sound common walls, floors and
   finishes reflect, absorb and let through, sand-filled timber wall included
 - [Sound reinforcement](docs/sound-reinforcement.md) — a handbook on live sound in twenty
-  chapters, from the physics of sound to the design and tuning of a system, drafted chapter by chapter
+  chapters, from the physics of sound to the design and tuning of a system, drafted chapter by chapter, with an
+  appendix of units, abbreviations and symbols
 
 ## Sub-repositories
 
@@ -60,7 +61,8 @@ See [`docs/`](docs/) for:
   Tests check the label order, fit and averages; the page's tables and source descriptions identify measurements and estimates.
 - **Sound reinforcement PDF.** [`scripts/sound-reinforcement/`](scripts/sound-reinforcement/) renders
   [Sound reinforcement](docs/sound-reinforcement.md) into one PDF. Its tests run without a browser and check that
-  every chapter, formula and diagram is in the document and that every in-document link lands on a heading.
+  every chapter, formula and diagram is in the document and that every in-document link lands on a heading. They also
+  check that the appendix lists every abbreviation the chapters use and links each to a chapter that contains it.
 
 The CI installer regression tests and the link and secret checks run locally against the same configuration:
 

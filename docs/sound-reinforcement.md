@@ -1,13 +1,13 @@
 # SdWa5 — Sound reinforcement
 
-This handbook is about live sound. It is written for the people who set up, run and plan free tekno events, and
-anyone else may use it as well. It follows the signal from the sources on stage, such as drum machines,
-synthesizers, sequencers, turntables, DJ controllers and the occasional microphone, through mixers and processors to
-the loudspeakers. It also covers the physics of sound, hearing and the limits that protect it, and the design and
-tuning of a system for a real event. It describes today's practice, in which consoles, processors and amplifiers are
-digital, loudspeakers are designed and aligned with measurement and prediction software, signals travel over
-networks, and hearing protection is a matter of regulation. Its chapters, their order and their figures are its own,
-and each chapter names the literature it draws on in its *Sources*.
+This handbook is about live sound. It is written for crews who set up, run and plan their own events on their own
+sound systems, and anyone else may use it as well. It follows the signal from the sources on stage, such as drum
+machines, synthesizers, sequencers, turntables, DJ controllers and the occasional microphone, through mixers and
+processors to the loudspeakers. It also covers the physics of sound, hearing and the limits that protect it, and the
+design and tuning of a system for a real event. It describes today's practice, in which consoles, processors and
+amplifiers are digital, loudspeakers are designed and aligned with measurement and prediction software, signals
+travel over networks, and hearing protection is a matter of regulation. Its chapters, their order and their figures
+are its own, and each chapter names the literature it draws on in its *Sources*.
 
 **Status.** This is pass 1, a full draft written quickly so that the whole book can be read. Every chapter carries
 a draft banner and ends with a list *To verify in pass 2*, which names each claim that has not yet been checked
@@ -23,11 +23,12 @@ Markdown pages here are the current version when the two differ.
 - **Units** are SI. Distances are in metres, pressures in pascals, and electrical supply is 230/400 V at 50 Hz.
   The speed of sound is 343 m/s (20 °C) unless a section states a temperature.
 - **Levels** always carry their reference, as in dBu, dBV, dBFS or dB SPL. A level written as plain dB is a
-  difference or a gain. Weighted sound levels are written as dB(A) and dB(C). Chapter 3 defines all of them.
+  difference or a gain. Weighted sound levels are written as dB(A) and dB(C). Chapter 3 defines all of them, and
+  the appendix lists them with the units, formula symbols and abbreviations.
 - **Gain** means voltage gain unless a section says otherwise.
 - **Standards** are cited by number. International (IEC, ISO) and AES standards come first, then European
-  directives and EN standards, then Austrian (ÖVE, ÖNORM) and German (DIN) ones where they are the regional
-  reference. SdWa5 is based in Austria, so national rules are Austrian unless a section says otherwise.
+  directives and EN standards, then Austrian (ÖVE, ÖNORM) ones. German DIN standards are named where they serve as
+  a reference. Laws and regulations are European or Austrian, so readers elsewhere check their own national rules.
 - **Numbers** in tables and worked examples are computed, not copied, and rounded as the text states.
 - **Diagrams** are Mermaid flowcharts rendered by GitHub from the page source. Signal flows from left to right, a
   box is a device or a function, a solid arrow carries audio and a dotted arrow carries control or clock. Chapter 1
@@ -66,6 +67,8 @@ Markdown pages here are the current version when the two differ.
 | 18 | [Stage monitoring](sound-reinforcement/18-stage-monitoring.md) | Wedges, fills, in-ear monitors, monitor mixing, ringing out |
 | 19 | [Control and sync](sound-reinforcement/19-control-and-sync.md) | MIDI, OSC, show control, timecode, clock synchronisation, playback |
 | 20 | [System design and tuning](sound-reinforcement/20-system-design-and-tuning.md) | Brief, prediction, coverage, subwoofer design, alignment, tuning, a worked event |
+| | **Appendix** | |
+| A | [Units, abbreviations and symbols](sound-reinforcement/appendix-units-abbreviations-symbols.md) | SI and metric units, prefixes, levels and their references, formula symbols, every abbreviation with its chapter |
 
 [Acoustics](acoustics.md) is a companion page with reflection, absorption and transmission data for common
 materials. Chapter 7 uses it as its reference table.
