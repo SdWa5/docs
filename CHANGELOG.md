@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.32.0] - 2026-11-03
+
+### Changed
+
+- `docs/sound-reinforcement.md` and chapters 1 to 16: the book stands on its own instead of presenting itself as a
+  rewrite of Davis and Jones. The intros no longer name handbook sections they replace, the *What changed since
+  1989* tables and the concordance are gone, sentences that cited the handbook stand on their own, the draft banner
+  names reference literature, and Davis and Jones remains one entry in each chapter's sources.
+- `README.md`: the entry for the sound reinforcement handbook describes the book itself.
+
 ## [0.31.0] - 2026-11-03
 
 ### Added

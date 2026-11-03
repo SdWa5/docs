@@ -1,13 +1,12 @@
 # 1. Signals and systems
 
-> **Draft, pass 1.** This chapter was written from general knowledge and checked against the 1989 handbook for
+> **Draft, pass 1.** This chapter was written from general knowledge and checked against reference literature for
 > coverage. Standards, editions and figures are named but have not yet been verified against their sources. The
 > list *To verify in pass 2* at the end names every claim that still needs one.
 
 This chapter answers what travels through a sound system and what the system is made of. It starts with sound as a
 pressure wave, explains phase and why it decides how two signals add, follows a modern signal chain from the
-microphone to the listener, and ends with how to read and draw the block diagrams the rest of the book uses. It
-replaces handbook §1 (pp. 1–8) and §7 (pp. 61–70).
+microphone to the listener, and ends with how to read and draw the block diagrams the rest of the book uses.
 
 ## Sound as a pressure wave
 
@@ -113,8 +112,8 @@ both.
 ## The signal chain
 
 Every sound system converts sound into an electrical signal, processes and amplifies it, and turns it back into
-sound in a room where people listen. The handbook drew this as three blocks, input transducer, processing and
-output transducer. A modern system has the same skeleton, but most of the processing happens on numbers rather
+sound in a room where people listen. In its simplest form this is three blocks, an input transducer, processing and
+an output transducer. A modern system has that skeleton, but most of the processing happens on numbers rather
 than voltages, and the room and the listener are part of the chain rather than a footnote.
 
 ```mermaid
@@ -172,7 +171,7 @@ Four properties of that conversion appear throughout the book.
 (48 kHz), sometimes 96 kHz. A sampled signal can represent frequencies up to half the sample rate, the Nyquist
 frequency, which is 24 kHz at 48 kHz. Anything above it must be filtered out before sampling, or it folds back as
 an audible alias. Modern converters oversample internally and filter digitally, so this filter no longer shapes the
-audible band the way the steep analog filters of 1989 did.
+audible band the way the steep analog filters of early converters did.
 
 **Bit depth.** Each sample is stored as a number with a fixed number of bits. Every bit doubles the number of
 possible values and adds about 6.02 dB to the theoretical dynamic range of the format.
@@ -215,9 +214,9 @@ connection, including power and ground, and is drawn for the person who repairs 
 block diagram, because it answers how the device works and where its controls act.
 
 Manufacturers still publish block diagrams for consoles, processors and amplifiers, although the symbol sets have
-drifted apart over the years. The handbook spent several pages on symbol sheets for amplifiers, switches,
-transformers, grounds, meters, connectors and filters. Those sheets are less useful today, because a digital device
-is mostly software and its diagrams are mostly labelled boxes. The rules for reading a diagram have outlived the
+drifted apart over the years. Older references collect symbol sheets for amplifiers, switches, transformers,
+grounds, meters, connectors and filters. Such sheets are less useful today, because a digital device is mostly
+software and its diagrams are mostly labelled boxes. The rules for reading a diagram have outlived the
 symbols.
 
 1. **Signal flows from left to right**, and top to bottom where a diagram wraps. An arrow is drawn only where a
@@ -265,19 +264,6 @@ at 48 kHz and 24 bits and then equalised and compressed on its way to an output 
 fed from before the converter, which is unusual and worth noticing, and the converter runs from a clock that does
 not carry audio. Each of these facts could matter during an event, and the diagram makes them visible in seconds.
 
-## What changed since 1989
-
-| Handbook | Then | Today |
-|---|---|---|
-| §1.1.1 | Speed of sound given for one standard day | Speed computed from temperature, which matters for delay alignment outdoors |
-| §1.1.3–1.1.4 | Phase and summation of two sines | Same physics, plus the distinction of polarity from phase and of coherent from incoherent summation |
-| §1.3 | Three-block model, processing as analog circuits | Chain with conversion, network transport, loudspeaker DSP, room and listener |
-| §1.4 | Inputs include tape heads, phono, CD laser and optical film | Microphones, pickups, DI and playback devices, often delivering digital audio directly |
-| §1.5 | Driver sizes by band in inches | Driver types and sizes moved to chapter 14, monitoring to chapter 18 |
-| §1.6 | Panel discussion with a console and one amplifier | Same idea, illustrated with the SdWa5 event rig |
-| §7.2 | Pages of symbol sheets for amplifiers, switches, transformers, meters and connectors | Labelled boxes and Mermaid conventions, because digital devices are mostly software |
-| §7.4 | Example of an analog delay with a voltage-controlled clock | Dropped. Digital processors run from a fixed sample clock, and delay is a parameter |
-
 ## In the SdWa5 rig
 
 The SdWa5 event rig follows the chain above with two loudspeaker processors in series with the console's output.
@@ -313,9 +299,9 @@ audio.
 
 ## Sources
 
-- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §1 (pp. 1–8) and §7
-  (pp. 61–70).
 - ISO 9613-1, attenuation of sound during propagation outdoors, part 1, for the speed of sound and air absorption.
 - AES17, measurement of digital audio equipment, for full scale and dynamic range.
 - AES26 and IEC 60268-12, for connector pin assignment.
 - SdWa5: [Signal chain](../../sdwa5-3d/docs/signal-chain.md), the rig documented in this chapter.
+- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §1 (pp. 1–8) and §7
+  (pp. 61–70).

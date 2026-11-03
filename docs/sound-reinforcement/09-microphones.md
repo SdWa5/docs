@@ -1,12 +1,12 @@
 # 9. Microphones and DI
 
-> **Draft, pass 1.** This chapter was written from general knowledge and checked against the 1989 handbook for
+> **Draft, pass 1.** This chapter was written from general knowledge and checked against reference literature for
 > coverage. Standards, editions and figures are named but have not yet been verified against their sources. The
 > list *To verify in pass 2* at the end names every claim that still needs one.
 
 This chapter answers how a microphone turns sound into a signal, how its pattern, sensitivity and noise are read
 from its data sheet, how it is powered and connected, and how instruments without a microphone are brought into the
-system through a DI box. It replaces handbook §10.1 to §10.4 (pp. 113–131) and §11.2 (pp. 152–154). Wireless
+system through a DI box. Wireless
 microphones are in [chapter 10](10-wireless.md), and gain before feedback is in
 [chapter 6](06-sound-outdoors.md#feedback-and-gain-before-feedback).
 
@@ -33,7 +33,7 @@ voltage. The transducer decides most of the microphone's character.
 - **Piezoelectric.** A crystal or ceramic element produces a voltage when it is bent. It survives today in contact
   pickups on acoustic guitars, violins and drums, with a very high source impedance that needs a suitable input.
 
-The carbon microphone of early telephones, which the handbook still describes, has no place in sound reinforcement.
+The carbon microphone of early telephones has no place in sound reinforcement.
 
 ## Forms and uses
 
@@ -49,8 +49,8 @@ The carbon microphone of early telephones, which the handbook still describes, h
 | Ceiling array | Conference rooms, hybrid events | Many capsules with beamforming that follows the active talker |
 
 A lecturer who moves around a lectern microphone changes the level by many decibels with every step, because the
-inverse square law is steep close to the microphone. The handbook's advice to give such a speaker a lavalier still
-holds, and a headset is better still where the gain before feedback is short.
+inverse square law is steep close to the microphone. A lavalier keeps the distance constant for such a speaker, and a
+headset is better still where the gain before feedback is short.
 
 ## Pickup patterns
 
@@ -73,15 +73,16 @@ microphone picks up than an omnidirectional one. The distance factor says how mu
 microphone can be placed for the same ratio of direct to diffuse sound. A hypercardioid at 0.2 m picks up as much room
 sound as an omnidirectional microphone at 0.1 m.
 
-The null angle decides where a monitor wedge belongs. A cardioid rejects most at the back, so its wedge sits directly
-behind it, in front of the performer. A supercardioid or hypercardioid rejects most at 110° to 125° and has a rear
-lobe, so its wedges belong at about 55° to 70° on either side of the line behind the microphone, which usually means
-two wedges, one on each side. Placing a wedge for a hypercardioid where a cardioid's would go puts it into the rear lobe.
+The null angle decides where a monitor wedge belongs. A cardioid rejects most at the back, so its wedge sits
+directly behind it, in front of the performer. A supercardioid or hypercardioid rejects most at 110° to 125° and has
+a rear lobe, so its wedges belong at about 55° to 70° on either side of the line behind the microphone, which
+usually means two wedges, one on each side. Placing a wedge for a hypercardioid where a cardioid's would go puts it
+into the rear lobe.
 
 Real microphones follow these patterns only in the midrange. At low frequencies most directional microphones become
 less directional, and at high frequencies the size of the capsule narrows the pattern. A pattern graph at several
 frequencies in the data sheet, or a polar plot at 125 Hz, 1 kHz and 8 kHz, shows how far the microphone keeps its
-pattern. For feedback, the handbook's point still holds. A microphone with smooth off-axis response gains more than
+pattern. For feedback, a microphone with smooth off-axis response gains more than
 one whose pattern is sharper on paper but has peaks off axis.
 
 ## Frequency response and proximity effect
@@ -103,12 +104,12 @@ far field follows from $|1 + 1/(2jkr)|$, with $k = 2\pi f / c$.
 | 1 m | +1.1 dB | +0.3 dB | +0.1 dB | 0 dB |
 
 These are values for an ideal point source and an ideal capsule, and a real vocal microphone is designed with a
-rising bass roll-off that takes back much of it at a typical singing distance. The handbook's figure of up to 16 dB is
-in that range. An omnidirectional microphone has no proximity effect, which is one reason lavaliers and headsets are
+rising bass roll-off that takes back much of it at a typical singing distance. Figures of up to 16 dB are commonly
+quoted. An omnidirectional microphone has no proximity effect, which is one reason lavaliers and headsets are
 omnis. A singer who uses the proximity effect deliberately gains warmth, and a public speaker who leans in by
 accident loses intelligibility. A high-pass filter in the channel, set by ear between 80 and 150 Hz, is the remedy.
 
-The handbook's section on frequency response peaks makes a further point. A peak in the response of any element in
+Peaks in the frequency response matter for a further reason. A peak in the response of any element in
 the loop is where feedback starts first, which is why a microphone with a smooth response gains more than one with a
 peaky response and the same pattern.
 
@@ -128,8 +129,8 @@ Sensitivity is the output voltage for 1 Pa, which is 94 dB SPL, given in mV/Pa o
 
 The preamplifier must take the whole range, from a quiet voice on a dynamic microphone at around −60 dBu to a
 condenser on a kick drum at over +5 dBu. A condenser at 135 dB SPL delivers a level that overloads many microphone
-inputs at their lowest gain, which is why the handbook notes that distortion with close miking usually comes from the
-preamplifier, not the microphone. A pad in the microphone or at the input solves it.
+inputs at their lowest gain, which is why distortion with close miking usually comes from the preamplifier, not
+the microphone. A pad in the microphone or at the input solves it.
 
 ### Self-noise and the noise of a dynamic microphone
 
@@ -233,24 +234,9 @@ lift removes it.
 ### Preamplifiers in the console
 
 The microphone preamplifier in the console or stagebox raises signals from around −60 dBu to line level or to the
-converter's working level, which can need up to about 70 dB of gain. The handbook also describes phono preamplifiers
-with their RIAA equalization, which now matter only for DJ turntables and are built into DJ mixers. Chapter 4 covers
+converter's working level, which can need up to about 70 dB of gain. Phono preamplifiers with their RIAA
+equalization now matter only for DJ turntables and are built into DJ mixers. Chapter 4 covers
 gain structure and chapter 11 the console.
-
-## What changed since 1989
-
-| Handbook | Then | Today |
-|---|---|---|
-| §10.1 | Dynamic, condenser, electret, ribbon, carbon, piezo | Carbon dropped, active ribbons added |
-| §10.2 | Handheld, lavalier, contact, boundary, shotgun, parabolic, two-element microphones | Headsets and beamforming ceiling arrays added, parabolic dropped |
-| §10.3.1 | Patterns described | Computed first-order family with null angles, directivity index and wedge placement |
-| §10.3.3 | Proximity effect up to 16 dB, low cut as cure | Computed table for an ideal cardioid, high-pass by ear |
-| §10.3.6 | Overload is usually at the preamp | Kept, with a sensitivity table |
-| §10.3.7, §10.3.8 | Low impedance below 150 Ω, load ten times higher, balanced lines | Kept, CMRR, detail in chapter 15 |
-| §10.4.3 | Phantom power 48 V or 24 V, dynamic microphones safe if balanced | IEC 61938 P48, P24 and P12, power budget, switching with the channel muted |
-| §10.4.6 | Stereo recording techniques | Dropped |
-| §11.2 | Preamps, impedance converters, phono preamps | DI boxes passive and active, ground lift, phono only for DJs |
-| — | Not covered | AES42 digital microphones, network microphones |
 
 ## To verify in pass 2
 
@@ -266,8 +252,8 @@ gain structure and chapter 11 the console.
 
 ## Sources
 
-- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §10.1 to §10.4
-  (pp. 113–131) and §11.2 (pp. 152–154).
 - Eargle, J.: *The Microphone Book*, Focal Press.
 - IEC 61938, guidance on interconnections and matching values, including phantom power.
 - AES42, digital interface for microphones.
+- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §10.1 to §10.4
+  (pp. 113–131) and §11.2 (pp. 152–154).

@@ -1,27 +1,26 @@
 # 8. Specifications
 
-> **Draft, pass 1.** This chapter was written from general knowledge and checked against the 1989 handbook for
+> **Draft, pass 1.** This chapter was written from general knowledge and checked against reference literature for
 > coverage. Standards, editions and figures are named but have not yet been verified against their sources. The
 > list *To verify in pass 2* at the end names every claim that still needs one.
 
 This chapter answers how to read a data sheet so that its numbers mean something. It explains why a figure without
 its conditions is worthless, and it goes through frequency response, noise, distortion, impedance, crosstalk, the
 specifications of digital equipment and the mechanical data, each with what a complete statement contains. It ends
-with a checklist. It replaces handbook §8 (pp. 71–104) except §8.7, which is in
-[chapter 3](03-decibels-levels-loudness.md), and §8.9 and §8.10, which are in
-[chapter 2](02-frequency-phase-time.md). How a measurement and a listener can disagree is in
+with a checklist. Operating levels are in [chapter 3](03-decibels-levels-loudness.md), and frequency bands and
+square-wave tests in [chapter 2](02-frequency-phase-time.md). How a measurement and a listener can disagree is in
 [chapter 5](05-hearing.md).
 
 ## A number needs its conditions
 
 A specification is a measurement result, and a measurement result is only meaningful with the conditions under which
-it was taken. The handbook states the rule plainly, and it remains the best test of any data sheet. A competent
+it was taken. This gives the best test of any data sheet. A competent
 technician with standard test equipment should be able to repeat the measurement from the data sheet alone and get
 the same result. Anything that would stop them, such as an unnamed load, an unknown bandwidth or an unstated level,
 makes the figure unverifiable.
 
-The handbook illustrates this with an invented data sheet in which every line looks plausible and none can be checked.
-The same exercise works today with a sheet of the kind found on many product pages.
+A data sheet of the kind found on many product pages shows how every line can look plausible while none can be
+checked.
 
 | Line on the sheet | What is missing |
 |---|---|
@@ -99,8 +98,8 @@ gain matters, because at low gain the stages after the preamplifier add their ow
 ### Output noise
 
 The output noise of a console depends on how many channels are routed to the bus, where the faders and the master
-sit, whether the hum was included and how the output was terminated. The handbook shows one console described in four
-ways that differ by 20 dB. The method still applies. A useful statement names the routing, the positions of the
+sit, whether the hum was included and how the output was terminated. The same console can be described in ways that
+differ by 20 dB. A useful statement names the routing, the positions of the
 controls, the bandwidth, the weighting and the load.
 
 ### Hum, buzz and other noises
@@ -132,7 +131,7 @@ it rises sharply at clipping. A THD+N curve against level shows both, while a si
 it.
 
 A total says nothing about which harmonics are present. Low, even harmonics are much less audible than high, odd
-ones, and chapter 5 gives the handbook's example where a loudspeaker's larger distortion does not hide an amplifier's
+ones, and chapter 5 gives an example where a loudspeaker's larger distortion does not hide an amplifier's
 smaller one. A spectrum of the distortion products tells more than the total.
 
 ### Intermodulation distortion
@@ -268,20 +267,6 @@ which chapter 20 covers.
 5. **Like with like.** Two devices are compared only on figures measured the same way.
 6. **Mechanics.** Depth behind the panel, net weight, power consumption and inrush current.
 
-## What changed since 1989
-
-| Handbook | Then | Today |
-|---|---|---|
-| §8.1–8.1.3 | An invented sheet of doubtful specs, reproducibility as the test | Same test, own example sheet with digital and loudspeaker figures |
-| §8.2 | Response, range, power bandwidth, graph versus number | Kept, with CTA-2034 and AES2 for loudspeakers |
-| §8.3 | Noise types, EIN, output noise in four versions | Kept, with the thermal limit computed and bandwidth effects quantified |
-| §8.4, §8.5 | THD by notch, SMPTE and CCIF IM | Kept, THD+N curves against level |
-| §8.5.4 | TIM, controversial | Rarely specified, slew rate explained |
-| §8.6 | Matching at 600 Ω versus bridging | Bridging is standard, matching kept for old gear |
-| §8.8 | Crosstalk causes and specification | Kept, with digital equipment |
-| §8.11 | Rack dimensions and weight in inches and pounds | Metric, with depth behind the panel and rigging |
-| — | Not covered | AES17 digital specifications, latency, jitter, M-Noise, CTA-2010 |
-
 ## To verify in pass 2
 
 - The A-weighting and bandwidth effects on white noise (−2 dB, +6 dB at 80 kHz); recompute with the IEC 61672-1
@@ -298,10 +283,10 @@ which chapter 20 covers.
 
 ## Sources
 
-- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §8 (pp. 71–104).
 - AES17, measurement of digital audio equipment.
 - AES2-2012, specification of loudspeaker components used in professional audio and sound reinforcement.
 - AES75, measuring loudspeaker maximum linear sound levels using noise (M-Noise).
 - IEC 60268-3, amplifiers, and IEC 60268-5, loudspeakers.
 - CTA-2034, standard method of measurement for in-home loudspeakers; CTA-2010, subwoofer output measurements.
 - IEC 60297 and EIA-310, rack dimensions.
+- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §8 (pp. 71–104).

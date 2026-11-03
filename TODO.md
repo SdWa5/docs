@@ -77,6 +77,6 @@
     2. Add generated figures where the numbers carry the argument, in the style of
        [scripts/acoustics/plots.py](scripts/acoustics/plots.py).
     3. Build PDF and EPUB editions through item 7.
-    4. Write a formula collection (Formelsammlung), a version of the whole handbook that is as short as possible,
+    4. Write a formula collection (Formelsammlung), a version of the whole book that is as short as possible,
        with the most important formulas, rules of thumb and tables on a few pages and a link to the chapter that
        explains each.

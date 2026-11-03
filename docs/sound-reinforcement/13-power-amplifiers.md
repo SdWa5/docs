@@ -1,12 +1,12 @@
 # 13. Power amplifiers
 
-> **Draft, pass 1.** This chapter was written from general knowledge and checked against the 1989 handbook for
+> **Draft, pass 1.** This chapter was written from general knowledge and checked against reference literature for
 > coverage. Standards, editions and figures are named but have not yet been verified against their sources. The
 > list *To verify in pass 2* at the end names every claim that still needs one.
 
 This chapter answers how much voltage, current and power an amplifier delivers into a loudspeaker, how its ratings
 are to be read, how amplifiers and loudspeakers are matched, how much a mains circuit can feed, and how the cable
-between them and the constant-voltage systems of installations fit in. It replaces handbook §12 (pp. 193–208).
+between them and the constant-voltage systems of installations fit in.
 Setting the amplifier's gain against the processor's limiters is in
 [chapter 4](04-dynamic-range-gain-structure.md#matching-the-stages-after-the-console), and the loudspeakers
 themselves are in [chapter 14](14-loudspeakers.md).
@@ -37,8 +37,8 @@ limit the current. The ratio between the 8 Ω and 4 Ω ratings shows how stiff a
 A loudspeaker's impedance is not a resistor. It varies with frequency, falling below the nominal value at some
 frequencies and rising far above it at resonance, and it has a reactive part that shifts current and voltage apart in
 phase. An amplifier that drives a nominal 4 Ω load may see 2.5 Ω at one frequency, and the reactive load makes the
-output stage dissipate more than a resistor of the same value would. The handbook makes this point in its discussion of
-static and dynamic tests, which chapter 5 summarises.
+output stage dissipate more than a resistor of the same value would. Chapter 5 explains why static tests on a
+resistor miss this.
 
 ## How amplifiers are built
 
@@ -82,7 +82,7 @@ long.
 - **Power bandwidth** is the frequency range over which the rated power is reached, as chapter 8 explains.
 
 In the United States, the FTC rule on amplifier power ratings has required a preconditioning period and continuous
-ratings for consumer amplifiers since the 1970s, which the handbook describes. CTA-2006 is a later test method for car
+ratings for consumer amplifiers since the 1970s. CTA-2006 is a later test method for car
 audio amplifiers. Professional amplifiers are not covered by either, and their data sheets give whatever the
 manufacturer chooses. A sheet that states the burst signal, the duration, the load and the number of channels driven
 can be compared with another that does the same.
@@ -92,8 +92,8 @@ can be compared with another that does the same.
 Two channels of an amplifier can drive one loudspeaker in bridge mode. One channel receives the signal inverted, and
 the loudspeaker is connected between the two hot outputs, so it sees twice the voltage. Into the same load, the
 power quadruples in theory. Each channel, however, sees half the load impedance, so a bridged amplifier into 4 Ω loads
-each channel as if it were driving 2 Ω. The handbook warns never to bridge into a load below the amplifier's rated
-bridged minimum, and that warning stands.
+each channel as if it were driving 2 Ω. A bridged amplifier is therefore never connected to a load below its rated
+bridged minimum.
 
 ### Gain and input sensitivity
 
@@ -106,7 +106,7 @@ channel, which chapter 4 uses.
 ## Clipping and protection
 
 When the signal asks for more voltage than the supply provides, the output clips. The peaks are flattened, and the
-signal gains harmonics at high frequencies. The handbook explains that clipping can damage a tweeter even when the
+signal gains harmonics at high frequencies. Clipping can damage a tweeter even when the
 amplifier is small. The clipped signal sends energy into the high-frequency driver that the programme did not have,
 and a small, heavily clipping amplifier can burn a tweeter that a large amplifier running cleanly would not.
 
@@ -192,19 +192,6 @@ Voice alarm systems for evacuation are constant-voltage systems with requirement
 components and the national installation rules, including monitored lines, battery backup and a minimum
 intelligibility. Their planning and installation are a specialist field outside the scope of an event system.
 
-## What changed since 1989
-
-| Handbook | Then | Today |
-|---|---|---|
-| §12.2 | Ohm's law and power with worked values | Kept, computed table for 8, 4 and 2 Ω |
-| §12.3 | FTC preconditioning, power bandwidth, slew rate | Ratings by conditions, burst ratings, CTA-2006 for car audio |
-| §12.3.4–12.3.5 | Bridging, clipping damages tweeters | Kept, with limiters in the processor and the amplifier |
-| — | Linear amplifiers with heavy transformers | Class D, switch-mode supplies with PFC, DSP and networking |
-| §12.5.1 | Interpreting loudspeaker power ratings | Rule of 1.5 to 2 times, manufacturer's recommendation first |
-| §12.5.2 | Series and parallel impedance | Kept, with cable resistance and damping factor computed |
-| §12.5.3 | 70 V constant-voltage systems | 100 V in Europe, EN 54 voice alarm as a specialist field |
-| — | Not covered | Mains current limits, programme power fractions, inrush |
-
 ## In the SdWa5 rig
 
 The rig's mains plan, which places four amplifiers and two DSPs on the three phases of a 16 A CEE supply, is in
@@ -225,8 +212,8 @@ mains figures there rest on assumed efficiency and programme fractions, which th
 
 ## Sources
 
-- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §12 (pp. 193–208).
 - 16 CFR Part 432, power output claims for amplifiers utilized in home entertainment products.
 - CTA-2006, testing and measurement methods for mobile audio amplifiers.
 - EN 54, fire detection and fire alarm systems, parts 16 and 24.
 - SdWa5: [Signal chain](../../sdwa5-3d/docs/signal-chain.md), sections *Mains* and *Why 32 dB and 26 dB*.
+- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §12 (pp. 193–208).

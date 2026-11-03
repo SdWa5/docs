@@ -1,17 +1,17 @@
 # 12. Signal processing
 
-> **Draft, pass 1.** This chapter was written from general knowledge and checked against the 1989 handbook for
+> **Draft, pass 1.** This chapter was written from general knowledge and checked against reference literature for
 > coverage. Standards, editions and figures are named but have not yet been verified against their sources. The
 > list *To verify in pass 2* at the end names every claim that still needs one.
 
 This chapter answers what the processors between the console and the amplifiers do, and what they cannot do. It
 covers equalizers, delay, reverb, dynamics processors, loudspeaker management, feedback suppression, automatic mixing
-and the modulation effects. It replaces handbook §14 (pp. 244–280). Filters, slopes and phase are explained in
+and the modulation effects. Filters, slopes and phase are explained in
 [chapter 2](02-frequency-phase-time.md), compression as range management in
 [chapter 4](04-dynamic-range-gain-structure.md#compression-and-limiting-as-range-management), and the measurement
 that guides equalization in chapter 16.
 
-In 1989, every one of these functions was a separate box in a rack, and the handbook describes them as such. Today
+Each of these functions used to be a separate box in a rack. Today
 almost all of them run inside the digital console or a loudspeaker processor, often several times per channel.
 What they do has changed less than where they sit.
 
@@ -30,7 +30,7 @@ What they do has changed less than where they sit.
   picture of the correction. A third-octave graphic has 31 bands on the ISO 266 centre frequencies from 20 Hz to
   20 kHz.
 
-The handbook also describes sweep equalizers, which have an adjustable frequency but a fixed bandwidth, and the
+Older designs include sweep equalizers, which have an adjustable frequency but a fixed bandwidth, and the
 so-called paragraphic, which is a set of parametric bands. Both are forms of the parametric filter today.
 
 ### Graphic equalizers in detail
@@ -62,7 +62,7 @@ air absorption at a distance. It cannot fix a problem that differs from seat to 
 - **Reverberation** is energy that the room returns late. An equalizer that lowers a band lowers the direct sound in
   that band too.
 
-The handbook's warning about tuning with an analyser that shows only level is covered in chapter 5. Modern
+Why tuning with an analyser that shows only level misleads is covered in chapter 5. Modern
 transfer-function measurement averages several positions and shows the phase and the coherence. Corrections where
 the coherence is low address reflections and are mostly wasted. Chapter 20 describes system tuning.
 
@@ -104,7 +104,7 @@ Sound in air travels 0.343 m per millisecond. A delay that matches a distance br
 
 ### History
 
-The handbook describes tape echo and analog bucket-brigade delays as well as the first digital delays. All delay is
+Tape echo and analog bucket-brigade delays have given way to digital ones. All delay is
 digital today, with any length, no loss of quality and a resolution of one sample, which is 21 µs at 48 kHz.
 
 ## Reverb
@@ -112,8 +112,7 @@ digital today, with any length, no loss of quality and a resolution of one sampl
 Reverb adds the decay of a room to a dry signal. In a live system it gives close-miked vocals and instruments the
 sense of space that they lose by being picked up from a few centimetres away.
 
-The handbook describes the physical reverbs of its time, which were rooms, ducts, springs and steel plates, and the
-first digital reverbs. Two digital methods are in use today.
+Reverb was once made physically, in rooms, ducts, springs and steel plates. Two digital methods are in use today.
 
 - **Algorithmic reverb** builds the decay from networks of delays and filters. It offers parameters such as the decay
   time, the pre-delay before the reverb starts, the size, the damping of high frequencies and the density of the early
@@ -141,7 +140,7 @@ A compressor reduces the level of the signal above a threshold by a ratio. With 
 | −8 dB | −17 dB | 9 dB |
 | 0 dB | −15 dB | 15 dB |
 
-The handbook explains the controls, and they have not changed.
+The controls are the same on every compressor.
 
 - **Threshold and ratio** set where and how strongly it acts. A ratio of 10 to 1 or more acts as a limiter.
 - **Attack** sets how quickly the gain falls when the signal rises above the threshold, typically from under a
@@ -167,15 +166,15 @@ The handbook explains the controls, and they have not changed.
 A gate mutes a signal below a threshold, and an expander lowers it by a ratio. On a drum kit, a gate on each tom
 removes the bleed from the rest of the kit, and on a noisy instrument it removes the hum between notes. A gate needs a
 range, so that it lowers rather than mutes when that sounds more natural, and a hold time and hysteresis, so that it
-does not chatter at the threshold. The handbook describes keying a gate from another source, such as a kick drum
-gating a bass tone, and it remains possible on any console with sidechain inputs.
+does not chatter at the threshold. A gate can also be keyed from another source, such as a kick drum
+gating a bass tone, on any console with sidechain inputs.
 
 A ducker lowers one signal when another is present, such as the background music when a presenter speaks.
 
 ## Loudspeaker management
 
 A loudspeaker management processor sits between the console and the amplifiers and turns a mix into what each
-amplifier channel needs. It combines several functions that the handbook describes as separate boxes.
+amplifier channel needs. It combines several functions that were once separate boxes.
 
 - **Crossover.** Splits the signal into the bands for subwoofers, low, mid and high drivers, with chosen filter types
   and slopes, as chapter 2 explains.
@@ -210,7 +209,7 @@ one built in.
 
 ## Effects
 
-The handbook describes flangers, phasers and exciters, and they remain in use as effects rather than corrections.
+Flangers, phasers and exciters remain in use as effects rather than corrections.
 
 - **Flanger and chorus.** Mix the signal with a copy that is delayed by a few milliseconds, with the delay slowly
   varied. A delay of 1 ms places the first notch of the resulting comb filter at 500 Hz and one of 5 ms at 100 Hz.
@@ -219,19 +218,6 @@ The handbook describes flangers, phasers and exciters, and they remain in use as
 - **Exciter.** Adds generated harmonics to the high frequencies to make a signal brighter and more present. Used
   sparingly on dull sources, it can help a voice through a dense mix.
 - **Pitch correction and harmonisers** process vocals in real time and are common in some styles of music.
-
-## What changed since 1989
-
-| Handbook | Then | Today |
-|---|---|---|
-| §14.1 | Tone controls, sweep, parametric, graphic and paragraphic equalizers in separate units | Parametric bands in every channel, graphics on outputs, FIR and dynamic EQ |
-| §14.1.8 | Tuning a system with a graphic and an RTA | Transfer-function measurement, what EQ cannot fix |
-| §14.2.1–14.2.4 | Chambers, ducts, springs and plates | History; simulated as presets |
-| §14.2.5–14.2.8 | First digital reverbs, tape and analog delay | Algorithmic and convolution reverb; delay always digital |
-| §14.3 | Compressor and limiter controls | Kept, with look-ahead, true peak, multiband, de-esser and sidechain |
-| §14.4 | Gates and expanders, keying | Kept, with ducker |
-| §14.5, §14.6 | Flanger, phaser, exciter | Kept briefly as effects |
-| — | Not covered | Loudspeaker management, feedback suppressors, gain-sharing automatic mixers |
 
 ## In the SdWa5 rig
 
@@ -260,8 +246,8 @@ and the tools that took them in [Gain rider, compressor, auto EQ and measurement
 
 ## Sources
 
-- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §14 (pp. 244–280).
 - ISO 266, preferred frequencies.
 - Dugan, D.: Automatic microphone mixing, *JAES* 23, 1975.
 - SdWa5: [Signal chain](../../sdwa5-3d/docs/signal-chain.md), section *On the bench, 2026-09-29*;
   [Measurements](../../sdwa5-dsp/docs/measurements.md); [Automation](../../sdwa5-dsp/docs/automation.md).
+- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §14 (pp. 244–280).

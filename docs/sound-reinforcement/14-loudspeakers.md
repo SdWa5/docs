@@ -1,13 +1,13 @@
 # 14. Loudspeakers
 
-> **Draft, pass 1.** This chapter was written from general knowledge and checked against the 1989 handbook for
+> **Draft, pass 1.** This chapter was written from general knowledge and checked against reference literature for
 > coverage. Standards, editions and figures are named but have not yet been verified against their sources. The
 > list *To verify in pass 2* at the end names every claim that still needs one.
 
 This chapter answers how a loudspeaker turns power into sound, why a box of a given size has the bass and the
 directivity it has, how drivers are combined with crossovers, how boxes are combined into point-source systems, line
-arrays and subwoofer arrays, how a loudspeaker data sheet is read, and how loudspeakers fail. It replaces handbook §13
-(pp. 209–243). Amplifiers are in [chapter 13](13-power-amplifiers.md), and filters and crossover alignments in
+arrays and subwoofer arrays, how a loudspeaker data sheet is read, and how loudspeakers fail.
+Amplifiers are in [chapter 13](13-power-amplifiers.md), and filters and crossover alignments in
 [chapter 2](02-frequency-phase-time.md).
 
 ## Drivers
@@ -23,9 +23,9 @@ magnet carries the signal current and moves, and it drives a diaphragm that move
 - **Ribbon and air-motion transformer (AMT) drivers** use a thin folded or flat membrane, and they appear as
   high-frequency drivers in some systems.
 
-The handbook also covers piezoelectric tweeters, which were cheap and needed no crossover, but they are not used in
-professional systems today. Neodymium magnets, much stronger per kilogram than ferrite, have cut the weight of
-drivers by half or more and made flown arrays practical.
+Piezoelectric tweeters, which were cheap and needed no crossover, are not used in professional systems today.
+Neodymium magnets, much stronger per kilogram than ferrite, have cut the weight of drivers by half or more and made
+flown arrays practical.
 
 ## Directivity
 
@@ -49,8 +49,8 @@ low frequencies needs size or several sources, which is the reason for the subwo
 
 A horn loads a driver acoustically and shapes its coverage. It controls the pattern down to roughly the frequency at
 which its mouth is one wavelength wide, so a mouth of 0.5 m controls to about 690 Hz and one of 1 m to about 340 Hz.
-The handbook describes the change from exponential horns, whose pattern narrowed with rising frequency, to the
-constant-directivity horns of the 1980s, which hold a stated coverage over a wide band. Today's waveguides continue
+Exponential horns, whose pattern narrowed with rising frequency, gave way in the 1980s to
+constant-directivity horns, which hold a stated coverage over a wide band. Today's waveguides continue
 that line. They are shallow horns optimised by simulation for smooth coverage, often with asymmetric patterns that
 throw further at the top of the pattern than at the bottom.
 
@@ -88,9 +88,9 @@ A crossover splits the signal so that each driver receives only the band it repr
 - **Passive crossovers** sit inside the box, after the amplifier. They are simple to connect but waste power in their
   components, cannot be adjusted, and place the amplifier's output impedance behind a network that weakens its control
   of the bass driver.
-- **Active crossovers** split the signal before separate amplifier channels. The handbook lists their advantages,
-  which are more headroom because each amplifier handles only one band, efficiency, better damping, and lower
-  intermodulation because a clipping bass channel does not distort the high frequencies. All of these still hold.
+- **Active crossovers** split the signal before separate amplifier channels. Their advantages
+  are more headroom because each amplifier handles only one band, efficiency, better damping, and lower
+  intermodulation because a clipping bass channel does not distort the high frequencies.
 
 A digital processor or an amplifier with DSP now provides the crossover along with delay to align the drivers in
 time, equalization for each way and limiters for each driver, as chapter 12 describes. A Linkwitz–Riley alignment,
@@ -107,8 +107,8 @@ Many current boxes are self-powered, with the amplifier and the processing built
 
 A single box or a small cluster of boxes, each covering its own angle, acts as a point source and loses 6 dB per
 doubling of distance, as chapter 6 explains. Where the coverage of two boxes overlaps, they interfere and produce a
-comb filter, so a well-built cluster splays its boxes so that their patterns meet at about their −6 dB points. The
-handbook's estimate for clusters, between 3 and 6 dB more level per doubling of the number of boxes, assumes some
+comb filter, so a well-built cluster splays its boxes so that their patterns meet at about their −6 dB points. A
+common estimate for clusters, between 3 and 6 dB more level per doubling of the number of boxes, assumes some
 overlap. Coaxial boxes, with the horn in the centre of the bass driver, behave like one source and are common as
 monitors and fills.
 
@@ -146,7 +146,7 @@ per doubling of their number at low frequencies. A floor and a wall add further 
 
 ### Left and right or centre
 
-Subwoofers placed left and right of the stage, as most systems were built in 1989, produce a comb filter across the
+Subwoofers placed left and right of the stage, as most systems were built for decades, produce a comb filter across the
 audience. On the centre line both arrive together, and the sum is loud, which is called the power alley. Off the
 centre line the path difference creates cancellations.
 
@@ -199,7 +199,7 @@ Chapter 8 explains why data sheets need conditions. For loudspeakers they need m
 
 ## How loudspeakers fail
 
-The handbook lists the failures, and they are the same today.
+The ways loudspeakers fail have not changed in decades.
 
 - **Over-excursion.** At a constant level, the cone excursion needed rises by a factor of four for every octave down,
   so 50 Hz needs four times and 25 Hz sixteen times the excursion of 100 Hz. Below the tuning frequency of a vented
@@ -217,24 +217,12 @@ The handbook lists the failures, and they are the same today.
 Limiters in the processor, set from the driver's ratings, prevent most of these. A defective box usually shows itself
 by an impedance curve that differs from its siblings, which chapter 16 covers.
 
-## What changed since 1989
-
-| Handbook | Then | Today |
-|---|---|---|
-| §13.2 | Electromagnetic and piezoelectric drivers | Piezo dropped; neodymium and AMT drivers added |
-| §13.3 | Cone directivity narrows with frequency | Kept, computed table |
-| §13.4 | Vented boxes and LF horns | Kept, Thiele-Small and Hofmann's law |
-| §13.5, §13.6 | Exponential and constant-directivity horns, compression drivers | Waveguides, asymmetric patterns |
-| §13.7 | Passive versus active crossovers, biamping | Active with DSP presets, LR alignment, FIR, self-powered boxes |
-| §13.8 | Stacks and clusters, boundary effects | Line arrays, steerable columns, subwoofer arrays; boundaries in chapter 7 |
-| §13.9 | Response, power, sensitivity, impedance, directivity | 2.83 V convention, AES2, AES75, directivity data for software |
-| §13.10, §13.11 | Over-excursion, IMD, failure causes | Kept, with power compression and processor protection |
-
 ## In the SdWa5 rig
 
 Most SdWa5 cabinets are DIY builds of commercial designs, so their weight, dimensions and rigging points can differ
-from the original's data sheet. [What drifts between a clone and its original](../../sdwa5-3d/docs/measuring.md#what-drifts-between-a-clone-and-its-original)
-lists what to measure first, and the rest of that page describes how a cabinet is measured for the rig's model.
+from the original's data sheet. [What drifts between a clone and its
+original](../../sdwa5-3d/docs/measuring.md#what-drifts-between-a-clone-and-its-original) lists what to measure
+first, and the rest of that page describes how a cabinet is measured for the rig's model.
 
 ## To verify in pass 2
 
@@ -248,10 +236,10 @@ lists what to measure first, and the rest of that page describes how a cabinet i
 
 ## Sources
 
-- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §13 (pp. 209–243).
 - Thiele, A. N.: Loudspeakers in vented boxes, *JAES* 19, 1971; Small, R. H.: Vented-box loudspeaker systems,
   *JAES* 21, 1973.
 - Heil, C., Urban, M.: Sound fields radiated by multiple sound source arrays, AES convention paper, 1992; Urban, M.,
   Heil, C., Bauman, P.: Wavefront sculpture technology, *JAES* 51, 2003.
 - AES2-2012, AES75, IEC 60268-5.
 - SdWa5: [Measuring a cabinet](../../sdwa5-3d/docs/measuring.md).
+- Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §13 (pp. 209–243).
