@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.30.0] - 2026-11-03
+
+### Added
+
+- `docs/sound-reinforcement/`: chapters 13 to 16 (power amplifiers; loudspeakers; cables, connectors and networks;
+  measurement) as a pass-1 draft.
+
 ## [0.29.0] - 2026-11-03
 
 ### Added
