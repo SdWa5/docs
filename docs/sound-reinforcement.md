@@ -50,11 +50,11 @@ the banners. Until then, treat named standards, editions and limit values as poi
 | 6 | [Sound outdoors](sound-reinforcement/06-sound-outdoors.md) | Distance loss, air absorption, weather, barriers, neighbours, feedback | 5, 18.3.3 |
 | 7 | [Sound indoors](sound-reinforcement/07-sound-indoors.md) | Reflection and absorption, room modes, reverberation, critical distance, intelligibility | 6, 18.3.4–5 |
 | | **Part III. Equipment** | | |
-| 8 | Specifications | Reading data sheets, noise, distortion, digital specifications | 8 |
-| 9 | Microphones and DI | Transducer types, polar patterns, sensitivity, phantom power, DI boxes | 10.1–10.4, 11.2 |
-| 10 | Wireless | Frequencies in the EU, analog and digital systems, intermodulation, antennas, in-ear transmitters, intercom | 10.5, 10.6 |
-| 11 | Mixing consoles | Channel strip, busses, digital consoles and stageboxes, splits, front-of-house placement | 11.1–11.6, 11.8, 11.10, 11.12 |
-| 12 | Signal processing | Equalisers, delay, reverb, dynamics, loudspeaker processors, feedback suppression | 14 |
+| 8 | [Specifications](sound-reinforcement/08-specifications.md) | Reading data sheets, noise, distortion, digital specifications | 8 |
+| 9 | [Microphones and DI](sound-reinforcement/09-microphones.md) | Transducer types, polar patterns, sensitivity, phantom power, DI boxes | 10.1–10.4, 11.2 |
+| 10 | [Wireless](sound-reinforcement/10-wireless.md) | Frequencies in the EU, analog and digital systems, intermodulation, antennas, in-ear transmitters, intercom | 10.5, 10.6 |
+| 11 | [Mixing consoles](sound-reinforcement/11-mixing-consoles.md) | Channel strip, busses, digital consoles and stageboxes, splits, front-of-house placement | 11.1–11.6, 11.8, 11.10, 11.12 |
+| 12 | [Signal processing](sound-reinforcement/12-signal-processing.md) | Equalisers, delay, reverb, dynamics, loudspeaker processors, feedback suppression | 14 |
 | 13 | Power amplifiers | Amplifier classes, ratings, mains supply, matching to loudspeakers, 100 V systems | 12 |
 | 14 | Loudspeakers | Drivers, enclosures, directivity, crossovers, line arrays, subwoofer arrays | 13 |
 | 15 | Cables, connectors and networks | Balanced lines, connectors, speaker cable loss, digital audio and networks | 15, 17.3, 18.4 |

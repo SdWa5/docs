@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.29.0] - 2026-11-03
+
+### Added
+
+- `docs/sound-reinforcement/`: chapters 8 to 12 (specifications; microphones and DI; wireless; mixing consoles;
+  signal processing) as a pass-1 draft.
+- TODO: item 11.4, a short formula collection of the sound reinforcement handbook.
+
 ## [0.28.0] - 2026-11-03
 
 ### Added
