@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.37.0] - 2026-11-04
+
+### Added
+
+- Sound reinforcement chapter 6: half, quarter and eighth space, with the mirror source, the gains, the unchanged
+  loss with distance and the comb filter above the boundary's range.
+- Sound reinforcement chapter 1: spherical spreading, the loss with distance and the effect of boundaries.
+
+### Changed
+
+- Sound reinforcement chapter 7: the boundary bullet links to chapter 6.
+
 ## [0.36.2] - 2026-11-04
 
 ### Changed

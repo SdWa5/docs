@@ -57,6 +57,32 @@ which chapter 14 covers.
 | 50 m | −34.0 dB | −17.0 dB |
 | 100 m | −40.0 dB | −20.0 dB |
 
+### Half, quarter and eighth space
+
+A loudspeaker next to a large, hard surface radiates into less than the full sphere. The surface reflects the sound
+that would have gone into it, and it acts like a mirror that places a second source behind the surface. Where the
+distance from the loudspeaker to the surface is small compared with the wavelength, the mirror source is in phase
+with the real one and the two add coherently, which doubles the sound pressure and adds 6 dB. Two surfaces give four
+coherent sources and three surfaces eight.
+
+| Position | Space | Solid angle | Gain at low frequencies |
+|---|---|---|---|
+| Free in the air | Full space | 4π | 0 dB |
+| On the ground or a floor | Half-space | 2π | +6 dB |
+| In the edge of floor and wall | Quarter space | π | +12 dB |
+| In a corner | Eighth space | π/2 | +18 dB |
+
+The gain shifts the level at every distance by the same amount. The wave still spreads as part of a sphere, so the
+level of a point source still falls by 6 dB per doubling of the distance, only from a higher starting point.
+
+The gain holds only for frequencies whose wavelength is large compared with the distance to the surface. Higher up,
+the reflection arrives late enough to cause a comb filter (chapter 2), with its first cancellation at $f = c / (4d)$
+for a source at distance $d$ from the surface, which is 172 Hz at 0.5 m and 86 Hz at 1 m. Outdoors the ground is
+always there, so a subwoofer standing on it works in half-space and gains the full 6 dB. A top box on a stand or
+flown is far from the ground in terms of its wavelengths, and its ground reflection is a comb filter at the listener
+rather than a gain, as [The ground](#the-ground) describes. Subwoofer data sheets state whether their figures were
+measured in half-space or in full space, and the two differ by 6 dB.
+
 ### A level budget
 
 A level budget starts from the level wanted at the last listener and works back to the loudspeaker.
@@ -260,6 +286,9 @@ the spacing is 0.86 m and the delay 2.5 ms. Such arrays reach well over 10 dB of
 range, which helps the stage and the neighbours behind it. Chapter 14 covers the variants.
 
 ## To verify in pass 2
+
+- The half-space, quarter-space and eighth-space gains of 6, 12 and 18 dB for a source small compared with the
+  wavelength, and how subwoofer data sheets state half-space or full-space conditions.
 
 - The transition distance formula $H^2 f / (2c)$ and its variants (Fresnel, Heil and Urban); check the line-array
   literature.

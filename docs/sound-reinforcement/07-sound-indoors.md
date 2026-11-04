@@ -213,9 +213,10 @@ The outdoor rules from chapter 6 hold indoors, with the room as an extra partici
   critical distance of a closer source, at a lower level overall. Chapter 20 sets them up.
 - **Mind the boundaries near the subwoofers.** A subwoofer on the floor gains up to 6 dB at low frequencies over the
   same box in free space, in a floor-wall edge up to 12 dB and in a corner up to 18 dB, as long as the distances are
-  small compared with the wavelength. At larger distances, the reflection from a nearby wall cancels the direct sound
-  at $f = c / (4d)$, which is 86 Hz for a box 1 m from the wall and 43 Hz for 2 m. A subwoofer against the wall or
-  well away from it avoids a cancellation in its own range.
+  small compared with the wavelength ([chapter 6](06-sound-outdoors.md#half-quarter-and-eighth-space)). At larger
+  distances, the reflection from a nearby wall cancels the direct sound at $f = c / (4d)$, which is 86 Hz for a box
+  1 m from the wall and 43 Hz for 2 m. A subwoofer against the wall or well away from it avoids a cancellation in
+  its own range.
 
 ### Feedback indoors
 
