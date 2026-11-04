@@ -1,8 +1,8 @@
 # SdWa5 — Sound reinforcement
 
 This handbook is about live sound. It is written for crews who set up, run and plan their own events on their own
-sound systems, and anyone else may use it as well. It follows the signal from the sources on stage, such as drum
-machines, synthesizers, sequencers, turntables, DJ controllers and the occasional microphone, through mixers and
+sound systems, and anyone else may use it as well. It follows the signal from the sources, such as microphones on
+voices and instruments, drum machines, synthesizers, sequencers, turntables and DJ controllers, through mixers and
 processors to the loudspeakers. It also covers the physics of sound, hearing and the limits that protect it, and the
 design and tuning of a system for a real event. It describes today's practice, in which consoles, processors and
 amplifiers are digital, loudspeakers are designed and aligned with measurement and prediction software, signals
