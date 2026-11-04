@@ -6,10 +6,10 @@
 
 This chapter covers everything that feeds a signal into the mixer. It starts with the kinds of source and what each
 needs at its input. It then explains how a microphone turns sound into a signal, how its pattern, sensitivity and
-noise are read from its data sheet and how it is powered and connected. The second half brings in the sources that
-need no microphone, which are instruments with pickups, drum machines, synthesizers, turntables, DJ mixers and
-laptops, through DI boxes and line inputs, and sets their gain. Wireless microphones are in
-[chapter 10](10-wireless.md), gain before feedback is in
+noise are read from its data sheet, how it is powered and connected, and where it is placed on voices and
+instruments. The second half brings in the sources that need no microphone, which are instruments with pickups, drum
+machines, synthesizers, turntables, DJ mixers and laptops, through DI boxes and line inputs, and sets their gain.
+Wireless microphones are in [chapter 10](10-wireless.md), gain before feedback is in
 [chapter 6](06-sound-outdoors.md#feedback-and-gain-before-feedback), and MIDI clock and sync between instruments are
 in [chapter 19](19-control-and-sync.md).
 
@@ -219,6 +219,81 @@ with remote control of gain and pattern. Such microphones avoid the analog cable
 they need inputs that support the standard and remain rare on live stages. Network microphones that connect over an
 audio network such as Dante are another variant, mostly in conference systems.
 
+## Instrument miking
+
+Miking (Tonabnahme) decides what a microphone hears of its own source and how much of everything else. The same
+microphone sounds different a few centimetres further away or at another angle, and no equaliser later restores what
+a poor position loses.
+
+### Principles
+
+- **Close is clean.** Halving the distance to the source raises its level by 6 dB, while the bleed from other
+  sources and the sound of the monitors stay almost the same. A microphone at 5 cm hears its source 12 dB louder than
+  one at 20 cm, so close miking is the main tool against bleed and feedback. It also brings the proximity effect
+  and a narrower view of the instrument, so a close microphone hears one part of it, such as the cone of a guitar
+  speaker or the head of a drum, not its whole sound.
+- **The 3:1 rule.** Where two microphones pick up neighbouring sources, the distance between them is at least three
+  times the distance from each microphone to its own source. The bleed then arrives about 9.5 dB below the direct
+  sound, and the comb filter it causes when both channels are mixed stays between +2.5 dB and −3.5 dB. At 2:1 the
+  bleed is only 6 dB lower, and the comb filter reaches +3.5 dB and −6 dB.
+  [Chapter 2](02-frequency-phase-time.md#the-comb-filter) explains comb filters.
+- **Aim the null.** A directional microphone rejects most at its null, which is behind a cardioid and at about 125°
+  for a supercardioid. The null points at the loudest neighbour, such as the hi-hat for a snare microphone, or at the
+  wedge. [Chapter 18](18-stage-monitoring.md#microphone-and-wedge-placement) gives the angles.
+- **Polarity between microphones on one source.** Two microphones facing a source from opposite sides, such as above
+  and below a snare drum, see opposite polarity. The channel of one of them is inverted, and the setting with the
+  fuller low end is correct.
+- **Fewer open microphones.** Every doubling of the number of open microphones costs 3 dB of gain before feedback
+  ([chapter 6](06-sound-outdoors.md#feedback-and-gain-before-feedback)) and adds noise and bleed. A microphone that
+  adds nothing to the mix is muted or left out.
+
+### Per instrument
+
+The table gives common starting positions. Each one is a starting point that the ear and the channel's solo confirm
+or correct, and a small move of the microphone usually beats an equaliser.
+
+| Source | Microphone | Starting position | Notes |
+|---|---|---|---|
+| Vocals | Dynamic cardioid or supercardioid, handheld | Lips a few centimetres from the grille | The singer's distance changes the level and the bass, and a high-pass filter removes handling noise |
+| Kick drum | Large-diaphragm dynamic, or a boundary microphone inside | Inside the drum near the beater for attack, at the port of the front head for body | A second microphone outside adds low end, checked for polarity against the inner one |
+| Snare drum | Dynamic cardioid | 3 to 5 cm above the rim, aimed at the centre of the head | Null towards the hi-hat; a microphone below the snare is inverted in polarity |
+| Toms | Dynamic, or clip-on condensers | A few centimetres above the rim, aimed at the head | Gates or expanders reduce their bleed (chapter 12) |
+| Hi-hat | Small-diaphragm condenser | Above the top cymbal, aimed away from the snare | Often left out when the overheads carry enough |
+| Overheads | Pair of small-diaphragm condensers | Above the kit, as a stereo pair or a spaced pair | Equal distance to the snare keeps it centred and avoids a comb filter on it |
+| Guitar amplifier | Dynamic cardioid | Close to the grille, between the centre and the edge of the cone | The centre sounds brighter, the edge darker; off axis softens it further |
+| Bass amplifier | Dynamic or large-diaphragm microphone, plus a DI | Close to the cone; the DI before the amplifier or from its DI output | Microphone and DI are aligned in time and polarity before they are mixed |
+| Acoustic guitar | Pickup through a DI; on a quiet stage a small-diaphragm condenser | Condenser at 15 to 30 cm, aimed where the neck meets the body | The pickup resists feedback, the microphone sounds more natural |
+| Piano | Two condensers under the open lid, or a pickup | Over the hammers, one towards the bass and one towards the treble strings | A stage piano or digital piano goes through a DI instead |
+| Brass and saxophone | Dynamic, or a clip-on condenser | Some centimetres in front of the bell, slightly off axis | A clip-on microphone moves with a player who walks |
+| Strings | Clip-on condenser or pickup | Close to the instrument body | Pickups resist feedback on loud stages |
+
+### Stereo pairs
+
+A stereo pair records the width of a source, such as a drum kit, a choir or the audience, from the level and time
+differences between two microphones.
+
+| Technique | Microphones | Arrangement | Character |
+|---|---|---|---|
+| XY | Two cardioids | Capsules at one point, 90° to 135° apart | Level differences only, fully mono compatible |
+| ORTF | Two cardioids | 17 cm apart at 110° | Level and time differences of up to 0.5 ms, wider image, mono compatible enough for most uses |
+| Spaced pair (AB) | Two omnidirectional microphones | 40 cm to several metres apart | Time differences, wide and spacious, comb filters in the mono sum |
+
+In live sound, a stereo image reaches only the listeners near the centre between the two sides of the system, and
+the subwoofers and much of the audience hear a sum. Stereo pairs are therefore used for overheads, keyboards and
+ambience, often panned narrower than in a recording, and a pair whose mono sum sounds hollow is changed or used in
+mono. Audience microphones for a recording or a stream are the main use of a spaced pair.
+
+### Pickup, DI or microphone
+
+A pickup or a DI takes the signal from the instrument itself. It has no bleed and no feedback, sounds the same every
+night and suits loud stages, but a piezo pickup in particular sounds harder than the instrument in the room. A
+microphone captures the acoustic sound, with bleed and feedback as its price. Electronic instruments always go
+through a DI or a line input, as the following sections describe.
+
+Where both are used on one source, the microphone signal arrives later. A microphone at 30 cm is 0.87 ms behind the
+pickup, and mixing the two gives a comb filter whose first notch is at 572 Hz. A delay on the pickup channel
+([chapter 12](12-signal-processing.md#alignment)) and a check of the polarity line them up.
+
 ## DI boxes and instrument inputs
 
 A DI (direct injection) box takes the output of an instrument, an amplifier or a playback device and turns it into a
@@ -385,10 +460,13 @@ channels can be prepared before the performers arrive.
 - The RIAA time constants (3180 µs, 318 µs, 75 µs) and the optional IEC amendment below 20 Hz.
 - Typical nominal and maximum output levels of drum machines, grooveboxes and DJ mixer master outputs.
 - Interface round-trip latency figures beyond the buffer, for common USB audio interfaces.
+- The miking positions in the table *Per instrument*, which are common rules of thumb, against the literature.
+- The 3:1 rule and its usual statement, and the ORTF (17 cm, 110°) and XY angles.
 
 ## Sources
 
 - Eargle, J.: *The Microphone Book*, Focal Press.
+- Bartlett, B.: *Stereo Microphone Techniques*, Focal Press.
 - IEC 61938, guidance on interconnections and matching values, including phantom power.
 - AES42, digital interface for microphones.
 - IEC 60098, analogue audio disk records and reproducing equipment (RIAA curve).

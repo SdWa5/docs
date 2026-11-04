@@ -119,6 +119,7 @@ chapter column links to the chapter that explains the term or uses it most.
 |---|---|---|---|
 | AA |  | Battery size of the cells in most wireless packs | [10](10-wireless.md) |
 | AAC | Advanced Audio Coding | Lossy audio codec | [5](05-hearing.md) |
+| AB (stereo) |  | Spaced pair of omnidirectional microphones | [9](09-sources.md) |
 | ABX |  | Blind listening test in which an unknown X is identified as A or B | [5](05-hearing.md) |
 | AC, DC | Alternating current, direct current |  | [16](16-measurement.md) |
 | ADAT | Alesis Digital Audio Tape | Optical link for eight channels, named after the recorder that introduced it | [15](15-cables-connectors-networks.md) |
@@ -205,6 +206,7 @@ chapter column links to the chapter that explains the term or uses it most.
 | ÖAL | Österreichischer Arbeitsring für Lärmbekämpfung | Austrian noise abatement body, issues ÖAL guideline No. 3 | [6](06-sound-outdoors.md) |
 | OB | Outside broadcast | As in an OB van | [10](10-wireless.md) |
 | ÖNORM |  | Austrian national standard | [7](07-sound-indoors.md) |
+| ORTF | Office de Radiodiffusion Télévision Française | Stereo pair of two cardioids, 17 cm apart at 110° | [9](09-sources.md) |
 | OSC | Open Sound Control |  | [19](19-control-and-sync.md) |
 | ÖVE | Österreichischer Verband für Elektrotechnik | Austrian electrotechnical association, issues ÖVE E 8101 | [17](17-power-grounding-safety.md) |
 | PA | Public address | The main sound system for the audience | [6](06-sound-outdoors.md) |
@@ -251,12 +253,13 @@ chapter column links to the chapter that explains the term or uses it most.
 | WHO | World Health Organization |  | [5](05-hearing.md) |
 | WST | Wavefront sculpture technology | Criteria for line arrays | [14](14-loudspeakers.md) |
 | XLR |  | Locking round connector; XLR-3 for audio, XLR-5 for DMX | [15](15-cables-connectors-networks.md) |
+| XY |  | Coincident stereo pair of two directional microphones | [9](09-sources.md) |
 
 ## To verify in pass 2
 
 - That the SI Brochure lists the decibel, bel and neper among the units accepted for use with SI, and in which
   edition.
-- The expansions of ADAT, CCIF, CEE, RG and XLR, and of the Austrian and German bodies and ordinances (ASchG,
+- The expansions of ADAT, CCIF, CEE, ORTF, RG and XLR, and of the Austrian and German bodies and ordinances (ASchG,
   FNV, LAI, ÖAL, ÖVE, RTR, TRVB, VDE, VOLV). ÖVE may now be named OVE.
 - The symbols in ISO 80000-2 and IEC 60027-3 for logarithms and levels, against the usage in this book.
 
