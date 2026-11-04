@@ -1,14 +1,33 @@
-# 9. Microphones and DI
+# 9. Microphones, instruments and other sources
 
 > **Draft, pass 1.** This chapter was written from general knowledge and checked against reference literature for
 > coverage. Standards, editions and figures are named but have not yet been verified against their sources. The
 > list *To verify in pass 2* at the end names every claim that still needs one.
 
-This chapter answers how a microphone turns sound into a signal, how its pattern, sensitivity and noise are read
-from its data sheet, how it is powered and connected, and how instruments without a microphone are brought into the
-system through a DI box. Wireless
-microphones are in [chapter 10](10-wireless.md), and gain before feedback is in
-[chapter 6](06-sound-outdoors.md#feedback-and-gain-before-feedback).
+This chapter covers everything that feeds a signal into the mixer. It starts with the kinds of source and what each
+needs at its input. It then explains how a microphone turns sound into a signal, how its pattern, sensitivity and
+noise are read from its data sheet and how it is powered and connected. The second half brings in the sources that
+need no microphone, which are instruments with pickups, drum machines, synthesizers, turntables, DJ mixers and
+laptops, through DI boxes and line inputs, and sets their gain. Wireless microphones are in
+[chapter 10](10-wireless.md), gain before feedback is in
+[chapter 6](06-sound-outdoors.md#feedback-and-gain-before-feedback), and MIDI clock and sync between instruments are
+in [chapter 19](19-control-and-sync.md).
+
+## Kinds of source
+
+A source is anything that delivers a signal to the mixer. Four kinds differ in level, impedance and connector, and
+each needs a different input.
+
+| Kind | Examples | Output | Input it needs |
+|---|---|---|---|
+| Transducers | Microphones, guitar and bass pickups, contact pickups | Microphone level of about −60 to −40 dBu, or a high-impedance pickup signal | Microphone preamplifier, or a DI box for a pickup |
+| Electronic instruments | Drum machines, grooveboxes, synthesizers, samplers, step sequencers with sound | Line level, mostly unbalanced on jack sockets, often stereo | Line input close by, or a DI box for a long run |
+| Players | Turntables, media players, laptops | Phono level of a few millivolts, or line level, or USB | Phono stage for a turntable, line input or audio interface for the rest |
+| Sub-mixers | DJ mixers, DJ controllers, a performer's small mixer | Line level, balanced master output or unbalanced RCA | Line input, or a DI box for a long run |
+
+On many electronic music events the microphone is the exception and the second half of this chapter covers most of
+the inputs. The microphone sections come first because the preamplifier, phantom power and balanced connection they
+explain apply to every other source as well.
 
 ## How microphones work
 
@@ -234,9 +253,122 @@ lift removes it.
 ### Preamplifiers in the console
 
 The microphone preamplifier in the console or stagebox raises signals from around −60 dBu to line level or to the
-converter's working level, which can need up to about 70 dB of gain. Phono preamplifiers with their RIAA
-equalization now matter only for DJ turntables and are built into DJ mixers. Chapter 4 covers
-gain structure and chapter 11 the console.
+converter's working level, which can need up to about 70 dB of gain. Chapter 4 covers gain structure and chapter 11
+the console.
+
+## Electronic instruments
+
+Drum machines, grooveboxes, synthesizers and samplers produce their signal electronically, so they need no
+microphone. Their outputs are line outputs, but they differ from the balanced +4 dBu outputs of professional
+equipment in several ways that decide how they are connected.
+
+- **Unbalanced jacks.** Most outputs are unbalanced 6.35 mm TS jacks, some are TRS jacks that are balanced or
+  impedance-balanced. An unbalanced output picks up hum on a long cable and forms a ground loop with the console,
+  so it runs a few metres at most to a line input or into a DI box next to the instrument.
+- **Level.** The nominal level lies anywhere between the consumer −10 dBV and the professional +4 dBu, and few
+  manuals state the clip point. The level is checked at the console, as chapter 3 describes for consumer and DJ
+  equipment.
+- **Volume control.** The master volume of the instrument sits in front of its output. It is set high and left
+  there, so that the output stage works well above its noise, and the gain is set at the console. A volume that is
+  turned up and down during a set moves the whole gain structure with it.
+- **Main and individual outputs.** Many drum machines and grooveboxes have a stereo main output and some individual
+  outputs, which take single parts such as the kick drum out of the main mix. Separate channels for the kick and the
+  bass let the console treat them on their own, at the cost of more inputs and more cables to check.
+- **Headphone output.** The headphone output is a power output for a low-impedance load, with its own volume and
+  often its own noise. It is not used as a feed, except as an emergency when the main output has failed.
+- **Mono and stereo.** Some synthesizers have a single output, which goes to a mono channel or to both sides of a
+  stereo channel. A stereo instrument feeds a stereo channel pair. The subwoofers usually receive a mono sum, and
+  stereo effects that put the bass out of phase between the two sides cancel in that sum. A check with the channel
+  pair switched to mono shows it before the event.
+
+Several instruments of one live act are often combined on a small mixer at the performer, which then sends one stereo
+mix to the console. That gives the performer control over the balance but adds a gain stage and a ground point, and
+[chapter 11](11-mixing-consoles.md#sub-mixers-feeds-and-cascades) covers sub-mixers. Tempo sync between the
+instruments runs over MIDI clock or a sync signal and is covered in [chapter 19](19-control-and-sync.md).
+
+## Turntables and phono
+
+A turntable with a moving-magnet cartridge delivers a few millivolts, and the record is cut with the RIAA
+equalization, which reduces the bass and raises the treble. The phono stage amplifies the signal and applies the
+inverse curve. Relative to 1 kHz it raises 20 Hz by 19.3 dB and lowers 20 kHz by 19.6 dB.
+
+| Frequency | 20 Hz | 50 Hz | 100 Hz | 1 kHz | 10 kHz | 20 kHz |
+|---|---|---|---|---|---|---|
+| RIAA playback curve | +19.3 dB | +16.9 dB | +13.1 dB | 0 dB | −13.7 dB | −19.6 dB |
+
+At 5 mV, which is −43.8 dBu, the phono stage needs about 36 dB of gain at 1 kHz to reach −10 dBV and about
+48 dB to reach +4 dBu. DJ mixers have phono stages built in, and a turntable is never connected to a line input,
+where it would sound thin and far too quiet.
+
+- **Ground wire.** The turntable's ground wire connects the tonearm and chassis to the ground terminal of the DJ
+  mixer. Without it, a hum appears that the console cannot remove.
+- **Acoustic feedback.** The stylus picks up the vibration of the table it stands on. Low frequencies from the
+  subwoofers reach the platter and the tonearm through the floor and the air, are amplified and played back, and
+  build up into a low-frequency howl. The turntables stand on a heavy, stable surface that is decoupled from a stage
+  floor, as far from the subwoofers as the layout allows, and a cardioid subwoofer arrangement
+  ([chapter 14](14-loudspeakers.md#cardioid-arrays)) reduces the level behind it. A high-pass filter in the phono
+  channel removes rumble below the music.
+- **Line-level players.** CD players, media players and digital vinyl systems have line outputs and need no phono
+  stage. A digital vinyl system reads a timecode record through the phono stage of its interface.
+
+## DJ mixers and controllers
+
+A DJ mixer is a sub-mixer with phono stages, and it reaches the system through its outputs.
+
+- **Master output.** The balanced XLR master output feeds the console or the system processor. The unbalanced RCA
+  master output is used only on short cables. The master level is set so that the DJ mixer's meter stays below its
+  red range, and the system's gain follows from that. A limiter on the master output, where the mixer has one,
+  protects the system from a DJ who turns everything up, but the system's own limiters remain the protection
+  (chapter 13).
+- **Booth output.** The booth output feeds the DJ's monitor with its own level control, independent of the master.
+  [Chapter 18](18-stage-monitoring.md) covers monitors.
+- **Record output.** A separate record or session output takes a recording or stream feed without touching the
+  master.
+
+A DJ controller combines the control surface with an audio interface and works with software on a laptop. Its
+outputs are often unbalanced RCA or TRS, and its power often comes over USB from the laptop. The ground loop through
+the laptop's charger then reaches the controller's outputs as well, which the next section explains.
+
+## Laptops and USB audio
+
+A laptop plays back through an audio interface, which may be built into a DJ controller or be a separate box. The
+laptop's own headphone socket is noisy, unbalanced and shares its ground with the charger, so it is avoided.
+
+- **Buffer and latency.** The software hands audio to the interface in blocks. Each block adds its length in time,
+  and a larger buffer is safer against dropouts but adds latency.
+
+  | Buffer | 64 samples | 128 samples | 256 samples | 512 samples |
+  |---|---|---|---|---|
+  | At 48 kHz | 1.33 ms | 2.67 ms | 5.33 ms | 10.67 ms |
+  | At 44.1 kHz | 1.45 ms | 2.90 ms | 5.80 ms | 11.61 ms |
+
+  Pure playback tolerates a large buffer. A performer who plays instruments through the laptop needs a small one,
+  and the round trip from key to sound is at least twice the buffer plus the converters.
+- **Sample rate.** The software, the interface and any digital connection to the console run at the same sample
+  rate, or the computer resamples and some combinations drop out.
+- **Settings.** Power saving, sleep, notifications, automatic updates, Wi-Fi and Bluetooth are switched off for the
+  show, and the laptop runs on its charger.
+- **Hum.** The charger connects the laptop to the mains, and its ground meets the console's ground through the
+  audio cable. The hum that results is the most common hum on a stage today. A DI box with a transformer or a ground
+  lift, or a USB isolator, breaks the loop. The protective earth of the charger or the console is never disconnected
+  ([chapter 17](17-power-grounding-safety.md)).
+
+## Gain into the mixer
+
+Every source ends at a channel whose gain is set as [chapter 4](04-dynamic-range-gain-structure.md) describes. The
+connection decides how much gain that channel needs.
+
+| Source and connection | Level at the channel input | Gain to the nominal +4 dBu |
+|---|---|---|
+| Professional line output, balanced | +4 dBu | 0 dB |
+| Consumer line output, −10 dBV, short cable to a line input | −7.8 dBu | 11.8 dB |
+| Consumer line output through a passive DI with 20 dB loss | −27.8 dBu | 31.8 dB |
+| Turntable without phono stage, 5 mV | −43.8 dBu | not usable, the RIAA curve is missing |
+
+A line source through a DI box arrives at the microphone preamplifier with a gain need similar to a loud
+microphone, which suits it well. A hot line output that clips the preamplifier even at its lowest gain needs the pad
+of the DI box or of the channel. The input list of an event names each source with its connection, so that the
+channels can be prepared before the performers arrive.
 
 ## To verify in pass 2
 
@@ -249,11 +381,16 @@ gain structure and chapter 11 the console.
 - Typical turns ratios and input impedances of passive DI boxes.
 - The 1 MΩ load for passive pickups.
 - The maximum preamplifier gain of about 70 dB in current stageboxes.
+- Output levels of moving-magnet cartridges, including DJ cartridges, and the usual phono input load of 47 kΩ.
+- The RIAA time constants (3180 µs, 318 µs, 75 µs) and the optional IEC amendment below 20 Hz.
+- Typical nominal and maximum output levels of drum machines, grooveboxes and DJ mixer master outputs.
+- Interface round-trip latency figures beyond the buffer, for common USB audio interfaces.
 
 ## Sources
 
 - Eargle, J.: *The Microphone Book*, Focal Press.
 - IEC 61938, guidance on interconnections and matching values, including phantom power.
 - AES42, digital interface for microphones.
+- IEC 60098, analogue audio disk records and reproducing equipment (RIAA curve).
 - Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §10.1 to §10.4
   (pp. 113–131) and §11.2 (pp. 152–154).

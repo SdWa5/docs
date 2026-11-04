@@ -8,7 +8,7 @@ This chapter answers what a mixing console does with its inputs, how its channel
 how a digital console with a stagebox differs from an analog desk, how one set of microphones feeds several
 consoles, and where the front-of-house console belongs. Gain structure is in
 [chapter 4](04-dynamic-range-gain-structure.md), microphone preamplifiers and DI boxes are in
-[chapter 9](09-microphones.md), and monitor mixing is in chapter 18.
+[chapter 9](09-sources.md), and monitor mixing is in chapter 18.
 
 ## What a console does
 
