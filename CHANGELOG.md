@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.36.1] - 2026-11-04
+
+### Changed
+
+- Sound reinforcement chapter 1: the signal chain starts at any source, from a microphone to a drum machine, a
+  turntable or a laptop, instead of at the microphone.
+- Sound reinforcement chapter 20: the patch list starts at each source instead of at the microphone.
+
 ## [0.36.0] - 2026-11-04
 
 ### Added
