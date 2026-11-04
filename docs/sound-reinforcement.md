@@ -67,7 +67,6 @@ Markdown pages here are the current version when the two differ.
 | 18 | [Stage monitoring](sound-reinforcement/18-stage-monitoring.md) | Wedges, fills, in-ear monitors, monitor mixing, ringing out |
 | 19 | [Control and sync](sound-reinforcement/19-control-and-sync.md) | MIDI, OSC, show control, timecode, clock synchronisation, playback |
 | 20 | [System design and tuning](sound-reinforcement/20-system-design-and-tuning.md) | Brief, prediction, coverage, subwoofer design, alignment, tuning, a worked event |
-| | **Appendix** | |
 | A | [Units, abbreviations and symbols](sound-reinforcement/appendix-units-abbreviations-symbols.md) | SI and metric units, prefixes, levels and their references, formula symbols, every abbreviation with its chapter |
 
 [Acoustics](acoustics.md) is a companion page with reflection, absorption and transmission data for common
