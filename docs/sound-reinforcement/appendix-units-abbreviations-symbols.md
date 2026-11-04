@@ -141,7 +141,7 @@ chapter column links to the chapter that explains the term or uses it most.
 | CFR | Code of Federal Regulations | United States federal rules, as in 16 CFR Part 432 | [13](13-power-amplifiers.md) |
 | Class AB |  | Linear amplifier output stage | [13](13-power-amplifiers.md) |
 | CLF, GLL | Common Loudspeaker Format, Generic Loudspeaker Library | Directivity data formats for prediction software | [14](14-loudspeakers.md) |
-| CMRR | Common-mode rejection ratio | How well a balanced input rejects interference on both legs | [9](09-microphones.md) |
+| CMRR | Common-mode rejection ratio | How well a balanced input rejects interference on both legs | [9](09-sources.md) |
 | CNMAT | Center for New Music and Audio Technologies | Berkeley research centre where OSC was developed | [19](19-control-and-sync.md) |
 | CONCAWE |  | Outdoor sound propagation method, named after an oil-industry environmental body | [6](06-sound-outdoors.md) |
 | CTA | Consumer Technology Association | United States standards body, as in CTA-2034 | [8](08-specifications.md) |
@@ -149,7 +149,7 @@ chapter column links to the chapter that explains the term or uses it most.
 | DCA | Digitally controlled amplifier | Control group that sets channel levels without carrying audio | [11](11-mixing-consoles.md) |
 | DECT | Digital Enhanced Cordless Telecommunications | Band used by wireless intercom | [10](10-wireless.md) |
 | DGUV | Deutsche Gesetzliche Unfallversicherung | German statutory accident insurance, issues safety rules | [17](17-power-grounding-safety.md) |
-| DI | Direct injection | Box that turns an instrument or line output into a balanced microphone-level signal | [9](09-microphones.md) |
+| DI | Direct injection | Box that turns an instrument or line output into a balanced microphone-level signal | [9](09-sources.md) |
 | DIN | Deutsches Institut für Normung | German standards body | [3](03-decibels-levels-loudness.md) |
 | DJ | Disc jockey |  | [1](01-signals-and-systems.md) |
 | DMX512 |  | Lighting control protocol | [15](15-cables-connectors-networks.md) |
@@ -161,7 +161,7 @@ chapter column links to the chapter that explains the term or uses it most.
 | EDT | Early decay time | Decay time from the first 10 dB of a decay | [7](07-sound-indoors.md) |
 | EEE | Energy-Efficient Ethernet | IEEE 802.3az, switched off for audio networks | [15](15-cables-connectors-networks.md) |
 | EIA | Electronic Industries Alliance | United States standards body, as in EIA-310 for racks | [8](08-specifications.md) |
-| EIN | Equivalent input noise | Noise of a preamplifier, referred to its input | [9](09-microphones.md) |
+| EIN | Equivalent input noise | Noise of a preamplifier, referred to its input | [9](09-sources.md) |
 | EN | Europäische Norm | European standard | [5](05-hearing.md) |
 | EQ | Equaliser |  | [12](12-signal-processing.md) |
 | ERB | Equivalent rectangular bandwidth | Width of an auditory filter | [5](05-hearing.md) |
@@ -217,7 +217,7 @@ chapter column links to the chapter that explains the term or uses it most.
 | RF | Radio frequency |  | [10](10-wireless.md) |
 | RFC | Request for Comments | IETF standard document | [19](19-control-and-sync.md) |
 | RG58, RG213 | Radio guide | Coaxial cable types | [10](10-wireless.md) |
-| RIAA | Recording Industry Association of America | Phono equalisation curve | [9](09-microphones.md) |
+| RIAA | Recording Industry Association of America | Phono equalisation curve | [9](09-sources.md) |
 | RJ45 | Registered jack 45 | Eight-pin modular network connector | [15](15-cables-connectors-networks.md) |
 | RMS | Root mean square |  | [3](03-decibels-levels-loudness.md) |
 | RP, ST (SMPTE) | Recommended practice, standard | SMPTE document types, as in SMPTE ST 12-1 | [19](19-control-and-sync.md) |

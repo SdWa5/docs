@@ -54,7 +54,7 @@ Markdown pages here are the current version when the two differ.
 | 7 | [Sound indoors](sound-reinforcement/07-sound-indoors.md) | Reflection and absorption, room modes, reverberation, critical distance, intelligibility |
 | | **Part III. Equipment** | |
 | 8 | [Specifications](sound-reinforcement/08-specifications.md) | Reading data sheets, noise, distortion, digital specifications |
-| 9 | [Microphones and DI](sound-reinforcement/09-microphones.md) | Transducer types, polar patterns, sensitivity, phantom power, DI boxes |
+| 9 | [Microphones, instruments and other sources](sound-reinforcement/09-sources.md) | Kinds of source, microphones, phantom power, DI boxes, drum machines and synthesizers, turntables and phono, DJ mixers, laptops, gain into the mixer |
 | 10 | [Wireless](sound-reinforcement/10-wireless.md) | Frequencies in the EU, analog and digital systems, intermodulation, antennas, in-ear transmitters, intercom |
 | 11 | [Mixing consoles](sound-reinforcement/11-mixing-consoles.md) | Channel strip, busses, digital consoles and stageboxes, splits, front-of-house placement |
 | 12 | [Signal processing](sound-reinforcement/12-signal-processing.md) | Equalisers, delay, reverb, dynamics, loudspeaker processors, feedback suppression |

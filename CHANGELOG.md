@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.35.0] - 2026-11-04
+
+### Added
+
+- `docs/sound-reinforcement/09-sources.md`: kinds of source, electronic instruments, turntables and phono, DJ mixers
+  and controllers, laptops and USB audio, and gain into the mixer.
+
+### Changed
+
+- Chapter 9 of the sound reinforcement handbook is renamed from "Microphones and DI" to "Microphones, instruments and
+  other sources" and moves from `09-microphones.md` to `09-sources.md`.
+
+### Removed
+
+- `TODO.md`: item 11.6, the proposal for a chapter on electronic sources, which chapter 9 now covers.
+
 ## [0.34.1] - 2026-11-04
 
 ### Changed
