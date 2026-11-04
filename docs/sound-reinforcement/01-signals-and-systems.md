@@ -6,7 +6,7 @@
 
 This chapter answers what travels through a sound system and what the system is made of. It starts with sound as a
 pressure wave, explains phase and why it decides how two signals add, follows a modern signal chain from the
-microphone to the listener, and ends with how to read and draw the block diagrams the rest of the book uses.
+source to the listener, and ends with how to read and draw the block diagrams the rest of the book uses.
 
 ## Sound as a pressure wave
 
@@ -111,14 +111,17 @@ both.
 
 ## The signal chain
 
-Every sound system converts sound into an electrical signal, processes and amplifies it, and turns it back into
-sound in a room where people listen. In its simplest form this is three blocks, an input transducer, processing and
-an output transducer. A modern system has that skeleton, but most of the processing happens on numbers rather
-than voltages, and the room and the listener are part of the chain rather than a footnote.
+Every sound system takes the signals of its sources, processes and amplifies them, and turns them into sound in a
+room where people listen. A source is either a sound that a microphone or a pickup turns into a signal, or a device
+that produces its signal electrically, such as a drum machine, a synthesizer, a turntable or a laptop. In its
+simplest form the system is three blocks, an input, processing and an output transducer. A modern system has that
+skeleton, but most of the processing happens on numbers rather than voltages, and the room and the listener are part
+of the chain rather than a footnote.
 
 ```mermaid
 flowchart LR
-    src["Source<br/>voice, instrument, playback"] --> mic["Microphone, DI<br/>or line source"]
+    src["Source<br/>voice, instrument, electronic<br/>instrument, playback"]
+    src --> mic["Microphone, DI,<br/>phono or line input"]
     mic --> pre["Preamp and ADC<br/>stagebox"]
     pre --> net["Console or network<br/>mixing, processing"]
     net --> dsp["Loudspeaker processor<br/>crossover, delay, limiter"]
@@ -128,14 +131,16 @@ flowchart LR
     room --> ear["Listener"]
 ```
 
-**Input transducers** turn sound or another physical signal into an electrical one. Microphones turn air pressure
-into voltage (chapter 9). Magnetic and piezo pickups turn string or body vibration into voltage. A DI box adapts the
-high-impedance, unbalanced output of an instrument to a balanced microphone input. Playback devices skip the
-acoustic step entirely, and many deliver a digital signal directly over USB, AES3 or a network.
+**Sources and inputs.** Microphones turn air pressure into voltage, and magnetic and piezo pickups turn string or
+body vibration into voltage. Drum machines, synthesizers and samplers produce their signal electronically and
+deliver it at line level, and turntables deliver a few millivolts that need a phono stage. Laptops and media
+players skip the acoustic step entirely, and many deliver a digital signal directly over USB, AES3 or a network. A
+DI box adapts an unbalanced or high-impedance output to a balanced microphone input. Chapter 9 covers all of them.
 
-**Conversion and transport.** A microphone delivers microvolts to millivolts. A preamplifier raises this to line
-level, and an analog-to-digital converter (ADC) turns it into a stream of numbers. In a modern rig both sit in a
-stagebox on stage, and the numbers travel over a network or a single digital multicore to the console (chapter 15).
+**Conversion and transport.** A microphone delivers microvolts to millivolts, and a line source a few hundred
+millivolts to about a volt. A preamplifier raises the signal to its working level, and an analog-to-digital
+converter (ADC) turns it into a stream of numbers. In a modern rig both sit in a stagebox on stage, and the numbers
+travel over a network or a single digital multicore to the console (chapter 15).
 
 **Mixing and processing.** The console sets the gain of each source, equalises, compresses, routes and mixes them
 into the outputs the event needs (chapters 11 and 12). Today this is software running on dedicated hardware,

@@ -37,7 +37,7 @@ Three documents describe a system well enough that someone else can build it.
 
 - **A block diagram** that shows the signal flow and the groups, such as left and right tops, subwoofers, front fills
   and delays.
-- **A patch list** that names every input and output, from the microphone on the stage to the amplifier channel and
+- **A patch list** that names every input and output, from each source on the stage to the amplifier channel and
   the box it drives.
 - **A settings table** for each processor and amplifier, with the crossover, delay, equalization, gain and limiter
   of each output.
