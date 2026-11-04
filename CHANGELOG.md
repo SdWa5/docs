@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.39.0] - 2026-11-04
+
+### Added
+
+- Sound reinforcement chapter 14: back-loaded horns, hybrids with a reflex chamber, and the W-bin, the scoop and
+  Super Scoop and the Paraflex described from the JBL W horn plan, a Graz University of Technology thesis and
+  further sources.
+
+### Changed
+
+- Sound reinforcement chapter 14: folded horn defined as a way of building; the 40 Hz mouth example taken from the
+  JBL plan; tapped horn origin restated.
+- Sound reinforcement appendix test: JBL and TH115 exempt as names.
+- Sound reinforcement PDF rebuilt.
+
 ## [0.38.0] - 2026-11-04
 
 ### Added

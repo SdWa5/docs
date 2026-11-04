@@ -9,8 +9,8 @@ import { sourceFiles } from '../render.mjs';
 // Words with at least two capitals that are names of products, software, venues, publishers or people, or
 // roman numerals, rather than abbreviations.
 const NOT_ABBREVIATIONS = new Set(['ArrayCalc', 'CATT', 'CD', 'CRC', 'DCX2496', 'DIY', 'EASE', 'GitHub', 'II', 'III',
-  'ISBN', 'IV', 'LaTeX', 'MAPP', 'MARK', 'MIT', 'MM14K', 'McCarthy', 'NL2', 'NL4', 'NL8', 'ODEON', 'PDF', 'REW',
-  'SdWa5', 'TIP10000q', 'TRUE1', 'TV']);
+  'ISBN', 'IV', 'JBL', 'LaTeX', 'MAPP', 'MARK', 'MIT', 'MM14K', 'McCarthy', 'NL2', 'NL4', 'NL8', 'ODEON', 'PDF',
+  'REW', 'SdWa5', 'TH115', 'TIP10000q', 'TRUE1', 'TV']);
 // Standard numbers are listed with their titles in each chapter's Sources instead.
 const STANDARD = /^(AES|CTA|DIN|EIA|EN|IEC|IEEE|ISO|ITU|RFC|SMPTE)-?\d/;
 const TOKEN = /(?<![\p{L}\p{N}_/-])(?=[\p{L}\p{N}]*\p{Lu}[\p{L}\p{N}]*\p{Lu})[\p{Lu}\p{N}][\p{L}\p{N}]*(?:-[\p{Lu}\p{N}]+)*(?![\p{L}\p{N}_])/gu;
