@@ -16,12 +16,22 @@ cone. When the cone moves back, it leaves a zone of slightly lower pressure, whi
 itself barely moves. What travels is the pattern of compression and rarefaction, passed on from one layer of air to
 the next.
 
-A wave that moves away from its source like this is a travelling wave. Where it is reflected back on itself, for
-example between two parallel walls, the outgoing and the returning wave overlap, and at certain frequencies they form
-a standing wave. Its pattern no longer travels but stays in place, with points of strong pressure variation, the
-antinodes, and points of almost none, the nodes, half a wavelength apart. In a room, standing waves are the room
-modes, which make the bass loud in one place and weak a few metres away
-([chapter 7](07-sound-indoors.md#room-modes)).
+A wave that moves away from its source like this is a travelling wave. From a small source it spreads in all three
+dimensions as a growing sphere. The same power is spread over a surface that grows with the square of the distance,
+so the sound pressure falls in proportion to the distance, by 6 dB for every doubling of it
+([chapter 6](06-sound-outdoors.md#loss-with-distance)).
+
+A large, hard surface next to the source, such as the floor under a subwoofer, reflects the part of the sphere that
+would have gone into it, and the sound spreads into the remaining half-space at a higher level. Each further surface,
+as in the edge between floor and wall or in a corner, halves the space again. The surfaces raise the level by a fixed
+amount but do not change the 6 dB per doubling of the distance
+([chapter 6](06-sound-outdoors.md#half-quarter-and-eighth-space)).
+
+Where a wave is reflected back on itself, for example between two parallel walls, the outgoing and the returning
+wave overlap, and at certain frequencies they form a standing wave. Its pattern no longer travels but stays in
+place, with points of strong pressure variation, the antinodes, and points of almost none, the nodes, half a
+wavelength apart. In a room, standing waves are the room modes, which make the bass loud in one place and weak a few
+metres away ([chapter 7](07-sound-indoors.md#room-modes)).
 
 Three quantities describe a steady tone.
 
