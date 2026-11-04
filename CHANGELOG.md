@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.36.0] - 2026-11-04
+
+### Added
+
+- `docs/sound-reinforcement/09-sources.md`: instrument miking, with principles, starting positions per instrument,
+  stereo pairs and the choice between pickup, DI and microphone.
+- `docs/sound-reinforcement/appendix-units-abbreviations-symbols.md`: ORTF, XY and AB.
+
+### Removed
+
+- `TODO.md`: item 11.6, now covered by chapter 9.
+
 ## [0.35.1] - 2026-11-04
 
 ### Changed

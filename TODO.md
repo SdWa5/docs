@@ -83,7 +83,3 @@
     5. Write a formula collection (Formelsammlung), a version of the whole book that is as short as possible,
        with the most important formulas, rules of thumb and tables on a few pages and a link to the chapter that
        explains each.
-    6. Proposal: instrument miking (Tonabnahme) as sections of chapter 9, after a reviewed outline. Placement per
-       instrument (vocals, kick, snare, toms, overheads, guitar and bass amplifiers, acoustic instruments, brass),
-       the 3:1 rule, stereo pairs (XY, ORTF, spaced pair), and when a pickup or DI beats a microphone. Every
-       placement rule goes on the chapter's verify list until checked against the literature.
