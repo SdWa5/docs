@@ -106,7 +106,8 @@ why a compression driver sounds harsh when it is pushed close to its limits.
 A cone driver on its own cancels its bass, because the front and the back of the cone radiate in opposite polarity
 and the sound from the back wraps around. An enclosure separates the two. Enclosures fall into three families. A
 direct radiator lets the cone radiate straight into the air from the front of a box. A bandpass box hides the cone in
-chambers and radiates through ports only. A horn-loaded box couples the cone to the air through a horn.
+chambers and radiates through ports only. A horn-loaded box couples the cone to the air through a horn. A hybrid
+combines two of these in one box.
 
 ### Direct radiators
 
@@ -152,29 +153,52 @@ wavelength, so its lowest frequency sets its size.
 The table holds for a horn in free space. On the floor, the mirror source of
 [chapter 6](06-sound-outdoors.md#half-quarter-and-eighth-space) halves the area a mouth needs, and in a corner it
 quarters it. A horn for the kick range fits into a box, while a full horn for 40 Hz does not. Several horn-loaded
-subwoofers side by side form one larger mouth, so on the floor about six boxes with a mouth of 0.5 m² each reach the
-area for 40 Hz.
+subwoofers side by side form one larger mouth. The W-bin plan that JBL published in 1977 states that the mouth of one
+box is an eighth of what a full 40 Hz horn needs, so a stack of eight boxes loads down to 40 Hz.
 
 - **Front-loaded horn.** The front of the cone drives the throat, and the back works into a sealed chamber. Kick bins
   and mid-bass boxes are often short front-loaded horns, which give a high efficiency and some directivity in the
   upper bass.
-- **Folded horn.** A bass horn is too long to build straight, so its path is folded inside the box. Most horn-loaded
-  subwoofers are folded front-loaded horns whose box is only a part of the mouth they need.
+- **Back-loaded horn.** The back of the cone feeds the horn, and the front radiates directly into the room. The two
+  outputs meet in front of the box, and at frequencies where they are out of phase they cancel, which the design and
+  the crossover have to keep out of the band in use.
+- **Folded horn.** A bass horn is too long to build straight, so its path is folded inside the box. Any kind of horn
+  can be folded, whether front-loaded, back-loaded or tapped, so folded names a way of building rather than a kind of
+  loading. Most horn-loaded subwoofers are folded, and their box is only a part of the mouth they need.
 - **Tapped horn.** Both sides of the cone feed the same horn, one side at the throat and the other at a point further
   along the path. The back of the cone, whose output a front-loaded horn loses in its chamber, then adds to the
   output over a band of one to two octaves, and the box reaches a high output for its size. Above that band, the two
   paths reach the mouth out of phase at some frequencies, and the response shows deep notches, so a tapped horn needs
-  a steep low-pass filter and is used as a subwoofer only. The design was introduced by Tom Danley of Danley Sound
-  Labs.
+  a steep low-pass filter and is used as a subwoofer only. Tom Danley developed the design, and Danley Sound Labs
+  builds its subwoofers as patented tapped horns.
+- **Hybrid.** A horn in front of the cone and a vented chamber behind it, which builders call a reflex chamber. The
+  horn gives the efficiency in the upper bass, and the port of the reflex chamber adds output below the range where
+  the horn loads, in the same way as the port of a vented box. A front-loaded horn with a sealed chamber has no such
+  extension and falls off steeply below its horn's range.
 
 ### Designs from the sound-system scene
 
-Crews who build their own systems have used named designs for decades, and the plans circulate between builders. The
-W-bin is a folded bass horn, named after the W shape of its path. The scoop is a short horn-loaded bass box, and the
-Super Scooper is a larger one. The Paraflex is another named bass box that many crews build, and its principle is on
-the verify list. Each of these designs exists in many variants, so this draft leaves their exact geometry, their
-origin and their measured behaviour to pass 2 rather than describe them from hearsay. A box built from such a plan is
-measured like any other DIY box, as [In the SdWa5 rig](#in-the-sdwa5-rig) describes.
+Crews who build their own systems have used named designs for decades, and most of the plans are free online. Each
+name stands for one design and its variants rather than for a kind of loading. A W-bin is therefore not simply a
+folded horn, and most folded horns are not W-bins.
+
+- **W-bin.** A hybrid, with a short horn folded into the shape of a W and a reflex chamber behind the driver. The
+  plan that D. B. Keele published at JBL in 1977 for the 18-inch K151 driver gives a response from 55 Hz to 400 Hz
+  for one box on the ground, and its rear chamber, tuned to 35 Hz, extends the usable range down to 32 Hz. The plan
+  names a midrange colouration inherent in any W horn and recommends a crossover at 300 Hz or lower.
+- **Scoop and Super Scoop.** A scoop is a back-loaded horn. The back of the cone feeds the horn, and the front
+  radiates directly. Reggae sound systems have used scoops as their bass box since the 1960s. The Super Scoop, also
+  called Super Scooper, is an 18-inch scoop by Rog Mogale, whose plans were published free of charge around 2002.
+- **Paraflex.** A compound quarter-wave design, developed in recent years by M. Morgan J., D. Morgan and
+  J. Vansickle, whose plans are shared in the High Order Quarterwave Society, a DIY community. Two quarter-wave lines,
+  one from each side of the cone, merge shortly before a shared mouth. Both lines use the shared part, and their
+  different lengths tune them to different frequencies, so together they cover a wider band than a single line.
+  Like the tapped horn, it uses both sides of the cone in one path to the mouth. The boxes are built from straight
+  panels only. In the simplified model of a 2023 bachelor's thesis at Graz University of Technology, the usable band
+  reached from the first resonance of the longer line to about its third, the response varied by more than 10 dB,
+  and the author expects a real box to need DSP to flatten it.
+
+A box built from such a plan is measured like any other DIY box, as [In the SdWa5 rig](#in-the-sdwa5-rig) describes.
 
 ## Crossovers
 
@@ -384,10 +408,12 @@ first, and the rest of that page describes how a cabinet is measured for the rig
 - The horn loading rule (mouth circumference of one wavelength) and the efficiency gain of horns over direct
   radiators.
 - The bandwidth of bandpass boxes (one to two octaves) and their delay compared with a vented box.
-- The principle, bandwidth and output per volume of the tapped horn; Tom Danley and Danley Sound Labs as its origin,
-  with the patent.
-- The geometry, principle, origin, variants and measured behaviour of the W-bin, the scoop, the Super Scooper and
-  the Paraflex, from the plans that crews build.
+- The principle, bandwidth and output per volume of the tapped horn; Tom Danley as its developer, with the patent
+  number and year.
+- Scoops as the bass box of reggae sound systems since the 1960s; Rog Mogale as the designer of the Super Scoop and
+  the year its plans were published.
+- The Paraflex developers and the High Order Quarterwave Society as the home of its plans.
+- The term reflex chamber and the low-frequency extension of a hybrid compared with a sealed rear chamber.
 - The four combinations of amplifier and crossover placement, and the name powered box for the fourth.
 - The 1 ms window for a stereo image, from the sources of chapter 5.
 - Keele 1977 (preprint number) and Kolbrek and Dunker 2019 (publisher, edition).
@@ -400,6 +426,9 @@ first, and the rest of that page describes how a cabinet is measured for the rig
   Heil, C., Bauman, P.: Wavefront sculpture technology, *JAES* 51, 2003.
 - Keele, D. B.: Low-frequency horn design using Thiele/Small driver parameters, AES preprint 1250, 1977.
 - Kolbrek, B., Dunker, T.: *High-Quality Horn Loudspeaker Systems*, Kolbrek Elektroakustikk, 2019.
+- Keele, D. B.: K151 or 2240H "W" horn, construction plan, JBL, 25 April 1977.
+- Hovorka, P.: *Modelling a Paraflex Loudspeaker System*, bachelor's thesis, Graz University of Technology, 2023.
+- Danley Sound Labs: TH115 specification sheet, 2022.
 - AES2-2012, AES75, IEC 60268-5.
 - SdWa5: [Measuring a cabinet](../../sdwa5-3d/docs/measuring.md).
 - Davis, G., Jones, R.: *The Sound Reinforcement Handbook*, 2nd ed., Yamaha / Hal Leonard 1989, §13 (pp. 209–243).
