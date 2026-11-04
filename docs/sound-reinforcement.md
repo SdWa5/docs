@@ -59,7 +59,7 @@ Markdown pages here are the current version when the two differ.
 | 11 | [Mixing consoles](sound-reinforcement/11-mixing-consoles.md) | Channel strip, busses, digital consoles and stageboxes, splits, front-of-house placement |
 | 12 | [Signal processing](sound-reinforcement/12-signal-processing.md) | Equalisers, delay, reverb, dynamics, loudspeaker processors, feedback suppression |
 | 13 | [Power amplifiers](sound-reinforcement/13-power-amplifiers.md) | Amplifier classes, ratings, mains supply, matching to loudspeakers, 100 V systems |
-| 14 | [Loudspeakers](sound-reinforcement/14-loudspeakers.md) | Drivers, enclosures, directivity, crossovers, line arrays, subwoofer arrays |
+| 14 | [Loudspeakers](sound-reinforcement/14-loudspeakers.md) | Kinds of box, drivers and phase plugs, directivity, enclosures from the closed box to the tapped horn, crossovers, active and passive, ways and channels, line arrays, subwoofer arrays, stereo and mono |
 | 15 | [Cables, connectors and networks](sound-reinforcement/15-cables-connectors-networks.md) | Balanced lines, connectors, speaker cable loss, digital audio and networks |
 | 16 | [Measurement](sound-reinforcement/16-measurement.md) | Meters and testers, SPL meters, FFT analysis, measurement practice |
 | | **Part IV. Systems** | |

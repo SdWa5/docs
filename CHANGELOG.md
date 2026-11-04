@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.38.0] - 2026-11-04
+
+### Added
+
+- Sound reinforcement chapter 14: kinds of box (subwoofers, kick bins, tops, full-range), phase plugs and compression
+  ratio, bandpass and horn-loaded enclosures with front-loaded, folded and tapped horns, designs from the
+  sound-system scene, active and passive with ways and channels, stereo and mono.
+
+### Changed
+
+- Sound reinforcement chapter 14: enclosures grouped into direct radiators, bandpass and horns; horn and waveguide
+  told apart.
+- Sound reinforcement PDF rebuilt.
+
 ## [0.37.0] - 2026-11-04
 
 ### Added
