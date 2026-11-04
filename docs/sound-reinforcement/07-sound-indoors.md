@@ -41,8 +41,8 @@ Three results from it matter most for a sound system.
 
 A wave that reflects back and forth between two parallel walls reinforces itself when a whole number of half
 wavelengths fits between them. The room then resonates at those frequencies, and the pressure varies through the room
-with loud places, the antinodes, and quiet ones, the nodes, half a wavelength apart. These resonances are the room
-modes. Between two walls at distance $L$ they lie at
+with loud places, the antinodes, and quiet ones, the nodes, half a wavelength apart. These resonances are standing
+waves, and in a room they are called room modes. Between two walls at distance $L$ they lie at
 
 $$f_n = \frac{n\,c}{2L}, \quad n = 1, 2, 3, \dots$$
 

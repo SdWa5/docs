@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.36.2] - 2026-11-04
+
+### Changed
+
+- Sound reinforcement chapter 1: clearer description of the pressure wave, and travelling and standing waves with a
+  link to room modes.
+- Sound reinforcement chapter 7: room modes are named as standing waves.
+
 ## [0.36.1] - 2026-11-04
 
 ### Changed
