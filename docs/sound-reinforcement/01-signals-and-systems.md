@@ -10,10 +10,18 @@ source to the listener, and ends with how to read and draw the block diagrams th
 
 ## Sound as a pressure wave
 
-Sound is a small, fast variation of air pressure around the static atmospheric pressure. A loudspeaker cone that
-moves forward pushes the air in front of it together, and the region of slightly higher pressure moves away from
-the cone. When the cone moves back, a region of slightly lower pressure follows. The air itself barely travels.
-What travels is the pattern of compression and rarefaction, passed on from one layer of air to the next.
+Sound is a small, fast variation of air pressure around the static atmospheric pressure. When a loudspeaker cone
+moves forward, it compresses the air in front of it, and this zone of slightly higher pressure travels away from the
+cone. When the cone moves back, it leaves a zone of slightly lower pressure, which follows the first one. The air
+itself barely moves. What travels is the pattern of compression and rarefaction, passed on from one layer of air to
+the next.
+
+A wave that moves away from its source like this is a travelling wave. Where it is reflected back on itself, for
+example between two parallel walls, the outgoing and the returning wave overlap, and at certain frequencies they form
+a standing wave. Its pattern no longer travels but stays in place, with points of strong pressure variation, the
+antinodes, and points of almost none, the nodes, half a wavelength apart. In a room, standing waves are the room
+modes, which make the bass loud in one place and weak a few metres away
+([chapter 7](07-sound-indoors.md#room-modes)).
 
 Three quantities describe a steady tone.
 
