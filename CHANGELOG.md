@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.35.1] - 2026-11-04
+
+### Changed
+
+- `docs/sound-reinforcement.md`: the intro names microphones on voices and instruments as a source in their own
+  right.
+- `TODO.md`: item 11.6 proposes instrument miking for chapter 9.
+
 ## [0.35.0] - 2026-11-04
 
 ### Added
