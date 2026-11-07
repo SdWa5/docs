@@ -64,6 +64,23 @@ piece.
 
 Technical/ops detail: [`sdwa5-vps/docs/paperless.md`](../sdwa5-vps/docs/paperless.md)
 
+## Jami (messenger)
+
+Jami is a peer-to-peer messenger with group chats and calls, in use since 2026-11-07. It needs no
+phone number, no email address and no server, so nobody has to host anything to take part. Install
+the app from https://jami.net/download, create an account and keep its backup, as the
+[user guide](https://docs.jami.net/en_US/user/index.html) describes. Contacts are added by username
+or Jami ID, which members exchange directly rather than here, and a group is joined by accepting an
+invitation.
+
+The VPS runs one always-on Jami peer, which is a linked device of the administrator's own account, so
+messages and groups keep syncing while that person's phone and laptop are off. An account on that
+peer is possible for people the administrator knows well, on request, but in general everyone runs
+their own Jami. Anyone may also run their own always-on Jami Web and still reach everyone, because all
+peers share the same public network.
+
+Technical/ops detail: [`sdwa5-vps/docs/jami.md`](../sdwa5-vps/docs/jami.md)
+
 ## Shopware (shop / merch)
 
 Storefront at https://sdwa5.org used for merch distributed as voluntary
