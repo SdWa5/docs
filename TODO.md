@@ -83,3 +83,13 @@
     5. Write a formula collection (Formelsammlung), a version of the whole book that is as short as possible,
        with the most important formulas, rules of thumb and tables on a few pages and a link to the chapter that
        explains each.
+12. Shared CI building blocks for the SdWa5 repositories (proposal)
+    1. Measured on 2026-11-15, `.github/scripts/install-ci-tool.sh` is a byte-identical copy in this repository,
+       sdwa5-vps, sdwa5-3d, sdwa5-dsp and sdwa5-xdj-rr, and all five run the same gitleaks job pinned to 8.30.1
+       with a `.gitleaks.toml` each. sdwa5-3d, sdwa5-dsp and sdwa5-xdj-rr also carry the same
+       `.github/tests/test_ci_tools.py`. The copies already drift, because sdwa5-3d pins `actions/checkout` v5
+       while sdwa5-dsp and sdwa5-xdj-rr pin v4.
+    2. Proposal: one reusable workflow (`on: workflow_call`) for the secret scan and the checksum-verified tool
+       download, in a repository such as `SdWa5/.github`, which every repository calls at a pinned ref. A gitleaks
+       or action upgrade is then one change instead of five. The PHP and JS jobs stay in each repository, because
+       their commands differ. (ca. 45 Minuten)

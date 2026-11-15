@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+
+- `TODO.md`: item 12 proposes a shared CI workflow for the secret scan and the checksum-verified tool download.
+
 ## [0.40.0] - 2026-11-07
 
 ### Added
