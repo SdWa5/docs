@@ -11,6 +11,11 @@
        drive, which is why the `SdWa5:` rclone remote cannot see it without a `--drive-team-drive ""` override.
        Deleting or renaming anything needs a write scope, since that remote is `scope = drive.readonly`. See `SIG-1`
        in [sdwa5-3d/TODO.md](sdwa5-3d/TODO.md)
+    2. (proposal) **back up the Shared Drive "SdWa5"** (ca. 2 Stunden). Its `Dokumente`, `Hardware` and `Medien`
+       hold 887 files with 9.42 GiB (measured 2026-11-16), and no repository documents a backup of them. restic on
+       sdwa5-vps saves only the server into "SdWa5 Backup". A read-only service account as in the `offsite-backup`
+       mirror of "Ripper privat" in bestcodename/ai could sync the drive either on sdwa5-vps into its restic paths
+       or on both workstations into their own backups
 5. Mapping engine inspired by Mapshroom and Resolume, possibly as a new sibling repository
     1. Resolume's UI does not suit us, and Mapshroom is only a simple vibe so far. The goal is a powerful engine of
        our own that covers most of Resolume's features. Decide first between a new UI on top of Resolume and a

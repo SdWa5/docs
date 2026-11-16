@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 
 - `TODO.md`: item 12 proposes a shared CI workflow for the secret scan and the checksum-verified tool download.
+- `TODO.md`: item 4.2 proposes a backup of the Shared Drive "SdWa5".
 
 ## [0.40.0] - 2026-11-07
 
