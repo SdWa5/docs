@@ -11,7 +11,7 @@
        drive, which is why the `SdWa5:` rclone remote cannot see it without a `--drive-team-drive ""` override.
        Deleting or renaming anything needs a write scope, since that remote is `scope = drive.readonly`. See `SIG-1`
        in [sdwa5-3d/TODO.md](sdwa5-3d/TODO.md)
-    2. (proposal) **back up the Shared Drive "SdWa5"** (ca. 2 Stunden). Its `Dokumente`, `Hardware` and `Medien`
+    2. (proposal) **back up the Shared Drive "SdWa5"** (ca. 1 Stunde). Its `Dokumente`, `Hardware` and `Medien`
        hold 887 files with 9.42 GiB (measured 2026-11-16), and no repository documents a backup of them. restic on
        sdwa5-vps saves only the server into "SdWa5 Backup". A read-only service account as in the `offsite-backup`
        mirror of "Ripper privat" in bestcodename/ai could sync the drive either on sdwa5-vps into its restic paths
@@ -67,7 +67,7 @@
     1. Investigate synchronizing Shopware content with `sdwa5-vps` or a new sibling repository, so it can be
        versioned and maintained alongside the other website sources.
 9. **Mark AI-agent OAuth clients agentic by 11.11.2026** (GCP `sdwa5-automation`, `pro-icon-447800-e5`).
-   Else Workspace MCP rejects them; fixed per client from 12.11. (ca. 15 Minuten)
+   Else Workspace MCP rejects them; fixed per client from 12.11. (ca. 10 Minuten)
 10. Dolibarr UI, a general ERP/CRM frontend, proposed as a new sibling repository
     1. Conceptualize, define and implement a general frontend for an ERP/CRM. This project covers function only, so
        the theme design stays open for now.
@@ -97,4 +97,4 @@
     2. Proposal: one reusable workflow (`on: workflow_call`) for the secret scan and the checksum-verified tool
        download, in a repository such as `SdWa5/.github`, which every repository calls at a pinned ref. A gitleaks
        or action upgrade is then one change instead of five. The PHP and JS jobs stay in each repository, because
-       their commands differ. (ca. 45 Minuten)
+       their commands differ. (ca. 25 Minuten)
